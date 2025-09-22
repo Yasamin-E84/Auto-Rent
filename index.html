@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Rent - Car rental website</title>
   <link rel="stylesheet" href="./src/css/output.css">
-  <title>Document</title>
 </head>
+
 <body>
-  
+  <!--#region main-->
+
+  <main class="main w-[1440px] h-auto mx-auto">
+    <!--#region header-->
+    <div class="header-container w-full h-[683px] mx-auto bg-[url(/src/img/header/bg-car.png)] bg-cover bg-bottom ">
+      <header
+        class="header w-[1224px] h-[96px] bg-[#FFFFFF] mx-auto rounded-bl-[16px] rounded-br-[16px] px-[32px] flex justify-between flex-wrap items-center">
+        <div class="header-logo"><img src="./src/img/header/Logo.png" alt="Auto-Rent" class="h-[59px]"></div>
+        <nav
+          class="header-navigation w-[507px] h-[28px] bg-transparent relative flex flex-wrap gap-x-[40px] items-center">
+          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">رزرو خودرو</a>
+          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">خدمات ما</a>
+          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">بلاگ</a>
+          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">درباره ما</a>
+          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">تماس با ما</a>
+          <a id="openSearch" class="search-btn absolute left-0 cursor-pointer" aria-expanded="false"><img
+              src="./src/img/header/search.svg" alt=""></a>
+        </nav>
+        <button
+          class="btn btn-active border-none bg-[#194BF0] font-Estedad text-[15.9px] text-[#FFFFFF] font-normal w-[122px] h-[40px] rounded-[8px] py-[4px] px-[16px] flex flex-wrap gap-x-[8px] hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">ورود
+          / ثبت‌نام</button>
+      </header>
+      <div class="container-body w-full h-[579px] ">
+        <div class="container-body-aside w-full px-[108px]">
+          <div class="container-body-text">
+            <h1 class="text-[#FDB713] text-[44px] font-[700] w-[335px] font-Estedad leading-[140%] mt-[72px]">اُتـــو
+              رِنت؛ سریع، آسان و به صرفه</h1>
+            <p class="font-Estedad text-[#F9F9F9] text-[20px] leading-[36px] font-[400] text-right">سرویس دهنده رزرو
+              خودرو در ایران در کمترین زمان ممکن!</p>
+          </div>
+          <div class="container-body-btns flex flex-wrap justify-between gap-x-[16px] w-[353px] mt-[40px]">
+            <button class="btn w-[186px] h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-base font-bold"><img src="./src/img/header/car.svg" alt="">رزرو آسان خودرو</button>
+            <button class="btn w-[151px] h-[48px] gap-x-[8px] rounded-[7px] border-[1px] font-Estedad border-[#FFFFFF] bg-transparent text-base font-bold"><img src="./src/img/header/arrow-left.svg" alt="">تماس با ما</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--#endregion header-->
+  </main>
+  <!--#endregion main-->
+  <script src="./src/js/main.js"></script>
 </body>
+
 </html>
