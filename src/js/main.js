@@ -123,3 +123,83 @@
         if (e.key === 'Escape') closeOverlay();
       });
     })();
+
+// Testimonials functionality
+(function () {
+  const testimonials = [
+    {
+      id: 1,
+      name: 'فاطمه ابراهیمی فر',
+      date: '۲۷ دی ماه ۱۳۸۰',
+      image: './src/img/testimonials/img-4.png',
+      text: 'سرویس عالی و پشتیبانی 24 ساعته. خودروها تمیز و با کیفیت هستند. قیمت‌ها هم بسیار مناسب است.',
+      rating: 4
+    },
+    {
+      id: 2,
+      name: 'فرزانه حیدری',
+      date: '۲۷ دی ماه ۱۳۸۰',
+      image: './src/img/testimonials/img-3.png',
+      text: 'تجربه فوق‌العاده‌ای داشتم. کارمندان خیلی مهربان و حرفه‌ای هستند. حتماً دوباره استفاده می‌کنم.',
+      rating: 5
+    },
+    {
+      id: 3,
+      name: 'محمد جواد امینی',
+      date: '۲۷ دی ماه ۱۳۹۹',
+      image: './src/img/testimonials/img-2.png',
+      text: 'بهترین سرویس اجاره خودرو در تهران. خودروها جدید و ایمن هستند. توصیه می‌کنم.',
+      rating: 4
+    },
+    {
+      id: 4,
+      name: 'اولدوز بهاور',
+      date: '۲۷ دی ماه ۱۳۸۰',
+      image: './src/img/testimonials/img-1.png',
+      text: 'اتو رنت بهترین سرویس اجاره خودرو است که تا حالا استفاده کردم. پشتیبانی عالی، هزینه‌های مناسب و فرآیند اجاره و رزرو بسیار آسان. حتماً دوباره از این سرویس استفاده خواهم کرد.',
+      rating: 4
+    }
+  ];
+
+  function updateMainTestimonial(testimonial) {
+    const mainProfileImg = document.getElementById('mainProfileImg');
+    const mainName = document.getElementById('mainName');
+    const mainTestimonialText = document.getElementById('mainTestimonialText');
+    
+    if (mainProfileImg) mainProfileImg.src = testimonial.image;
+    if (mainProfileImg) mainProfileImg.alt = testimonial.name;
+    if (mainName) mainName.textContent = testimonial.name;
+    if (mainTestimonialText) mainTestimonialText.textContent = testimonial.text;
+  }
+
+  function updateActiveTab(activeId) {
+    const tabs = document.querySelectorAll('.testimonial-tab');
+    tabs.forEach(tab => {
+      const tabId = parseInt(tab.getAttribute('data-testimonial'));
+      const img = tab.querySelector('img');
+      
+      if (tabId === activeId) {
+        tab.classList.remove('bg-white');
+        tab.classList.add('bg-[#FDB713]');
+        if (img) img.classList.remove('grayscale');
+      } else {
+        tab.classList.remove('bg-[#FDB713]');
+        tab.classList.add('bg-white');
+        if (img) img.classList.add('grayscale');
+      }
+    });
+  }
+
+  // Add click listeners to testimonial tabs
+  document.querySelectorAll('.testimonial-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      const testimonialId = parseInt(this.getAttribute('data-testimonial'));
+      const testimonial = testimonials.find(t => t.id === testimonialId);
+      
+      if (testimonial) {
+        updateMainTestimonial(testimonial);
+        updateActiveTab(testimonialId);
+      }
+    });
+  });
+})();
