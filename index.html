@@ -13,46 +13,87 @@
 
   <main class="main desktop:min-[1000px] h-auto mx-auto ">
     <!--#region header-->
-    <div class="header-container w-full h-[683px] mx-auto bg-[url(/src/img/header/bg-car.png)] bg-cover bg-bottom ">
+    <div class="header-container w-full h-[683px] mx-auto bg-[url(/src/img/header/bg-car.png)] bg-cover bg-bottom">
       <header
-        class="header w-[1224px] h-[96px] bg-[#FFFFFF] mx-auto rounded-bl-[16px] rounded-br-[16px] px-[32px] flex justify-between flex-wrap items-center">
-        <div class="header-logo"><img src="./src/img/header/Logo.png" alt="Auto-Rent" class="h-[59px]"></div>
-        <nav
-          class="header-navigation w-[507px] h-[28px] bg-transparent relative flex flex-wrap gap-x-[40px] items-center">
-          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">رزرو خودرو</a>
-          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">خدمات ما</a>
-          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">بلاگ</a>
-          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">درباره ما</a>
-          <a href="#" class="header-navigation-links text-base text-[#353535] font-Estedad font-normal ">تماس با ما</a>
-          <a id="openSearch" class="search-btn absolute left-0 cursor-pointer" aria-expanded="false"><img
-              src="./src/img/header/search.svg" alt=""></a>
+        class="w-full desktop:w-[1224px] h-[64px] desktop:h-[96px] bg-white mx-auto rounded-bl-[16px] rounded-br-[16px] px-4 desktop:px-[32px] flex items-center justify-between">
+
+        <div class="flex items-center gap-3">
+          <button id="navToggle"
+            class="inline-flex desktop:hidden items-center justify-center w-10 h-10 rounded-md border border-[#E5E7EB] transition-all ease-linear duration-200">
+            <img src="./src/img/header/hamburger.svg" alt="" class="w-[24px] ">
+            <span class="sr-only">باز کردن منو</span>
+          </button>
+
+          <div class="header-logo">
+            <img src="./src/img/header/Logo.png" alt="Auto-Rent" class="h-[40px] desktop:h-[59px]">
+          </div>
+        </div>
+
+        <nav class="header-navigation
+             hidden desktop:flex
+             w-auto desktop:w-fit h-[28px] relative items-center gap-x-6 bg-transparent">
+          <a href="#" class="text-base text-[#353535] font-Estedad">رزرو خودرو</a>
+          <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
+          <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
+          <a href="#" class="text-base text-[#353535] font-Estedad">درباره ما</a>
+          <a href="#" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
+
+          <button id="openSearch" class=" cursor-pointer" aria-expanded="false">
+            <img src="./src/img/header/search.svg" alt="search">
+          </button>
         </nav>
+
         <button
-          class="btn btn-active border-none bg-[#194BF0] font-Estedad text-[15.9px] text-[#FFFFFF] font-normal w-[122px] h-[40px] rounded-[8px] py-[4px] px-[16px] flex flex-wrap gap-x-[8px] hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">ورود
-          / ثبت‌نام</button>
+          class="hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white w-fit h-fit rounded-[8px] py-[4px] px-[16px] gap-x-[8px] hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">
+          ورود / ثبت‌نام
+        </button>
+
+        <div class="flex items-center gap-2 desktop:hidden">
+          <button id="openSearchMobile"
+            class="w-10 h-10 inline-flex items-center justify-center rounded-md border border-[#E5E7EB]">
+            <img src="./src/img/header/search.svg" alt="جستجو" class="w-5 h-5">
+          </button>
+          <a
+            class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
+            ورود / ثبت‌نام
+          </a>
+        </div>
       </header>
-      <!-- Search Overlay -->
+
+      <!-- #region hamburger -->
+      <div id="mobileNav" class="desktop:hidden w-full max-w-[1224px] mx-auto px-4 pt-2 pb-4
+              hidden">
+        <div class="rounded-[12px] border border-[#E5E7EB] bg-white p-3">
+          <div class="flex flex-col gap-2 font-Estedad text-[#353535] text-[15px]">
+            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">رزرو خودرو</a>
+            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
+            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
+            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
+            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+          </div>
+        </div>
+      </div>
+      <!-- #endregion hamburger -->
+
       <section id="searchOverlay"
         class="fixed inset-0 z-50 invisible opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- Backdrop below header -->
-        <div class="absolute inset-x-0 bottom-0 top-[96px] bg-black/40" data-close></div>
-        <!-- Darken header sides, keep center clear -->
-        <div class="absolute top-0 inset-x-0 h-[96px] pointer-events-none">
+        <div class="absolute inset-x-0 bottom-0 top-[64px] desktop:top-[96px] bg-black/40" data-close></div>
+        <div class="absolute top-0 inset-x-0 h-[64px] desktop:h-[96px] pointer-events-none">
           <div class="w-full h-full flex justify-center">
             <div class="flex-1 bg-black/40"></div>
-            <div class="w-[1224px] h-full"></div>
+            <div class="w-full desktop:w-[1224px] h-full"></div>
             <div class="flex-1 bg-black/40"></div>
           </div>
         </div>
-        <!-- Top search bar and content -->
         <div class="relative">
-          <div class="w-[884px] mx-auto">
-            <div class="w-[884px] h-[96px] mx-auto flex items-center px-[32px]">
+          <div class="w-full desktop:w-[884px] mx-auto">
+            <div class="h-[64px] desktop:h-[96px] mx-auto flex items-center px-4 desktop:px-[32px]">
               <div class="flex-1">
                 <label class="block" for="globalSearch"></label>
-                <div class="relative rounded-[16px] border border-[#E5E7EB] bg-white shadow-sm py-3 pr-12 pl-4">
+                <div
+                  class="relative rounded-[16px] border border-[#E5E7EB] bg-white shadow-sm py-2 desktop:py-3 pr-10 desktop:pr-12 pl-4">
                   <button type="button" aria-hidden="true" tabindex="-1"
-                    class="absolute right-4 top-1/2 -translate-y-1/2">
+                    class="absolute right-3 desktop:right-4 top-1/2 -translate-y-1/2">
                     <img src="./src/img/header/search.svg" alt="search" class="w-5 h-5">
                   </button>
                   <input id="globalSearch" type="text" placeholder="جستجو"
@@ -60,27 +101,27 @@
                 </div>
               </div>
             </div>
-            <!-- Recent and popular searches -->
-            <div class="w-[884px] mx-auto px-[16px] pb-8 bg-white rounded-bl-[16px] rounded-br-[16px]">
-              <div class="h-px bg-[#E5E7EB] mb-6"></div>
-              <div class="mb-8">
+            <div class="mx-auto px-4 desktop:px-[16px] pb-6 desktop:pb-8 bg-white rounded-b-[16px]">
+              <div class="h-px bg-[#E5E7EB] mb-4 desktop:mb-6"></div>
+
+              <div class="mb-6 desktop:mb-8">
                 <div class="flex items-center justify-between mb-3">
-                  <div class="flex gap-x-[8px] items-center justify-start">
+                  <div class="flex gap-2 items-center">
                     <img src="./src/img/header/clock.svg" alt="">
-                    <h4 class="text-[#111827] font-Estedad">تاریخچه جستجوهای شما </h4>
+                    <h4 class="text-[#111827] font-Estedad">تاریخچه جستجوهای شما</h4>
                   </div>
-                  <img src="./src/img/header/trash.svg" alt="" class="w-[24px]">
+                  <img src="./src/img/header/trash.svg" alt="" class="w-6">
                 </div>
-                <div id="recentChips" class="flex flex-wrap gap-3">
-                  
-                </div>
+                <div id="recentChips" class="flex flex-wrap gap-2 desktop:gap-3"></div>
               </div>
+
               <div>
-                <div class="flex items-center justify-between mb-3 mt-[41px]">
-                  <div class="text-[#111827] font-Estedad flex gap-x-[8px]"><img src="./src/img/header/heart-search.svg"
-                      alt="">جستجوهای پرطرفدار</div>
+                <div class="flex items-center justify-between mb-3 mt-6">
+                  <div class="text-[#111827] font-Estedad flex gap-2">
+                    <img src="./src/img/header/heart-search.svg" alt="">جستجوهای پرطرفدار
+                  </div>
                 </div>
-                <div class="flex flex-wrap gap-3" id="popularChips">
+                <div class="flex flex-wrap gap-2 desktop:gap-3" id="popularChips">
                   <button type="button"
                     class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
                     S500</button>
@@ -105,113 +146,186 @@
           </div>
         </div>
       </section>
-      <div class="container-body w-full h-[579px] ">
-        <div class="container-body-aside w-full px-[108px]">
-          <div class="container-body-text">
-            <h1 class="text-[#FDB713] text-[44px] font-[700] w-[335px] font-Estedad leading-[140%] mt-[72px]">اُتـــو
-              رِنت؛ سریع، آسان و به صرفه</h1>
-            <p class="font-Estedad text-[#F9F9F9] text-[20px] leading-[36px] font-[400] text-right">سرویس دهنده رزرو
-              خودرو در ایران در کمترین زمان ممکن!</p>
+      <!-- #region banner -->
+      <div class="container-body w-full">
+        <div class="px-4 desktop:px-[108px]">
+          <div class="container-body-text text-center desktop:text-right">
+            <h1
+              class="text-[#FDB713] text-[28px] mobile:text-[36px] desktop:text-[44px] font-bold w-full desktop:w-[335px] font-Estedad leading-[140%] mt-[32px] desktop:mt-[72px]">
+              اُتـــو رِنت؛ سریع، آسان و به صرفه
+            </h1>
+            <p
+              class="font-Estedad text-[#F9F9F9] text-[16px] mobile:text-[18px] desktop:text-[20px] leading-[32px] desktop:leading-[36px] mt-2">
+              سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
+            </p>
           </div>
-          <div class="container-body-btns flex flex-wrap justify-between gap-x-[16px] w-[353px] mt-[40px]">
-            <button
-              class="btn w-[186px] h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-base font-bold"><img
-                src="./src/img/header/car.svg" alt="">رزرو آسان خودرو</button>
-            <button
-              class="btn w-[151px] h-[48px] gap-x-[8px] rounded-[7px] border-[1px] font-Estedad border-[#FFFFFF] bg-transparent text-base font-bold"><img
-                src="./src/img/header/arrow-left.svg" alt="">تماس با ما</button>
 
+          <div
+            class="container-body-btns flex justify-center desktop:justify-between gap-3 w-full desktop:w-[353px] mt-[24px] desktop:mt-[40px]">
+            <button
+              class="w-[60%] mobile:w-[240px] desktop:w-[186px] h-[44px] desktop:h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
+              <img src="./src/img/header/car.svg" alt="">رزرو آسان خودرو
+            </button>
+            <button
+              class="w-[35%] mobile:w-[180px] desktop:w-[151px] h-[44px] desktop:h-[48px] gap-x-[8px] rounded-[7px] border border-white bg-transparent text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
+              <img src="./src/img/header/arrow-left.svg" alt="">تماس با ما
+            </button>
           </div>
         </div>
       </div>
+      <!-- #region banner -->
     </div>
     <!--#endregion header-->
+
     <!--#region type-->
-    <div
-      class="rent-type w-[1224px] h-[201px] border-[1px] border-[#D7D7D7] py-[16px] px-[8px] mx-auto mt-[-100.5px] rounded-[16px] flex flex-col gap-y-[16px] bg-[#ffffff]">
+    <div class="rent-type w-full desktop:w-[1224px]
+         h-auto desktop:h-[201px]
+         border border-[#D7D7D7]
+         py-4 px-3 desktop:px-2
+         mx-auto desktop:mt-[-100.5px] mt-6
+         rounded-[16px]
+         flex flex-col gap-y-4 bg-white">
+
       <!--#region type-choose-->
-      <div class="rent-type-choose w-full h-[40px] justify-between flex flex-wrap mx-auto px-[8px]">
-        <div class="choose-right w-[430px] h-full flex gap-x-[8px] items-center ">
-          <div
-            class="choose-right-content w-fit h-full bg-[#194BF0] border-[#D7D7D7] border-[1px] px-[12px] rounded-[20px] btn btn-active font-Estedad text-[14px] text-[#ffffff] font-[600] leading-[180%] text-center">
+      <div class="rent-type-choose w-full min-h-[40px]
+              flex flex-col desktop:flex-row
+              gap-3 desktop:gap-0
+              desktop:justify-between mx-auto px-2">
+
+        <!-- Right: Choose type buttons -->
+        <div class="choose-right w-full desktop:w-[430px] h-full
+                flex items-center gap-2
+                overflow-x-auto desktop:overflow-visible
+                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <button class="shrink-0 h-10 px-3 rounded-[20px]
+               bg-[#194BF0] border border-[#D7D7D7]
+               btn btn-active font-Estedad text-[14px] text-white font-[600] leading-[180%] text-center">
             اجاره خودرو با راننده
-          </div>
-          <div
-            class="choose-right-content w-fit h-full bg-transparent border-[#D7D7D7] border-[1px] px-[12px] rounded-[20px] btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
-            اجاره خودرو بی راننده </div>
-          <div
-            class="choose-right-content w-fit h-full bg-transparent border-[#D7D7D7] border-[1px] px-[12px] rounded-[20px] btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
-            اجاره ماشین عروس </div>
+          </button>
+          <button class="shrink-0 h-10 px-3 rounded-[20px]
+               bg-transparent border border-[#D7D7D7]
+               btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
+            اجاره خودرو بی راننده
+          </button>
+          <button class="shrink-0 h-10 px-3 rounded-[20px]
+               bg-transparent border border-[#D7D7D7]
+               btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
+            اجاره ماشین عروس
+          </button>
         </div>
-        <div class="choose-left w-fit h-[25px] font-Estedad font-[500] text-[14px] leading-[100%] text-[#194BF0]">
-          <a href="#">
+
+        <!-- Left: More info link -->
+        <div class="choose-left w-full desktop:w-auto h-[25px]
+                text-center desktop:text-right
+                font-Estedad font-[500] text-[14px] leading-[100%] text-[#194BF0]">
+          <a href="#" class="inline-block">
             اطلاعات بیشتر در مورد رزرو خودرو
           </a>
         </div>
       </div>
       <!--#endregion type-choose-->
+
       <!--#region type-time-->
-      <div class="rent-type-time w-[1069px] h-[25px] flex flex-wrap justify-between items-center mr-[10px]">
-        <div
-          class="rent-type-time-right w-fit h-full items-center flex flex-wrap gap-x-[4px] font-Estedad text-[14px] text-[#0C0C0C] leading-[180%] font-[400]">
+      <div class="rent-type-time w-full desktop:w-[1069px]
+              h-auto desktop:h-[25px]
+              flex flex-col desktop:flex-row
+              gap-3 desktop:gap-0
+              desktop:justify-between items-start desktop:items-center desktop:mr-[10px] px-1">
+        <div class="rent-type-time-right w-full desktop:w-fit h-full
+             inline-flex items-center gap-1
+             font-Estedad text-[14px] text-[#0C0C0C] leading-[180%] font-[400]">
           <img src="./src/img/header/arrow-left-b.svg" alt="">
           محل تحویل خودرو
         </div>
-        <div class="rent-type-time-left w-[506px] h-[25px] flex flex-wrap">
-          <div
-            class="rent-type-time-left-content text-[14px] font-Estedad text-[#0C0C0C] font-[400] flex flex-wrap gap-x-[4px] items-center">
+
+        <div class="rent-type-time-left w-full desktop:w-[506px]
+                flex flex-wrap items-center
+                gap-x-6 gap-y-2 desktop:gap-y-0">
+          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+               inline-flex items-center gap-1">
             <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ تحویل
           </div>
-          <div
-            class="rent-type-time-left-content text-[14px] font-Estedad text-[#0C0C0C] font-[400] flex flex-wrap gap-x-[4px] items-center mr-[49px] ml-[36px]">
+          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+               inline-flex items-center gap-1">
             <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت تحویل
           </div>
-          <div
-            class="rent-type-time-left-content text-[14px] font-Estedad text-[#0C0C0C] font-[400] flex flex-wrap gap-x-[4px] items-center ml-[39px]">
+          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+               inline-flex items-center gap-1">
             <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ بازگشت
           </div>
-          <div
-            class="rent-type-time-left-content text-[14px] font-Estedad text-[#0C0C0C] font-[400] flex flex-wrap gap-x-[4px] items-center">
+          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+               inline-flex items-center gap-1">
             <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت بازگشت
           </div>
         </div>
       </div>
       <!--#endregion type-time-->
+
       <!--#region type-location-->
-      <div
-        class="rent-type-location w-full h-[56px] flex flex-wrap px-[14px] py-[12px] bg-white gap-x-[12px] items-center mx-auto">
-        <div class="w-[535px] h-[29px] flex flex-wrap justify-between items-center">
-          <span class="font-Estedad font-[400] texxt-[16px] leading-[180%] text-[#0C0C0C]">تهران-فرودگاه امام
-            خمینی</span>
-          <img src="./src/img/header/arrow-down.svg" alt="" class="w-[20px]">
+      <div class="rent-type-location w-full
+           grid grid-cols-1 mobile:grid-cols-2 desktop:grid-cols-[535px_1px_111px_1px_106px_1px_111px_1px_106px_auto]
+           gap-3 desktop:gap-x-3
+           items-center px-3 py-3 bg-white">
+
+        <!-- Location -->
+        <div class="w-full desktop:w-[535px] h-[29px]
+                flex justify-between items-center">
+          <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">
+            تهران-فرودگاه امام خمینی
+          </span>
+          <img src="./src/img/header/arrow-down.svg" alt="" class="w-5">
         </div>
-        <div class="h-[32px] w-[0.5px] bg-[#D7D7D7]"></div>
-        <div class="w-[111px] h-[31px] flex flex-wrap justify-between items-center">
+
+        <!-- Separators: Only in desktop -->
+        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+
+        <!-- Delivery Date -->
+        <div class="w-full desktop:w-[111px] h-[31px]
+                flex justify-between items-center">
           <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
-          <img src="./src/img/header/calendar.svg" alt="" class="w-[20px]">
+          <img src="./src/img/header/calendar.svg" alt="" class="w-5">
         </div>
-        <div class="h-[32px] w-[0.5px] bg-[#D7D7D7]"></div>
-        <div class="w-[106px] h-[31px] flex flex-wrap justify-between items-center">
+
+        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+
+        <!-- Delivery Time -->
+        <div class="w-full desktop:w-[106px] h-[31px]
+                flex justify-between items-center">
           <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
-          <img src="./src/img/header/clock.svg" alt="" class="w-[20px]">
+          <img src="./src/img/header/clock.svg" alt="" class="w-5">
         </div>
-        <div class="h-[32px] w-[0.5px] bg-[#D7D7D7]"></div>
-        <div class="w-[111px] h-[31px] flex flex-wrap justify-between items-center">
+
+        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+
+        <!-- Return Date -->
+        <div class="w-full desktop:w-[111px] h-[31px]
+                flex justify-between items-center">
           <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
-          <img src="./src/img/header/calendar.svg" alt="" class="w-[20px]">
+          <img src="./src/img/header/calendar.svg" alt="" class="w-5">
         </div>
-        <div class="h-[32px] w-[0.5px] bg-[#D7D7D7]"></div>
-        <div class="w-[106px] h-[31px] flex flex-wrap justify-between items-center">
+
+        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+
+        <!-- Return Time -->
+        <div class="w-full desktop:w-[106px] h-[31px]
+                flex justify-between items-center">
           <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
-          <img src="./src/img/header/clock.svg" alt="" class="w-[20px]">
+          <img src="./src/img/header/clock.svg" alt="" class="w-5">
         </div>
-        <div class="w-[56px] h-[56px] rounded-[16px] bg-[#FDB713] flex justify-center items-center mr-[36px]">
-          <img src="./src/img/header/search.svg" alt="" class="w-[24px]">
+
+        <!-- Search button -->
+        <div class="w-full desktop:w-[56px] h-[44px] desktop:h-[56px]
+                rounded-[12px] desktop:rounded-[16px]
+                bg-[#FDB713] flex justify-center items-center
+                desktop:mr-[36px]">
+          <img src="./src/img/header/search.svg" alt="" class="w-6">
         </div>
       </div>
       <!--#endregion type-location-->
+
     </div>
     <!--#endregion type-->
+
     <!--#region brand-->
     <div
       class="brand w-full h-[80px] opacity-[35%] flex flex-wrap items-center justify-between mt-[49px] px-[16px] py-[8px]">
@@ -318,7 +432,8 @@
     <!--#region reservation-->
     <div class="reservation w-[85%]  mx-auto mt-[48px]">
       <!--#region reservation-textop-->
-      <div class="reservation-textop w-[845px] mx-auto flex flex-col box-border gap-y-[20px] py-[16px] px-[8px] items-center">
+      <div
+        class="reservation-textop w-[845px] mx-auto flex flex-col box-border gap-y-[20px] py-[16px] px-[8px] items-center">
         <h4 class="font-Estedad font-[200] leading-[180%] text-[24px] text-center text-[#5e5e5e]">مشاهده موجودی خودروها
         </h4>
         <div class="flex mx-auto">

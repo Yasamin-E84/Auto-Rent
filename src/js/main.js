@@ -203,3 +203,19 @@
     });
   });
 })();
+
+// hamburger
+(function () {
+  const btn = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileNav');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+})();
+// hamburger rotate toggle
+const navToggle = document.getElementById('navToggle');
+
+navToggle?.addEventListener('click', () => {
+  navToggle.classList.toggle('rotate-90'); // Tailwind class for rotation
+});
