@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="./src/css/output.css">
 </head>
 
-<body>
+<body class="bg-[#F3F3F3]">
   <!--#region main-->
 
-  <main class="main w-[1440px] h-auto mx-auto">
+  <main class="main desktop:min-[1000px] h-auto mx-auto ">
     <!--#region header-->
     <div class="header-container w-full h-[683px] mx-auto bg-[url(/src/img/header/bg-car.png)] bg-cover bg-bottom ">
       <header
@@ -71,7 +71,9 @@
                   </div>
                   <img src="./src/img/header/trash.svg" alt="" class="w-[24px]">
                 </div>
-                <div id="recentChips" class="flex flex-wrap gap-3"></div>
+                <div id="recentChips" class="flex flex-wrap gap-3">
+                  
+                </div>
               </div>
               <div>
                 <div class="flex items-center justify-between mb-3 mt-[41px]">
@@ -80,22 +82,22 @@
                 </div>
                 <div class="flex flex-wrap gap-3" id="popularChips">
                   <button type="button"
-                    class="px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
+                    class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
                     S500</button>
                   <button type="button"
-                    class="px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">پرشیا
+                    class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">پرشیا
                     ELX سفید</button>
                   <button type="button"
-                    class="px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
+                    class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
                     S500</button>
                   <button type="button"
-                    class="px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Audi
+                    class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Audi
                     A8</button>
                   <button type="button"
-                    class="px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Peugeot
+                    class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Peugeot
                     2008</button>
                   <button type="button"
-                    class="px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Ferrari
+                    class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Ferrari
                     Roma</button>
                 </div>
               </div>
@@ -314,9 +316,9 @@
     </div>
     <!--#endregion car-types-->
     <!--#region reservation-->
-    <div class="reservation w-[85%] h-[1201px] mx-auto mt-[48px]">
+    <div class="reservation w-[85%]  mx-auto mt-[48px]">
       <!--#region reservation-textop-->
-      <div class="reservation-textop w-[845px] mx-auto flex flex-col box-border gap-y-[20px] py-[16px] px-[8px]">
+      <div class="reservation-textop w-[845px] mx-auto flex flex-col box-border gap-y-[20px] py-[16px] px-[8px] items-center">
         <h4 class="font-Estedad font-[200] leading-[180%] text-[24px] text-center text-[#5e5e5e]">مشاهده موجودی خودروها
         </h4>
         <div class="flex mx-auto">
@@ -327,7 +329,7 @@
       </div>
       <!--#endregion reservation-textop-->
       <!--#region reservation-sections-->
-      <div class="reservation-sections w-[1224px] h-[48px] mt-[16px] mb-[24px] flex flex-wrap justify-between">
+      <div class=" mx-auto reservation-sections w-[1224px] h-[48px] mt-[16px] mb-[24px] flex flex-wrap justify-between">
         <div class="w-[184px] h-full"></div>
         <div class="w-[400px] h-full flex flex-wrap gap-x-[8px]">
           <div
@@ -348,7 +350,7 @@
       </div>
       <!--#endregion reservation-sections-->
       <!--#region reservation-items-->
-      <div class="reservation-items w-full h-[1044px] flex flex-wrap gap-[24px] py-[16px]">
+      <div class="reservation-items w-full flex flex-wrap gap-[24px] py-[16px] items-center justify-center">
         <div
           class="reservation-items-content box-border w-[392px] h-[510px] p-[16px] flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
           <!--#region reservation-items-img-->
@@ -1121,6 +1123,7 @@
       </div>
       <!--#endregion footer-bottom-->
     </footer>
+    <div class="h-[64px]"></div>
     <!--#endregion footer-->
 
   </main>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Rent - Car rental website</title>
+  <!-- Tailwind/DaisyUI output -->
+  <link rel="stylesheet" href="./src/css/output.css" />
+</head>
+
+<body class="bg-[#F3F3F3]">
+  <!--#region main-->
+  <main class="main h-auto mx-auto">
+
+    <!-- Drawer (for mobile nav) -->
+    <div class="drawer max-[999px]:drawer-end">
+      <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
+
+      <!-- Drawer Content (whole page) -->
+      <div class="drawer-content">
+
+        <!--#region header-->
+        <div class="header-container w-full min-[1000px]:h-[683px] max-[999px]:h-auto mx-auto bg-[url(/src/img/header/bg-car.png)] bg-cover bg-bottom">
+
+          <!-- Navbar Wrapper -->
+          <header
+            class="navbar min-[1000px]:w-[1224px] w-full min-[1000px]:h-[96px] bg-white mx-auto rounded-b-[16px] px-4 min-[1000px]:px-[32px] flex items-center">
+
+            <!-- Left side (brand) -->
+            <div class="flex-1">
+              <a class="inline-flex items-center">
+                <img src="./src/img/header/Logo.png" alt="Auto-Rent" class="h-[48px] min-[1000px]:h-[59px]" />
+              </a>
+            </div>
+
+            <!-- Desktop nav -->
+            <nav
+              class="min-[1000px]:flex hidden gap-x-[40px] items-center">
+              <a href="#" class="text-base text-[#353535] font-Estedad">رزرو خودرو</a>
+              <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
+              <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
+              <a href="#" class="text-base text-[#353535] font-Estedad">درباره ما</a>
+              <a href="#" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
+
+              <!-- search button -->
+              <button id="openSearch" class="relative cursor-pointer" aria-expanded="false">
+                <img src="./src/img/header/search.svg" alt="search" />
+              </button>
+            </nav>
+
+            <!-- CTA desktop -->
+            <div class="min-[1000px]:block hidden">
+              <button
+                class="btn border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white w-[122px] h-[40px] rounded-[8px] hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">ورود / ثبت‌نام</button>
+            </div>
+
+            <!-- Mobile actions -->
+            <div class="min-[1000px]:hidden flex items-center gap-2">
+              <button id="openSearch_m" class="btn btn-ghost btn-square">
+                <img src="./src/img/header/search.svg" class="w-5 h-5" alt="search" />
+              </button>
+              <label for="mobile-drawer" class="btn btn-ghost btn-square">
+                <!-- Hamburger -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round"
+                     stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+              </label>
+            </div>
+          </header>
+
+          <!-- Search Overlay -->
+          <section id="searchOverlay"
+            class="fixed inset-0 z-50 invisible opacity-0 pointer-events-none transition-opacity duration-300">
+            <!-- Backdrop below header -->
+            <div class="absolute inset-x-0 bottom-0 min-[1000px]:top-[96px] top-0 bg-black/40" data-close></div>
+
+            <!-- Darken header sides, keep center clear (desktop only) -->
+            <div class="absolute top-0 inset-x-0 h-[96px] pointer-events-none max-[999px]:hidden">
+              <div class="w-full h-full flex justify-center">
+                <div class="flex-1 bg-black/40"></div>
+                <div class="w-[1224px] h-full"></div>
+                <div class="flex-1 bg-black/40"></div>
+              </div>
+            </div>
+
+            <!-- Top search bar and content -->
+            <div class="relative">
+              <div class="min-[1000px]:w-[884px] w-full max-w-full mx-auto max-[999px]:px-4">
+                <div class="min-[1000px]:h-[96px] h-[72px] mx-auto flex items-center min-[1000px]:px-[32px]">
+                  <div class="flex-1">
+                    <label class="block" for="globalSearch"></label>
+                    <div
+                      class="relative rounded-[16px] border border-[#E5E7EB] bg-white shadow-sm min-[1000px]:py-3 py-2 pr-12 pl-4">
+                      <button type="button" aria-hidden="true" tabindex="-1"
+                        class="absolute right-4 top-1/2 -translate-y-1/2">
+                        <img src="./src/img/header/search.svg" alt="search" class="w-5 h-5" />
+                      </button>
+                      <input id="globalSearch" type="text" placeholder="جستجو"
+                        class="w-full bg-transparent outline-none text-[#353535] placeholder:text-[#9CA3AF] font-Estedad" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Recent and popular searches -->
+                <div
+                  class="mx-auto min-[1000px]:px-[16px] px-4 pb-6 min-[1000px]:pb-8 bg-white rounded-b-[16px]">
+                  <div class="h-px bg-[#E5E7EB] mb-6"></div>
+
+                  <div class="mb-6 min-[1000px]:mb-8">
+                    <div class="flex items-center justify-between mb-3">
+                      <div class="flex gap-x-[8px] items-center">
+                        <img src="./src/img/header/clock.svg" alt="">
+                        <h4 class="text-[#111827] font-Estedad">تاریخچه جستجوهای شما</h4>
+                      </div>
+                      <img src="./src/img/header/trash.svg" alt="" class="w-[24px]">
+                    </div>
+                    <div id="recentChips" class="flex flex-wrap gap-3"></div>
+                  </div>
+
+                  <div>
+                    <div class="flex items-center justify-between mb-3 mt-[24px] min-[1000px]:mt-[41px]">
+                      <div class="text-[#111827] font-Estedad flex gap-x-[8px]">
+                        <img src="./src/img/header/heart-search.svg" alt="">جستجوهای پرطرفدار
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3" id="popularChips">
+                      <button type="button"
+                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز S500</button>
+                      <button type="button"
+                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">پرشیا ELX سفید</button>
+                      <button type="button"
+                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Audi A8</button>
+                      <button type="button"
+                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Peugeot 2008</button>
+                      <button type="button"
+                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Ferrari Roma</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Hero copy -->
+          <div class="w-full min-[1000px]:h-[579px]">
+            <div class="px-4 min-[1000px]:px-[108px]">
+              <div class="max-[999px]:pt-8">
+                <h1 class="text-[#FDB713] text-[28px] min-[1000px]:text-[44px] font-[700] min-[1000px]:w-[335px] font-Estedad leading-[150%] min-[1000px]:leading-[140%] mt-6 min-[1000px]:mt-[72px]">
+                  اُتـــو رِنت؛ سریع، آسان و به صرفه
+                </h1>
+                <p class="font-Estedad text-[#F9F9F9] text-[16px] min-[1000px]:text-[20px] leading-[28px] min-[1000px]:leading-[36px] mt-2">
+                  سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3 w-full min-[1000px]:w-[353px] mt-[20px] min-[1000px]:mt-[40px]">
+                <button
+                  class="btn w-full min-[1000px]:w-[186px] h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-base font-bold">
+                  <img src="./src/img/header/car.svg" alt="">رزرو آسان خودرو
+                </button>
+                <button
+                  class="btn w-full min-[1000px]:w-[151px] h-[48px] gap-x-[8px] rounded-[7px] border border-[#FFFFFF] bg-transparent text-base font-bold font-Estedad">
+                  <img src="./src/img/header/arrow-left.svg" alt="">تماس با ما
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--#endregion header-->
+
+        <!--#region type-->
+        <div
+          class="rent-type min-[1000px]:w-[1224px] w-full min-[1000px]:h-[201px] h-auto border border-[#D7D7D7] py-[16px] px-[8px] mx-auto min-[1000px]:mt-[-100.5px] mt-4 rounded-[16px] flex flex-col gap-y-[16px] bg-white">
+
+          <!-- choose -->
+          <div class="w-full min-[1000px]:h-[40px] flex flex-wrap justify-between px-[8px] gap-3">
+            <div class="flex gap-2 items-center">
+              <div class="w-fit h-full bg-[#194BF0] border border-[#D7D7D7] px-[12px] rounded-[20px] btn btn-active font-Estedad text-[13px] min-[1000px]:text-[14px] text-white font-[600]">
+                اجاره خودرو با راننده
+              </div>
+              <div class="w-fit h-full bg-transparent border border-[#D7D7D7] px-[12px] rounded-[20px] btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600]">
+                اجاره خودرو بی راننده
+              </div>
+              <div class="w-fit h-full bg-transparent border border-[#D7D7D7] px-[12px] rounded-[20px] btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600]">
+                اجاره ماشین عروس
+              </div>
+            </div>
+            <div class="w-fit h-[25px] font-Estedad font-[500] text-[14px] leading-[100%] text-[#194BF0]">
+              <a href="#">اطلاعات بیشتر در مورد رزرو خودرو</a>
+            </div>
+          </div>
+
+          <!-- time row -->
+          <div class="w-full min-[1000px]:h-[25px] flex flex-wrap items-center gap-y-2 min-[1000px]:justify-between">
+            <div class="flex items-center gap-1 font-Estedad text-[14px] text-[#0C0C0C]">
+              <img src="./src/img/header/arrow-left-b.svg" alt="">محل تحویل خودرو
+            </div>
+            <div class="flex flex-wrap items-center gap-x-6">
+              <div class="flex items-center gap-1 font-Estedad text-[14px] text-[#0C0C0C]">
+                <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ تحویل
+              </div>
+              <div class="flex items-center gap-1 font-Estedad text-[14px] text-[#0C0C0C]">
+                <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت تحویل
+              </div>
+              <div class="flex items-center gap-1 font-Estedad text-[14px] text-[#0C0C0C]">
+                <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ بازگشت
+              </div>
+              <div class="flex items-center gap-1 font-Estedad text-[14px] text-[#0C0C0C]">
+                <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت بازگشت
+              </div>
+            </div>
+          </div>
+
+          <!-- inputs row -->
+          <div
+            class="w-full min-[1000px]:h-[56px] flex max-[999px]:flex-col min-[1000px]:flex-row gap-3 px-[14px] py-[12px] bg-white items-center">
+            <div class="flex-1 min-[1000px]:w-[535px] h-[44px] min-[1000px]:h-[29px] flex justify-between items-center w-full rounded-lg border border-[#E5E7EB] px-3">
+              <span class="font-Estedad text-[16px] text-[#0C0C0C]">تهران-فرودگاه امام خمینی</span>
+              <img src="./src/img/header/arrow-down.svg" alt="" class="w-[20px]">
+            </div>
+
+            <div class="hidden min-[1000px]:block h-[32px] w-px bg-[#D7D7D7]"></div>
+
+            <div class="flex gap-3 w-full min-[1000px]:w-auto">
+              <div class="flex-1 min-[1000px]:w-[111px] h-[44px] min-[1000px]:h-[31px] flex justify-between items-center rounded-lg border border-[#E5E7EB] px-3">
+                <span class="font-Estedad text-[16px] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+                <img src="./src/img/header/calendar.svg" alt="" class="w-[20px]">
+              </div>
+              <div class="flex-1 min-[1000px]:w-[106px] h-[44px] min-[1000px]:h-[31px] flex justify-between items-center rounded-lg border border-[#E5E7EB] px-3">
+                <span class="font-Estedad text-[16px] text-[#0C0C0C]">۰۷:۰۰</span>
+                <img src="./src/img/header/clock.svg" alt="" class="w-[20px]">
+              </div>
+              <div class="flex-1 min-[1000px]:w-[111px] h-[44px] min-[1000px]:h-[31px] flex justify-between items-center rounded-lg border border-[#E5E7EB] px-3">
+                <span class="font-Estedad text-[16px] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+                <img src="./src/img/header/calendar.svg" alt="" class="w-[20px]">
+              </div>
+              <div class="flex-1 min-[1000px]:w-[106px] h-[44px] min-[1000px]:h-[31px] flex justify-between items-center rounded-lg border border-[#E5E7EB] px-3">
+                <span class="font-Estedad text-[16px] text-[#0C0C0C]">۰۷:۰۰</span>
+                <img src="./src/img/header/clock.svg" alt="" class="w-[20px]">
+              </div>
+              <button class="w-[56px] h-[56px] rounded-[16px] bg-[#FDB713] flex justify-center items-center min-[1000px]:mr-[36px]">
+                <img src="./src/img/header/search.svg" alt="" class="w-[24px]">
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--#endregion type-->
+
+        <!--#region brand-->
+        <div class="brand w-full min-[1000px]:h-[80px] opacity-[35%] flex items-center justify-between mt-[24px] min-[1000px]:mt-[49px] px-2 min-[1000px]:px-[16px] py-[8px] overflow-x-auto gap-6">
+          <img src="./src/img/brands/land-rover.png" alt="" class="h-[40px] min-[1000px]:h-[50px]" />
+          <img src="./src/img/brands/jeep.png" alt="" class="h-[40px] min-[1000px]:h-[50px]" />
+          <img src="./src/img/brands/KIA.png" alt="" class="h-[40px] min-[1000px]:h-[50px]" />
+          <img src="./src/img/brands/Toyota.png" alt="" class="h-[48px] min-[1000px]:h-[60px]" />
+          <img src="./src/img/brands/Nissan.png" alt="" class="h-[48px] min-[1000px]:h-[60px]" />
+          <img src="./src/img/brands/Hyundai.png" alt="" class="h-[48px] min-[1000px]:h-[60px]" />
+          <img src="./src/img/brands/Honda.png" alt="" class="h-[48px] min-[1000px]:h-[60px]" />
+          <img src="./src/img/brands/Marcedes.png" alt="" class="h-[64px] min-[1000px]:h-[80px]" />
+          <img src="./src/img/brands/lexus-logo.png" alt="" class="h-[56px] min-[1000px]:h-[70px]" />
+          <img src="./src/img/brands/BMW.png" alt="" class="h-[64px] min-[1000px]:h-[80px]" />
+        </div>
+        <!--#endregion brand-->
+
+        <!--#region why-us-->
+        <div
+          class="why-us min-[1000px]:w-[1224px] w-full min-[1000px]:h-[292px] h-auto rounded-[16px] mt-[32px] min-[1000px]:mt-[47px] bg-[url(/src/img/why-us/bg-car.png)] bg-cover bg-center mx-auto p-4">
+          <div class="mx-auto min-[1000px]:w-[845px]">
+            <h1 class="font-Estedad font-bold text-[20px] min-[1000px]:text-[24px] text-[#FDB713] text-center">چــــــرا اُتو رِنت؟</h1>
+            <p class="font-Estedad text-[14px] min-[1000px]:text-[18px] text-white text-center mt-2 min-[1000px]:mt-[8px]">
+              اجاره خودرو از یک شرکت اجاره خودرو با سابقه…
+            </p>
+          </div>
+
+          <div class="flex flex-wrap min-[1000px]:justify-between justify-center gap-4 min-[1000px]:w-[1016px] mx-auto mt-6 min-[1000px]:mt-[39px]">
+            <!-- 3 cards keep same content -->
+            <div class="w-full min-[1000px]:w-[312px] rounded-[16px] pt-[16px] px-[24px] flex flex-col gap-y-[8px] items-center bg-white border border-[#D7d7d7]">
+              <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]"><img src="./src/img/why-us/box.svg" class="w-[48px]" /></div>
+              <h6 class="font-Estedad font-bold text-[16px] text-[#414141]">تحویل در محل</h6>
+              <p class="font-Estedad text-[12px] text-[#757575] text-center">تحویل خودرو…</p>
+            </div>
+            <div class="w-full min-[1000px]:w-[312px] rounded-[16px] pt-[16px] px-[24px] flex flex-col gap-y-[8px] items-center bg-white border border-[#D7d7d7]">
+              <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]"><img src="./src/img/why-us/24-support.svg" class="w-[48px]" /></div>
+              <h6 class="font-Estedad font-bold text-[16px] text-[#414141]">پشتیبانی 24 ساعته</h6>
+              <p class="font-Estedad text-[12px] text-[#757575] text-center">کارشناسان ما…</p>
+            </div>
+            <div class="w-full min-[1000px]:w-[312px] rounded-[16px] pt-[16px] px-[24px] flex flex-col gap-y-[8px] items-center bg-white border border-[#D7d7d7]">
+              <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]"><img src="./src/img/why-us/wallet-minus.svg" class="w-[48px]" /></div>
+              <h6 class="font-Estedad font-bold text-[16px] text-[#414141]">قیمت مناسب</h6>
+              <p class="font-Estedad text-[12px] text-[#757575] text-center">هدف ما…</p>
+            </div>
+          </div>
+        </div>
+        <!--#endregion why-us-->
+
+        <!--#region car-types-->
+        <div class="car-types min-[1000px]:w-[1224px] w-full min-[1000px]:h-[144px] flex gap-x-[8px] mx-auto min-[1000px]:mt-[152px] mt-10 px-4 overflow-x-auto snap-x snap-mandatory">
+          <!-- each card -->
+          <div class="group snap-start shrink-0 w-[220px] min-[1000px]:w-[238.4px] min-[1000px]:h-full h-[140px] rounded-[16px] border border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
+            <h4 class="font-bold font-Estedad text-[20px] min-[1000px]:text-[24px] text-[#353535]">کوپه</h4>
+            <img src="./src/img/types/1.png" class="w-[232px] absolute bottom-0" />
+            <div class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[115px] min-[1000px]:top-[137px] group-hover:top-[90px] transition-all duration-100"></div>
+          </div>
+          <div class="group snap-start shrink-0 w-[220px] min-[1000px]:w-[238.4px] h-[140px] min-[1000px]:h-full rounded-[16px] border border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
+            <h4 class="font-bold font-Estedad text-[20px] min-[1000px]:text-[24px] text-[#353535]">سدان</h4>
+            <img src="./src/img/types/2.png" class="w-[232px] absolute bottom-0" />
+            <div class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[115px] min-[1000px]:top-[137px] group-hover:top-[90px] transition-all duration-100"></div>
+          </div>
+          <div class="group snap-start shrink-0 w-[220px] min-[1000px]:w-[238.4px] h-[140px] min-[1000px]:h-full rounded-[16px] border border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
+            <h4 class="font-bold font-Estedad text-[20px] min-[1000px]:text-[24px] text-[#353535]">کروک</h4>
+            <img src="./src/img/types/3.png" class="w-[232px] absolute bottom-0" />
+            <div class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[115px] min-[1000px]:top-[137px] group-hover:top-[90px] transition-all duration-100"></div>
+          </div>
+          <div class="group snap-start shrink-0 w-[220px] min-[1000px]:w-[238.4px] h-[140px] min-[1000px]:h-full rounded-[16px] border border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
+            <h4 class="font-bold font-Estedad text-[20px] min-[1000px]:text-[24px] text-[#353535]">شاسی‌بلند</h4>
+            <img src="./src/img/types/4.png" class="w-[232px] absolute bottom-0" />
+            <div class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[115px] min-[1000px]:top-[137px] group-hover:top-[90px] transition-all duration-100"></div>
+          </div>
+          <div class="group snap-start shrink-0 w-[220px] min-[1000px]:w-[238.4px] h-[140px] min-[1000px]:h-full rounded-[16px] border border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
+            <h4 class="font-bold font-Estedad text-[20px] min-[1000px]:text-[24px] text-[#353535]">اسپرت</h4>
+            <img src="./src/img/types/5.png" class="w-[232px] absolute bottom-0" />
+            <div class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[115px] min-[1000px]:top-[137px] group-hover:top-[90px] transition-all duration-100"></div>
+          </div>
+        </div>
+        <!--#endregion car-types-->
+
+        <!--#region reservation-->
+        <div class="reservation w-[92%] min-[1000px]:w-[85%] mx-auto mt-[32px] min-[1000px]:mt-[48px]">
+          <div class="w-full mx-auto flex flex-col gap-y-[12px] items-center">
+            <h4 class="font-Estedad font-[200] text-[20px] min-[1000px]:text-[24px] text-center text-[#5e5e5e]">مشاهده موجودی خودروها</h4>
+            <div class="flex flex-wrap justify-center">
+              <span class="font-Estedad font-[800] text-[26px] min-[1000px]:text-[32px] text-[#353535]">رزرو خودرو در</span>
+              <span class="font-Estedad font-[800] text-[26px] min-[1000px]:text-[32px] text-[#D79C10] mr-2.5">اُتـــورِنت</span>
+            </div>
+          </div>
+
+          <!-- tabs / filters -->
+          <div class="w-full min-[1000px]:w-[1224px] h-auto mt-[16px] mb-[16px] min-[1000px]:mb-[24px] flex flex-wrap justify-between items-center gap-3">
+            <div class="min-[1000px]:w-[184px]"></div>
+            <div class="flex gap-2">
+              <div class="btn px-4 rounded-[8px] bg-[#194BF0] text-white font-Estedad text-[14px]">پرطرفدار</div>
+              <div class="btn px-4 rounded-[8px] border border-[#194BF0] text-[#194BF0] bg-transparent font-Estedad text-[14px]">لوکس</div>
+              <div class="btn px-4 rounded-[8px] border border-[#194BF0] text-[#194BF0] bg-transparent font-Estedad text-[14px]">اقتصادی</div>
+            </div>
+            <button class="flex gap-2 btn bg-transparent border-0 text-[#194BF0] font-Estedad font-[600] text-[16px] min-[1000px]:text-[18px]">
+              مشاهده همه <img src="./src/img/reservation/arrow-left.svg" class="w-5" />
+            </button>
+          </div>
+
+          <!-- cards grid -->
+          <div class="w-full grid grid-cols-1 min-[1000px]:grid-cols-3 gap-[16px] min-[1000px]:gap-[24px] py-[8px] min-[1000px]:py-[16px]">
+            <!-- 6 items (همان محتوای شما) -->
+            <!-- نمونه یک کارت؛ سایر کارت‌ها را همان‌طور که داشتید تکرار کنید -->
+            <div class="box-border w-full h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+              <div class="w-full h-[200px] min-[1000px]:h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+                <div class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] text-white absolute top-2 left-2">٪۲۰</div>
+              </div>
+              <div class="w-full flex flex-col gap-y-[8px]">
+                <h6 class="font-Estedad font-[700] text-[16px] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
+                <span class="font-Estedad font-[400] text-[12px] text-[#494949]">مدل: ۲۰۱۶</span>
+              </div>
+              <div class="w-full flex flex-col gap-y-[8px]">
+                <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] flex justify-between items-center">
+                  <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                  <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                  <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                </div>
+                <div class="w-full rounded-[8px] p-[12px] bg-[#d7د7د7] flex justify-between items-center">
+                  <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                  <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                  <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                </div>
+              </div>
+              <div class="w-full flex justify-between">
+                <span class="font-Estedad font-[500] text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+              </div>
+              <button class="btn w-full h-[40px] rounded-[8px] bg-[#194BF0] text-white font-Estedad font-[600] text-[14px]">درخواست رزرو</button>
+            </div>
+
+            <!-- کارت‌های بعدی شما را همان‌طور کپی/پیست کنید -->
+            <!-- ... پنج کارت دیگر همین ساختار ... -->
+
+          </div>
+        </div>
+        <!--#endregion reservation-->
+
+       <!--#region how-to-->
+<div class="how-to w-[92%] min-[1000px]:w-[1234px] mt-[48px] min-[1000px]:mt-[148px] mx-auto">
+  <!-- title -->
+  <div class="w-full max-w-[362px] h-auto flex flex-col items-center gap-y-[16px] mx-auto text-center">
+    <p class="font-Estedad text-[20px] min-[1000px]:text-[24px] text-[#5E5E5E]">چگونه در وبسایت</p>
+    <div class="flex gap-x-[4px]">
+      <span class="font-Estedad font-[700] text-[26px] min-[1000px]:text-[32px] text-[#D79C10]">اُتـــورِنت،</span>
+      <span class="font-Estedad font-[700] text-[26px] min-[1000px]:text-[32px] text-[#353535]">خودرو رزرو کنیم؟</span>
+    </div>
+  </div>
+
+  <!-- columns -->
+  <div class="w-full grid grid-cols-1 min-[1000px]:grid-cols-3 gap-10 min-[1000px]:gap-6 items-start min-[1000px]:mt-10 mt-8">
+    <!-- right -->
+    <div class="w-full min-[1000px]:w-[366px] flex flex-col gap-y-[80px] min-[1000px]:gap-y-[427px]">
+      <!-- step 1 -->
+      <div>
+        <span class="font-Estedad font-[700] text-[96px] min-[1000px]:text-[152px] leading-[80%] text-transparent mr-[20px] min-[1000px]:mr-[50px]"
+              style="-webkit-text-stroke:0.5px #0B2FA6;text-stroke:0.5px #0B2FA6;">۱</span>
+        <div class="flex gap-4 mt-[-40px] min-[1000px]:mt-[-60px]">
+          <div class="w-[64px] h-[64px] min-[1000px]:w-[80px] min-[1000px]:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+            <img src="./src/img/how-to/car.svg" class="w-[40px] min-[1000px]:w-[48px]" />
+          </div>
+          <div class="flex flex-col gap-2 max-w-[280px]">
+            <div class="flex gap-1">
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#D79C10]">خودروی</span>
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#212121]">خود را انتخاب کنید.</span>
+            </div>
+            <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] leading-[170%] text-[#727272]">
+              خودروی مورد نظر خود را، متناسب با درخواست خود انتخاب کنید.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- step 3 -->
+      <div>
+        <span class="font-Estedad font-[700] text-[96px] min-[1000px]:text-[152px] leading-[80%] text-transparent mr-[-6px] min-[1000px]:mr-[-10px]"
+              style="-webkit-text-stroke:0.5px #0B2FA6;text-stroke:0.5px #0B2FA6;">۳</span>
+        <div class="flex gap-4 mt-[-40px] min-[1000px]:mt-[-60px]">
+          <div class="w-[64px] h-[64px] min-[1000px]:w-[80px] min-[1000px]:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+            <img src="./src/img/how-to/car.svg" class="w-[40px] min-[1000px]:w-[48px]" />
+          </div>
+          <div class="flex flex-col gap-2 max-w-[280px]">
+            <div class="flex gap-1">
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#D79C10]">هزینه</span>
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#212121]">اجاره را پرداخت کنید.</span>
+            </div>
+            <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] leading-[170%] text-[#727272]">
+              می‌توانید از طریق کیف پول آنلاین یا کارت‌های عضو شبکه شتاب هزینه اجاره را پرداخت کنید.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- middle image -->
+    <div class="order-[-1] min-[1000px]:order-none flex justify-center">
+      <img src="./src/img/how-to/frama.png" alt="" class="w-full max-w-[540px] min-[1000px]:max-w-none min-[1000px]:w-auto">
+    </div>
+
+    <!-- left -->
+    <div class="w-full min-[1000px]:w-[366px] flex flex-col gap-y-[80px] min-[1000px]:gap-y-[427px]">
+      <!-- step 2 -->
+      <div>
+        <span class="font-Estedad font-[700] text-[96px] min-[1000px]:text-[152px] leading-[80%] text-transparent mr-[200px] min-[1000px]:mr-[300px]"
+              style="-webkit-text-stroke:0.5px #0B2FA6;text-stroke:0.5px #0B2FA6;">۲</span>
+        <div class="flex gap-4 mt-[-40px] min-[1000px]:mt-[-60px] flex-row-reverse">
+          <div class="w-[64px] h-[64px] min-[1000px]:w-[80px] min-[1000px]:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+            <img src="./src/img/how-to/calendar-tick.svg" class="w-[40px] min-[1000px]:w-[48px]" />
+          </div>
+          <div class="flex flex-col gap-2 max-w-[280px]">
+            <div class="flex gap-1">
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#D79C10]">تاریخ</span>
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#212121]">تحویل را تعیین کنید.</span>
+            </div>
+            <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] leading-[170%] text-[#727272]">
+              تاریخ موردنظر خود را از تقویم انتخاب و رزرو کنید.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- step 4 -->
+      <div>
+        <span class="font-Estedad font-[700] text-[96px] min-[1000px]:text-[152px] leading-[80%] text-transparent mr-[200px] min-[1000px]:mr-[300px]"
+              style="-webkit-text-stroke:0.5px #0B2FA6;text-stroke:0.5px #0B2FA6;">۴</span>
+        <div class="flex gap-4 mt-[-40px] min-[1000px]:mt-[-60px] flex-row-reverse">
+          <div class="w-[64px] h-[64px] min-[1000px]:w-[80px] min-[1000px]:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+            <img src="./src/img/how-to/key.svg" class="w-[40px] min-[1000px]:w-[48px]" />
+          </div>
+          <div class="flex flex-col gap-2 max-w-[280px]">
+            <div class="flex gap-1">
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#D79C10]">خودرو</span>
+              <span class="font-Estedad font-bold text-[18px] min-[1000px]:text-[24px] text-[#212121]">را دریافت کنید.</span>
+            </div>
+            <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] leading-[170%] text-[#727272]">
+              در زمان و مکان تعیین‌شده، خودروی خود را دریافت کنید.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--#endregion how-to-->
+
+<!--#region common-Q-->
+<div class="common-Q w-[92%] min-[1000px]:w-[1224px] mx-auto mt-[40px] min-[1000px]:mt-[56px]">
+  <!-- title -->
+  <div class="w-full min-[1000px]:w-[845px] h-auto mb-[24px] flex flex-col gap-y-[20px] mx-auto items-center text-center">
+    <p class="font-Estedad text-[18px] min-[1000px]:text-[24px] leading-[100%] text-[#5E5E5E]">
+      پر تکرارترین سؤالاتی که پرسیدید
+    </p>
+    <div class="flex gap-x-[4px]">
+      <span class="font-Estedad font-[700] text-[24px] min-[1000px]:text-[32px] text-[#D79C10]">سؤالات </span>
+      <span class="font-Estedad font-[700] text-[24px] min-[1000px]:text-[32px] text-[#353535]">متداول</span>
+    </div>
+  </div>
+
+  <!-- content -->
+  <div class="w-full flex flex-col-reverse min-[1000px]:flex-row gap-6">
+    <!-- accordions -->
+    <div class="h-full w-full min-[1000px]:w-[808px] flex flex-col gap-y-[16px]">
+      <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
+        <input type="radio" name="faq-accordion" checked class="ml-4" />
+        <div class="collapse-title font-Estedad font-[600] text-[15px] min-[1000px]:text-[16px] text-[#353535] text-right min-h-[64px] leading-[220%]">
+          در صورت بروز نقص فنی برای خودرو چه اتفاقی می‌افتد؟
+        </div>
+        <div class="collapse-content font-Estedad text-[13px] min-[1000px]:text-[14px] text-[#727272] text-right">
+          <p class="leading-[180%]">هزینه بنزین و کارواش…</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
+        <input type="radio" name="faq-accordion" class="ml-4" />
+        <div class="collapse-title font-Estedad font-[600] text-[15px] min-[1000px]:text-[16px] text-[#353535] text-right min-h-[64px] leading-[220%]">
+          آیا ماشین‌های اتورنت دارای بیمه هستند؟
+        </div>
+        <div class="collapse-content font-Estedad text-[13px] min-[1000px]:text-[14px] text-[#727272] text-right">
+          <p class="leading-[180%]">در زمان اجاره خودرو…</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
+        <input type="radio" name="faq-accordion" class="ml-4" />
+        <div class="collapse-title font-Estedad font-[600] text-[15px] min-[1000px]:text-[16px] text-[#353535] text-right min-h-[64px] leading-[220%]">
+          آیا ماشین های اتورنت دارای بیمه هستند؟
+        </div>
+        <div class="collapse-content font-Estedad text-[13px] min-[1000px]:text-[14px] text-[#727272] text-right">
+          <p class="leading-[180%]">هزینه بنزین و کارواش…</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
+        <input type="radio" name="faq-accordion" class="ml-4" />
+        <div class="collapse-title font-Estedad font-[600] text-[15px] min-[1000px]:text-[16px] text-[#353535] text-right min-h-[64px] leading-[220%]">
+          محدودیت کیلومتر در اجاره خودرو چقدر می باشد؟
+        </div>
+        <div class="collapse-content font-Estedad text-[13px] min-[1000px]:text-[14px] text-[#727272] text-right">
+          <p class="leading-[180%]">…</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- image -->
+    <div class="overflow-hidden h-full w-full min-[1000px]:w-[392px] rounded-[16px]">
+      <img src="./src/img/questions/man.png" alt="" class="w-full h-auto object-cover">
+    </div>
+  </div>
+</div>
+<!--#endregion common-Q-->
+
+<!--#region comments-->
+<div class="comments w-[92%] min-[1000px]:w-[1224px] h-auto mx-auto mt-[40px] min-[1000px]:mt-[48px]">
+  <!-- title -->
+  <div class="w-full min-[1000px]:w-[845px] h-auto mb-[24px] flex flex-col gap-y-[20px] mx-auto items-center text-center">
+    <p class="font-Estedad text-[18px] min-[1000px]:text-[24px] text-[#5E5E5E]">آنچه مشتریان ما درموردمان گفته‌اند. </p>
+    <div class="flex gap-x-[4px]">
+      <span class="font-Estedad font-[700] text-[24px] min-[1000px]:text-[32px] text-[#353535]">نظرات </span>
+      <span class="font-Estedad font-[700] text-[24px] min-[1000px]:text-[32px] text-[#D79C10]">مشتریان</span>
+    </div>
+  </div>
+
+  <!-- section -->
+  <div class="w-full flex flex-col items-center">
+    <!-- main card -->
+    <div class="w-full bg-white rounded-[16px] border border-[#D7D7D7] p-6 flex flex-col items-center gap-y-4 shadow-lg mb-[24px]">
+      <div class="w-[72px] h-[72px] min-[1000px]:w-[80px] min-[1000px]:h-[80px] rounded-full overflow-hidden">
+        <img id="mainProfileImg" src="./src/img/testimonials/img-1.png" alt="اولدوز بهاور" class="w-full h-full object-cover">
+      </div>
+      <h4 id="mainName" class="font-Estedad font-bold text-[16px] min-[1000px]:text-[18px] text-[#353535]">اولدوز بهاور</h4>
+      <div class="flex gap-x-[4px]"><span class="text-[#FDB713] text-[18px] min-[1000px]:text-[20px]">☆★★★★</span></div>
+      <p id="mainTestimonialText" class="font-Estedad text-[13px] min-[1000px]:text-[14px] text-[#727272] text-center leading-[180%] w-full min-[1000px]:w-[776px]">
+        اولین بار بود که برای مسافرت ماشین اجاره می‌کردم …
+      </p>
+    </div>
+
+    <!-- nav tabs -->
+    <div class="w-full flex gap-x-[8px] overflow-x-auto no-scrollbar pb-1">
+      <div class="testimonial-tab min-w-[260px] h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer hover:bg-[#FDB713]/10 transition-all duration-200"
+           data-testimonial="1">
+        <div class="w-[56px] h-[56px] min-[1000px]:w-[64px] min-[1000px]:h-[64px] rounded-full overflow-hidden">
+          <img src="./src/img/testimonials/img-4.png" alt="فاطمه ابراهیمی فر" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="flex flex-col items-start">
+          <span class="font-Estedad font-[500] text-[14px] min-[1000px]:text-[16px] text-[#212121] leading-[180%]">فاطمه ابراهیمی فر</span>
+          <span class="font-Estedad font-[400] text-[12px] min-[1000px]:text-[14px] text-[#494949] leading-[180%]">۲۷ دی ماه ۱۳۸۰</span>
+        </div>
+      </div>
+
+      <div class="testimonial-tab min-w-[260px] h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer hover:bg-[#FDB713]/10 transition-all duration-200"
+           data-testimonial="2">
+        <div class="w-[56px] h-[56px] min-[1000px]:w-[64px] min-[1000px]:h-[64px] rounded-full overflow-hidden">
+          <img src="./src/img/testimonials/img-3.png" alt="فرزانه حیدری" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="flex flex-col items-start">
+          <span class="font-Estedad font-[500] text-[14px] min-[1000px]:text-[16px] text-[#212121] leading-[180%]">فرزانه حیدری</span>
+          <span class="font-Estedad font-[400] text-[12px] min-[1000px]:text-[14px] text-[#494949] leading-[180%]">۲۷ دی ماه ۱۳۸۰</span>
+        </div>
+      </div>
+
+      <div class="testimonial-tab min-w-[260px] h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer hover:bg-[#FDB713]/10 transition-all duration-200"
+           data-testimonial="3">
+        <div class="w-[56px] h-[56px] min-[1000px]:w-[64px] min-[1000px]:h-[64px] rounded-full overflow-hidden">
+          <img src="./src/img/testimonials/img-2.png" alt="محمد جواد امینی" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="flex flex-col items-start">
+          <span class="font-Estedad font-[500] text-[14px] min-[1000px]:text-[16px] text-[#212121] leading-[180%]">محمد جواد امینی</span>
+          <span class="font-Estedad font-[400] text-[12px] min-[1000px]:text-[14px] text-[#494949] leading-[180%]">۲۷ دی ماه ۱۳۹۹</span>
+        </div>
+      </div>
+
+      <div class="testimonial-tab min-w-[260px] h-[96px] bg-[#FDB713] rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer transition-all duration-200"
+           data-testimonial="4">
+        <div class="w-[56px] h-[56px] min-[1000px]:w-[64px] min-[1000px]:h-[64px] rounded-full overflow-hidden">
+          <img src="./src/img/testimonials/img-1.png" alt="اولدوز بهاور" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col items-start">
+          <span class="font-Estedad font-[500] text-[14px] min-[1000px]:text-[16px] text-[#212121] leading-[180%]">اولدوز بهاور</span>
+          <span class="font-Estedad font-[400] text-[12px] min-[1000px]:text-[14px] text-[#494949] leading-[180%]">۲۷ دی ماه ۱۳۸۰</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--#endregion comments-->
+
+<!--#region thesis-->
+<div class="thesis w-[92%] min-[1000px]:w-[1224px] mx-auto mt-[40px]">
+  <!-- title row -->
+  <div class="w-full flex flex-col min-[1000px]:flex-row min-[1000px]:items-end gap-y-4 min-[1000px]:gap-y-0 min-[1000px]:justify-between">
+    <div class="thesis-title w-full min-[1000px]:w-[845px] h-auto mb-[8px] min-[1000px]:mb-[24px] flex flex-col gap-y-[20px] mx-auto items-center">
+      <p class="font-Estedad text-[18px] min-[1000px]:text-[24px] text-[#5E5E5E]">مقالات ما</p>
+      <div class="flex gap-x-[4px]">
+        <span class="font-Estedad font-[700] text-[24px] min-[1000px]:text-[32px] text-[#353535]">مجله </span>
+        <span class="font-Estedad font-[700] text-[24px] min-[1000px]:text-[32px] text-[#D79C10]">خودرو</span>
+      </div>
+    </div>
+    <div class="thesis-all text-center min-[1000px]:text-right">
+      <a href="#" class="inline-flex w-fit h-fit gap-x-[8px] font-Estedad font-[600] leading-[180%] text-[16px] min-[1000px]:text-[18px] text-[#194BF0] items-center">
+        مشاهده همه <img src="./src/img/thesis/arrow-left.svg" alt="" class="w-[20px]">
+      </a>
+    </div>
+  </div>
+
+  <!-- cards -->
+  <div class="w-full grid grid-cols-1 sm:grid-cols-2 min-[1000px]:grid-cols-3 gap-[16px] min-[1000px]:gap-[24px] items-stretch mt-[24px]">
+    <!-- card 1 -->
+    <div class="w-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border border-[#D7D7D7]">
+      <img src="./src/img/thesis/pic-1.png" alt="" class="rounded-[12px] w-full">
+      <div class="w-full flex flex-col gap-y-[16px] px-[4px] mt-[16px]">
+        <h3 class="font-Estedad text-[#414141] text-[15px] min-[1000px]:text-[16px] leading-[120%] font-[500]">
+          روش های مختلف برای اجاره خودرو
+        </h3>
+        <p class="font-Estedad text-[#757575] text-[12px] leading-[180%]">
+          امروزه با تغییراتی که در سبک زندگی مردم …
+        </p>
+        <div class="w-full flex gap-x-[16px] items-center">
+          <div class="flex gap-x-[8px] items-center">
+            <img src="./src/img/thesis/clock.svg" alt="" class="w-[18px]">
+            <span class="font-Estedad text-[13px] text-[#757575]">۳دقیقه</span>
+          </div>
+          <div class="flex gap-x-[8px] items-center">
+            <img src="./src/img/thesis/eye.svg" alt="" class="w-[18px]">
+            <span class="font-Estedad text-[13px] text-[#757575]">۱۲۱۳</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- card 2 -->
+    <div class="w-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border border-[#D7D7D7]">
+      <img src="./src/img/thesis/pic-2.png" alt="" class="rounded-[12px] w-full">
+      <div class="w-full flex flex-col gap-y-[16px] px-[4px] mt-[16px]">
+        <h3 class="font-Estedad text-[#414141] text-[15px] min-[1000px]:text-[16px] leading-[120%] font-[500]">
+          روش های مختلف برای اجاره خودرو
+        </h3>
+        <p class="font-Estedad text-[#757575] text-[12px] leading-[180%]">
+          امروزه با تغییراتی که در سبک زندگی مردم …
+        </p>
+        <div class="w-full flex gap-x-[16px] items-center">
+          <div class="flex gap-x-[8px] items-center">
+            <img src="./src/img/thesis/clock.svg" alt="" class="w-[18px]">
+            <span class="font-Estedad text-[13px] text-[#757575]">۳دقیقه</span>
+          </div>
+          <div class="flex gap-x-[8px] items-center">
+            <img src="./src/img/thesis/eye.svg" alt="" class="w-[18px]">
+            <span class="font-Estedad text-[13px] text-[#757575]">۱۲۱۳</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+    <div class="w-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border border-[#D7D7D7]">
+      <img src="./src/img/thesis/pic-3.png" alt="" class="rounded-[12px] w-full">
+      <div class="w-full flex flex-col gap-y-[16px] px-[4px] mt-[16px]">
+        <h3 class="font-Estedad text-[#414141] text-[15px] min-[1000px]:text-[16px] leading-[120%] font-[500]">
+          روش های مختلف برای اجاره خودرو
+        </h3>
+        <p class="font-Estedad text-[#757575] text-[12px] leading-[180%]">
+          امروزه با تغییراتی که در سبک زندگی مردم …
+        </p>
+        <div class="w-full flex gap-x-[16px] items-center">
+          <div class="flex gap-x-[8px] items-center">
+            <img src="./src/img/thesis/clock.svg" alt="" class="w-[18px]">
+            <span class="font-Estedad text-[13px] text-[#757575]">۳دقیقه</span>
+          </div>
+          <div class="flex gap-x-[8px] items-center">
+            <img src="./src/img/thesis/eye.svg" alt="" class="w-[18px]">
+            <span class="font-Estedad text-[13px] text-[#757575]">۱۲۱۳</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--#endregion thesis-->
+
+<!--#region footer-->
+<footer class="footer w-full bg-[#1E1E1EE5] py-[40px] min-[1000px]:py-[56px] rounded-none mt-[56px]">
+  <div class="w-[92%] min-[1000px]:w-[1224px] mx-auto rounded-[16px] shadow-md shadow-black/35 bg-[url(/src/img/footer/bg.png)] bg-cover bg-center p-4 min-[1000px]:p-6">
+    <!-- top strip -->
+    <div class="w-full rounded-[16px] border border-[#868686] p-4 flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-x-[81px] items-center justify-center bg-[#1E1E1EE5]">
+      <div class="flex gap-x-[16px] items-center">
+        <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-white flex items-center justify-center">
+          <img src="./src/img/footer/call-calling.svg" alt="">
+        </div>
+        <div class="flex flex-col gap-y-[12px] items-center">
+          <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] text-[#FFFBFB] leading-[180%]">ارتباط با ما</p>
+          <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] text-white leading-[100%]">۰۹۱۲-۲۱۳۲۶۵۴۵</p>
+        </div>
+      </div>
+
+      <div class="hidden sm:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+      <div class="flex gap-x-[16px] items-center">
+        <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-white flex items-center justify-center">
+          <img src="./src/img/footer/sms.svg" alt="">
+        </div>
+        <div class="flex flex-col gap-y-[12px] items-center">
+          <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] text-[#FFFBFB] leading-[180%]">ایمیل</p>
+          <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] text-white leading-[100%]">autorent@info.com</p>
+        </div>
+      </div>
+
+      <div class="hidden sm:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+      <div class="flex gap-x-[16px] items-center">
+        <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-white flex items-center justify-center">
+          <img src="./src/img/footer/map.svg" alt="">
+        </div>
+        <div class="flex flex-col gap-y-[12px] items-center">
+          <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] text-[#FFFBFB] leading-[180%]">آدرس</p>
+          <p class="font-Estedad text-[14px] min-[1000px]:text-[16px] text-white leading-[100%]">تهران- خ شادمان</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom -->
+    <div class="w-full mt-6">
+      <div class="w-full flex flex-col min-[1000px]:flex-row gap-8 min-[1000px]:gap-x-[88px] px-0 min-[1000px]:px-[67.5px] items-start">
+        <div class="w-full min-[1000px]:w-[572px] flex gap-x-[32px] items-start">
+          <div class="w-full min-[1000px]:w-[438px] flex flex-col gap-y-[24px]">
+            <img src="./src/img/footer/Logo.png" alt="" class="h-[48px] min-[1000px]:h-[59px] w-auto">
+            <p class="font-Estedad text-[13px] min-[1000px]:text-[14px] leading-[190%] text-white max-w-[520px]">
+              اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع خودروهای صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+            </p>
+          </div>
+          <div class="w-fit min-[1000px]:w-[134px] flex-shrink-0 flex flex-col gap-y-[24px] mt-2">
+            <p class="font-Estedad font-[500] text-[14px] text-white leading-[100%]">دسترسی آسان</p>
+            <a class="font-Estedad text-white/90 text-[14px]">سوالات متداول</a>
+            <a class="font-Estedad text-white/90 text-[14px]">تماس با ما</a>
+            <a class="font-Estedad text-white/90 text-[14px]">درباره ما</a>
+          </div>
+        </div>
+
+        <div class="w-full min-[1000px]:w-[320px]">
+          <h4 class="font-Estedad font-[600] text-[16px] text-white mb-[12px]">خبرنامه</h4>
+          <div class="w-full h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
+            <input type="email" placeholder="ایمیل خود را وارد کنید"
+                   class="flex-1 h-full bg-transparent px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
+            <button class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[14px] px-[16px] ml-[8px] py-[12px] h-[40px] rounded-[6px] hover:bg-[#FDB713]/90 transition-colors">
+              ارسال
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full border-t border-[#868686] mt-6"></div>
+      <div class="w-fit h-[25px] flex gap-x-[8px] mx-auto mt-[24px] items-center">
+        <img src="./src/img/footer/creative-commons.svg" alt="">
+        <p class="font-Estedad font-[500] text-[13px] min-[1000px]:text-[14px] leading-[180%] text-[#9A9A9A]">
+          تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="h-[64px]"></div>
+<!--#endregion footer-->
+ </main>
+  <!--#endregion main-->
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>
