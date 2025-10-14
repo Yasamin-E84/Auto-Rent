@@ -2243,6 +2243,9 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[url\(\/public\/img\/header\/bg-car\.png\)\] {
+    background-image: url(/public/img/header/bg-car.png);
+  }
   .bg-\[url\(\/src\/img\/footer\/bg\.png\)\] {
     background-image: url(/src/img/footer/bg.png);
   }
