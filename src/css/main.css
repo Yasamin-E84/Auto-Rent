@@ -5,8 +5,10 @@
   font-family: Estedad;
   src: url(../fonts/Estedad-Regular.ttf);
 }
+
 @theme {
   --font-Estedad: Estedad;
   --breakpoint-desktop: 1000px;
   --breakpoint-mobile: 340px;
 }
+

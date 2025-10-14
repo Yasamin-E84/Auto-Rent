@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "tailwind": "npx @tailwindcss/cli -i ./src/css/main.css -o ./src/css/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/css/main.css -o ./src/css/output.css --watch"
+
   },
   "devDependencies": {
     "daisyui": "^5.1.13",

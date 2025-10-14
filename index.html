@@ -6,6 +6,317 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Rent - Car rental website</title>
   <link rel="stylesheet" href="./src/css/output.css">
+
+  <style id="force-dark-class">
+    /* global browser treatment */
+    html.dark {
+      color-scheme: dark;
+    }
+
+    html:not(.dark) {
+      color-scheme: light;
+    }
+
+    /* ===== COMMON TOKENS (text) ===== */
+    /* primaries → light text */
+    html.dark .text-\[\#0C0C0C\],
+    html.dark .text-\[\#111827\],
+    html.dark .text-\[\#212121\],
+    html.dark .text-\[\#353535\],
+    html.dark .text-\[\#374151\],
+    html.dark .text-\[\#414141\] {
+      color: #E5E7EB !important;
+    }
+
+    /* secondary/grays → softer text */
+    html.dark .text-\[\#494949\],
+    html.dark .text-\[\#5E5E5E\],
+    html.dark .text-\[\#727272\],
+    html.dark .text-\[\#757575\],
+    html.dark .text-\[\#9A9A9A\] {
+      color: #A3A3A3 !important;
+    }
+
+    /* accents you already use (keep) */
+    html.dark .text-\[\#FDB713\] {
+      color: #FACC15 !important;
+    }
+
+    html.dark .text-\[\#D79C10\] {
+      color: #FACC15 !important;
+    }
+
+    html.dark .text-\[\#194BF0\] {
+      color: #89A9FF !important;
+    }
+
+    /* placeholders */
+    html.dark ::placeholder,
+    html.dark .placeholder\:text-\[\#9CA3AF\] {
+      color: #9CA3AF !important;
+    }
+
+    /* ===== COMMON TOKENS (borders / backgrounds) ===== */
+    html.dark .border-\[\#D7D7D7\],
+    html.dark .border-\[\#d7d7d7\] {
+      border-color: #334155 !important;
+    }
+
+    /* slate-700 */
+    html.dark .border-\[\#E5E7EB\] {
+      border-color: #475569 !important;
+    }
+
+    /* slate-600 */
+    html.dark .border-\[\#f3f3f3\] {
+      border-color: #1F2937 !important;
+    }
+
+    /* gray-800 */
+    html.dark .border-\[\#868686\] {
+      border-color: #475569 !important;
+    }
+
+    /* “white” surfaces → dark surfaces */
+    html.dark .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    /* slate-900ish */
+    html.dark .bg-\[\#F3F3F3\] {
+      background-color: #0B1220 !important;
+    }
+
+    /* page */
+    html.dark .bg-\[\#d7d7d7\] {
+      background-color: #111827 !important;
+    }
+
+    /* chips/rows */
+    html.dark .bg-\[\#353535\] {
+      background-color: #111827 !important;
+    }
+
+    /* newsletter bar */
+
+    /* blue/yellow brand blocks */
+    html.dark .bg-\[\#194BF0\] {
+      background-color: #365CF5 !important;
+    }
+
+    html.dark .hover\:bg-\[\#194BF0\]\/20:hover {
+      background-color: rgba(54, 92, 245, .2) !important;
+    }
+
+    html.dark .bg-\[\#FDB713\] {
+      background-color: #FACC15 !important;
+    }
+
+    /* generic hover grays used in search/history chips */
+    html.dark .hover\:bg-gray-50:hover {
+      background-color: rgba(148, 163, 184, .10) !important;
+    }
+
+    /* inputs default text color (if not overridden) */
+    html.dark input,
+    html.dark textarea,
+    html.dark button {
+      color: #E5E7EB;
+    }
+
+    /* ===== HEADER / HERO / SEARCH ===== */
+    html.dark .header-container header {
+      background: #0F172A !important;
+      color: #E5E7EB !important;
+    }
+
+    html.dark .header-container header a {
+      color: #E5E7EB !important;
+    }
+
+    html.dark .header-container header .border-\[\#E5E7EB\] {
+      border-color: #475569 !important;
+    }
+
+    /* search overlay card & field */
+    html.dark #searchOverlay .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark #searchOverlay .border-\[\#E5E7EB\] {
+      border-color: #475569 !important;
+    }
+
+    html.dark #searchOverlay .text-\[\#111827\] {
+      color: #E5E7EB !important;
+    }
+
+    html.dark #searchOverlay .text-\[\#374151\] {
+      color: #A3A3A3 !important;
+    }
+
+    html.dark #searchOverlay .h-px {
+      background-color: #334155 !important;
+    }
+
+    /* ===== RENT TYPE CARD ===== */
+    html.dark .rent-type {
+      background: #0F172A !important;
+      color: #E5E7EB !important;
+      border-color: #334155 !important;
+    }
+
+    html.dark .rent-type .choose-right button {
+      border-color: #334155 !important;
+    }
+
+    html.dark .rent-type .h-\[32px\].w-px {
+      background: #334155 !important;
+    }
+
+    /* ===== CAR TYPES ===== */
+    html.dark .car-types .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark .car-types .border-\[\#d7d7d7\] {
+      border-color: #334155 !important;
+    }
+
+    html.dark .car-types h4 {
+      color: #E5E7EB !important;
+    }
+
+    /* ===== RESERVATION CARDS ===== */
+    html.dark .reservation .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark .reservation .border-\[\#d7d7d7\] {
+      border-color: #334155 !important;
+    }
+
+    html.dark .reservation .border-\[\#f3f3f3\] {
+      border-color: #1F2937 !important;
+    }
+
+    html.dark .reservation .w-\[32px\].h-\[29px\].bg-\[\#08237d\] {
+      background-color: #0B2FA6 !important;
+    }
+
+    /* keep readable */
+    html.dark .reservation .text-\[\#0c0c0c\] {
+      color: #E5E7EB !important;
+    }
+
+    html.dark .reservation .text-\[\#494949\] {
+      color: #A3A3A3 !important;
+    }
+
+    /* gray price rows */
+    html.dark .reservation .bg-\[\#d7d7d7\] {
+      background-color: #111827 !important;
+    }
+
+    /* ===== WHY-US ===== */
+    html.dark .why-us-boxes-contents {
+      background: #0F172A !important;
+      color: #E5E7EB !important;
+      border-color: #334155 !important;
+    }
+
+    html.dark .why-us-text p {
+      color: #E5E7EB !important;
+    }
+
+    /* ===== HOW-TO ===== */
+    html.dark .how-to .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark .how-to .border-\[\#D7D7D7\] {
+      border-color: #334155 !important;
+    }
+
+    /* outlined big numbers: keep stroke blue but brighten a bit */
+    html.dark .how-to span[style*="text-stroke"],
+    html.dark .how-to span[style*="-webkit-text-stroke"] {
+      color: transparent !important;
+    }
+
+    /* ===== FAQ (collapse) ===== */
+    html.dark .common-Q .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark .common-Q .border-\[\#D7D7D7\] {
+      border-color: #334155 !important;
+    }
+
+    /* ===== COMMENTS (testimonials) ===== */
+    html.dark .comments .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark .comments .border-\[\#D7D7D7\] {
+      border-color: #334155 !important;
+    }
+
+    html.dark .comments .text-\[\#353535\] {
+      color: #E5E7EB !important;
+    }
+
+    html.dark .comments .text-\[\#727272\] {
+      color: #A3A3A3 !important;
+    }
+
+    html.dark .testimonial-tab:hover {
+      background-color: rgba(250, 204, 21, .10) !important;
+    }
+
+    /* ===== THESIS (blog cards) ===== */
+    html.dark .thesis .bg-white {
+      background-color: #0F172A !important;
+    }
+
+    html.dark .thesis .border-\[\#D7D7D7\] {
+      border-color: #334155 !important;
+    }
+
+    html.dark .thesis .text-\[\#414141\] {
+      color: #E5E7EB !important;
+    }
+
+    html.dark .thesis .text-\[\#757575\] {
+      color: #A3A3A3 !important;
+    }
+
+    /* ===== FOOTER ===== */
+      html.dark .footer .border-\[\#868686\] {
+      border-color: #475569 !important;
+    }
+
+    html.dark .footer .border-t {
+      border-color: #475569 !important;
+    }
+
+    html.dark .brand {
+      opacity: .8 !important;
+    }
+
+    html.dark img.land-over {
+      filter: invert(1) hue-rotate(180deg);
+    }
+    html.dark img.svg-invert  {
+      filter: invert(1) hue-rotate(90deg);
+    }
+
+    html.dark .easy-reserve {
+      color: #0C0C0C !important;
+    }
+  </style>
+
+
 </head>
 
 <body class="bg-[#F3F3F3]">
@@ -14,13 +325,15 @@
   <main class="main desktop:min-[1000px] h-auto mx-auto ">
     <!--#region header-->
     <div class="header-container w-full h-[683px] mx-auto bg-[url(/src/img/header/bg-car.png)] bg-cover bg-bottom">
-      <header
-        class="w-full desktop:w-[1224px] h-[64px] desktop:h-[96px] bg-white mx-auto rounded-bl-[16px] rounded-br-[16px] px-4 desktop:px-[32px] flex items-center justify-between">
+      <header class="w-full desktop:w-[1224px] h-[64px] desktop:h-[96px] bg-white
+         mx-auto rounded-bl-[16px] rounded-br-[16px]
+         px-4 desktop:px-[32px] flex items-center justify-between">
 
+        <!-- Left: logo & menu -->
         <div class="flex items-center gap-3">
           <button id="navToggle"
-            class="inline-flex desktop:hidden items-center justify-center w-10 h-10 rounded-md border border-[#E5E7EB] transition-all ease-linear duration-200">
-            <img src="./src/img/header/hamburger.svg" alt="" class="w-[24px] ">
+            class="inline-flex desktop:hidden items-center justify-center w-10 h-10 rounded-md border border-[#E5E7EB] transition">
+            <img src="./src/img/header/hamburger.svg" alt="" class="w-[24px]">
             <span class="sr-only">باز کردن منو</span>
           </button>
 
@@ -29,36 +342,70 @@
           </div>
         </div>
 
-        <nav class="header-navigation
-             hidden desktop:flex
-             w-auto desktop:w-fit h-[28px] relative items-center gap-x-6 bg-transparent">
+        <!-- Center: nav links -->
+        <nav class="hidden desktop:flex items-center gap-x-6 bg-transparent">
           <a href="#" class="text-base text-[#353535] font-Estedad">رزرو خودرو</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">درباره ما</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
 
-          <button id="openSearch" class=" cursor-pointer" aria-expanded="false">
+          <button id="openSearch" class="cursor-pointer" aria-expanded="false">
             <img src="./src/img/header/search.svg" alt="search">
           </button>
         </nav>
 
-        <button
-          class="hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white w-fit h-fit rounded-[8px] py-[4px] px-[16px] gap-x-[8px] hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">
-          ورود / ثبت‌نام
-        </button>
+        <!-- Right: theme + login -->
+        <div class="flex items-center gap-4">
+          <!-- desktop theme buttons -->
+          <div class="hidden desktop:flex items-center gap-3" dir="rtl">
+            <!-- Moon (light→dark) -->
+            <button class="js-dark w-[56px] h-[40px] relative rounded-[32px] overflow-hidden active:scale-95 transition"
+              aria-label="تیره کن">
+              <img src="./src/img/header/lightmode.svg" alt=""
+                class="absolute inset-0 w-[56px] object-cover mx-auto my-auto">
+            </button>
 
-        <div class="flex items-center gap-2 desktop:hidden">
-          <button id="openSearchMobile"
-            class="w-10 h-10 inline-flex items-center justify-center rounded-md border border-[#E5E7EB]">
-            <img src="./src/img/header/search.svg" alt="جستجو" class="w-5 h-5">
-          </button>
-          <a
-            class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
+            <!-- Sun (dark→light) -->
+            <button
+              class="js-light w-[72px] h-[30px] relative rounded-[32px] overflow-hidden active:scale-95 transition hidden"
+              aria-label="روشن کن">
+              <img src="./src/img/header/dark mode.svg" alt=""
+                class="absolute inset-0 w-[72px] object-cover mx-auto my-auto">
+            </button>
+          </div>
+
+          <!-- login btn -->
+          <button class="hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white rounded-[8px] py-[4px] px-[16px] gap-x-[8px]
+             hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">
             ورود / ثبت‌نام
-          </a>
+          </button>
+
+          <!-- mobile search + theme + login -->
+          <div class="flex items-center gap-2 desktop:hidden">
+            <button id="openSearchMobile"
+              class="w-10 h-10 inline-flex items-center justify-center rounded-md border border-[#E5E7EB]">
+              <img src="./src/img/header/search.svg" alt="جستجو" class="w-5 h-5">
+            </button>
+
+            <!-- small theme switch (mobile) -->
+            <button
+              class="js-dark w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition">
+              <img src="./src/img/header/lightmode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
+            </button>
+            <button
+              class="js-light w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition hidden">
+              <img src="./src/img/header/dark mode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
+            </button>
+
+            <a
+              class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
+              ورود / ثبت‌نام
+            </a>
+          </div>
         </div>
       </header>
+
 
       <!-- #region hamburger -->
       <div id="mobileNav" class="desktop:hidden w-full max-w-[1224px] mx-auto px-4 pt-2 pb-4
@@ -163,7 +510,7 @@
           <div
             class="container-body-btns flex justify-center desktop:justify-between gap-3 w-full desktop:w-[353px] mt-[24px] desktop:mt-[40px]">
             <button
-              class="w-[60%] mobile:w-[240px] desktop:w-[186px] h-[44px] desktop:h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
+              class="easy-reserve w-[60%] mobile:w-[240px] desktop:w-[186px] h-[44px] desktop:h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
               <img src="./src/img/header/car.svg" alt="">رزرو آسان خودرو
             </button>
             <button
@@ -176,9 +523,8 @@
       <!-- #region banner -->
     </div>
     <!--#endregion header-->
-
     <!--#region type-->
-    <div class="rent-type w-full desktop:w-[1224px]
+    <div class="rent-type w-full desktop:w-[1224px] 
          h-auto desktop:h-[201px]
          border border-[#D7D7D7]
          py-4 px-3 desktop:px-2
@@ -188,36 +534,39 @@
 
       <!--#region type-choose-->
       <div class="rent-type-choose w-full min-h-[40px]
-              flex flex-col desktop:flex-row
-              gap-3 desktop:gap-0
-              desktop:justify-between mx-auto px-2">
+              flex desktop:flex-row
+              gap-3 desktop:gap-0 justify-center items-center
+              desktop:justify-between mx-auto px-2 mobile:px-0">
 
         <!-- Right: Choose type buttons -->
-        <div class="choose-right w-full desktop:w-[430px] h-full
+        <div class="choose-right w-fit desktop:w-[430px] h-full
                 flex items-center gap-2
                 overflow-x-auto desktop:overflow-visible
                 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-          <button class="shrink-0 h-10 px-3 rounded-[20px]
+          <button
+            class="shrink-0 h-10 px-3 rounded-[20px]
                bg-[#194BF0] border border-[#D7D7D7]
-               btn btn-active font-Estedad text-[14px] text-white font-[600] leading-[180%] text-center">
+               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[10px] text-white font-[600] leading-[180%] text-center">
             اجاره خودرو با راننده
           </button>
-          <button class="shrink-0 h-10 px-3 rounded-[20px]
+          <button
+            class="shrink-0 h-10 px-3 rounded-[20px]
                bg-transparent border border-[#D7D7D7]
-               btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
+               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[10px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
             اجاره خودرو بی راننده
           </button>
-          <button class="shrink-0 h-10 px-3 rounded-[20px]
+          <button
+            class="shrink-0 h-10 px-3 rounded-[20px]
                bg-transparent border border-[#D7D7D7]
-               btn btn-active font-Estedad text-[13px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
+               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[10px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
             اجاره ماشین عروس
           </button>
         </div>
 
-        <!-- Left: More info link -->
-        <div class="choose-left w-full desktop:w-auto h-[25px]
-                text-center desktop:text-right
-                font-Estedad font-[500] text-[14px] leading-[100%] text-[#194BF0]">
+        <div
+          class="choose-left w-fit h-[25px]
+                text-center desktop:text-right 
+                font-Estedad font-[500] desktop:text-[14px] mobile:text-[10px] leading-[100%] text-[#194BF0] flex justify-center items-center ">
           <a href="#" class="inline-block">
             اطلاعات بیشتر در مورد رزرو خودرو
           </a>
@@ -225,847 +574,940 @@
       </div>
       <!--#endregion type-choose-->
 
-      <!--#region type-time-->
-      <div class="rent-type-time w-full desktop:w-[1069px]
-              h-auto desktop:h-[25px]
+
+      <!--#region type-time-all-->
+      <div class="type-time-all desktop:flex desktop:flex-col mobile:flex mobile:flex-row">
+        <!--#region type-time-->
+        <div class="rent-type-time w-full desktop:w-[1069px]
+              h-auto desktop:h-[25px] 
               flex flex-col desktop:flex-row
               gap-3 desktop:gap-0
               desktop:justify-between items-start desktop:items-center desktop:mr-[10px] px-1">
-        <div class="rent-type-time-right w-full desktop:w-fit h-full
+          <div class="rent-type-time-right w-full desktop:w-fit
              inline-flex items-center gap-1
              font-Estedad text-[14px] text-[#0C0C0C] leading-[180%] font-[400]">
-          <img src="./src/img/header/arrow-left-b.svg" alt="">
-          محل تحویل خودرو
-        </div>
-
-        <div class="rent-type-time-left w-full desktop:w-[506px]
-                flex flex-wrap items-center
-                gap-x-6 gap-y-2 desktop:gap-y-0">
-          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
-               inline-flex items-center gap-1">
-            <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ تحویل
+            <img src="./src/img/header/arrow-left-b.svg" alt="">
+            محل تحویل خودرو
           </div>
-          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+
+          <div class="rent-type-time-left w-full desktop:w-[506px]
+                flex flex-wrap items-center desktop:flex-row
+                gap-x-8 gap-y-2 desktop:gap-y-0 mobile:flex-col mobile:items-start">
+            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+               inline-flex items-center gap-1 desktop:mr-[32px]">
+              <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ تحویل
+            </div>
+            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1">
-            <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت تحویل
-          </div>
-          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+              <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت تحویل
+            </div>
+            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1">
-            <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ بازگشت
-          </div>
-          <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+              <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ بازگشت
+            </div>
+            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1">
-            <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت بازگشت
+              <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت بازگشت
+            </div>
           </div>
         </div>
-      </div>
-      <!--#endregion type-time-->
+        <!--#endregion type-time-->
 
-      <!--#region type-location-->
-      <div class="rent-type-location w-full
-           grid grid-cols-1 mobile:grid-cols-2 desktop:grid-cols-[535px_1px_111px_1px_106px_1px_111px_1px_106px_auto]
-           gap-3 desktop:gap-x-3
-           items-center px-3 py-3 bg-white">
+        <!--#region type-location-desktop-->
+        <div class="rent-type-location w-full
+           gap-3 desktop:gap-x-3 desktop:flex desktop:flex-wrap
+           items-center px-3 py-3 bg-white mobile:mt-[-12px] desktop:mt-[12px]">
 
-        <!-- Location -->
-        <div class="w-full desktop:w-[535px] h-[29px]
+          <div class="w-full desktop:w-[535px] h-[29px]
                 flex justify-between items-center">
-          <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">
-            تهران-فرودگاه امام خمینی
-          </span>
-          <img src="./src/img/header/arrow-down.svg" alt="" class="w-5">
-        </div>
+            <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">
+              تهران-فرودگاه امام خمینی
+            </span>
+            <img src="./src/img/header/arrow-down.svg" alt="" class="w-5">
+          </div>
 
-        <!-- Separators: Only in desktop -->
-        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
-
-        <!-- Delivery Date -->
-        <div class="w-full desktop:w-[111px] h-[31px]
+          <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+          <div class="type-location-middle desktop:flex desktop:flex-wrap desktop:gap-x-3">
+            <!-- #region Delivery Date -->
+            <div class="w-full desktop:w-[111px] h-[31px]
                 flex justify-between items-center">
-          <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
-          <img src="./src/img/header/calendar.svg" alt="" class="w-5">
-        </div>
+              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+              <img src="./src/img/header/calendar.svg" alt="" class="w-5">
+            </div>
+            <!-- #endregion Delivery Date -->
 
-        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+            <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
 
-        <!-- Delivery Time -->
-        <div class="w-full desktop:w-[106px] h-[31px]
+            <!-- #region Delivery Time -->
+            <div class="w-full desktop:w-[106px] h-[31px]
                 flex justify-between items-center">
-          <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
-          <img src="./src/img/header/clock.svg" alt="" class="w-5">
-        </div>
+              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
+              <img src="./src/img/header/clock.svg" alt="" class="w-5">
+            </div>
+            <!-- #endregion Delivery Time -->
 
-        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+            <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
 
-        <!-- Return Date -->
-        <div class="w-full desktop:w-[111px] h-[31px]
+            <!-- #region Return Date -->
+            <div class="w-full desktop:w-[111px] h-[31px]
                 flex justify-between items-center">
-          <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
-          <img src="./src/img/header/calendar.svg" alt="" class="w-5">
-        </div>
+              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+              <img src="./src/img/header/calendar.svg" alt="" class="w-5">
+            </div>
+            <!-- #endregion Return Date -->
 
-        <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
 
-        <!-- Return Time -->
-        <div class="w-full desktop:w-[106px] h-[31px]
+            <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
+
+            <!-- #region Return Time -->
+            <div class="w-full desktop:w-[106px] h-[31px]
                 flex justify-between items-center">
-          <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
-          <img src="./src/img/header/clock.svg" alt="" class="w-5">
-        </div>
+              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
+              <img src="./src/img/header/clock.svg" alt="" class="w-5">
+            </div>
+            <!-- #endregion Return Time -->
 
-        <!-- Search button -->
-        <div class="w-full desktop:w-[56px] h-[44px] desktop:h-[56px]
+
+            <!-- #region Search button -->
+            <div class="w-full desktop:w-[56px] h-[44px] desktop:h-[56px]
                 rounded-[12px] desktop:rounded-[16px]
-                bg-[#FDB713] flex justify-center items-center
+                bg-[#FDB713] flex justify-center items-center mobile:hidden
                 desktop:mr-[36px]">
-          <img src="./src/img/header/search.svg" alt="" class="w-6">
+              <img src="./src/img/header/search.svg" alt="" class="w-6">
+            </div>
+            <!-- #endregion Search button -->
+          </div>
+
         </div>
+        <!--#endregion type-location desktop-->
       </div>
-      <!--#endregion type-location-->
+      <div class="w-full h-[44px]
+            rounded-[12px] desktop:rounded-[16px]
+            bg-[#FDB713] flex justify-center items-center desktop:hidden
+            desktop:mr-[36px]">
+        <img src="./src/img/header/search.svg" alt="" class="w-6">
+      </div>
+      <!--#endregion type-time-all-->
 
     </div>
     <!--#endregion type-->
-
     <!--#region brand-->
     <div
-      class="brand w-full h-[80px] opacity-[35%] flex flex-wrap items-center justify-between mt-[49px] px-[16px] py-[8px]">
-      <img src="./src/img/brands/land-rover.png" alt="" class="h-[50px] mr-[16px]" />‌
-      <img src="./src/img/brands/jeep.png" alt="" class="h-[50px]" />‌
-      <img src="./src/img/brands/KIA.png" alt="" class="h-[50px]" />‌
-      <img src="./src/img/brands/Toyota.png" alt="" class="h-[60px]" />‌
-      <img src="./src/img/brands/Nissan.png" alt="" class="h-[60px]" />‌
-      <img src="./src/img/brands/Hyundai.png" alt="" class="h-[60px]" />‌
-      <img src="./src/img/brands/Honda.png" alt="" class="h-[60px]" />‌
-      <img src="./src/img/brands/Marcedes.png" alt="" class="h-[80px]" />‌
-      <img src="./src/img/brands/lexus-logo.png" alt="" class="h-[70px]" />‌
-      <img src="./src/img/brands/BMW.png" alt="" class="h-[80px]" />‌
+      class="brand w-full h-auto mobile:gap-3 desktop:gap-7 mobile:justify-center opacity-[35%] flex flex-wrap items-center justify-between mt-[49px] px-[16px] py-[8px]">
+      <img src="./src/img/brands/land-rover.png" alt="" class="desktop:h-[50px] mobile:h-[30px] mr-[16px] land-over" />‌
+      <img src="./src/img/brands/jeep.png" alt="" class="desktop:h-[50px] mobile:h-[30px]" />‌
+      <img src="./src/img/brands/KIA.png" alt="" class="desktop:h-[50px] mobile:h-[30px]" />‌
+      <img src="./src/img/brands/Toyota.png" alt="" class="desktop:h-[60px] mobile:h-[40px]" />‌
+      <img src="./src/img/brands/Nissan.png" alt="" class="desktop:h-[60px] mobile:h-[40px]" />‌
+      <img src="./src/img/brands/Hyundai.png" alt="" class="desktop:h-[60px] mobile:h-[40px]" />‌
+      <img src="./src/img/brands/Honda.png" alt="" class="desktop:h-[60px] mobile:h-[40px]" />‌
+      <img src="./src/img/brands/Marcedes.png" alt="" class="desktop:h-[80px] mobile:h-[60px]" />‌
+      <img src="./src/img/brands/lexus-logo.png" alt="" class="desktop:h-[70px] mobile:h-[50px]" />‌
+      <img src="./src/img/brands/BMW.png" alt="" class="desktop:h-[80px] mobile:h-[60px]" />‌
     </div>
     <!--#endregion brand-->
     <!--#region why-us-->
-    <div
-      class="why-us w-[1224px] h-[292px] rounded-[16px] box-border mt-[47px] bg-[url(/src/img/why-us/bg-car.png)] bg-cover bg-center mx-auto">
-      <div class="why-us-text w-[845px] h-[147px] py-[16px] px-[8px] mx-auto box-border">
-        <h1 class="font-Estedad font-bold text-[24px] leading-[180%] text-[#FDB713] text-center">چــــــرا اُتو رِنت؟
+    <div class="why-us w-full desktop:w-[1224px]
+         h-auto desktop:h-[292px]
+         rounded-[16px] box-border mt-[47px]
+         bg-[url(/src/img/why-us/bg-car.png)] bg-cover bg-center mx-auto mobile:p-[16px]">
+
+      <div class="why-us-text w-full desktop:w-[845px]
+              h-auto desktop:h-[147px]
+              py-[16px] px-[8px] mx-auto box-border">
+        <!-- title -->
+        <h1 class="font-Estedad font-bold text-[24px] leading-[180%] text-[#FDB713] text-center">
+          چــــــرا اُتو رِنت؟
         </h1>
-        <p class="font-Estedad leading-[180%] text-[18px] text-white text-center font-[400] mt-[8px] w-[845px]">اجاره
-          خودرو از یک شرکت اجاره خودرو با سابقه به شما کمک می‌کند تا در مسافرت ها، قرار ملاقات‌ های مهم، مجالس و
+        <!-- description -->
+        <p class="font-Estedad leading-[180%] text-[18px] desktop:text-[18px]
+              text-white text-center font-[400] mt-[8px]
+              w-full desktop:w-[845px]">
+          اجاره خودرو از یک شرکت اجاره خودرو با سابقه به شما کمک می‌کند تا در مسافرت ها، قرار ملاقات‌ های مهم، مجالس و
           مراسم‌های خانوادگی ماشین مناسب خود را در اختیار داشته باشید. اگر شما اصلا خودرویی در اختیار ندارید یا خودروی
-          شما مطمئن نیست، می‌توانید از سوییچ، خودروی مناسب خود را کرایه کرده و با آسودگی به سفر بروید.</p>
+          شما مطمئن نیست، می‌توانید از سوییچ، خودروی مناسب خود را کرایه کرده و با آسودگی به سفر بروید.
+        </p>
       </div>
-      <div class="why-us-boxes flex flex-wrap justify-between w-[1016px] h-[186px] mx-auto mt-[39px]">
-        <div
-          class="why-us-boxes-contents w-[312px] h-full rounded-[16px] pt-[16px] px-[24px] flex flex-col gap-y-[8px] items-center bg-white border-[1px] border-[#D7d7d7]">
-          <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border-[1px] border-[#08237D] ">
+
+      <!-- feature boxes -->
+      <div class="why-us-boxes flex flex-wrap gap-6 desktop:gap-6
+           w-full desktop:w-[1016px]
+           h-auto desktop:h-[186px]
+           mx-auto mt-[24px] desktop:mt-[39px]">
+
+        <div class="why-us-boxes-contents desktop:w-[312px] h-full
+             rounded-[16px] pt-[16px] px-[24px] mobile:w-[210px]
+             flex flex-col gap-y-[8px] items-center
+             bg-white border border-[#D7D7D7]">
+          <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]">
             <img src="./src/img/why-us/box.svg" alt="" class="w-[48px]">
           </div>
           <h6 class="font-Estedad font-bold leading-[140%] text-[16px] text-[#414141]">تحویل در محل</h6>
-          <p class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#757575] text-center">تحویل خودرو در زمان و
-            مکان تعیین شده توسط شما خواهد بود.</p>
+          <p class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#757575] text-center">
+            تحویل خودرو در زمان و مکان تعیین شده توسط شما خواهد بود.
+          </p>
         </div>
 
-        <div
-          class="why-us-boxes-contents w-[312px] h-full rounded-[16px] pt-[16px] px-[24px] flex flex-col gap-y-[8px] items-center bg-white border-[1px] border-[#D7d7d7]">
-          <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border-[1px] border-[#08237D] ">
+        <div class="why-us-boxes-contents desktop:w-[312px] h-full
+             rounded-[16px] pt-[16px] px-[24px] mobile:w-[210px]
+             flex flex-col gap-y-[8px] items-center
+             bg-white border border-[#D7D7D7]">
+          <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]">
             <img src="./src/img/why-us/24-support.svg" alt="" class="w-[48px]">
           </div>
           <h6 class="font-Estedad font-bold leading-[140%] text-[16px] text-[#414141]">پشتیبانی 24 ساعته</h6>
-          <p class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#757575] text-center">کارشناسان ما در هر
-            زمان و مکان، پاسخگوی سوالات شما خواهند بود.</p>
+          <p class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#757575] text-center">
+            کارشناسان ما در هر زمان و مکان، پاسخگوی سوالات شما خواهند بود.
+          </p>
         </div>
 
-        <div
-          class="why-us-boxes-contents w-[312px] h-full rounded-[16px] pt-[16px] px-[24px] flex flex-col gap-y-[8px] items-center bg-white border-[1px] border-[#D7d7d7]">
-          <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border-[1px] border-[#08237D] ">
+        <div class="why-us-boxes-contents desktop:w-[312px] h-full
+             rounded-[16px] pt-[16px] px-[24px] mobile:w-[270px] mobile:mx-auto desktop:mx-0
+             flex flex-col gap-y-[8px] items-center
+             bg-white border border-[#D7D7D7]">
+          <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]">
             <img src="./src/img/why-us/wallet-minus.svg" alt="" class="w-[48px]">
           </div>
           <h6 class="font-Estedad font-bold leading-[140%] text-[16px] text-[#414141]">قیمت مناسب</h6>
-          <p class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#757575] text-center">هدف ما، ارائه بهترین
-            خدمات با مناسب ترین قیمت ممکن است.</p>
+          <p class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#757575] text-center">
+            هدف ما، ارائه بهترین خدمات با مناسب ترین قیمت ممکن است.
+          </p>
         </div>
       </div>
     </div>
     <!--#endregion why-us-->
     <!--#region car-types-->
-    <div class="car-types w-[1224px] h-[144px] flex flex-wrap gap-x-[8px] mx-auto mt-[152px] ">
-      <div
-        class="group cursor-pointer w-[238.4px] h-full rounded-[16px] border-[1px] border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
-        <h4 class="font-bold font-Estedad text-[24px] leading-[140%] text-[#353535] mx-auto">کوپه</h4>
-        <img src="./src/img/types/1.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
-        <div
-          class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[137px] group-hover:top-[100px] transition-all ease-linear duration-100">
+    <div class="car-types w-full desktop:w-[1224px]
+         h-auto desktop:h-[144px]
+         mx-auto mt-[96px] desktop:mt-[152px]">
+
+      <!-- grid for car types -->
+      <div class="flex flex-wrap gap-3 justify-center items-center desktop:w-[1224px] h-auto mx-auto">
+        <div class="group cursor-pointer w-[232px] h-[144px] desktop:h-[144px]
+             rounded-[16px] border border-[#d7d7d7]
+             relative overflow-hidden py-[16px] px-[8px]
+             bg-white flex flex-col items-center">
+          <h4 class="font-bold font-Estedad text-[20px] desktop:text-[24px] leading-[140%] text-[#353535] mx-auto">کوپه
+          </h4>
+          <img src="./src/img/types/1.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
+          <div class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black
+               absolute top-[130px] desktop:top-[137px]
+               group-hover:top-[100px] desktop:group-hover:top-[100px]
+               transition-all ease-linear duration-100"></div>
         </div>
-      </div>
-      <div
-        class="group cursor-pointer w-[238.4px] h-full rounded-[16px] border-[1px] border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
-        <h4 class="font-bold font-Estedad text-[24px] leading-[140%] text-[#353535] mx-auto">سدان</h4>
-        <img src="./src/img/types/2.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
-        <div
-          class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[137px] group-hover:top-[100px] transition-all ease-linear duration-100">
+
+        <div class="group cursor-pointer w-[232px] h-[144px]
+             rounded-[16px] border border-[#d7d7d7]
+             relative overflow-hidden py-[16px] px-[8px]
+             bg-white flex flex-col items-center">
+          <h4 class="font-bold font-Estedad text-[20px] desktop:text-[24px] leading-[140%] text-[#353535] mx-auto">سدان
+          </h4>
+          <img src="./src/img/types/2.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
+          <div
+            class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[130px] desktop:top-[137px] group-hover:top-[100px] desktop:group-hover:top-[100px] transition-all ease-linear duration-100">
+          </div>
         </div>
-      </div>
-      <div
-        class="group cursor-pointer w-[238.4px] h-full rounded-[16px] border-[1px] border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
-        <h4 class="font-bold font-Estedad text-[24px] leading-[140%] text-[#353535] mx-auto">کروک</h4>
-        <img src="./src/img/types/3.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
-        <div
-          class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[137px] group-hover:top-[100px] transition-all ease-linear duration-100">
+
+        <div class="group cursor-pointer w-[232px] h-[144px]
+             rounded-[16px] border border-[#d7d7d7]
+             relative overflow-hidden py-[16px] px-[8px]
+             bg-white flex flex-col items-center">
+          <h4 class="font-bold font-Estedad text-[20px] desktop:text-[24px] leading-[140%] text-[#353535] mx-auto">کروک
+          </h4>
+          <img src="./src/img/types/3.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
+          <div
+            class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[130px] desktop:top-[137px] group-hover:top-[100px] desktop:group-hover:top-[100px] transition-all ease-linear duration-100">
+          </div>
         </div>
-      </div>
-      <div
-        class="group cursor-pointer w-[238.4px] h-full rounded-[16px] border-[1px] border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
-        <h4 class="font-bold font-Estedad text-[24px] leading-[140%] text-[#353535] mx-auto">شاسی‌بلند</h4>
-        <img src="./src/img/types/4.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
-        <div
-          class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[137px] group-hover:top-[100px] transition-all ease-linear duration-100">
+
+        <div class="group cursor-pointer w-[232px] h-[144px] 
+             rounded-[16px] border border-[#d7d7d7]
+             relative overflow-hidden py-[16px] px-[8px]
+             bg-white flex flex-col items-center">
+          <h4 class="font-bold font-Estedad text-[20px] desktop:text-[24px] leading-[140%] text-[#353535] mx-auto">
+            شاسی‌بلند</h4>
+          <img src="./src/img/types/4.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
+          <div
+            class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[130px] desktop:top-[137px] group-hover:top-[100px] desktop:group-hover:top-[100px] transition-all ease-linear duration-100">
+          </div>
         </div>
-      </div>
-      <div
-        class="group cursor-pointer w-[238.4px] h-full rounded-[16px] border-[1px] border-[#d7d7d7] relative overflow-hidden py-[16px] px-[8px] bg-white flex flex-col items-center">
-        <h4 class="font-bold font-Estedad text-[24px] leading-[140%] text-[#353535] mx-auto">اسپرت</h4>
-        <img src="./src/img/types/5.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
-        <div
-          class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[137px] group-hover:top-[100px] transition-all ease-linear duration-100">
+
+        <div class="group cursor-pointer w-[232px] h-[144px]
+             rounded-[16px] border border-[#d7d7d7]
+             relative overflow-hidden py-[16px] px-[8px]
+             bg-white flex flex-col items-center">
+          <h4 class="font-bold font-Estedad text-[20px] desktop:text-[24px] leading-[140%] text-[#353535] mx-auto">اسپرت
+          </h4>
+          <img src="./src/img/types/5.png" alt="" class="w-[232px] absolute bottom-0 z-1" />
+          <div
+            class="bg-[#FDB713] w-[208px] h-[48px] rounded-[8px] drop-shadow-black absolute top-[130px] desktop:top-[137px] group-hover:top-[100px] desktop:group-hover:top-[100px] transition-all ease-linear duration-100">
+          </div>
         </div>
       </div>
     </div>
     <!--#endregion car-types-->
     <!--#region reservation-->
-    <div class="reservation w-[85%]  mx-auto mt-[48px]">
-      <!--#region reservation-textop-->
-      <div
-        class="reservation-textop w-[845px] mx-auto flex flex-col box-border gap-y-[20px] py-[16px] px-[8px] items-center">
-        <h4 class="font-Estedad font-[200] leading-[180%] text-[24px] text-center text-[#5e5e5e]">مشاهده موجودی خودروها
+    <div class="reservation w-[92%] desktop:w-[85%] mx-auto mt-[48px]">
+
+      <!-- top text -->
+      <div class="reservation-textop w-full desktop:w-[845px]
+           mx-auto flex flex-col box-border gap-y-[20px]
+           py-[16px] px-[8px] items-center">
+        <h4 class="font-Estedad font-[200] leading-[180%] text-[20px] desktop:text-[24px] text-center text-[#5e5e5e]">
+          مشاهده موجودی خودروها
         </h4>
         <div class="flex mx-auto">
-          <span class="font-Estedad font-[800] text-[32px] leading-[180%] text-[#353535]">رزرو خودرو
-            در</span>
-          <span class="font-Estedad font-[800] text-[32px] leading-[180%] text-[#D79C10] mr-2.5">اُتـــورِنت</span>
+          <span class="font-Estedad font-[800] text-[28px] desktop:text-[32px] leading-[180%] text-[#353535]">
+            رزرو خودرو در
+          </span>
+          <span class="font-Estedad font-[800] text-[28px] desktop:text-[32px] leading-[180%] text-[#D79C10] mr-2.5">
+            اُتـــورِنت
+          </span>
         </div>
       </div>
-      <!--#endregion reservation-textop-->
-      <!--#region reservation-sections-->
-      <div class=" mx-auto reservation-sections w-[1224px] h-[48px] mt-[16px] mb-[24px] flex flex-wrap justify-between">
-        <div class="w-[184px] h-full"></div>
-        <div class="w-[400px] h-full flex flex-wrap gap-x-[8px]">
-          <div
-            class="btn w-[128px] h-full px-[16px] py-[4px] rounded-[8px] bg-[#194BF0] font-Estedad font-[500] leading-[100%] text-[14px] text-white">
-            پرطرفدار</div>
-          <div
-            class="btn w-[128px] h-full px-[16px] py-[4px] rounded-[8px] bg-transparent border-[1px] border-[#194BF0] font-Estedad font-[500] leading-[100%] text-[14px] text-[#194BF0]">
-            لوکس</div>
-          <div
-            class="btn w-[128px] h-full px-[16px] py-[4px] rounded-[8px] bg-transparent border-[1px] border-[#194BF0] font-Estedad font-[500] leading-[100%] text-[14px] text-[#194BF0]">
-            اقتصادی</div>
+
+      <!-- tabs row -->
+      <div class="reservation-sections w-full  desktop:w-[1224px]  mx-auto          
+          h-auto desktop:h-[48px]
+           mt-[16px] mb-[24px] desktop:mr-auto
+           flex flex-col desktop:flex-row gap-3
+           desktop:justify-between ">
+
+        <div class="hidden desktop:block w-[184px] h-[48px]"></div>
+
+        <div class="w-full desktop:w-[400px] h-[48px]
+                flex items-center justify-center desktop:justify-start gap-2">
+          <button class="btn min-w-[120px] h-full px-[16px] py-[4px]
+               rounded-[8px] bg-[#194BF0]
+               font-Estedad font-[500] leading-[100%] text-[14px] text-white">
+            پرطرفدار
+          </button>
+          <button class="btn min-w-[120px] h-full px-[16px] py-[4px]
+               rounded-[8px] bg-transparent border border-[#194BF0]
+               font-Estedad font-[500] leading-[100%] text-[14px] text-[#194BF0]">
+            لوکس
+          </button>
+          <button class="btn min-w-[120px] h-full px-[16px] py-[4px]
+               rounded-[8px] bg-transparent border border-[#194BF0]
+               font-Estedad font-[500] leading-[100%] text-[14px] text-[#194BF0]">
+            اقتصادی
+          </button>
         </div>
-        <button
-          class="w-[184px] h-full py-[4px] px-[16px] flex gap-x-[8px] btn bg-transparent outline-0 shadow-none border-0 font-Estedad font-[600] text-[18px] leading-[180%] text-[#194BF0]">
+
+        <!-- see all -->
+        <button class="w-full desktop:w-[184px] h-[44px] desktop:h-[48px]
+             py-[4px] px-[16px] flex items-center justify-center gap-2
+             btn bg-transparent outline-0 shadow-none border-0
+             font-Estedad font-[600] text-[16px] desktop:text-[18px] leading-[180%] text-[#194BF0]">
           مشاهده همه
           <img src="./src/img/reservation/arrow-left.svg" alt="" class="w-[20px]">
         </button>
       </div>
-      <!--#endregion reservation-sections-->
-      <!--#region reservation-items-->
-      <div class="reservation-items w-full flex flex-wrap gap-[24px] py-[16px] items-center justify-center">
-        <div
-          class="reservation-items-content box-border w-[392px] h-[510px] p-[16px] flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
-          <!--#region reservation-items-img-->
 
-          <div
-            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border-[1px] border-[#f3f3f3] relative">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-[360px]">
-            <div
-              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-0 left-0 ">
-              ٪۲۰</div>
+      <!-- items grid -->
+      <div class="reservation-items w-full
+           flex flex-wrap gap-[24px] mx-auto justify-center items-center">
+
+        <div class="reservation-items-content box-border w-[392px] h-auto
+             p-[16px] flex flex-col gap-y-[16px]
+             border border-[#d7d7d7] bg-white rounded-[16px]">
+          <!-- img -->
+          <div class="reservation-items-content-img w-full h-[225px]
+               rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <div class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d]
+                 font-Estedad text-[14px] leading-[180%] font-500 text-white
+                 absolute top-2 left-2">
+              ٪۲۰
+            </div>
           </div>
-          <!--#endregion reservation-items-img-->
-          <!--#region reservation-items-title-->
-          <div class="reservation-items-content-title w-full h-[52px] flex flex-col gap-y-[8px]">
+          <!-- title -->
+          <div class="reservation-items-content-title w-full h-auto flex flex-col gap-y-[8px]">
             <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
             <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل: ۲۰۱۶</span>
           </div>
-          <!--#endregion reservation-items-title-->
-          <!--#region reservation-items-price-->
-          <div class="reservation-items-content-price w-full h-[96px] flex flex-col gap-y-[8px]">
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
+          <!-- price blocks -->
+          <div class="reservation-items-content-price w-full h-auto flex flex-col gap-y-[8px]">
+            <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
             </div>
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
+            <div class="w-full rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
             </div>
           </div>
-          <!--#endregion reservation-items-price-->
-          <!--#region reservation-items-garauntee-->
-          <div class="reservation-items-garauntee w-full h-[21px] px-[1px] flex justify-between">
+          <!-- guarantee -->
+          <div class="reservation-items-garauntee w-full flex justify-between">
             <span class="font-Estedad font-[500] text-[12px] leading-[100%] text-[#212121]">مبلغ ضمانت:</span>
-            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">
-              ۸۰ میلیون تومان
-            </span>
+            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">۸۰ میلیون تومان</span>
           </div>
-          <!--#endregion reservation-items-garauntee-->
-          <!--#region reservation-items-request-->
-          <div
-            class="reservation-items-request btn w-full h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none mt-[-6px] font-Estedad font-[600] text-[14px] leading-[180%] text-white">
+          <!-- CTA -->
+          <button class="reservation-items-request btn w-full h-[44px] desktop:h-[40px]
+               rounded-[8px] py-[4px] px-[16px] bg-[#194BF0]
+               border-0 outline-0 shadow-none
+               font-Estedad font-[600] text-[14px] leading-[180%] text-white">
             درخواست رزرو
-          </div>
-          <!--#endregion reservation-items-request-->
+          </button>
         </div>
-        <div
-          class="reservation-items-content w-[392px] h-[510px] box-border p-[16px] flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
-          <!--#region reservation-items-img-->
 
+        <div
+          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
-            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border-[1px] border-[#f3f3f3] relative">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-[360px]">
+            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
             <div
-              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-0 left-0 ">
+              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
           </div>
-          <!--#endregion reservation-items-img-->
-          <!--#region reservation-items-title-->
-          <div class="reservation-items-content-title w-full h-[52px] flex flex-col gap-y-[8px]">
+          <div class="reservation-items-content-title w-full h-auto flex flex-col gap-y-[8px]">
             <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
             <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل: ۲۰۱۶</span>
           </div>
-          <!--#endregion reservation-items-title-->
-          <!--#region reservation-items-price-->
-          <div class="reservation-items-content-price w-full h-[96px] flex flex-col gap-y-[8px]">
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
+          <div class="reservation-items-content-price w-full h-auto flex flex-col gap-y-[8px]">
+            <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
             </div>
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
+            <div class="w-full rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
             </div>
           </div>
-          <!--#endregion reservation-items-price-->
-          <!--#region reservation-items-garauntee-->
-          <div class="reservation-items-garauntee w-full h-[21px] px-[1px] flex justify-between">
+          <div class="reservation-items-garauntee w-full flex justify-between">
             <span class="font-Estedad font-[500] text-[12px] leading-[100%] text-[#212121]">مبلغ ضمانت:</span>
-            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">
-              ۸۰ میلیون تومان
-            </span>
+            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">۸۰ میلیون تومان</span>
           </div>
-          <!--#endregion reservation-items-garauntee-->
-          <!--#region reservation-items-request-->
-          <div
-            class="reservation-items-request btn w-full h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none mt-[-6px] font-Estedad font-[600] text-[14px] leading-[180%] text-white">
+          <button
+            class="reservation-items-request btn w-full h-[44px] desktop:h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none font-Estedad font-[600] text-[14px] leading-[180%] text-white">
             درخواست رزرو
-          </div>
-          <!--#endregion reservation-items-request-->
+          </button>
         </div>
-        <div
-          class="reservation-items-content w-[392px] h-[510px] box-border p-[16px] flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
-          <!--#region reservation-items-img-->
 
+        <div
+          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
-            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border-[1px] border-[#f3f3f3] relative">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-[360px]">
+            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
             <div
-              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-0 left-0 ">
+              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
           </div>
-          <!--#endregion reservation-items-img-->
-          <!--#region reservation-items-title-->
-          <div class="reservation-items-content-title w-full h-[52px] flex flex-col gap-y-[8px]">
+          <div class="reservation-items-content-title w-full h-auto flex flex-col gap-y-[8px]">
             <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
             <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل: ۲۰۱۶</span>
           </div>
-          <!--#endregion reservation-items-title-->
-          <!--#region reservation-items-price-->
-          <div class="reservation-items-content-price w-full h-[96px] flex flex-col gap-y-[8px]">
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
+          <div class="reservation-items-content-price w-full h-auto flex flex-col gap-y-[8px]">
+            <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
             </div>
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
+            <div class="w-full rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
             </div>
           </div>
-          <!--#endregion reservation-items-price-->
-          <!--#region reservation-items-garauntee-->
-          <div class="reservation-items-garauntee w-full h-[21px] px-[1px] flex justify-between">
+          <div class="reservation-items-garauntee w-full flex justify-between">
             <span class="font-Estedad font-[500] text-[12px] leading-[100%] text-[#212121]">مبلغ ضمانت:</span>
-            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">
-              ۸۰ میلیون تومان
-            </span>
+            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">۸۰ میلیون تومان</span>
           </div>
-          <!--#endregion reservation-items-garauntee-->
-          <!--#region reservation-items-request-->
-          <div
-            class="reservation-items-request btn w-full h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none mt-[-6px] font-Estedad font-[600] text-[14px] leading-[180%] text-white">
+          <button
+            class="reservation-items-request btn w-full h-[44px] desktop:h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none font-Estedad font-[600] text-[14px] leading-[180%] text-white">
             درخواست رزرو
-          </div>
-          <!--#endregion reservation-items-request-->
+          </button>
         </div>
-        <div
-          class="reservation-items-content w-[392px] h-[510px] p-[16px] box-border flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
-          <!--#region reservation-items-img-->
 
+        <div
+          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
-            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border-[1px] border-[#f3f3f3] relative">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-[360px]">
+            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
             <div
-              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-0 left-0 ">
+              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
           </div>
-          <!--#endregion reservation-items-img-->
-          <!--#region reservation-items-title-->
-          <div class="reservation-items-content-title w-full h-[52px] flex flex-col gap-y-[8px]">
+          <div class="reservation-items-content-title w-full h-auto flex flex-col gap-y-[8px]">
             <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
             <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل: ۲۰۱۶</span>
           </div>
-          <!--#endregion reservation-items-title-->
-          <!--#region reservation-items-price-->
-          <div class="reservation-items-content-price w-full h-[96px] flex flex-col gap-y-[8px]">
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
+          <div class="reservation-items-content-price w-full h-auto flex flex-col gap-y-[8px]">
+            <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
             </div>
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
+            <div class="w-full rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
             </div>
           </div>
-          <!--#endregion reservation-items-price-->
-          <!--#region reservation-items-garauntee-->
-          <div class="reservation-items-garauntee w-full h-[21px] px-[1px] flex justify-between">
+          <div class="reservation-items-garauntee w-full flex justify-between">
             <span class="font-Estedad font-[500] text-[12px] leading-[100%] text-[#212121]">مبلغ ضمانت:</span>
-            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">
-              ۸۰ میلیون تومان
-            </span>
+            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">۸۰ میلیون تومان</span>
           </div>
-          <!--#endregion reservation-items-garauntee-->
-          <!--#region reservation-items-request-->
-          <div
-            class="reservation-items-request btn w-full h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none mt-[-6px] font-Estedad font-[600] text-[14px] leading-[180%] text-white">
+          <button
+            class="reservation-items-request btn w-full h-[44px] desktop:h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none font-Estedad font-[600] text-[14px] leading-[180%] text-white">
             درخواست رزرو
-          </div>
-          <!--#endregion reservation-items-request-->
+          </button>
         </div>
-        <div
-          class="reservation-items-content w-[392px] h-[510px] box-border p-[16px] flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
-          <!--#region reservation-items-img-->
 
+        <div
+          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
-            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border-[1px] border-[#f3f3f3] relative">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-[360px]">
+            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
             <div
-              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-0 left-0 ">
+              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
           </div>
-          <!--#endregion reservation-items-img-->
-          <!--#region reservation-items-title-->
-          <div class="reservation-items-content-title w-full h-[52px] flex flex-col gap-y-[8px]">
+          <div class="reservation-items-content-title w-full h-auto flex flex-col gap-y-[8px]">
             <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
             <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل: ۲۰۱۶</span>
           </div>
-          <!--#endregion reservation-items-title-->
-          <!--#region reservation-items-price-->
-          <div class="reservation-items-content-price w-full h-[96px] flex flex-col gap-y-[8px]">
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
+          <div class="reservation-items-content-price w-full h-auto flex flex-col gap-y-[8px]">
+            <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
             </div>
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
+            <div class="w-full rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
             </div>
           </div>
-          <!--#endregion reservation-items-price-->
-          <!--#region reservation-items-garauntee-->
-          <div class="reservation-items-garauntee w-full h-[21px] px-[1px] flex justify-between">
+          <div class="reservation-items-garauntee w-full flex justify-between">
             <span class="font-Estedad font-[500] text-[12px] leading-[100%] text-[#212121]">مبلغ ضمانت:</span>
-            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">
-              ۸۰ میلیون تومان
-            </span>
+            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">۸۰ میلیون تومان</span>
           </div>
-          <!--#endregion reservation-items-garauntee-->
-          <!--#region reservation-items-request-->
-          <div
-            class="reservation-items-request btn w-full h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none mt-[-6px] font-Estedad font-[600] text-[14px] leading-[180%] text-white">
+          <button
+            class="reservation-items-request btn w-full h-[44px] desktop:h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none font-Estedad font-[600] text-[14px] leading-[180%] text-white">
             درخواست رزرو
-          </div>
-          <!--#endregion reservation-items-request-->
+          </button>
         </div>
-        <div
-          class="reservation-items-content box-border w-[392px] h-[510px] p-[16px] flex flex-col gap-y-[16px] border-[1px] border-[#d7d7d7] bg-white rounded-[16px]">
-          <!--#region reservation-items-img-->
 
+        <div
+          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
-            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border-[1px] border-[#f3f3f3] relative">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-[360px]">
+            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
             <div
-              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-0 left-0 ">
+              class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
           </div>
-          <!--#endregion reservation-items-img-->
-          <!--#region reservation-items-title-->
-          <div class="reservation-items-content-title w-full h-[52px] flex flex-col gap-y-[8px]">
+          <div class="reservation-items-content-title w-full h-auto flex flex-col gap-y-[8px]">
             <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">اجاره بنز E۳۵۰ سدان</h6>
             <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل: ۲۰۱۶</span>
           </div>
-          <!--#endregion reservation-items-title-->
-          <!--#region reservation-items-price-->
-          <div class="reservation-items-content-price w-full h-[96px] flex flex-col gap-y-[8px]">
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
+          <div class="reservation-items-content-price w-full h-auto flex flex-col gap-y-[8px]">
+            <div class="w-full rounded-[8px] p-[8px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">روزانه</span>
             </div>
-            <div
-              class="w-full h-[44px] rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
+            <div class="w-full rounded-[8px] p-[12px] bg-[#d7d7d7] box-border flex justify-between items-center">
               <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#212121]">از ۱ تا ۳۰ روز:</span>
-              <span
-                class="w-[241px] h-[28px] font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
-              <span
-                class="w-[27px] h-[22px] font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
+              <span class="font-Estedad font-[700] text-[16px] leading-[180%] text-[#194BF0] w-[241px]">۸,۵۰۰,۰۰۰</span>
+              <span class="font-Estedad font-[400] leading-[180%] text-[12px] text-[#494949]">ماهانه</span>
             </div>
           </div>
-          <!--#endregion reservation-items-price-->
-          <!--#region reservation-items-garauntee-->
-          <div class="reservation-items-garauntee w-full h-[21px] px-[1px] flex justify-between">
+          <div class="reservation-items-garauntee w-full flex justify-between">
             <span class="font-Estedad font-[500] text-[12px] leading-[100%] text-[#212121]">مبلغ ضمانت:</span>
-            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">
-              ۸۰ میلیون تومان
-            </span>
+            <span class="font-Estedad font-[700] text-[12px] leading-[100%] text-[#212121]">۸۰ میلیون تومان</span>
           </div>
-          <!--#endregion reservation-items-garauntee-->
-          <!--#region reservation-items-request-->
-          <div
-            class="reservation-items-request btn w-full h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none mt-[-6px] font-Estedad font-[600] text-[14px] leading-[180%] text-white">
+          <button
+            class="reservation-items-request btn w-full h-[44px] desktop:h-[40px] rounded-[8px] py-[4px] px-[16px] bg-[#194BF0] border-0 outline-0 shadow-none font-Estedad font-[600] text-[14px] leading-[180%] text-white">
             درخواست رزرو
-          </div>
-          <!--#endregion reservation-items-request-->
+          </button>
         </div>
+
       </div>
-      <!--#endregion reservation-items-->
-
     </div>
     <!--#endregion reservation-->
     <!--#region how-to-->
-    <div class="how-to w-[1234px] mt-[148px] mx-auto">
+    <div
+      class="how-to desktop:h-[850px] w-full overflow-hidden desktop:w-[1234px] mt-[96px] desktop:mt-[32px] mx-auto px-4">
       <!--#region how-to-title-->
-      <div class="how-to-title w-[362px] h-[95px] flex flex-col items-center gap-y-[20px] mx-auto">
-        <p class="font-Estedad font-normal text-[24px] leading-[100%] text-[#5E5E5E]">چگونه در وبسایت</p>
+      <div
+        class="how-to-title w-full desktop:w-[362px] h-auto flex flex-col items-center gap-y-[16px] desktop:gap-y-[20px] mx-auto">
+        <p class="font-Estedad font-normal text-[20px] desktop:text-[24px] leading-[100%] text-[#5E5E5E]">
+          چگونه در وبسایت
+        </p>
         <div class="flex gap-x-[4px]">
-          <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#D79C10]">اُتـــورِنت، </span>
-          <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#353535]">خودرو رزرو کنیم؟</span>
+          <span
+            class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#D79C10]">اُتـــورِنت،
+          </span>
+          <span class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#353535]">خودرو رزرو
+            کنیم؟</span>
         </div>
       </div>
       <!--#endregion how-to-title-->
+
       <!--#region how-to-answers-->
-      <div class="how-to-answers w-full h-auto flex flex-wrap justify-between">
+      <div
+        class="how-to-answers w-full h-auto gap-4 flex mt-10 items-start mobile:relative desktop:static desktop:justify-center">
+
         <!--#region how-to-answers-right-->
-        <div class="how-to-answers-right w-[366px] flex flex-col gap-y-[427px]">
-          <div class="how-to-answers-right-first">
-            <span class="font-Estedad font-[700] text-[152px] leading-[80%] text-transparent mr-[50px]"
+        <div
+          class="how-to-answers-right w-[300px] mobile:h-[600px] desktop:w-[366px] flex flex-col gap-y-[260px] desktop:gap-y-[427px]">
+          <!-- step 1 -->
+          <div class="how-to-answers-right-first mobile:w-[220px] desktop:w-auto">
+            <!-- large outlined number -->
+            <span
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۱</span>
-            <div class="how-to-answers-right-first-text flex gap-x-[16px] mt-[-60px]">
+            <!-- step content -->
+            <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
               <div
-                class="w-[80px] h-[80px] rounded-[16px] border-[1px] bg-white border-[#D7D7D7] flex justify-center items-center">
-                <img src="./src/img/how-to/car.svg" alt="" class="w-[48px]">
+                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
-              <div class="w-[270px] h-[92px] flex flex-col gap-y-[8px]">
+              <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
                 <div class="flex gap-x-[4px]">
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#D79C10]">خودروی</span>
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#212121]">خود را انتخاب
-                    کنید.</span>
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودروی</span>
+                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">خود
+                    را انتخاب کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[16px] leading-[100%] text-[#727272]">خودروی مورد نظر خود را،
-                  متناسب با درخواست خود انتخاب کنید.</p>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                  خودروی مورد نظر خود را، متناسب با درخواست خود انتخاب کنید.
+                </p>
               </div>
             </div>
           </div>
-          <div class="how-to-answers-right-third">
-            <span class="font-Estedad font-[700] text-[152px] leading-[80%] text-transparent mr-[-10px]"
+
+          <!-- step 3 -->
+          <div class="how-to-answers-right-third mobile:w-[220px] desktop:w-auto">
+            <!-- large outlined number -->
+            <span
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-1.5 desktop:mr-[20px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
-            <div class="how-to-answers-right-third-text flex gap-x-[16px] mt-[-60px]">
+            <!-- step content -->
+            <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
               <div
-                class="w-[80px] h-[80px] rounded-[16px] border-[1px] bg-white border-[#D7D7D7] flex justify-center items-center">
-                <img src="./src/img/how-to/car.svg" alt="" class="w-[48px]">
+                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                <img src="./src/img/how-to/cards.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
-              <div class="w-[270px] h-[92px] flex flex-col gap-y-[8px]">
+              <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
                 <div class="flex gap-x-[4px]">
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#212121]">اجاره را پرداخت
-                    کنید.</span>
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره
+                    را پرداخت کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[16px] leading-[100%] text-[#727272]">می توانید از طریق کیف پول
-                  آنلاین یا کارت های عضو شبکه شتاب هزینه اجاره را پرداخت کنید.</p>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                  می توانید از طریق کیف پول آنلاین یا کارت های عضو شبکه شتاب هزینه اجاره را پرداخت کنید.
+                </p>
               </div>
             </div>
           </div>
         </div>
         <!--#endregion how-to-answers-right-->
+
         <!--#region how-to-answers-middle-->
-        <div class="how-to-answers-middle">
-          <img src="./src/img/how-to/frama.png" alt="">
+        <div
+          class="how-to-answers-middle w-[300px] flex items-center justify-center desktop:order-nonen desktop:rotate-0 desktop:static mobile:rotate-90 mobile:absolute mobile:left-18 mobile:top-[0px]">
+          <img src="./src/img/how-to/frama.png" alt=""
+            class="w-full max-w-[560px] mobile:w-[70%] desktop:w-[100%] desktop:max-w-[640px] h-auto object-contain mx-auto">
         </div>
         <!--#endregion how-to-answers-middle-->
-        <!--#region how-to-answers-left-->
-        <div class="how-to-answers-left w-[366px] flex flex-col gap-y-[427px]">
-          <div class="how-to-answers-left-second">
-            <span class="font-Estedad font-[700] text-[152px] leading-[80%] text-transparent mr-[300px]"
-              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
-            <div class="how-to-answers-left-first-text flex gap-x-[16px] mt-[-60px] flex-row-reverse">
-              <div
-                class="w-[80px] h-[80px] rounded-[16px] border-[1px] bg-white border-[#D7D7D7] flex justify-center items-center">
-                <img src="./src/img/how-to/calendar-tick.svg" alt="" class="w-[48px]">
-              </div>
-              <div class="w-[270px] h-[92px] flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px]">
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#212121]"> تحویل را تعیین کنید.
-                  </span>
-                </div>
-                <p class="font-Estedad font-[500] text-[16px] leading-[100%] text-[#727272]">تاریخ موردنظر خود را از
-                  تقویم، انتخاب و رزرو کنید</p>
-              </div>
-            </div>
-          </div>
-          <div class="how-to-answers-right-fourth">
-            <span class="font-Estedad font-[700] text-[152px] leading-[80%] text-transparent mr-[300px]"
-              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
-            <div class="how-to-answers-right-third-text flex gap-x-[16px] mt-[-60px] flex-row-reverse">
-              <div
-                class="w-[80px] h-[80px] rounded-[16px] border-[1px] bg-white border-[#D7D7D7] flex justify-center items-center">
-                <img src="./src/img/how-to/key.svg" alt="" class="w-[48px]">
-              </div>
-              <div class="w-[270px] h-[92px] flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px]">
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#D79C10]">خودرو</span>
-                  <span class="font-Estedad font-bold text-[24px] leading-[140%] text-[#212121]">را دریافت کنید.</span>
-                </div>
-                <p class="font-Estedad font-[500] text-[16px] leading-[100%] text-[#727272]">در زمان و مکان تعیین شده،
-                  خودروی خود را دریافت کنید.</p>
-              </div>
-            </div>
-          </div>
-        </div> <!--#endregion how-to-answers-left-->
-      </div>
 
+        <!--#region how-to-answers-left-->
+        <div
+          class="how-to-answers-left w-[300px] mobile:h-[600px] mobile:pr-6 desktop:w-[366px] flex flex-col gap-y-[260px] desktop:gap-y-[427px]">
+          <!-- step 2 -->
+          <div class="how-to-answers-left-second mobile:w-[200px] desktop:w-auto">
+            <!-- large outlined number -->
+            <span
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[128px] desktop:mr-[300px]"
+              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
+            <!-- step content -->
+            <div
+              class="how-to-answers-left-first-text flex gap-x-[16px] mobile:gap-x-0 -mt-10 desktop:mt-[-60px] flex-row-reverse">
+              <div
+                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center ">
+                <img src="./src/img/how-to/calendar-tick.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+              <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
+                <div class="flex gap-x-[4px]">
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
+                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">
+                    تحویل را تعیین کنید.</span>
+                </div>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- step 4 -->
+          <div class="how-to-answers-right-fourth mobile:w-[200px] desktop:w-auto">
+            <!-- large outlined number -->
+            <span
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[120px] desktop:mr-[280px]"
+              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
+            <!-- step content -->
+            <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px] flex-row-reverse">
+              <div
+                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                <img src="./src/img/how-to/key.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+              <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
+                <div class="flex gap-x-[4px]">
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودرو</span>
+                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">را
+                    دریافت کنید.</span>
+                </div>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                  در زمان و مکان تعیین شده، خودروی خود را دریافت کنید.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--#endregion how-to-answers-left-->
+
+      </div>
       <!--#endregion how-to-answers-->
     </div>
     <!--#endregion how-to-->
     <!--#region common-Q-->
-    <div class="common-Q w-[1224px] h-[578px] mx-auto mt-[56px]">
+    <div class="common-Q w-full desktop:w-[1224px] h-auto mx-auto mt-[64px] desktop:mt-[56px] px-4">
       <!--#region common-Q-title-->
-      <div class="common-Q-title w-[845px] h-[95px] mb-[24px] flex flex-col gap-y-[20px] mx-auto items-center">
-        <p class="font-Estedad font-normal text-[24px] leading-[100%] text-[#5E5E5E]">پر تکرارترین سؤالاتی که پرسیدید
+      <div
+        class="common-Q-title w-full desktop:w-[845px] h-auto mb-[16px] desktop:mb-[24px] flex flex-col gap-y-[16px] desktop:gap-y-[20px] mx-auto items-center">
+        <p class="font-Estedad font-normal text-[20px] desktop:text-[24px] leading-[100%] text-[#5E5E5E]">
+          پر تکرارترین سؤالاتی که پرسیدید
         </p>
         <div class="flex gap-x-[4px]">
-          <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#D79C10]">سؤالات </span>
-          <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#353535]">متداول</span>
+          <span class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#D79C10]">سؤالات
+          </span>
+          <span
+            class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#353535]">متداول</span>
         </div>
       </div>
       <!--#endregion common-Q-title-->
+
       <!--#region common-Q-questions-->
-      <div class="common-Q-questions w-full h-[459px] flex flex-wrap gap-x-[24px]">
-        <!--#region common-Q-questions-right-->
-        <div class="common-Q-questions-right h-full w-[808px] flex flex-col gap-y-[16px]">
+      <!-- layout: 1 column on mobile (image then FAQ), 2 columns on desktop -->
+      <div
+        class="common-Q-questions w-full grid grid-cols-1 desktop:grid-cols-[1fr_392px] gap-6 desktop:gap-x-[24px] items-start">
+
+        <!--#region common-Q-questions-left (image)-->
+        <!-- on mobile we show the image first; on desktop it's at the right -->
+        <div
+          class="common-Q-questions-left order-1 desktop:order-2 overflow-hidden w-full desktop:w-[392px] rounded-[16px]">
+          <img src="./src/img/questions/man.png" alt="" class="w-full h-full object-cover">
+        </div>
+        <!--#endregion common-Q-questions-left-->
+
+        <!--#region common-Q-questions-right (FAQ list)-->
+        <div
+          class="common-Q-questions-right order-2 desktop:order-1 w-full desktop:w-auto flex flex-col gap-y-[12px] desktop:gap-y-[16px]">
+          <!-- item 1 -->
           <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
-            <input type="radio" name="my-accordion-3" checked="checked" class="ml-4" />
+            <input type="radio" name="faq-accordion" checked class="ml-4" />
             <div
-              class="collapse-title font-Estedad font-[600] text-[16px] text-[#353535] text-right h-[76px] leading-[240%]">
-              در صورت بروز نقص فنی برای خودرو چه اتفاقی می‌افتد؟</div>
+              class="collapse-title font-Estedad font-[600] text-[15px] desktop:text-[16px] text-[#353535] text-right min-h-[64px] desktop:h-[76px] leading-[200%] desktop:leading-[240%]">
+              در صورت بروز نقص فنی برای خودرو چه اتفاقی می‌افتد؟
+            </div>
             <div class="collapse-content text-sm font-Estedad text-[14px] text-[#727272] text-right">
-              <p class="h-[107px]">هزینه بنزین و کارواش در خودروهای اجاره‌ای به عهده کیست؟ در زمان اجاره خودرو بدون
-                راننده خودروها کارواش شده و با باک بنزین پر تحویل مشتریان عزیز می‌گردد. در زمان استرداد خودرو در صورتی
-                که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده مشتری می‌باشد.</p>
+              <p class="min-h-[80px] desktop:h-[107px]">
+                هزینه بنزین و کارواش در خودروهای اجاره‌ای به عهده کیست؟ در زمان اجاره خودرو بدون راننده خودروها کارواش
+                شده و با باک بنزین پر تحویل مشتریان عزیز می‌گردد. در زمان استرداد خودرو در صورتی که خودرو به کارواش نیاز
+                داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده مشتری می‌باشد.
+              </p>
             </div>
           </div>
+
+          <!-- item 2 -->
           <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
-            <input type="radio" name="my-accordion-3" class="ml-4" />
+            <input type="radio" name="faq-accordion" class="ml-4" />
             <div
-              class="collapse-title font-Estedad font-[600] text-[16px] text-[#353535] text-right h-[76px] leading-[240%]">
-              آیا ماشین‌های اتورنت دارای بیمه هستند؟</div>
+              class="collapse-title font-Estedad font-[600] text-[15px] desktop:text-[16px] text-[#353535] text-right min-h-[64px] desktop:h-[76px] leading-[200%] desktop:leading-[240%]">
+              آیا ماشین‌های اتورنت دارای بیمه هستند؟
+            </div>
             <div class="collapse-content text-sm font-Estedad text-[14px] text-[#727272] text-right">
-              <p class="h-[107px]">در زمان اجاره خودرو بدون راننده خودروها کارواش شده و با باک بنزین پر تحویل مشتریان
-                عزیز می گردد. در زمان استرداد خودرو در صورتی که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت
-                باشد هزینه آن بر عهده مشتری می باشد</p>.
+              <p class="min-h-[80px] desktop:h-[107px]">
+                در زمان اجاره خودرو بدون راننده خودروها کارواش شده و با باک بنزین پر تحویل مشتریان عزیز می گردد. در زمان
+                استرداد خودرو در صورتی که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده
+                مشتری می باشد.
+              </p>
             </div>
           </div>
+
+          <!-- item 3 -->
           <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
-            <input type="radio" name="my-accordion-3" class="ml-4" />
+            <input type="radio" name="faq-accordion" class="ml-4" />
             <div
-              class="collapse-title font-Estedad font-[600] text-[16px] text-[#353535] text-right h-[76px] leading-[240%]">
-              آیا ماشین های اتورنت دارای بیمه هستند؟</div>
+              class="collapse-title font-Estedad font-[600] text-[15px] desktop:text-[16px] text-[#353535] text-right min-h-[64px] desktop:h-[76px] leading-[200%] desktop:leading-[240%]">
+              آیا ماشین های اتورنت دارای بیمه هستند؟
+            </div>
             <div class="collapse-content text-sm font-Estedad text-[14px] text-[#727272] text-right">
-              <p class="h-[107px]">هزینه بنزین و کارواش در خودروهای اجاره‌ای به عهده کیست؟ در زمان اجاره خودرو بدون
-                راننده خودروها کارواش شده و با باک بنزین پر تحویل مشتریان عزیز می‌گردد. در زمان استرداد خودرو در صورتی
-                که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده مشتری می‌باشد.</p>
+              <p class="min-h-[80px] desktop:h-[107px]">
+                هزینه بنزین و کارواش در خودروهای اجاره‌ای به عهده کیست؟ در زمان اجاره خودرو بدون راننده خودروها کارواش
+                شده و با باک بنزین پر تحویل مشتریان عزیز می‌گردد. در زمان استرداد خودرو در صورتی که خودرو به کارواش نیاز
+                داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده مشتری می‌باشد.
+              </p>
             </div>
           </div>
+
+          <!-- item 4 -->
           <div class="collapse collapse-plus bg-white border border-[#D7D7D7] rounded-[16px] text-right" dir="ltr">
-            <input type="radio" name="my-accordion-3" class="ml-4" />
+            <input type="radio" name="faq-accordion" class="ml-4" />
             <div
-              class="collapse-title font-Estedad font-[600] text-[16px] text-[#353535] text-right h-[76px] leading-[240%]">
-              محدودیت کیلومتر در اجاره خودرو چقدر می باشد؟</div>
+              class="collapse-title font-Estedad font-[600] text-[15px] desktop:text-[16px] text-[#353535] text-right min-h-[64px] desktop:h-[76px] leading-[200%] desktop:leading-[240%]">
+              محدودیت کیلومتر در اجاره خودرو چقدر می باشد؟
+            </div>
             <div class="collapse-content text-sm font-Estedad text-[14px] text-[#727272] text-right">
-              <p class="h-[107px]">هزینه بنزین و کارواش در خودروهای اجاره‌ای به عهده کیست؟ در زمان اجاره خودرو بدون
-                راننده خودروها کارواش شده و با باک بنزین پر تحویل مشتریان عزیز می‌گردد. در زمان استرداد خودرو در صورتی
-                که خودرو به کارواش نیاز داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده مشتری می‌باشد.</p>
+              <p class="min-h-[80px] desktop:h-[107px]">
+                هزینه بنزین و کارواش در خودروهای اجاره‌ای به عهده کیست؟ در زمان اجاره خودرو بدون راننده خودروها کارواش
+                شده و با باک بنزین پر تحویل مشتریان عزیز می‌گردد. در زمان استرداد خودرو در صورتی که خودرو به کارواش نیاز
+                داشته و یا خودرو دارای کسر سوخت باشد هزینه آن بر عهده مشتری می‌باشد.
+              </p>
             </div>
           </div>
         </div>
         <!--#endregion common-Q-questions-right-->
-        <!--#region common-Q-questions-left-->
-        <div class="common-Q-questions-left overflow-hidden h-full w-[392px] rounded-[16px]">
-          <img src="./src/img/questions/man.png" alt="">
-        </div>
-        <!--#endregion common-Q-questions-left-->
 
       </div>
       <!--#endregion common-Q-questions-->
     </div>
     <!--#endregion common-Q-->
     <!--#region comments-->
-    <div class="comments w-[1224px] h-[630px] mx-auto mt-[48px]">
+    <div class="comments w-full desktop:w-[1224px] h-auto mx-auto mt-[40px] desktop:mt-[48px] px-4">
       <!--#region comments-title-->
-      <div class="comments-title w-[845px] h-[95px] mb-[24px] flex flex-col gap-y-[20px] mx-auto items-center">
-        <p class="font-Estedad font-normal text-[24px] leading-[100%] text-[#5E5E5E]">آنچه مشتریان ما درموردمان
-          گفته‌اند. </p>
+      <div
+        class="comments-title w-full desktop:w-[845px] h-auto mb-[16px] desktop:mb-[24px] flex flex-col gap-y-[16px] desktop:gap-y-[20px] mx-auto items-center">
+        <p class="font-Estedad font-normal text-[20px] desktop:text-[24px] leading-[100%] text-[#5E5E5E]">
+          آنچه مشتریان ما درموردمان گفته‌اند.
+        </p>
         <div class="flex gap-x-[4px]">
-          <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#353535]">نظرات </span>
-          <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#D79C10]">مشتریان</span>
+          <span class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#353535]">نظرات
+          </span>
+          <span
+            class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#D79C10]">مشتریان</span>
         </div>
       </div>
       <!--#endregion comments-title-->
+
       <!--#region comments-section-->
-      <div class="comments-sections w-full h-[511px] flex flex-col items-center">
-        <!-- Main Testimonial Card -->
+      <div class="comments-sections w-full h-auto flex flex-col items-center">
+        <!-- main testimonial card -->
         <div
-          class="main-testimonial w-full h-[320px] bg-white rounded-[16px] border border-[#D7D7D7] p-[24px] flex flex-col items-center gap-y-[16px] shadow-lg mb-[24px]">
-          <!-- Customer Photo -->
-          <div class="w-[80px] h-[80px] rounded-full overflow-hidden">
+          class="main-testimonial w-full bg-white rounded-[16px] border border-[#D7D7D7] p-[16px] desktop:p-[24px] flex flex-col items-center gap-y-[12px] desktop:gap-y-[16px] shadow-lg mb-[16px] desktop:mb-[24px]">
+          <!-- customer photo -->
+          <div class="w-[72px] h-[72px] desktop:w-[80px] desktop:h-[80px] rounded-full overflow-hidden">
             <img id="mainProfileImg" src="./src/img/testimonials/img-1.png" alt="اولدوز بهاور"
               class="w-full h-full object-cover">
           </div>
-          <!-- Customer Name -->
-          <h4 id="mainName" class="font-Estedad font-bold text-[18px] text-[#353535]">اولدوز بهاور</h4>
-          <!-- Rating Stars -->
+          <!-- customer name -->
+          <h4 id="mainName" class="font-Estedad font-bold text-[16px] desktop:text-[18px] text-[#353535]">اولدوز بهاور
+          </h4>
+          <!-- rating stars -->
           <div class="flex gap-x-[4px]">
-            <span class="text-[#FDB713] text-[20px]">☆★★★★</span>
+            <span class="text-[#FDB713] text-[18px] desktop:text-[20px]">☆★★★★</span>
           </div>
-          <!-- Testimonial Text -->
+          <!-- testimonial text -->
           <p id="mainTestimonialText"
-            class="font-Estedad font-[400] text-[14px] text-[#727272] text-center leading-[180%] w-[776px]">
-            اولین بار بود که برای مسافرت ماشین اجاره می‌کردم و به دنبال یک شرکت با سابقه و مطمئن می‌گشتم!<br>بدون هیچ
-            شکی
-            میگم، اتو رنت تو کار خودش بهترینه!<br>پشتیبانی عالی، هزینه بسیار مناسب، آسان بودن روند اجاره و رزرو؛ هرچی
-            بگم کم
-            گفتم!<br>حتماً دفعه بعد هم برای اجاره ماشین به سراغشون میام. </p>
+            class="font-Estedad font-[400] text-[14px] text-[#727272] text-center leading-[200%] max-w-[90%] desktop:w-[776px]">
+            اولین بار بود که برای مسافرت ماشین اجاره می‌کردم و به دنبال یک شرکت با سابقه و مطمئن می‌گشتم!<br>
+            بدون هیچ شکی میگم، اتو رنت تو کار خودش بهترینه!<br>
+            پشتیبانی عالی، هزینه بسیار مناسب، آسان بودن روند اجاره و رزرو؛ هرچی بگم کم گفتم!<br>
+            حتماً دفعه بعد هم برای اجاره ماشین به سراغشون میام.
+          </p>
         </div>
 
-        <!-- Testimonial Navigation Cards -->
-        <div class="testimonial-nav w-full h-[96px] flex flex-row-reverse gap-x-[8px]">
-          <!-- Testimonial Tab 1 -->
+        <!-- testimonial navigation cards -->
+        <!-- layout: 2 per row on mobile, 4 per row on desktop -->
+        <div class="testimonial-nav w-full flex flex-wrap-reverse flex-row-reverse gap-[8px]">
+          <!-- testimonial tab 1 -->
           <div
-            class="testimonial-tab w-[25%] h-full bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
             data-testimonial="1">
-            <div class="w-[64px] h-[64px] rounded-full overflow-hidden">
+            <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-4.png" alt="فاطمه ابراهیمی فر"
                 class="w-full h-full object-cover grayscale">
             </div>
             <div class="flex flex-col items-start">
-              <span class="font-Estedad font-[500] text-[16px] text-[#212121] text-center leading-[180%]">فاطمه ابراهیمی
-                فر</span>
-              <span class="font-Estedad font-[400] text-[14px] text-[#494949] text-center leading-[180%]">۲۷ دی ماه
-                ۱۳۸۰</span>
+              <span
+                class="font-Estedad font-[500] text-[14px] desktop:text-[16px] text-[#212121] text-center leading-[160%] desktop:leading-[180%]">
+                فاطمه ابراهیمی فر
+              </span>
+              <span
+                class="font-Estedad font-[400] text-[12px] desktop:text-[14px] text-[#494949] text-center leading-[160%] desktop:leading-[180%]">
+                ۲۷ دی ماه ۱۳۸۰
+              </span>
             </div>
           </div>
 
-          <!-- Testimonial Tab 2 -->
+          <!-- testimonial tab 2 -->
           <div
-            class="testimonial-tab w-[25%] h-full bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
             data-testimonial="2">
-            <div class="w-[64px] h-[64px] rounded-full overflow-hidden">
+            <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-3.png" alt="فرزانه حیدری"
                 class="w-full h-full object-cover grayscale">
             </div>
             <div class="flex flex-col items-start">
-              <span class="font-Estedad font-[500] text-[16px] text-[#212121] text-center leading-[180%]">فرزانه
-                حیدری</span>
-              <span class="font-Estedad font-[400] text-[14px] text-[#494949] text-center leading-[180%]">۲۷ دی ماه
-                ۱۳۸۰</span>
+              <span
+                class="font-Estedad font-[500] text-[14px] desktop:text-[16px] text-[#212121] text-center leading-[160%] desktop:leading-[180%]">
+                فرزانه حیدری
+              </span>
+              <span
+                class="font-Estedad font-[400] text-[12px] desktop:text-[14px] text-[#494949] text-center leading-[160%] desktop:leading-[180%]">
+                ۲۷ دی ماه ۱۳۸۰
+              </span>
             </div>
           </div>
 
-          <!-- Testimonial Tab 3 -->
+          <!-- testimonial tab 3 -->
           <div
-            class="testimonial-tab w-[25%] h-full bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
             data-testimonial="3">
-            <div class="w-[64px] h-[64px] rounded-full overflow-hidden">
+            <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-2.png" alt="محمد جواد امینی"
                 class="w-full h-full object-cover grayscale">
             </div>
             <div class="flex flex-col items-start">
-              <span class="font-Estedad font-[500] text-[16px] text-[#212121] text-center leading-[180%]">محمد جواد
-                امینی</span>
-              <span class="font-Estedad font-[400] text-[14px] text-[#494949] text-center leading-[180%]">۲۷ دی ماه
-                ۱۳۹۹</span>
+              <span
+                class="font-Estedad font-[500] text-[14px] desktop:text-[16px] text-[#212121] text-center leading-[160%] desktop:leading-[180%]">
+                محمد جواد امینی
+              </span>
+              <span
+                class="font-Estedad font-[400] text-[12px] desktop:text-[14px] text-[#494949] text-center leading-[160%] desktop:leading-[180%]">
+                ۲۷ دی ماه ۱۳۹۹
+              </span>
             </div>
           </div>
 
-          <!-- Testimonial Tab 4 (Active) -->
+          <!-- testimonial tab 4 (active) -->
           <div
-            class="testimonial-tab w-[25%] h-full bg-[#FDB713] rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[16px] cursor-pointer transition-all duration-200"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-[#FDB713] rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200"
             data-testimonial="4">
-            <div class="w-[64px] h-[64px] rounded-full overflow-hidden">
+            <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-1.png" alt="اولدوز بهاور" class="w-full h-full object-cover">
             </div>
             <div class="flex flex-col items-start">
-              <span class="font-Estedad font-[500] text-[16px] text-[#212121] text-center leading-[180%]">اولدوز
-                بهاور</span>
-              <span class="font-Estedad font-[400] text-[14px] text-[#494949] text-center leading-[180%]">۲۷ دی ماه
-                ۱۳۸۰</span>
+              <span
+                class="font-Estedad font-[500] text-[14px] desktop:text-[16px] text-[#212121] text-center leading-[160%] desktop:leading-[180%]">
+                اولدوز بهاور
+              </span>
+              <span
+                class="font-Estedad font-[400] text-[12px] desktop:text-[14px] text-[#494949] text-center leading-[160%] desktop:leading-[180%]">
+                ۲۷ دی ماه ۱۳۸۰
+              </span>
             </div>
           </div>
         </div>
@@ -1074,85 +1516,115 @@
     </div>
     <!--#endregion comments-->
     <!--#region thesis-->
-    <div class="thesis w-[1224px] mx-auto">
+    <div class="thesis w-full desktop:w-[1224px] mx-auto px-4 mt-[48px]">
       <!--#region thesis-title-->
-      <div class="w-full flex flex-wrap h-[95px] justify-center items-end">
+      <div
+        class="w-full flex flex-wrap gap-y-4 desktop:gap-y-0 h-auto desktop:h-[95px] justify-center desktop:justify-between items-end">
+        <div class="w-[95px]"></div>
         <div
-          class="thesis-title w-[845px] h-[95px] mb-[24px] ml-[56px] flex flex-col gap-y-[20px] mx-auto items-center">
-          <p class="font-Estedad font-normal text-[24px] leading-[100%] text-[#5E5E5E]">مقالات ما</p>
+          class="thesis-title w-fit desktop:w-[845px] h-auto desktop:h-[95px] mb-[16px] desktop:mb-[24px] desktop:ml-[56px] flex flex-col gap-y-[16px] desktop:gap-y-[20px] mx-auto items-center desktop:items-center">
+          <p class="font-Estedad font-normal text-[20px] desktop:text-[24px] leading-[100%] text-[#5E5E5E]">مقالات ما
+          </p>
           <div class="flex gap-x-[4px]">
-            <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#353535]">مجله </span>
-            <span class="font-Estedad font-[700] text-[32px] leading-[140%] text-[#D79C10]">خودرو</span>
+            <span class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#353535]">مجله
+            </span>
+            <span
+              class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#D79C10]">خودرو</span>
           </div>
         </div>
-        <div class="thesis-all">
+        <div class="thesis-all w-fit desktop:w-auto flex justify-center desktop:justify-end mb-[24px]">
           <a href="#"
-            class="flex w-fit h-fit boxborder gap-x-[8px] font-Estedad font-[600] leading-[180%] text-[18px] text-[#194BF0] items-center">مشاهده
-            همه <img src="./src/img/thesis/arrow-left.svg" alt="" class="w-[20px]"></a>
+            class="flex w-fit h-fit gap-x-[8px] font-Estedad font-[600] leading-[180%] text-[16px] desktop:text-[18px] text-[#194BF0] items-center">
+            مشاهده همه
+            <img src="./src/img/thesis/arrow-left.svg" alt="" class="w-[18px] desktop:w-[20px]">
+          </a>
         </div>
       </div>
       <!--#endregion thesis-title-->
+
       <!--#region thesis-cards-->
-      <div class="thesis-cards w-full h-[370px] flex flex-wrap gap-x-[24px] items-center justify-center mt-[48px]">
+      <!-- layout: stack on mobile, 3 across on desktop -->
+      <div
+        class="thesis-cards w-full h-auto grid grid-cols-1 desktop:grid-cols-3 gap-4 desktop:gap-x-[24px] items-stretch justify-center mt-[32px] desktop:mt-[48px]">
+        <!-- card 1 -->
         <div
-          class="thesis-cards-content w-[391px] h-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border-[1px] border-[#D7D7D7]">
-          <img src="./src/img/thesis/pic-1.png" alt="" class="rounded-[12px] w-full">
-          <div class="thesis-cards-content-botom w-full h-[127px] flex flex-col gap-y-[16px] px-[4px] mt-[16px]">
-            <h3 class="font-Estedad text-[#414141] text-[16px] leading-[100%] font-[500]">روش های مختلف برای اجاره خودرو
+          class="thesis-cards-content w-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border border-[#D7D7D7]">
+          <img src="./src/img/thesis/pic-1.png" alt="" class="rounded-[12px] w-full h-auto object-cover">
+          <div
+            class="thesis-cards-content-botom w-full h-auto flex flex-col gap-y-[12px] desktop:gap-y-[16px] px-[4px] mt-[12px] desktop:mt-[16px]">
+            <h3 class="font-Estedad text-[#414141] text-[15px] desktop:text-[16px] leading-[130%] font-[500]">
+              روش های مختلف برای اجاره خودرو
             </h3>
-            <p class="font-Estedad text-[#757575] text-[12px] leading-[180%] font-normal text-right w-full h-[42px]">
-               امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به وجود آمده است نیازهای
-              افراد و نحوه دسترسی به آنها نیز دچار تحولاتی شده است.</p>
+            <p class="font-Estedad text-[#757575] text-[12px] leading-[180%] font-normal text-right w-full">
+              امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به وجود آمده است نیازهای
+              افراد و نحوه دسترسی به آنها نیز دچار تحولاتی شده است.
+            </p>
             <div class="thesis-cards-content-bottom-very w-full flex gap-x-[16px] items-center justify-start">
               <div class="flex w-[70px] h-[25px] gap-x-[8px] items-center">
                 <img src="./src/img/thesis/clock.svg" alt="" class="w-[18px]">
-                <span class="font-Estedad text-[14px] text-[#757575] leading-[100%] font-normal ">۳دقیقه</span>
+                <span
+                  class="font-Estedad text-[12px] desktop:text-[14px] text-[#757575] leading-[100%] font-normal">۳دقیقه</span>
               </div>
               <div class="flex w-[70px] h-[25px] gap-x-[8px] items-center">
                 <img src="./src/img/thesis/eye.svg" alt="" class="w-[18px]">
-                <span class="font-Estedad text-[14px] text-[#757575] leading-[100%] font-normal ">۱۲۱۳</span>
+                <span
+                  class="font-Estedad text-[12px] desktop:text-[14px] text-[#757575] leading-[100%] font-normal">۱۲۱۳</span>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- card 2 -->
         <div
-          class="thesis-cards-content w-[391px] h-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border-[1px] border-[#D7D7D7]">
-          <img src="./src/img/thesis/pic-2.png" alt="" class="rounded-[12px] w-full">
-          <div class="thesis-cards-content-botom w-full h-[127px] flex flex-col gap-y-[16px] px-[4px] mt-[16px]">
-            <h3 class="font-Estedad text-[#414141] text-[16px] leading-[100%] font-[500]">روش های مختلف برای اجاره خودرو
+          class="thesis-cards-content w-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border border-[#D7D7D7]">
+          <img src="./src/img/thesis/pic-2.png" alt="" class="rounded-[12px] w-full h-auto object-cover">
+          <div
+            class="thesis-cards-content-botom w-full h-auto flex flex-col gap-y-[12px] desktop:gap-y-[16px] px-[4px] mt-[12px] desktop:mt-[16px]">
+            <h3 class="font-Estedad text-[#414141] text-[15px] desktop:text-[16px] leading-[130%] font-[500]">
+              روش های مختلف برای اجاره خودرو
             </h3>
-            <p class="font-Estedad text-[#757575] text-[12px] leading-[180%] font-normal text-right w-full h-[42px]">
-               امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به وجود آمده است نیازهای
-              افراد و نحوه دسترسی به آنها نیز دچار تحولاتی شده است.</p>
+            <p class="font-Estedad text-[#757575] text-[12px] leading-[180%] font-normal text-right w-full">
+              امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به وجود آمده است نیازهای
+              افراد و نحوه دسترسی به آنها نیز دچار تحولاتی شده است.
+            </p>
             <div class="thesis-cards-content-bottom-very w-full flex gap-x-[16px] items-center justify-start">
               <div class="flex w-[70px] h-[25px] gap-x-[8px] items-center">
                 <img src="./src/img/thesis/clock.svg" alt="" class="w-[18px]">
-                <span class="font-Estedad text-[14px] text-[#757575] leading-[100%] font-normal ">۳دقیقه</span>
+                <span
+                  class="font-Estedad text-[12px] desktop:text-[14px] text-[#757575] leading-[100%] font-normal">۳دقیقه</span>
               </div>
               <div class="flex w-[70px] h-[25px] gap-x-[8px] items-center">
                 <img src="./src/img/thesis/eye.svg" alt="" class="w-[18px]">
-                <span class="font-Estedad text-[14px] text-[#757575] leading-[100%] font-normal ">۱۲۱۳</span>
+                <span
+                  class="font-Estedad text-[12px] desktop:text-[14px] text-[#757575] leading-[100%] font-normal">۱۲۱۳</span>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- card 3 -->
         <div
-          class="thesis-cards-content w-[391px] h-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border-[1px] border-[#D7D7D7]">
-          <img src="./src/img/thesis/pic-3.png" alt="" class="rounded-[12px] w-full">
-          <div class="thesis-cards-content-botom w-full h-[127px] flex flex-col gap-y-[16px] px-[4px] mt-[16px]">
-            <h3 class="font-Estedad text-[#414141] text-[16px] leading-[100%] font-[500]">روش های مختلف برای اجاره خودرو
+          class="thesis-cards-content w-full bg-white rounded-[16px] p-[16px] flex flex-col gap-y-[8px] border border-[#D7D7D7]">
+          <img src="./src/img/thesis/pic-3.png" alt="" class="rounded-[12px] w-full h-auto object-cover">
+          <div
+            class="thesis-cards-content-botom w-full h-auto flex flex-col gap-y-[12px] desktop:gap-y-[16px] px-[4px] mt-[12px] desktop:mt-[16px]">
+            <h3 class="font-Estedad text-[#414141] text-[15px] desktop:text-[16px] leading-[130%] font-[500]">
+              روش های مختلف برای اجاره خودرو
             </h3>
-            <p class="font-Estedad text-[#757575] text-[12px] leading-[180%] font-normal text-right w-full h-[42px]">
-               امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به وجود آمده است نیازهای
-              افراد و نحوه دسترسی به آنها نیز دچار تحولاتی شده است.</p>
+            <p class="font-Estedad text-[#757575] text-[12px] leading-[180%] font-normal text-right w-full">
+              امروزه با تغییراتی که در سبک زندگی مردم و شرایط اقتصادی جوامع به وجود آمده است نیازهای
+              افراد و نحوه دسترسی به آنها نیز دچار تحولاتی شده است.
+            </p>
             <div class="thesis-cards-content-bottom-very w-full flex gap-x-[16px] items-center justify-start">
               <div class="flex w-[70px] h-[25px] gap-x-[8px] items-center">
                 <img src="./src/img/thesis/clock.svg" alt="" class="w-[18px]">
-                <span class="font-Estedad text-[14px] text-[#757575] leading-[100%] font-normal ">۳دقیقه</span>
+                <span
+                  class="font-Estedad text-[12px] desktop:text-[14px] text-[#757575] leading-[100%] font-normal">۳دقیقه</span>
               </div>
               <div class="flex w-[70px] h-[25px] gap-x-[8px] items-center">
                 <img src="./src/img/thesis/eye.svg" alt="" class="w-[18px]">
-                <span class="font-Estedad text-[14px] text-[#757575] leading-[100%] font-normal ">۱۲۱۳</span>
+                <span
+                  class="font-Estedad text-[12px] desktop:text-[14px] text-[#757575] leading-[100%] font-normal">۱۲۱۳</span>
               </div>
             </div>
           </div>
@@ -1163,84 +1635,113 @@
     <!--#endregion thesis-->
     <!--#region footer-->
     <footer
-      class="footer w-[1224px] h-[432px] bg-[#1E1E1EE5] py-[56px] px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[80px] mx-auto bg-[url(/src/img/footer/bg.png)] ">
+      class="footer w-full desktop:w-[1224px] h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(/src/img/footer/bg.png)] bg-cover bg-center">
       <!--#region footer-top-->
       <div
-        class="footer-top w-[1120px] mx-auto h-[101px] rounded-[16px] border-[1px] border-[#868686] flex flex-wrap gap-x-[81px] p-[16px] items-center justify-center">
-        <div class="footer-top-box w-[254-67px] h-full flex gap-x-[16px] justify-center items-center">
-          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border-[1px] border-[#FFFFFF]"> <img
-              src="./src/img/footer/call-calling.svg" alt=""></div>
-          <div class="flex flex-col gap-y-[12px] w-fit h-full items-center">
-            <p class="font-Estedad text-[16px] text-[#FFFBFB] leading-[180%] font-normal">ارتباط با ما</p>
-            <p class="font-Estedad text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
-              ۰۹۱۲-۲۱۳۲۶۵۴۵</p>
+        class="footer-top w-full desktop:w-[1120px] mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
+        <div
+          class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+            <img src="./src/img/footer/call-calling.svg" alt="">
+          </div>
+          <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+            <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">ارتباط با
+              ما</p>
+            <p
+              class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+              ۰۹۱۲-۲۱۳۲۶۵۴۵
+            </p>
           </div>
         </div>
-        <div class="h-[32px] w-[2px] bg-[#868686]"></div>
-        <div class="footer-top-box w-[254-67px] h-full flex gap-x-[16px] justify-center items-center">
-          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border-[1px] border-[#FFFFFF]"> <img
-              src="./src/img/footer/sms.svg" alt=""></div>
-          <div class="flex flex-col gap-y-[12px] w-fit h-full items-center">
-            <p class="font-Estedad text-[16px] text-[#FFFBFB] leading-[180%] font-normal">ایمیل</p>
-            <p class="font-Estedad text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
-              autorent@info.com</p>
+
+        <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+        <div
+          class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+            <img src="./src/img/footer/sms.svg" alt="">
+          </div>
+          <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+            <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">ایمیل</p>
+            <p
+              class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+              autorent@info.com
+            </p>
           </div>
         </div>
-        <div class="h-[32px] w-[2px] bg-[#868686]"></div>
-        <div class="footer-top-box w-[254-67px] h-full flex gap-x-[16px] justify-center items-center">
-          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border-[1px] border-[#FFFFFF]"> <img
-              src="./src/img/footer/map.svg" alt=""></div>
-          <div class="flex flex-col gap-y-[12px] w-fit h-full items-center">
-            <p class="font-Estedad text-[16px] text-[#FFFBFB] leading-[180%] font-normal">آدرس</p>
-            <p class="font-Estedad text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
-              تهران- خ شادمان</p>
+
+        <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+        <div
+          class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+            <img src="./src/img/footer/map.svg" alt="">
+          </div>
+          <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+            <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">آدرس</p>
+            <p
+              class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+              تهران- خ شادمان
+            </p>
           </div>
         </div>
       </div>
       <!--#endregion footer-top-->
+
       <!--#region footer-bottom-->
-      <div class="footer-bottom w-full h-[233px]">
-        <div class="footer-bottom-content w-full h-[168px] flex gap-x-[88px] px-[67.5px] mt-[16px] items-center">
-          <div class="footer-bottom-content-box w-[572px] h-[168px] flex gap-x-[32px] items-start">
-            <div class="footer-bottom-content-box-right w-[438px] h-[168px] flex flex-col gap-y-[24px]">
-              <img src="./src/img/footer/Logo.png" alt="" class="h-[59px] w-[151.28px]">
-              <p class="font-Estedad font-normal text-[14px] leading-[180%] text-white w-[407px]">اتورنت با رویکرد
-                اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع خودروهای
-                صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.</p>
+      <div class="footer-bottom w-full h-auto">
+        <div
+          class="footer-bottom-content w-full min-h-[168px] flex flex-col desktop:flex-row gap-y-8 desktop:gap-y-0 desktop:gap-x-[88px] px-0 desktop:px-[67.5px] mt-[16px] items-start desktop:items-center">
+          <div
+            class="footer-bottom-content-box w-full desktop:w-[572px] h-auto flex flex-col desktop:flex-row gap-y-[24px] desktop:gap-y-0 desktop:gap-x-[32px] items-start">
+            <div
+              class="footer-bottom-content-box-right w-full mobile:items-center desktop:w-[438px] h-auto flex desktop:flex-col mobile:flex-row mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start">
+              <img src="./src/img/footer/Logo.png" alt="" class="h-[50px] w-[150px]">
+              <p
+                class="font-Estedad font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
+                اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع خودروهای
+                صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+              </p>
             </div>
-            <div class="footer-bottom-content-box-left w-[134px] h-[156px] flex flex-col gap-y-[32px] ">
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%]">دسترسی آسان</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%]">سوالات متداول</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%]">تماس با ما</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%]">درباره ما</p>
+            <div
+              class="footer-bottom-content-box-left w-full desktop:w-[134px] h-auto desktop:flex desktop:flex-col mobile:flex mobile:justify-center gap-y-[16px] desktop:gap-y-[32px] gap-x-[16px]">
+              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی آسان</p>
+              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">سوالات متداول</p>
+              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما</p>
+              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">درباره ما</p>
             </div>
           </div>
-          <div class="footer-bottom-content-send w-[320px] h-[80px] flex flex-col gap-y-[8px]">
-            <h4 class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[12px]">خبرنامه</h4>
+
+          <div class="footer-bottom-content-send w-fit mx-auto desktop:w-[320px] h-auto flex flex-col gap-y-[8px]">
+            <h4 class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">خبرنامه
+            </h4>
 
             <div
-              class="newsletter-container w-full h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
+              class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
               <input type="email" placeholder="ایمیل خود را وارد کنید"
-                class="flex-1 h-full bg-transparent px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
+                class="flex-1 h-full bg-transparent px-[12px] desktop:px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
               <button
-                class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[14px] px-[16px] ml-[8px] py-[12px] h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
+                class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[13px] desktop:text-[14px] px-[12px] desktop:px-[16px] ml-[8px] py-[8px] desktop:py-[12px] h-[36px] desktop:h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
                 ارسال
               </button>
             </div>
           </div>
         </div>
-        <div class="footer-bottom-divider w-full border-[1px] border-[#868686]"></div>
-        <div class="w-fit h-[25px] flex gap-x-[8px] mx-auto mt-[24px]">
-          <img src="./src/img/footer/creative-commons.svg" alt="">
-          <p class="font-Estedad font-[500] text-[14px] leading-[180%] text-[#9A9A9A]">تمامی حقوق این وبسایت متعلق به
-            اتورنت می‌باشد</p>
+
+        <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
+
+        <div
+          class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+          <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
+          <p class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
+            تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+          </p>
         </div>
       </div>
       <!--#endregion footer-bottom-->
     </footer>
-    <div class="h-[64px]"></div>
+    <div class="h-[48px] desktop:h-[64px]"></div>
     <!--#endregion footer-->
-
   </main>
   <!--#endregion main-->
   <script src="./src/js/main.js"></script>

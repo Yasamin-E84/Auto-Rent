@@ -219,3 +219,26 @@ const navToggle = document.getElementById('navToggle');
 navToggle?.addEventListener('click', () => {
   navToggle.classList.toggle('rotate-90'); // Tailwind class for rotation
 });
+
+// theme mode buttons
+ const THEME_KEY = 'theme'; // 'light' | 'dark'
+
+  function applyTheme(mode) {
+    localStorage.setItem(THEME_KEY, mode);
+    document.documentElement.classList.toggle('dark', mode === 'dark');
+
+    // ✅ correct toggle logic now
+    const showLight = mode === 'light'; // show the moon when light, sun when dark
+    document.querySelectorAll('.js-dark').forEach(b => b.classList.toggle('hidden', !showLight)); // show 🌙 when light
+    document.querySelectorAll('.js-light').forEach(b => b.classList.toggle('hidden', showLight));  // show ☀️ when dark
+  }
+
+  (function init() {
+    const saved = localStorage.getItem(THEME_KEY) || 'light';
+    applyTheme(saved);
+  })();
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.js-dark'))  applyTheme('dark');  // 🌙 click → dark mode
+    if (e.target.closest('.js-light')) applyTheme('light'); // ☀️ click → light mode
+  });
