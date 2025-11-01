@@ -19,6 +19,8 @@
     --font-weight-bold: 700;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -3025,6 +3027,9 @@
   .bg-\[url\(\'\/src\/img\/plp\/header\/page-screen\.png\'\)\] {
     background-image: url('/src/img/plp/header/page-screen.png');
   }
+  .bg-\[url\(\)\] {
+    background-image: url();
+  }
   .bg-\[url\(\/src\/img\/footer\/bg\.png\)\] {
     background-image: url(/src/img/footer/bg.png);
   }
@@ -3033,6 +3038,15 @@
   }
   .bg-\[url\(\/src\/img\/why-us\/bg-car\.png\)\] {
     background-image: url(/src/img/why-us/bg-car.png);
+  }
+  .bg-\[url\(https\:\/\/i\.pinimg\.com\/736x\/ab\/fb\/d5\/abfbd5a249016341afe2ce417a890ad0\.jpg\)\] {
+    background-image: url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg);
+  }
+  .bg-\[url\(https\:\/\/i\.pinimg\.com\/736x\/d4\/dc\/8c\/d4dc8cd326e127fc370c996b8a0b7b01\.jpg\)\] {
+    background-image: url(https://i.pinimg.com/736x/d4/dc/8c/d4dc8cd326e127fc370c996b8a0b7b01.jpg);
+  }
+  .bg-\[url\(https\:\/\/i\.pinimg\.com\/736x\/e3\/60\/19\/e36019025b1887e930e9d01d1968ba35\.jpg\)\] {
+    background-image: url(https://i.pinimg.com/736x/e3/60/19/e36019025b1887e930e9d01d1968ba35.jpg);
   }
   .bg-\[url\(https\:\/\/i\.pinimg\.com\/1200x\/ea\/ee\/80\/eaee80661a66618094a1188bccaa9f9f\.jpg\)\] {
     background-image: url(https://i.pinimg.com/1200x/ea/ee/80/eaee80661a66618094a1188bccaa9f9f.jpg);
@@ -3519,9 +3533,17 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+  }
   .ease-linear {
     --tw-ease: linear;
     transition-timing-function: linear;
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
   }
   .outline-none {
     --tw-outline-style: none;
