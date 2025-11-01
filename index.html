@@ -292,7 +292,7 @@
     }
 
     /* ===== FOOTER ===== */
-      html.dark .footer .border-\[\#868686\] {
+    html.dark .footer .border-\[\#868686\] {
       border-color: #475569 !important;
     }
 
@@ -307,7 +307,8 @@
     html.dark img.land-over {
       filter: invert(1) hue-rotate(180deg);
     }
-    html.dark img.svg-invert  {
+
+    html.dark img.svg-invert {
       filter: invert(1) hue-rotate(90deg);
     }
 
@@ -321,10 +322,11 @@
 
 <body class="bg-[#F3F3F3]">
   <!--#region main-->
-  <main class="main desktop:min-[1000px] h-auto mx-auto overflow-hiden">
+  <main class="main h-auto mx-auto overflow-hiden">
     <!--#region header-->
-    <div class="header-container w-full h-[683px] mx-auto bg-[url(https://i.pinimg.com/736x/d4/dc/8c/d4dc8cd326e127fc370c996b8a0b7b01.jpg)] bg-cover bg-bottom">
-      <header class="w-full desktop:w-[1224px] h-[64px] desktop:h-[96px] bg-white
+    <div
+      class="header-container w-full h-[683px] mx-auto bg-[url(https://i.pinimg.com/736x/d4/dc/8c/d4dc8cd326e127fc370c996b8a0b7b01.jpg)] bg-cover bg-bottom">
+      <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
          mx-auto rounded-bl-[16px] rounded-br-[16px]
          px-4 desktop:px-[32px] flex items-center justify-between">
 
@@ -337,7 +339,8 @@
           </button>
 
           <div class="header-logo">
-            <a href="./index.html"><img src="./src/img/header/Logo.png" alt="Auto-Rent" class="h-[40px] desktop:h-[59px]"></a>
+            <a href="./index.html"><img src="./src/img/header/Logo.png" alt="Auto-Rent"
+                class="h-[40px] desktop:h-[59px]"></a>
           </div>
         </div>
 
@@ -375,7 +378,7 @@
           </div>
 
           <!-- login btn -->
-          <button class="hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white rounded-[8px] py-[4px] px-[16px] gap-x-[8px]
+          <button class="mobile:hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white rounded-[8px] py-[4px] px-[16px] gap-x-[8px]
              hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">
             ورود / ثبت‌نام
           </button>
@@ -396,16 +399,9 @@
               class="js-light w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition hidden">
               <img src="./src/img/header/dark mode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
             </button>
-
-            <a
-              class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
-              ورود / ثبت‌نام
-            </a>
           </div>
         </div>
       </header>
-
-
       <!-- #region hamburger -->
       <div id="mobileNav" class="desktop:hidden w-full max-w-[1224px] mx-auto px-4 pt-2 pb-4
               hidden">
@@ -416,6 +412,10 @@
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+            <a
+              class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
+              ورود / ثبت‌نام
+            </a>
           </div>
         </div>
       </div>
@@ -523,7 +523,7 @@
     </div>
     <!--#endregion header-->
     <!--#region type-->
-    <div class="rent-type w-full desktop:w-[1224px] 
+    <div class="rent-type w-full
          h-auto desktop:h-[201px]
          border border-[#D7D7D7]
          py-4 px-3 desktop:px-2
@@ -539,7 +539,7 @@
 
         <!-- Right: Choose type buttons -->
         <div class="choose-right w-fit desktop:w-[430px] h-full
-                flex items-center gap-2
+                flex items-center gap-2 
                 overflow-x-auto desktop:overflow-visible
                 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
           <button
@@ -575,12 +575,12 @@
 
 
       <!--#region type-time-all-->
-      <div class="type-time-all desktop:flex desktop:flex-col mobile:flex mobile:flex-row">
+      <div class="type-time-all desktop:flex desktop:flex-col mobile:flex mobile:flex-row desktop:justify-between">
         <!--#region type-time-->
-        <div class="rent-type-time w-full desktop:w-[1069px]
+        <div class=" rent-type-time w-full
               h-auto desktop:h-[25px] 
               flex flex-col desktop:flex-row
-              gap-3 desktop:gap-0
+              gap-3
               desktop:justify-between items-start desktop:items-center desktop:mr-[10px] px-1">
           <div class="rent-type-time-right w-full desktop:w-fit
              inline-flex items-center gap-1
@@ -613,13 +613,13 @@
         <!--#endregion type-time-->
 
         <!--#region type-location-desktop-->
-        <div class="rent-type-location w-full
+        <div class="rent-type-location w-full desktop:justify-between h-auto
            gap-3 desktop:gap-x-3 desktop:flex desktop:flex-wrap
-           items-center px-3 py-3 bg-white mobile:mt-[-12px] desktop:mt-[12px]">
+           items-center px-3 py-3 mobile:mt-[-12px] desktop:mt-[12px]">
 
           <div class="w-full desktop:w-[535px] h-[29px]
                 flex justify-between items-center">
-            <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">
+            <span class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">
               تهران-فرودگاه امام خمینی
             </span>
             <img src="./src/img/header/arrow-down.svg" alt="" class="w-5">
@@ -630,7 +630,8 @@
             <!-- #region Delivery Date -->
             <div class="w-full desktop:w-[111px] h-[31px]
                 flex justify-between items-center">
-              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+              <span
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
               <img src="./src/img/header/calendar.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Delivery Date -->
@@ -640,7 +641,8 @@
             <!-- #region Delivery Time -->
             <div class="w-full desktop:w-[106px] h-[31px]
                 flex justify-between items-center">
-              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
+              <span
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
               <img src="./src/img/header/clock.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Delivery Time -->
@@ -650,7 +652,8 @@
             <!-- #region Return Date -->
             <div class="w-full desktop:w-[111px] h-[31px]
                 flex justify-between items-center">
-              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+              <span
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
               <img src="./src/img/header/calendar.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Return Date -->
@@ -692,7 +695,7 @@
     <!--#endregion type-->
     <!--#region brand-->
     <div
-      class="brand w-full h-auto mobile:gap-3 desktop:gap-7 mobile:justify-center opacity-[35%] flex flex-wrap items-center justify-between mt-[49px] px-[16px] py-[8px]">
+      class="brand w-full h-auto mobile:gap-3 mobile:justify-center desktop:justify-between opacity-[35%] flex flex-wrap items-center justify-between mt-[49px] px-[16px] py-[8px]">
       <img src="./src/img/brands/land-rover.png" alt="" class="desktop:h-[50px] mobile:h-[30px] mr-[16px] land-over" />‌
       <img src="./src/img/brands/jeep.png" alt="" class="desktop:h-[50px] mobile:h-[30px]" />‌
       <img src="./src/img/brands/KIA.png" alt="" class="desktop:h-[50px] mobile:h-[30px]" />‌
@@ -706,7 +709,8 @@
     </div>
     <!--#endregion brand-->
     <!--#region why-us-->
-    <div class="why-us w-full desktop:w-[1224px]
+    <div
+      class="why-us w-full desktop:w-[90%]
          h-auto desktop:h-[292px]
          rounded-[16px] box-border mt-[47px]
          bg-[url(https://i.pinimg.com/736x/e3/60/19/e36019025b1887e930e9d01d1968ba35.jpg)] bg-cover bg-center mx-auto mobile:p-[16px]">
@@ -729,13 +733,12 @@
       </div>
 
       <!-- feature boxes -->
-      <div class="why-us-boxes flex flex-wrap gap-6 desktop:gap-6
-           w-full desktop:w-[1016px]
-           h-auto desktop:h-[186px]
+      <div class="why-us-boxes flex flex-wrap gap-y-[16px]
+           w-[100%] justify-between
            mx-auto mt-[24px] desktop:mt-[39px]">
 
         <div class="why-us-boxes-contents desktop:w-[312px] h-full
-             rounded-[16px] pt-[16px] px-[24px] mobile:w-[210px]
+             rounded-[16px] pt-[16px] px-[24px] mobile:w-[270px] mobile:mx-auto desktop:mx-0
              flex flex-col gap-y-[8px] items-center
              bg-white border border-[#D7D7D7]">
           <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]">
@@ -748,7 +751,7 @@
         </div>
 
         <div class="why-us-boxes-contents desktop:w-[312px] h-full
-             rounded-[16px] pt-[16px] px-[24px] mobile:w-[210px]
+             rounded-[16px] pt-[16px] px-[24px] mobile:w-[270px] mobile:mx-auto desktop:mx-0
              flex flex-col gap-y-[8px] items-center
              bg-white border border-[#D7D7D7]">
           <div class="w-[72px] h-[72px] rounded-[12px] p-[12px] border border-[#08237D]">
@@ -776,12 +779,10 @@
     </div>
     <!--#endregion why-us-->
     <!--#region car-types-->
-    <div class="car-types w-full desktop:w-[1224px]
-         h-auto desktop:h-[144px]
+    <div class="car-types w-full h-auto
          mx-auto mt-[96px] desktop:mt-[152px]">
-
       <!-- grid for car types -->
-      <div class="flex flex-wrap gap-3 justify-center items-center desktop:w-[1224px] h-auto mx-auto">
+      <div class="flex flex-wrap desktop:justify-between mobile:justify-center items-center w-[90%] h-auto mx-auto gap-4">
         <div class="group cursor-pointer w-[232px] h-[144px] desktop:h-[144px]
              rounded-[16px] border border-[#d7d7d7]
              relative overflow-hidden py-[16px] px-[8px]
@@ -846,10 +847,10 @@
     </div>
     <!--#endregion car-types-->
     <!--#region reservation-->
-    <div class="reservation w-[92%] desktop:w-[85%] mx-auto mt-[48px]">
+    <div class="reservation mobile:w-[92%] desktop:w-[90%] mx-auto mt-[48px]">
 
       <!-- top text -->
-      <div class="reservation-textop w-full desktop:w-[845px]
+      <div class="reservation-textop w-full
            mx-auto flex flex-col box-border gap-y-[20px]
            py-[16px] px-[8px] items-center">
         <h4 class="font-Estedad font-[200] leading-[180%] text-[20px] desktop:text-[24px] text-center text-[#5e5e5e]">
@@ -866,9 +867,9 @@
       </div>
 
       <!-- tabs row -->
-      <div class="reservation-sections w-full  desktop:w-[1224px]  mx-auto          
+      <div class="reservation-sections w-[80%] mx-auto          
           h-auto desktop:h-[48px]
-           mt-[16px] mb-[24px] desktop:mr-auto
+           mt-[16px] mb-[24px] desktop:mx-auto
            flex flex-col desktop:flex-row gap-3
            desktop:justify-between ">
 
@@ -876,17 +877,17 @@
 
         <div class="w-full desktop:w-[400px] h-[48px]
                 flex items-center justify-center desktop:justify-start gap-2">
-          <button class="btn min-w-[120px] h-full px-[16px] py-[4px]
+          <button class="btn w-1/3 h-full px-[16px] py-[4px]
                rounded-[8px] bg-[#194BF0]
                font-Estedad font-[500] leading-[100%] text-[14px] text-white">
             پرطرفدار
           </button>
-          <button class="btn min-w-[120px] h-full px-[16px] py-[4px]
+          <button class="btn w-1/3 h-full px-[16px] py-[4px]
                rounded-[8px] bg-transparent border border-[#194BF0]
                font-Estedad font-[500] leading-[100%] text-[14px] text-[#194BF0]">
             لوکس
           </button>
-          <button class="btn min-w-[120px] h-full px-[16px] py-[4px]
+          <button class="btn w-1/3 h-full px-[16px] py-[4px]
                rounded-[8px] bg-transparent border border-[#194BF0]
                font-Estedad font-[500] leading-[100%] text-[14px] text-[#194BF0]">
             اقتصادی
@@ -905,15 +906,15 @@
 
       <!-- items grid -->
       <div class="reservation-items w-full
-           flex flex-wrap gap-[24px] mx-auto justify-center items-center">
+           flex flex-wrap gap-[24px] mx-auto items-center justify-center">
 
-        <div class="reservation-items-content box-border w-[392px] h-auto
+        <div class="reservation-items-content box-border desktop:w-[392px] mobile:w-[95%] h-auto
              p-[16px] flex flex-col gap-y-[16px]
              border border-[#d7d7d7] bg-white rounded-[16px]">
           <!-- img -->
           <div class="reservation-items-content-img w-full h-[225px]
                rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full rounded-[8px]">
             <div class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d]
                  font-Estedad text-[14px] leading-[180%] font-500 text-white
                  absolute top-2 left-2">
@@ -953,10 +954,10 @@
         </div>
 
         <div
-          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+          class="reservation-items-content box-border desktop:w-[392px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
             class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full rounded-[8px]">
             <div
               class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
@@ -988,10 +989,10 @@
         </div>
 
         <div
-          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+          class="reservation-items-content box-border desktop:w-[392px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
             class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full rounded-[8px]">
             <div
               class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
@@ -1023,10 +1024,10 @@
         </div>
 
         <div
-          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+          class="reservation-items-content box-border desktop:w-[392px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
             class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full rounded-[8px]">
             <div
               class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
@@ -1058,10 +1059,10 @@
         </div>
 
         <div
-          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+          class="reservation-items-content box-border desktop:w-[392px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
             class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full rounded-[8px]">
             <div
               class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
@@ -1093,10 +1094,10 @@
         </div>
 
         <div
-          class="reservation-items-content box-border w-[392px] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+          class="reservation-items-content box-border desktop:w-[392px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
           <div
             class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
-            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full h-full object-cover rounded-[8px]">
+            <img src="./src/img/reservation/img-1.jpg" alt="" class="w-full rounded-[8px]">
             <div
               class="w-[32px] h-[29px] px-[4px] py-[2px] rounded-[8px] bg-[#08237d] font-Estedad text-[14px] leading-[180%] font-500 text-white absolute top-2 left-2">
               ٪۲۰</div>
@@ -1151,13 +1152,13 @@
 
       <!--#region how-to-answers-->
       <div
-        class="how-to-answers w-full h-auto gap-4 flex mt-10 items-start mobile:relative desktop:static desktop:justify-center">
+        class="how-to-answers mobile:flex-col desktop:flex-row w-full h-auto gap-4 flex mt-10 items-start mobile:relative desktop:static desktop:justify-center">
 
         <!--#region how-to-answers-right-->
         <div
-          class="how-to-answers-right w-[300px] mobile:h-[600px] desktop:w-[366px] flex flex-col gap-y-[260px] desktop:gap-y-[427px]">
+          class="how-to-answers-right mobile:flex-row desktop:flex-col w-[300px] desktop:w-[366px] flex gap-y-[260px] desktop:gap-y-[427px]">
           <!-- step 1 -->
-          <div class="how-to-answers-right-first mobile:w-[220px] desktop:w-auto">
+          <div class="how-to-answers-right-first mobile:w-1-2 desktop:w-auto ">
             <!-- large outlined number -->
             <span
               class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
@@ -1182,8 +1183,34 @@
             </div>
           </div>
 
+          <!-- step 2 -->
+          <div class="how-to-answers-left-second mobile:w-1/2 desktop:w-auto mobile:visible desktop:hidden text-left">
+            <!-- large outlined number -->
+            <span
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mobile:mr-[100px] desktop:mr-[300px]"
+              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
+            <!-- step content -->
+            <div
+              class="how-to-answers-left-first-text flex gap-x-[16px] mobile:gap-x-0 -mt-10 desktop:mt-[-60px] flex-row-reverse">
+              <div
+                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center ">
+                <img src="./src/img/how-to/calendar-tick.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+              <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
+                <div class="flex gap-x-[4px]">
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
+                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">
+                    تحویل را تعیین کنید.</span>
+                </div>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید
+                </p>
+              </div>
+            </div>
+          </div>
           <!-- step 3 -->
-          <div class="how-to-answers-right-third mobile:w-[220px] desktop:w-auto">
+          <div class="how-to-answers-right-third mobile:w-[220px] desktop:w-auto mobile:hidden desktop:block">
             <!-- large outlined number -->
             <span
               class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-1.5 desktop:mr-[20px]"
@@ -1213,17 +1240,17 @@
 
         <!--#region how-to-answers-middle-->
         <div
-          class="how-to-answers-middle w-[300px] flex items-center justify-center desktop:order-nonen desktop:rotate-0 desktop:static mobile:rotate-90 mobile:absolute mobile:left-18 mobile:top-[0px]">
+          class="how-to-answers-middle flex items-center justify-center desktop:order-nonen desktop:rotate-0 mobile:rotate-90">
           <img src="./src/img/how-to/frama.png" alt=""
-            class="w-full max-w-[560px] mobile:w-[70%] desktop:w-[100%] desktop:max-w-[640px] h-auto object-contain mx-auto">
+            class="mobile:w-[50%] desktop:w-[80%] desktop:max-w-[640px] -my-8 object-contain mx-auto">
         </div>
         <!--#endregion how-to-answers-middle-->
 
         <!--#region how-to-answers-left-->
         <div
-          class="how-to-answers-left w-[300px] mobile:h-[600px] mobile:pr-6 desktop:w-[366px] flex flex-col gap-y-[260px] desktop:gap-y-[427px]">
+          class="how-to-answers-left mobile:flex-row w-[300px] mobile:pr-6 desktop:w-[366px] flex desktop:flex-col gap-y-[260px] desktop:gap-y-[427px]">
           <!-- step 2 -->
-          <div class="how-to-answers-left-second mobile:w-[200px] desktop:w-auto">
+          <div class="how-to-answers-left-second mobile:w-[200px] desktop:w-auto mobile:hidden desktop:block">
             <!-- large outlined number -->
             <span
               class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[128px] desktop:mr-[300px]"
@@ -1249,11 +1276,37 @@
             </div>
           </div>
 
-          <!-- step 4 -->
-          <div class="how-to-answers-right-fourth mobile:w-[200px] desktop:w-auto">
+          <!-- step 3 -->
+          <div class="how-to-answers-right-third mobile:w-1/2 desktop:w-auto mobile:block desktop:hidden">
             <!-- large outlined number -->
             <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[120px] desktop:mr-[280px]"
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mobile:-mr-[30px] desktop:mr-[20px]"
+              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
+            <!-- step content -->
+            <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
+              <div
+                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                <img src="./src/img/how-to/cards.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+              <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
+                <div class="flex gap-x-[4px]">
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
+                  <span
+                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره
+                    را پرداخت کنید.</span>
+                </div>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                  می توانید از طریق کیف پول آنلاین یا کارت های عضو شبکه شتاب هزینه اجاره را پرداخت کنید.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- step 4 -->
+          <div class="how-to-answers-right-fourth mobile:w-1/2 desktop:w-auto">
+            <!-- large outlined number -->
+            <span
+              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mobile:mr-[90px] desktop:mr-[280px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
             <!-- step content -->
             <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px] flex-row-reverse">
@@ -1282,7 +1335,7 @@
     </div>
     <!--#endregion how-to-->
     <!--#region common-Q-->
-    <div class="common-Q w-full desktop:w-[1224px] h-auto mx-auto mt-[64px] desktop:mt-[56px] px-4">
+    <div class="common-Q w-[95%] h-auto mx-auto mt-[64px] desktop:mt-[56px] px-4">
       <!--#region common-Q-title-->
       <div
         class="common-Q-title w-full desktop:w-[845px] h-auto mb-[16px] desktop:mb-[24px] flex flex-col gap-y-[16px] desktop:gap-y-[20px] mx-auto items-center">
@@ -1385,7 +1438,7 @@
     </div>
     <!--#endregion common-Q-->
     <!--#region comments-->
-    <div class="comments w-full desktop:w-[1224px] h-auto mx-auto mt-[40px] desktop:mt-[48px] px-4">
+    <div class="comments w-[95%] h-auto mx-auto mt-[40px] desktop:mt-[48px] px-4">
       <!--#region comments-title-->
       <div
         class="comments-title w-full desktop:w-[845px] h-auto mb-[16px] desktop:mb-[24px] flex flex-col gap-y-[16px] desktop:gap-y-[20px] mx-auto items-center">
@@ -1515,13 +1568,17 @@
     </div>
     <!--#endregion comments-->
     <!--#region thesis-->
-    <div class="thesis w-full desktop:w-[1224px] mx-auto px-4 mt-[48px]">
+    <div class="thesis w-[95%] mx-auto px-4 mt-[48px]">
       <!--#region thesis-title-->
-      <div
-        class="w-full flex flex-wrap gap-y-4 desktop:gap-y-0 h-auto desktop:h-[95px] justify-center desktop:justify-between items-end">
-        <div class="w-[95px]"></div>
-        <div
-          class="thesis-title w-fit desktop:w-[845px] h-auto desktop:h-[95px] mb-[16px] desktop:mb-[24px] desktop:ml-[56px] flex flex-col gap-y-[16px] desktop:gap-y-[20px] mx-auto items-center desktop:items-center">
+      <div class="w-[100%] mx-auto          
+          h-auto desktop:h-[48px]
+           mt-[16px] mb-[24px] desktop:mx-auto
+           flex flex-col desktop:flex-row gap-3
+           desktop:justify-between">
+        <div class="hidden desktop:block w-[183px] h-[48px]"></div>
+
+        <div class="thesis-title w-full desktop:w-[400px] h-[48px]
+                flex flex-col items-center justify-center desktop:justify-start gap-2">
           <p class="font-Estedad font-normal text-[20px] desktop:text-[24px] leading-[100%] text-[#5E5E5E]">مقالات ما
           </p>
           <div class="flex gap-x-[4px]">
@@ -1531,13 +1588,13 @@
               class="font-Estedad font-[700] text-[28px] desktop:text-[32px] leading-[140%] text-[#D79C10]">خودرو</span>
           </div>
         </div>
-        <div class="thesis-all w-fit desktop:w-auto flex justify-center desktop:justify-end mb-[24px]">
-          <a href="#"
-            class="flex w-fit h-fit gap-x-[8px] font-Estedad font-[600] leading-[180%] text-[16px] desktop:text-[18px] text-[#194BF0] items-center">
-            مشاهده همه
-            <img src="./src/img/thesis/arrow-left.svg" alt="" class="w-[18px] desktop:w-[20px]">
-          </a>
-        </div>
+        <button class="w-full desktop:w-[184px] h-[44px] desktop:h-[48px]
+             py-[4px] px-[16px] flex items-center justify-center gap-2
+             btn bg-transparent outline-0 shadow-none border-0
+             font-Estedad font-[600] text-[16px] desktop:text-[18px] leading-[180%] text-[#194BF0]">
+          مشاهده همه
+          <img src="./src/img/reservation/arrow-left.svg" alt="" class="w-[20px]">
+        </button>
       </div>
       <!--#endregion thesis-title-->
 
@@ -1634,10 +1691,11 @@
     <!--#endregion thesis-->
     <!--#region footer-->
     <footer
-      class="footer w-full desktop:w-[1224px] h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center">
+      class="footer relative w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center ">
+      <div class="absolute inset-0 bg-black/80"></div>
       <!--#region footer-top-->
       <div
-        class="footer-top w-full desktop:w-[1120px] mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
+        class="footer-top relative w-full desktop:w-[1120px] mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
         <div
           class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
           <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
@@ -1688,44 +1746,47 @@
       <!--#endregion footer-top-->
 
       <!--#region footer-bottom-->
-      <div class="footer-bottom w-full h-auto">
+      <div class="footer-bottom w-full relative h-auto">
         <div
-          class="footer-bottom-content w-full min-h-[168px] flex flex-col desktop:flex-row gap-y-8 desktop:gap-y-0 desktop:gap-x-[88px] px-0 desktop:px-[67.5px] mt-[16px] items-start desktop:items-center">
-          <div
-            class="footer-bottom-content-box w-full desktop:w-[572px] h-auto flex flex-col desktop:flex-row gap-y-[24px] desktop:gap-y-0 desktop:gap-x-[32px] items-start">
-            <div
-              class="footer-bottom-content-box-right w-full mobile:items-center desktop:w-[438px] h-auto flex desktop:flex-col mobile:flex-row mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start">
-              <img src="./src/img/footer/Logo.png" alt="" class="h-[50px] w-[150px]">
-              <p
-                class="font-Estedad font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
-                اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع خودروهای
-                صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
-              </p>
-            </div>
-            <div
-              class="footer-bottom-content-box-left w-full desktop:w-[134px] h-auto desktop:flex desktop:flex-col mobile:flex mobile:justify-center gap-y-[16px] desktop:gap-y-[32px] gap-x-[16px]">
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی آسان</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">سوالات متداول</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">درباره ما</p>
-            </div>
-          </div>
+  class="footer-bottom-content w-full flex mobile:flex-col desktop:flex-row gap-y-8 desktop:px-[67.5px] mt-[16px] items-center desktop:justify-evenly mobile:justify-center">
+  
+  <!-- Right box -->
+  <div
+    class="footer-bottom-content-box-right w-fit h-auto flex flex-col mobile:items-center mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start text-center desktop:text-left">
+    <img src="./src/img/footer/Logo.png" alt="" class="w-[150px] mx-auto desktop:mx-0">
+    <p
+      class="font-Estedad font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
+      اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع خودروهای
+      صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+    </p>
+  </div>
 
-          <div class="footer-bottom-content-send w-fit mx-auto desktop:w-[320px] h-auto flex flex-col gap-y-[8px]">
-            <h4 class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">خبرنامه
-            </h4>
+  <!-- Middle box -->
+  <div
+    class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
+    <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی آسان</p>
+    <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">سوالات متداول</p>
+    <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما</p>
+    <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">درباره ما</p>
+  </div>
 
-            <div
-              class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
-              <input type="email" placeholder="ایمیل خود را وارد کنید"
-                class="flex-1 h-full bg-transparent px-[12px] desktop:px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
-              <button
-                class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[13px] desktop:text-[14px] px-[12px] desktop:px-[16px] ml-[8px] py-[8px] desktop:py-[12px] h-[36px] desktop:h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
-                ارسال
-              </button>
-            </div>
-          </div>
-        </div>
+  <!-- Left box -->
+  <div
+    class="footer-bottom-content-send w-fit h-auto flex flex-col gap-y-[8px] items-center desktop:items-start text-center desktop:text-left">
+    <h4 class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">خبرنامه</h4>
+
+    <div
+      class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
+      <input type="email" placeholder="ایمیل خود را وارد کنید"
+        class="flex-1 h-full bg-transparent px-[12px] desktop:px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
+      <button
+        class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[13px] desktop:text-[14px] px-[12px] desktop:px-[16px] ml-[8px] py-[8px] desktop:py-[12px] h-[36px] desktop:h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
+        ارسال
+      </button>
+    </div>
+  </div>
+</div>
+
 
         <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
 

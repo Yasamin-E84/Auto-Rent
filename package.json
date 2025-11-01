@@ -11,7 +11,8 @@
   },
   "devDependencies": {
     "daisyui": "^5.1.13",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "vite-plugin-qrcode": "^0.3.0"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
