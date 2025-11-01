@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "tailwind": "npx tailwindcss -i ./src/css/main.css -o ./src/css/output.css --watch"
-
   },
   "devDependencies": {
     "daisyui": "^5.1.13",
@@ -16,6 +15,8 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "nouislider": "^15.8.1",
+    "preline": "^3.2.3",
     "tailwindcss": "^4.1.13"
   }
 }

@@ -1,3 +1,5 @@
+
+
 // Overlay open/close logic for global search
 (function () {
   const openBtn = document.getElementById('openSearch');
@@ -242,3 +244,40 @@ navToggle?.addEventListener('click', () => {
     if (e.target.closest('.js-dark'))  applyTheme('dark');  // 🌙 click → dark mode
     if (e.target.closest('.js-light')) applyTheme('light'); // ☀️ click → light mode
   });
+
+   const root   = document.getElementById('priceDual');
+  const minR   = document.getElementById('minR');
+  const maxR   = document.getElementById('maxR');
+  const minLbl = document.getElementById('minLabel');
+  const maxLbl = document.getElementById('maxLabel');
+
+  // constants
+  const MIN = +minR.min, MAX = +minR.max, GAP = 1_000_000;
+  const fa = new Intl.NumberFormat('fa-IR');
+
+  const pct = v => ((v - MIN) / (MAX - MIN)) * 100 + '%';
+
+  function update() {
+    let a = +minR.value, b = +maxR.value;
+
+    // keep handles from crossing
+    if (b - a < GAP) {
+      if (document.activeElement === minR) { a = b - GAP; minR.value = a; }
+      else { b = a + GAP; maxR.value = b; }
+    }
+
+    // paint filled segment via CSS vars
+    root.style.setProperty('--min', pct(+minR.value));
+    root.style.setProperty('--max', pct(+maxR.value));
+
+    // RTL labels like your screenshot
+    maxLbl.textContent = `تا ${fa.format(+maxR.value)} تومان`;
+    minLbl.textContent = `از ${fa.format(+minR.value)} تومان`;
+  }
+
+  ['input','change'].forEach(ev => {
+    minR.addEventListener(ev, update);
+    maxR.addEventListener(ev, update);
+  });
+
+  update(); // init
