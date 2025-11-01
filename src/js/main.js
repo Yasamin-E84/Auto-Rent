@@ -281,3 +281,43 @@ navToggle?.addEventListener('click', () => {
   });
 
   update(); // init
+
+
+   function updateDualRange() {
+    const minRange = document.getElementById('minRange');
+    const maxRange = document.getElementById('maxRange');
+    const fillTrack = document.getElementById('fillTrack');
+    const minLabel = document.getElementById('minLabel');
+    const maxLabel = document.getElementById('maxLabel');
+
+    let minVal = parseInt(minRange.value);
+    let maxVal = parseInt(maxRange.value);
+    const minGap = 2000000;
+
+    // Prevent overlap
+    if (maxVal - minVal <= minGap) {
+      if (event.target.id === 'minRange') minVal = maxVal - minGap;
+      else maxVal = minVal + minGap;
+    }
+
+    // Update labels (formatted)
+    minLabel.textContent = "از " + minVal.toLocaleString("fa-IR") + " تومان";
+    maxLabel.textContent = "تا " + maxVal.toLocaleString("fa-IR") + " تومان";
+
+    const rangeMin = parseInt(minRange.min);
+    const rangeMax = parseInt(minRange.max);
+    const percentMin = ((minVal - rangeMin) / (rangeMax - rangeMin)) * 100;
+    const percentMax = ((maxVal - rangeMin) / (rangeMax - rangeMin)) * 100;
+
+    // Update blue fill position
+    fillTrack.style.left = percentMin + "%";
+    fillTrack.style.width = (percentMax - percentMin) + "%";
+
+    // Update values back to sliders
+    minRange.value = minVal;
+    maxRange.value = maxVal;
+  }
+
+  // Initialize once
+  updateDualRange();
+  

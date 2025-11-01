@@ -327,11 +327,11 @@
 
 <body class="bg-[#F3F3F3]">
     <!--#region main-->
-    <main class="main desktop:min-[1000px] h-auto mx-auto ">
+    <main class="main h-auto mx-auto overflow-hiden">
         <!--#region header-->
         <div
-            class="header-container w-full h-[400px] mx-auto bg-[url('/src/img/plp/header/page-screen.png')] bg-cover bg-bottom">
-            <header class="w-full desktop:w-[1224px] h-[64px] desktop:h-[96px] bg-white
+            class="header-container w-full h-[400px] mx-auto bg-[url('/src/img/plp/header/bg-plp.jpg')] bg-cover bg-center">
+            <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
          mx-auto rounded-bl-[16px] rounded-br-[16px]
          px-4 desktop:px-[32px] flex items-center justify-between">
 
@@ -384,7 +384,7 @@
                     </div>
 
                     <!-- login btn -->
-                    <button class="hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white rounded-[8px] py-[4px] px-[16px] gap-x-[8px]
+                    <button class="mobile:hidden desktop:flex border-none bg-[#194BF0] font-Estedad text-[15.9px] text-white rounded-[8px] py-[4px] px-[16px] gap-x-[8px]
              hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">
                         ورود / ثبت‌نام
                     </button>
@@ -407,26 +407,25 @@
                             <img src="./src/img/header/dark mode.svg" alt=""
                                 class="absolute inset-0 w-full h-full object-cover">
                         </button>
-
-                        <a
-                            class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
-                            ورود / ثبت‌نام
-                        </a>
                     </div>
                 </div>
             </header>
 
-
             <!-- #region hamburger -->
-            <div id="mobileNav" class="desktop:hidden w-full max-w-[1224px] mx-auto px-4 pt-2 pb-4
+            <div id="mobileNav" class="desktop:hidden w-full max-w-[1224px] mx-auto px-4 pt-2 pb-4 relative
               hidden">
-                <div class="rounded-[12px] border border-[#E5E7EB] bg-white p-3 z-10 absolute">
+                <div
+                    class="rounded-[12px] w-[90%] right-1/2 translate-x-[50%] border border-[#E5E7EB] bg-white p-3 absolute z-4">
                     <div class="flex flex-col gap-2 font-Estedad text-[#353535] text-[15px]">
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">رزرو خودرو</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+                        <a
+                            class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
+                            ورود / ثبت‌نام
+                        </a>
                     </div>
                 </div>
             </div>
@@ -505,21 +504,211 @@
             </section>
             <!-- #region banner -->
             <div
-                class="container-body w-fit desktop:absolute desktop:top-55 desktop:right-136 mobile:absolute mobile:top-54 mobile:right-39">
+                class="container-body w-fit absolute right-1/2 translate-x-[50%] top-[20%] flex flex-col justify-center items-center">
+                <span class="text-[#FDB713] font-700 text-[32px] leading-[80%] font-Estedad">اجاره خودرو</span>
                 <div
-                    class="flex justify-center items-center w-fit gap-x-[6px] font-Estedad text-[14px] leading-[180%] text-[#353535]">
+                    class="flex justify-center items-center w-fit gap-x-[6px] font-Estedad text-[14px] leading-[10%] text-[#353535]">
                     اتورنت
                     <img src="./src/img/plp/header/arrow-left.svg" alt="">
                     لیست خودروهای اجاره ای
                 </div>
             </div>
-            <!-- #region banner -->
+            <!-- #endregion banner -->
         </div>
         <!--#endregion header-->
         <!--#region cars-->
-        <div class="cars w-full h-auto mobile:flex mobile:flex-col gap-[24px] desktop:flex">
+        <div
+            class="cars w-full h-auto flex mobile:flex-col desktop:flex-row mobile:gap-[24px] desktop:gap-0 mt-[56px] items-start justify-around">
             <!--#region cars-aside-desktop-->
-            <div class="cars-aside mobile:hidden">
+            <div class="cars-aside mobile:hidden desktop:flex flex-col desktop:w-[24%]">
+                <!-- Mobile Filter Panel -->
+                <div class="w-full max-w-[360px] mx-auto bg-white rounded-[24px] p-4 flex flex-col gap-6 shadow-md"
+                    dir="rtl">
+
+                    <!-- Accordion Item 1: قیمت اجاره خودرو -->
+                    <div class="accordion-item border-b border-gray-200 pb-3">
+                        <button
+                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none"
+                            onclick="toggleAccordion(1)">
+                            <span>قیمت اجاره خودرو</span>
+                            <svg id="icon-1" xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-[#111827] transition-transform duration-300" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div id="panel-1" class="accordion-panel mt-3 space-y-3">
+                            <div class="w-full max-w-[360px] mx-auto bg-white rounded-[24px] p-4 shadow-md" dir="rtl">
+                                <div class="mb-4">
+                                    <h3 class="font-Estedad font-[600] text-[#111827] text-[15px] mb-2">قیمت اجاره خودرو
+                                    </h3>
+
+                                    <!-- Labels -->
+                                    <div
+                                        class="flex items-center justify-between text-[#111827] font-Estedad text-[13px] mb-2">
+                                        <span id="maxLabel">تا ۶۰,۰۰۰,۰۰۰ تومان</span>
+                                        <span id="minLabel">از ۶,۰۰۰,۰۰۰ تومان</span>
+                                    </div>
+
+                                    <!-- Dual Range -->
+                                    <div class="relative w-full h-6" dir="ltr">
+                                        <!-- Background track -->
+                                        <div
+                                            class="absolute top-1/2 -translate-y-1/2 left-0 w-full h-[4px] bg-gray-300 rounded-full">
+                                        </div>
+
+                                        <!-- Blue filled section -->
+                                        <div id="fillTrack"
+                                            class="absolute top-1/2 -translate-y-1/2 h-[4px] bg-[#194BF0] rounded-full">
+                                        </div>
+
+                                        <!-- Min Handle -->
+                                        <input id="minRange" type="range" min="6000000" max="60000000" step="1000000"
+                                            value="6000000"
+                                            class="absolute w-full appearance-none bg-transparent pointer-events-auto accent-[#194BF0]"
+                                            oninput="updateDualRange()" />
+
+                                        <!-- Max Handle -->
+                                        <input id="maxRange" type="range" min="6000000" max="60000000" step="1000000"
+                                            value="60000000"
+                                            class="absolute w-full appearance-none bg-transparent pointer-events-auto accent-[#194BF0]"
+                                            oninput="updateDualRange()" />
+
+                                        <style>
+                                            /* Custom thumb styling */
+                                            input[type=range]::-webkit-slider-thumb {
+                                                appearance: none;
+                                                height: 18px;
+                                                width: 18px;
+                                                border-radius: 50%;
+                                                background-color: #194BF0;
+                                                cursor: pointer;
+                                                position: relative;
+                                                z-index: 3;
+                                            }
+
+                                            input[type=range]::-moz-range-thumb {
+                                                height: 18px;
+                                                width: 18px;
+                                                border-radius: 50%;
+                                                background-color: #194BF0;
+                                                cursor: pointer;
+                                                position: relative;
+                                                z-index: 3;
+                                            }
+
+                                            input[type=range] {
+                                                z-index: 2;
+                                                height: 20px;
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 2: برند خودرو -->
+                    <div class="accordion-item border-b border-gray-200 pb-3">
+                        <button
+                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none"
+                            onclick="toggleAccordion(2)">
+                            <span>برند خودرو</span>
+                            <svg id="icon-2" xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-[#111827] transition-transform duration-300" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div id="panel-2" class="accordion-panel hidden mt-3 space-y-2">
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="checkbox" checked class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره
+                                بنز</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="checkbox" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره بی‌ام‌و</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="checkbox" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره پژو</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="checkbox" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره پورشه</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="checkbox" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره کیا</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="checkbox" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره هیوندای</label>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 3: اجاره خودرو براساس نیاز شما -->
+                    <div class="accordion-item">
+                        <button
+                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none"
+                            onclick="toggleAccordion(3)">
+                            <span>اجاره خودرو براساس نیاز شما</span>
+                            <svg id="icon-3" xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-[#111827] transition-transform duration-300" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div id="panel-3" class="accordion-panel hidden mt-3 space-y-2">
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="radio" name="rentType" checked class="accent-[#194BF0] w-[16px] h-[16px]">
+                                اجاره خودرو با راننده</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="radio" name="rentType" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره خودرو
+                                بدون راننده</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="radio" name="rentType" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره خودرو
+                                ایرانی</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="radio" name="rentType" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره خودرو
+                                لوکس</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="radio" name="rentType" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره خودرو
+                                تشریفات</label>
+                            <label class="flex items-center gap-2 font-Estedad text-[14px] text-[#111827]"><input
+                                    type="radio" name="rentType" class="accent-[#194BF0] w-[16px] h-[16px]"> اجاره ماشین
+                                عروس</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion + Dual Range JS -->
+                <script>
+                    function toggleAccordion(id) {
+                        document.querySelectorAll('.accordion-panel').forEach((panel, i) => {
+                            const num = i + 1;
+                            const icon = document.getElementById(`icon-${num}`);
+                            if (num === id) {
+                                panel.classList.toggle('hidden');
+                                icon.classList.toggle('rotate-180');
+                            } else {
+                                panel.classList.add('hidden');
+                                icon.classList.remove('rotate-180');
+                            }
+                        });
+                    }
+
+                    function updateRange() {
+                        const minRange = document.getElementById('minRange');
+                        const maxRange = document.getElementById('maxRange');
+                        const rangeTrack = document.getElementById('rangeTrack');
+                        const min = parseInt(minRange.min), max = parseInt(minRange.max);
+                        const minVal = Math.min(parseInt(minRange.value), parseInt(maxRange.value) - 1000000);
+                        const maxVal = Math.max(parseInt(maxRange.value), parseInt(minRange.value) + 1000000);
+                        const percent1 = ((minVal - min) / (max - min)) * 100;
+                        const percent2 = ((maxVal - min) / (max - min)) * 100;
+
+                        rangeTrack.style.left = percent1 + "%";
+                        rangeTrack.style.width = (percent2 - percent1) + "%";
+                    }
+                    updateRange();
+                </script>
 
             </div>
             <!--#endregion cars-aside-desktop-->
@@ -528,7 +717,7 @@
                 class="cars-aside desktop:hidden mobile:w-full mobile:h-auto mobile:px-[12px] mobile:py-[16px] mobile:flex mobile:justify-center mobile:items-center">
                 <div class="dropdown dropdown-end" dir="rtl">
                     <div tabindex="0" role="button"
-                        class="btn bg-[#194BF0] text-white font-Estedad font-Estedad font-[500] text-[16px] leading-[180%]">
+                        class="btn bg-[#194BF0] text-white font-Estedad font-Estedad font-[500]  mobile:text-[12px] desktop:text-[16px] leading-[180%]">
                         قیمت اجاره خودرو
                     </div>
                     <!-- Panel -->
@@ -557,10 +746,11 @@
                 </div>
                 <div class="cars-brand dropdown dropdown-center">
                     <div tabindex="0" role="button"
-                        class="btn m-1 bg-[#194BF0] text-white font-Estedad font-[500] text-[16px] leading-[180%]">برند
+                        class="btn m-1 bg-[#194BF0] text-white font-Estedad font-[500] mobile:text-[12px] desktop:text-[16px] leading-[180%]">
+                        برند
                         خودرو</div>
                     <ul tabindex="-1"
-                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm flex flex-col justify-center items-center">
+                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm flex flex-col justify-center items-center">
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox" checked="checked"
@@ -601,10 +791,11 @@
                 </div>
                 <div class="cars-needs dropdown dropdown-center">
                     <div tabindex="0" role="button"
-                        class="btn m-1 bg-[#194BF0] text-white font-Estedad font-[500] text-[16px] leading-[180%]">اجاره
+                        class="btn m-1 bg-[#194BF0] text-white font-Estedad font-[500]  mobile:text-[12px] desktop:text-[16px] leading-[180%]">
+                        اجاره
                         خودرو براساس نیاز شما</div>
                     <ul tabindex="-1"
-                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm flex flex-col justify-center items-center">
+                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 box-border shadow-sm flex flex-col justify-center items-center">
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="radio" name="radio-12" checked="checked"
@@ -646,16 +837,246 @@
             </div>
             <!--#endregion cars-aside-mobile-->
             <!--#region cars-main-->
-            <div class="cars-main"></div>
+            <div class="cars-main mobile:w-[95%] flex flex-col justify-center items-center desktop:w-[74%]">
+                <!--#region cars-filter-->
+                <div
+                    class="cars-filter w-[80%] flex mobile:justify-between desktop:justify-center desktop:gap-x-[24px] items-center mb-[24px]">
+                    <div
+                        class="calender-filter flex mobile:w-1/2 desktop:w-3/4 justify-between items-center gap-x-[8px] p-[12px] border-1 border-[#D7D7D7] rounded-[8px]">
+                        <span class="font-Estedad text-[14px] text-[#353535] leading-[180%]">تقویم قیمتی </span>
+                        <img src="./src/img/plp/cars/arrow-down-outline.svg" alt="">
+                    </div>
+                    <div
+                        class="sort-filter flex mobile:w-1/2 desktop:w-1/4 justify-between items-center gap-x-[8px] p-[12px] border-1 border-[#D7D7D7] rounded-[8px]">
+                        <span class="font-Estedad text-[14px] text-[#353535] leading-[180%]">مرتب سازی</span>
+                        <img src="./src/img/plp/cars/arrow-down-outline.svg" alt="">
+                    </div>
+                </div>
+                <!--#endregion cars-filter-->
+                <!-- #region cars-cards -->
+                <div class="reservation-items w-full flex flex-wrap gap-[24px] mx-auto items-center justify-center rtl"
+                    dir="rtl">
+
+                    <!-- Card 1 -->
+                    <div
+                        class="reservation-items-content box-border desktop:w-[288px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+                        <div
+                            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                            <img src="./src/img/reservation/img-1.jpg" alt="اجاره بنز E450 سدان"
+                                class="w-full rounded-[8px]">
+                        </div>
+                        <div class="reservation-items-content-title w-full flex flex-col gap-y-[8px]">
+                            <h6 class="font-Estedad font-[700] text-[16px] leading-[140%] text-[#0c0c0c]">
+                                اجاره بنز E۴۵۰ سدان
+                            </h6>
+                            <span class="font-Estedad font-[400] text-[12px] leading-[180%] text-[#494949]">مدل:
+                                ۲۰۱۶</span>
+                        </div>
+                        <div class="reservation-items-content-price w-full flex flex-col gap-y-[8px]">
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                            </div>
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                            </div>
+                        </div>
+                        <div class="reservation-items-garauntee w-full flex justify-between">
+                            <span class="font-Estedad font-[500] text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                            <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+                        </div>
+                        <button
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            درخواست رزرو
+                        </button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="reservation-items-content box-border desktop:w-[288px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+                        <div
+                            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                            <img src="./src/img/reservation/img-2.jpg" alt="اجاره بنز SL کروک"
+                                class="w-full rounded-[8px]">
+                        </div>
+                        <div class="reservation-items-content-title flex flex-col gap-y-[8px]">
+                            <h6 class="font-Estedad font-[700] text-[16px] text-[#0c0c0c]">اجاره بنز SL کروک</h6>
+                            <span class="font-Estedad text-[12px] text-[#494949]">مدل: ۲۰۱۶</span>
+                        </div>
+                        <div class="reservation-items-content-price flex flex-col gap-y-[8px]">
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                            </div>
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                            </div>
+                        </div>
+                        <div class="reservation-items-garauntee w-full flex justify-between">
+                            <span class="font-Estedad text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                            <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+                        </div>
+                        <button
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            درخواست رزرو
+                        </button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="reservation-items-content box-border desktop:w-[288px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+                        <div
+                            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                            <img src="./src/img/reservation/img-3.jpg" alt="اجاره بنز S500"
+                                class="w-full rounded-[8px]">
+                        </div>
+                        <div class="reservation-items-content-title flex flex-col gap-y-[8px]">
+                            <h6 class="font-Estedad font-[700] text-[16px] text-[#0c0c0c]">اجاره بنز S۵۰۰</h6>
+                            <span class="font-Estedad text-[12px] text-[#494949]">مدل: ۲۰۱۶</span>
+                        </div>
+                        <div class="reservation-items-content-price flex flex-col gap-y-[8px]">
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                            </div>
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                            </div>
+                        </div>
+                        <div class="reservation-items-garauntee flex justify-between">
+                            <span class="font-Estedad text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                            <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+                        </div>
+                        <button
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            درخواست رزرو
+                        </button>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="reservation-items-content box-border desktop:w-[288px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+                        <div
+                            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                            <img src="./src/img/reservation/img-4.jpg" alt="اجاره بنز CLS" class="w-full rounded-[8px]">
+                        </div>
+                        <div class="reservation-items-content-title flex flex-col gap-y-[8px]">
+                            <h6 class="font-Estedad font-[700] text-[16px] text-[#0c0c0c]">اجاره بنز CLS</h6>
+                            <span class="font-Estedad text-[12px] text-[#494949]">مدل: ۲۰۱۶</span>
+                        </div>
+                        <div class="reservation-items-content-price flex flex-col gap-y-[8px]">
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                            </div>
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                            </div>
+                        </div>
+                        <div class="reservation-items-garauntee flex justify-between">
+                            <span class="font-Estedad text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                            <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+                        </div>
+                        <button
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            درخواست رزرو
+                        </button>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="reservation-items-content box-border desktop:w-[288px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+                        <div
+                            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                            <img src="./src/img/reservation/img-5.jpg" alt="اجاره بنز E350 کروک ۲۰۱۳"
+                                class="w-full rounded-[8px]">
+                        </div>
+                        <div class="reservation-items-content-title flex flex-col gap-y-[8px]">
+                            <h6 class="font-Estedad font-[700] text-[16px] text-[#0c0c0c]">اجاره بنز E۳۵۰ کروک ۲۰۱۳</h6>
+                            <span class="font-Estedad text-[12px] text-[#494949]">مدل: ۲۰۱۳</span>
+                        </div>
+                        <div class="reservation-items-content-price flex flex-col gap-y-[8px]">
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                            </div>
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                            </div>
+                        </div>
+                        <div class="reservation-items-garauntee flex justify-between">
+                            <span class="font-Estedad text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                            <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+                        </div>
+                        <button
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            درخواست رزرو
+                        </button>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div
+                        class="reservation-items-content box-border desktop:w-[288px] mobile:w-[95%] h-auto p-[16px] flex flex-col gap-y-[16px] border border-[#d7d7d7] bg-white rounded-[16px]">
+                        <div
+                            class="reservation-items-content-img w-full h-[225px] rounded-[12px] p-[8px] border border-[#f3f3f3] relative overflow-hidden">
+                            <img src="./src/img/reservation/img-6.jpg" alt="اجاره خودرو بنز E450"
+                                class="w-full rounded-[8px]">
+                        </div>
+                        <div class="reservation-items-content-title flex flex-col gap-y-[8px]">
+                            <h6 class="font-Estedad font-[700] text-[16px] text-[#0c0c0c]">اجاره خودرو بنز E۴۵۰</h6>
+                            <span class="font-Estedad text-[12px] text-[#494949]">مدل: ۲۰۱۶</span>
+                        </div>
+                        <div class="reservation-items-content-price flex flex-col gap-y-[8px]">
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">روزانه</span>
+                            </div>
+                            <div class="rounded-[8px] p-[8px] bg-[#f3f3f3] flex justify-between items-center">
+                                <span class="font-Estedad text-[12px] text-[#212121]">از ۱ تا ۳۰ روز:</span>
+                                <span class="font-Estedad font-[700] text-[16px] text-[#194BF0]">۸,۵۰۰,۰۰۰</span>
+                                <span class="font-Estedad text-[12px] text-[#494949]">ماهانه</span>
+                            </div>
+                        </div>
+                        <div class="reservation-items-garauntee flex justify-between">
+                            <span class="font-Estedad text-[12px] text-[#212121]">مبلغ ضمانت:</span>
+                            <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
+                        </div>
+                        <button
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            درخواست رزرو
+                        </button>
+                    </div>
+
+                </div>
+                <!-- #endregion cars-cards -->
+
+            </div>
             <!--#endregion cars-main-->
         </div>
         <!--#endregion cars-->
         <!--#region footer-->
         <footer
-            class="footer w-full desktop:w-[1224px] h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(/src/img/footer/bg.png)] bg-cover bg-center">
+            class="footer relative w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center ">
+            <div class="absolute inset-0 bg-black/80"></div>
             <!--#region footer-top-->
             <div
-                class="footer-top w-full desktop:w-[1120px] mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
+                class="footer-top relative w-full mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
                 <div
                     class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
                     <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
@@ -712,40 +1133,41 @@
             <!--#endregion footer-top-->
 
             <!--#region footer-bottom-->
-            <div class="footer-bottom w-full h-auto">
+            <div class="footer-bottom w-full relative h-auto">
                 <div
-                    class="footer-bottom-content w-full min-h-[168px] flex flex-col desktop:flex-row gap-y-8 desktop:gap-y-0 desktop:gap-x-[88px] px-0 desktop:px-[67.5px] mt-[16px] items-start desktop:items-center">
+                    class="footer-bottom-content w-full flex mobile:flex-col desktop:flex-row gap-y-8 desktop:px-[67.5px] mt-[16px] items-center desktop:justify-evenly mobile:justify-center">
+
+                    <!-- Right box -->
                     <div
-                        class="footer-bottom-content-box w-full desktop:w-[572px] h-auto flex flex-col desktop:flex-row gap-y-[24px] desktop:gap-y-0 desktop:gap-x-[32px] items-start">
-                        <div
-                            class="footer-bottom-content-box-right w-full mobile:items-center desktop:w-[438px] h-auto flex desktop:flex-col mobile:flex-row mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start">
-                            <img src="./src/img/footer/Logo.png" alt="" class="h-[50px] w-[150px]">
-                            <p
-                                class="font-Estedad font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
-                                اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از
-                                انواع خودروهای
-                                صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
-                            </p>
-                        </div>
-                        <div
-                            class="footer-bottom-content-box-left w-full desktop:w-[134px] h-auto desktop:flex desktop:flex-col mobile:flex mobile:justify-center gap-y-[16px] desktop:gap-y-[32px] gap-x-[16px]">
-                            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی
-                                آسان</p>
-                            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">سوالات
-                                متداول</p>
-                            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس
-                                با ما</p>
-                            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">درباره
-                                ما</p>
-                        </div>
+                        class="footer-bottom-content-box-right w-fit h-auto flex flex-col mobile:items-center mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start text-center desktop:text-left">
+                        <img src="./src/img/footer/Logo.png" alt="" class="w-[150px] mx-auto desktop:mx-0">
+                        <p
+                            class="font-Estedad font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
+                            اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع
+                            خودروهای
+                            صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+                        </p>
                     </div>
 
+                    <!-- Middle box -->
                     <div
-                        class="footer-bottom-content-send w-fit mx-auto desktop:w-[320px] h-auto flex flex-col gap-y-[8px]">
+                        class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی
+                            آسان</p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">سوالات
+                            متداول</p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما
+                        </p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">درباره ما
+                        </p>
+                    </div>
+
+                    <!-- Left box -->
+                    <div
+                        class="footer-bottom-content-send w-fit h-auto flex flex-col gap-y-[8px] items-center desktop:items-start text-center desktop:text-left">
                         <h4
                             class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">
-                            خبرنامه
-                        </h4>
+                            خبرنامه</h4>
 
                         <div
                             class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
@@ -758,6 +1180,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
 

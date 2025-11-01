@@ -10,5 +10,30 @@
   --font-Estedad: Estedad;
   --breakpoint-desktop: 1000px;
   --breakpoint-mobile: 340px;
+  --breakpoint-how: 1200px;
 }
+input[type=range] {
+    z-index: 2;
+    height: 20px;
+  }
 
+  input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #194BF0;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #194BF0;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
