@@ -2602,6 +2602,9 @@
   .bg-\[url\(\'\/src\/img\/plp\/header\/bg-plp\.jpg\'\)\] {
     background-image: url('/src/img/plp/header/bg-plp.jpg');
   }
+  .bg-\[url\(\'https\:\/\/i\.pinimg\.com\/736x\/4d\/96\/4a\/4d964ab7a8c34a3c54d021de4fe0da04\.jpg\'\)\] {
+    background-image: url('https://i.pinimg.com/736x/4d/96/4a/4d964ab7a8c34a3c54d021de4fe0da04.jpg');
+  }
   .bg-\[url\(\/src\/img\/footer\/bg\.png\)\] {
     background-image: url(/src/img/footer/bg.png);
   }
