@@ -321,3 +321,5 @@ navToggle?.addEventListener('click', () => {
   // Initialize once
   updateDualRange();
   
+
+  
