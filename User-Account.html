@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto-rent-PLP</title>
+    <title>Auto-rent-Account</title>
     <link rel="stylesheet" href="./src/css/output.css">
     <style id="force-dark-class">
         .range::-webkit-slider-runnable-track {
@@ -325,12 +325,12 @@
     </style>
 </head>
 
-<body class="bg-[#F3F3F3]">
+<body class="bg-[#F3F3F3] pb-8">
     <!--#region main-->
     <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden">
         <!--#region header-->
         <div
-            class="header-container w-full mx-auto bg-[url('https://i.pinimg.com/736x/4d/96/4a/4d964ab7a8c34a3c54d021de4fe0da04.jpg')] bg-cover bg-center">
+            class="header-container w-full mx-auto">
             <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
          mx-auto rounded-bl-[16px] rounded-br-[16px]
          px-4 desktop:px-[32px] flex items-center justify-between">
@@ -505,29 +505,347 @@
         </div>
         <!--#endregion header-->
         <!--#region dashboard-->
-        <div class="dashboard w-[95%] flex mobile:flex-col desktop:flex-row">
+        <div class="dashboard w-[95%] flex mobile:flex-col desktop:flex-row justify-center items-center gap-[24px] mx-auto mt-[56px]">
+            <!-- hidden radios control which tab is visible -->
+            <input id="tab-1-radio" type="radio" name="dashboard-tabs" class="hidden" checked>
+            <input id="tab-2-radio" type="radio" name="dashboard-tabs" class="hidden">
+            <input id="tab-3-radio" type="radio" name="dashboard-tabs" class="hidden">
+            <input id="tab-4-radio" type="radio" name="dashboard-tabs" class="hidden">
+            <input id="tab-5-radio" type="radio" name="dashboard-tabs" class="hidden">
+            <input id="tab-6-radio" type="radio" name="dashboard-tabs" class="hidden">
+            <input id="tab-7-radio" type="radio" name="dashboard-tabs" class="hidden">
+            <input id="tab-8-radio" type="radio" name="dashboard-tabs" class="hidden">
+
             <!--#region dashboard-mobile-aside-->
-            <div class="dashboard-mobile-aside mobile:visible desktop:hidden">
-                <div class="drawer drawer-end">
-                    <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
+            <div class="dashboard-mobile-aside mobile:visible desktop:hidden fixed bottom-4 left-4 z-50">
+                <div class="drawer drawer-start">
+                    <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content">
-                        <!-- Page content here -->
-                        <label for="my-drawer-5" class="drawer-button btn btn-primary">Open drawer</label>
+                        <!-- Fixed open button -->
+                        <label for="dashboard-drawer" class="btn btn-primary bg-[#194BF0] font-Estedad rounded-4xl">منو</label>
                     </div>
-                    <div class="drawer-side">
-                        <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
-                        <ul class="menu bg-base-200 min-h-full w-80 p-4">
-                            <!-- Sidebar content here -->
-                            <li><a>Sidebar Item 1</a></li>
-                            <li><a>Sidebar Item 2</a></li>
+
+                    <div class="drawer-side z-40">
+                        <label for="dashboard-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul
+                            class="menu w-[85%] bg-white flex flex-col gap-2 justify-start items-start rounded-tl-2xl rounded-bl-2xl top-0 right-0 p-4">
+                            <!-- use <label for=radio> so clicking switches tab without JS -->
+                            <li class="w-full"><label
+                                    class="btn btn-ghost tab-item w-full h-auto flex flex-row gap-x-[16px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                                    for="tab-1-radio">
+                                    <img src="./src/img/user/header/profile.png" alt="" class="rounded-4xl w-[44px]">
+                                    <div class="flex flex-col gap-[8px]">
+                                        <h4 class="font-Estedad font-700 text-[16px] leading-[100%] text-[#353535]">
+                                            اولدوز بهاور</h4>
+                                        <span
+                                            class="font-Estedad font-700 text-[16px] leading-[100%] text-[#353535]">۶۷۸۹
+                                            ۳۴۵ ۰۹۱۲</span>
+                                    </div>
+                                    <img src="./src/img/user/dashboard/edit-outline.svg" alt="">
+                                </label>
+                            </li>
+                            <li class="w-full "><label
+                                    class="btn btn-ghost tab-item w-full justify-between h-auto flex flex-row gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                                    for="tab-2-radio">
+                                    <img src="./src/img/user/dashboard/empty-wallet.svg" alt="">
+                                    <span
+                                        class="text-[#494949] w-full text-[13px] text-right leading-[100%] font-500 font-Estedad">کیف
+                                        پول</span>
+                                    <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                                </label>
+                            </li>
+                            <li class="w-full"><label
+                                    class="btn btn-ghost tab-item w-full justify-between h-auto flex flex-row gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                                    for="tab-3-radio">
+                                    <img src="./src/img/user/dashboard/reserve.svg" alt="">
+                                    <span
+                                        class="text-[#494949] w-full text-[13px] text-right leading-[100%] font-500 font-Estedad">رزروهای
+                                        من</span>
+                                    <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                                </label>
+                            </li>
+                            <li class="w-full"><label
+                                    class="btn btn-ghost tab-item w-full justify-between h-auto flex flex-row gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                                    for="tab-4-radio">
+                                    <img src="./src/img/user/dashboard/location.svg" alt="">
+                                    <span
+                                        class="text-[#494949] text-[13px] text-right w-full leading-[100%] font-500 font-Estedad">رزروهای
+                                        من</span>
+                                    <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                                </label>
+                            </li>
+                            <li class="w-full"><label
+                                    class="btn btn-ghost tab-item w-full h-auto flex flex-row justify-between gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                                    for="tab-5-radio">
+                                    <img src="./src/img/user/dashboard/card-pos.svg" alt="">
+                                    <span
+                                        class="text-[#494949] text-[13px] text-right leading-[100%] font-500 w-full font-Estedad">پرداخت‌های
+                                        من</span>
+                                    <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                                </label>
+                            </li>
+                            <li class="w-full"><label
+                                    class="btn btn-ghost tab-item w-full h-auto flex flex-row gap-x-[8px] px-[24px] justify-between py-[16px] rounded-[16px] bg-white"
+                                    for="tab-6-radio">
+                                    <img src="./src/img/user/dashboard/Comment-outline.svg" alt="">
+                                    <span
+                                        class="text-[#494949] text-[13px] text-right leading-[100%] w-full font-500 font-Estedad">نظرات
+                                        من</span>
+                                    <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                                </label>
+                            </li>
+
+                            <li class="w-full"><label
+                                    class="btn btn-ghost tab-item w-full h-auto flex flex-row gap-x-[8px] justify-between px-[24px] py-[16px] rounded-[16px] bg-white"
+                                    for="tab-7-radio">
+                                    <img src="./src/img/user/dashboard/logout.svg" alt="">
+                                    <span
+                                        class="text-[#FF2F28] text-[13px] w-full text-right leading-[100%] font-500 font-Estedad">جورخ</span>
+                                </label>
+                            </li>
                         </ul>
+                        <div class="divider"></div>
+                        <label for="dashboard-drawer" class="btn btn-ghost w-full">بستن منو</label>
                     </div>
                 </div>
             </div>
             <!--#endregion dashboard-mobile-aside-->
+
             <!--#region dashboard-desktop-aside-->
-            <div class="dashboard-desktop-aside mobile:hidden desktop:visible"></div>
+            <div class="dashboard-desktop-aside mobile:hidden desktop:flex h-auto">
+                <h3 class="text-lg font-bold mb-3">بخش‌ها</h3>
+                <ul class="menu w-[100%]flex flex-col gap-2 justify-start items-start">
+                    <!-- use <label for=radio> so clicking switches tab without JS -->
+                    <li class="w-full"><label
+                            class="btn btn-ghost tab-item w-full h-auto flex flex-row gap-x-[16px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                            for="tab-1-radio">
+                            <img src="./src/img/user/header/profile.png" alt="" class="rounded-4xl w-[44px]">
+                            <div class="flex flex-col gap-[8px]">
+                                <h4 class="font-Estedad font-700 text-[16px] leading-[100%] text-[#353535]">
+                                    اولدوز بهاور</h4>
+                                <span class="font-Estedad font-700 text-[16px] leading-[100%] text-[#353535]">۶۷۸۹
+                                    ۳۴۵ ۰۹۱۲</span>
+                            </div>
+                            <img src="./src/img/user/dashboard/edit-outline.svg" alt="">
+                        </label>
+                    </li>
+                    <li class="w-full "><label
+                            class="btn btn-ghost tab-item w-full justify-between h-auto flex flex-row gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                            for="tab-2-radio">
+                            <img src="./src/img/user/dashboard/empty-wallet.svg" alt="">
+                            <span
+                                class="text-[#494949] w-full text-[13px] text-right leading-[100%] font-500 font-Estedad">کیف
+                                پول</span>
+                            <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                        </label>
+                    </li>
+                    <li class="w-full"><label
+                            class="btn btn-ghost tab-item w-full justify-between h-auto flex flex-row gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                            for="tab-3-radio">
+                            <img src="./src/img/user/dashboard/reserve.svg" alt="">
+                            <span
+                                class="text-[#494949] w-full text-[13px] text-right leading-[100%] font-500 font-Estedad">رزروهای
+                                من</span>
+                            <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                        </label>
+                    </li>
+                    <li class="w-full"><label
+                            class="btn btn-ghost tab-item w-full justify-between h-auto flex flex-row gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                            for="tab-4-radio">
+                            <img src="./src/img/user/dashboard/location.svg" alt="">
+                            <span
+                                class="text-[#494949] text-[13px] text-right w-full leading-[100%] font-500 font-Estedad">رزروهای
+                                من</span>
+                            <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                        </label>
+                    </li>
+                    <li class="w-full"><label
+                            class="btn btn-ghost tab-item w-full h-auto flex flex-row justify-between gap-x-[8px] px-[24px] py-[16px] rounded-[16px] bg-white"
+                            for="tab-5-radio">
+                            <img src="./src/img/user/dashboard/card-pos.svg" alt="">
+                            <span
+                                class="text-[#494949] text-[13px] text-right leading-[100%] font-500 w-full font-Estedad">پرداخت‌های
+                                من</span>
+                            <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                        </label>
+                    </li>
+                    <li class="w-full"><label
+                            class="btn btn-ghost tab-item w-full h-auto flex flex-row gap-x-[8px] px-[24px] justify-between py-[16px] rounded-[16px] bg-white"
+                            for="tab-6-radio">
+                            <img src="./src/img/user/dashboard/Comment-outline.svg" alt="">
+                            <span
+                                class="text-[#494949] text-[13px] text-right leading-[100%] w-full font-500 font-Estedad">نظرات
+                                من</span>
+                            <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
+                        </label>
+                    </li>
+
+                    <li class="w-full"><label
+                            class="btn btn-ghost tab-item w-full h-auto flex flex-row gap-x-[8px] justify-between px-[24px] py-[16px] rounded-[16px] bg-white"
+                            for="tab-7-radio">
+                            <img src="./src/img/user/dashboard/logout.svg" alt="">
+                            <span
+                                class="text-[#FF2F28] text-[13px] w-full text-right leading-[100%] font-500 font-Estedad">جورخ</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
             <!--#endregion dashboard-desktop-aside-->
+
+            <!--#region dashboard-contents-->
+            <div class="dashboard-contents flex-1 w-full flex flex-col gap-4">
+                <div id="tab-1"
+                    class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
+                    <div class="card-body w-full p-2">
+                        <h2 class="card-title text-[#212121] text-[16px] font-700 leading-[100%] font-Estedad mobile:text-center my-auto pt-8">اطلاعات
+                            حساب کاربری</h2>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">نام
+                                            و نام خانوادگی</span>
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">اولدوز
+                                        بهاور</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">کدملی</span>
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">۰۰۳۴۸۷۹۴۷۲</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">شماره موبایل</span>
+                                        <img src="./src/img/user/dashboard/close-circle.svg" alt="">
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">-----------</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">ایمیل</span>
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">autorent@gmail.com</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">رمز عبور</span>
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">*********</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">روش بازگرداندن پول من</span>
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad ">IR۲۷۶۹۵۷۳۸۶۷۰۹۸۳۷۶۸۲۷۶۸۴</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">تاریخ تولد</span>
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">
+                                        ۱۳۵۹/۱۱/۱۱</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                                <div class="flex flex-col gap-[16px] justify-start items-start w-full">
+                                    <div class="flex flex-row gap-[8px] justify-center items-center">
+                                        <span
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">شغل</span>
+                                    </div>
+                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">---------------</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/edit-2.svg" alt="">
+                            </div>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-content card bg-base-100 shadow bg-green-400">
+                    <div class="card-body w-full p-2">
+                        
+                    </div>
+                </div>
+                <div id="tab-3" class="tab-content card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title">بخش ۳</h2>
+                        <p>محتوای بخش ۳</p>
+                    </div>
+                </div>
+                <div id="tab-4" class="tab-content card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title">بخش ۴</h2>
+                        <p>محتوای بخش ۴</p>
+                    </div>
+                </div>
+                <div id="tab-5" class="tab-content card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title">بخش ۵</h2>
+                        <p>محتوای بخش ۵</p>
+                    </div>
+                </div>
+                <div id="tab-6" class="tab-content card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title">بخش ۶</h2>
+                        <p>محتوای بخش ۶</p>
+                    </div>
+                </div>
+                <div id="tab-7" class="tab-content card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title">بخش ۷</h2>
+                        <p>محتوای بخش ۷</p>
+                    </div>
+                </div>
+                <div id="tab-8" class="tab-content card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h2 class="card-title">بخش ۸</h2>
+                        <p>محتوای بخش ۸</p>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion dashboard-contents-->
 
         </div>
         <!--#endregion dashboard-->

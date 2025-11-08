@@ -322,4 +322,27 @@ navToggle?.addEventListener('click', () => {
   updateDualRange();
   
 
-  
+    const drawer = document.getElementById('dashboard-drawer');
+    document.querySelectorAll('.drawer-side .tab-item').forEach(lbl => {
+      lbl.addEventListener('click', () => { if (window.innerWidth < 1024) drawer.checked = false; });
+    });
+
+    // optional: visually mark the active tab in menus (works everywhere)
+    function syncActive() {
+      const activeId = document.querySelector('input[name="dashboard-tabs"]:checked')?.id;
+      const map = {
+        'tab-1-radio':'tab-1','tab-2-radio':'tab-2','tab-3-radio':'tab-3','tab-4-radio':'tab-4',
+        'tab-5-radio':'tab-5','tab-6-radio':'tab-6','tab-7-radio':'tab-7','tab-8-radio':'tab-8'
+      };
+      const current = map[activeId];
+
+      document.querySelectorAll('.tab-item').forEach(el => {
+        const forId = el.getAttribute('for');
+        const matches = map[forId] === current;
+        el.classList.toggle('btn-active', matches);
+        el.classList.toggle('btn-primary', matches);
+        el.classList.toggle('text-base-content', !matches);
+      });
+    }
+    document.querySelectorAll('input[name="dashboard-tabs"]').forEach(r => r.addEventListener('change', syncActive));
+    syncActive(); // on load
