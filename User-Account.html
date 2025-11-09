@@ -325,12 +325,11 @@
     </style>
 </head>
 
-<body class="bg-[#F3F3F3] pb-8">
+<body class="bg-[#F3F3F3] pb-8 h-screen">
     <!--#region main-->
     <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden">
         <!--#region header-->
-        <div
-            class="header-container w-full mx-auto">
+        <div class="header-container w-full mx-auto">
             <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
          mx-auto rounded-bl-[16px] rounded-br-[16px]
          px-4 desktop:px-[32px] flex items-center justify-between">
@@ -505,7 +504,8 @@
         </div>
         <!--#endregion header-->
         <!--#region dashboard-->
-        <div class="dashboard w-[95%] flex mobile:flex-col desktop:flex-row justify-center items-center gap-[24px] mx-auto mt-[56px]">
+        <div
+            class="dashboard w-[95%] flex mobile:flex-col desktop:flex-row justify-center items-center gap-[24px] mx-auto mt-[56px]">
             <!-- hidden radios control which tab is visible -->
             <input id="tab-1-radio" type="radio" name="dashboard-tabs" class="hidden" checked>
             <input id="tab-2-radio" type="radio" name="dashboard-tabs" class="hidden">
@@ -522,7 +522,8 @@
                     <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content">
                         <!-- Fixed open button -->
-                        <label for="dashboard-drawer" class="btn btn-primary bg-[#194BF0] font-Estedad rounded-4xl">منو</label>
+                        <label for="dashboard-drawer"
+                            class="btn btn-primary bg-[#194BF0] font-Estedad rounded-4xl">منو</label>
                     </div>
 
                     <div class="drawer-side z-40">
@@ -569,7 +570,7 @@
                                     for="tab-4-radio">
                                     <img src="./src/img/user/dashboard/location.svg" alt="">
                                     <span
-                                        class="text-[#494949] text-[13px] text-right w-full leading-[100%] font-500 font-Estedad">رزروهای
+                                        class="text-[#494949] text-[13px] text-right w-full leading-[100%] font-500 font-Estedad">آدرس‌های
                                         من</span>
                                     <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
                                 </label>
@@ -600,7 +601,7 @@
                                     for="tab-7-radio">
                                     <img src="./src/img/user/dashboard/logout.svg" alt="">
                                     <span
-                                        class="text-[#FF2F28] text-[13px] w-full text-right leading-[100%] font-500 font-Estedad">جورخ</span>
+                                        class="text-[#FF2F28] text-[13px] w-full text-right leading-[100%] font-500 font-Estedad">خروج</span>
                                 </label>
                             </li>
                         </ul>
@@ -613,7 +614,6 @@
 
             <!--#region dashboard-desktop-aside-->
             <div class="dashboard-desktop-aside mobile:hidden desktop:flex h-auto">
-                <h3 class="text-lg font-bold mb-3">بخش‌ها</h3>
                 <ul class="menu w-[100%]flex flex-col gap-2 justify-start items-start">
                     <!-- use <label for=radio> so clicking switches tab without JS -->
                     <li class="w-full"><label
@@ -654,7 +654,7 @@
                             for="tab-4-radio">
                             <img src="./src/img/user/dashboard/location.svg" alt="">
                             <span
-                                class="text-[#494949] text-[13px] text-right w-full leading-[100%] font-500 font-Estedad">رزروهای
+                                class="text-[#494949] text-[13px] text-right w-full leading-[100%] font-500 font-Estedad">آدرس‌های
                                 من</span>
                             <img src="./src/img/user/dashboard/Arrow-left.svg" alt="">
                         </label>
@@ -685,7 +685,7 @@
                             for="tab-7-radio">
                             <img src="./src/img/user/dashboard/logout.svg" alt="">
                             <span
-                                class="text-[#FF2F28] text-[13px] w-full text-right leading-[100%] font-500 font-Estedad">جورخ</span>
+                                class="text-[#FF2F28] text-[13px] w-full text-right leading-[100%] font-500 font-Estedad">خروج</span>
                         </label>
                     </li>
                 </ul>
@@ -693,15 +693,18 @@
             <!--#endregion dashboard-desktop-aside-->
 
             <!--#region dashboard-contents-->
-            <div class="dashboard-contents flex-1 w-full flex flex-col gap-4">
+            <div class="dashboard-contents flex-1 w-full flex flex-col gap-4 bg-transparent">
                 <div id="tab-1"
                     class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
                     <div class="card-body w-full p-2">
-                        <h2 class="card-title text-[#212121] text-[16px] font-700 leading-[100%] font-Estedad mobile:text-center my-auto pt-8">اطلاعات
+                        <h2
+                            class="card-title text-[#212121] text-[16px] font-700 leading-[100%] font-Estedad mobile:text-center my-auto pt-8">
+                            اطلاعات
                             حساب کاربری</h2>
                         <hr class="border-[##F3F3F3] border-1 w-full my-8">
                         <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
@@ -714,73 +717,88 @@
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
                                             class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">کدملی</span>
                                         <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
                                     </div>
-                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">۰۰۳۴۸۷۹۴۷۲</span>
+                                    <span
+                                        class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">۰۰۳۴۸۷۹۴۷۲</span>
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
                         </div>
                         <hr class="border-[##F3F3F3] border-1 w-full my-8">
                         <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
-                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">شماره موبایل</span>
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">شماره
+                                            موبایل</span>
                                         <img src="./src/img/user/dashboard/close-circle.svg" alt="">
                                     </div>
-                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">-----------</span>
+                                    <span
+                                        class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">-----------</span>
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
                                             class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">ایمیل</span>
                                     </div>
-                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">autorent@gmail.com</span>
+                                    <span
+                                        class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">autorent@gmail.com</span>
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
                         </div>
                         <hr class="border-[##F3F3F3] border-1 w-full my-8">
                         <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
-                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">رمز عبور</span>
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">رمز
+                                            عبور</span>
                                     </div>
-                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">*********</span>
+                                    <span
+                                        class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">*********</span>
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
-                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">روش بازگرداندن پول من</span>
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">روش
+                                            بازگرداندن پول من</span>
                                         <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
                                     </div>
-                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad ">IR۲۷۶۹۵۷۳۸۶۷۰۹۸۳۷۶۸۲۷۶۸۴</span>
+                                    <span
+                                        class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad ">IR۲۷۶۹۵۷۳۸۶۷۰۹۸۳۷۶۸۲۷۶۸۴</span>
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
                         </div>
                         <hr class="border-[##F3F3F3] border-1 w-full my-8">
                         <div class="first-edit flex mobile:flex-col desktop:flex-row w-full gap-4">
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
-                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">تاریخ تولد</span>
+                                            class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">تاریخ
+                                            تولد</span>
                                         <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
                                     </div>
                                     <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">
@@ -788,13 +806,15 @@
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
-                            <div class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
+                            <div
+                                class="desktop:w-[50%] mobile:w-full flex flex-row justify-between items-center px-[24px]">
                                 <div class="flex flex-col gap-[16px] justify-start items-start w-full">
                                     <div class="flex flex-row gap-[8px] justify-center items-center">
                                         <span
                                             class="text-[#5E5E5E] leading-[100%] text-[13px] font-500 font-Estedad">شغل</span>
                                     </div>
-                                    <span class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">---------------</span>
+                                    <span
+                                        class="text-[#353535] leading-[100%] text-[16px] font-500 font-Estedad">---------------</span>
                                 </div>
                                 <img src="./src/img/user/dashboard/edit-2.svg" alt="">
                             </div>
@@ -803,45 +823,419 @@
 
                     </div>
                 </div>
-                <div id="tab-2" class="tab-content card bg-base-100 shadow bg-green-400">
-                    <div class="card-body w-full p-2">
-                        
+                <div id="tab-2"
+                    class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
+                    <div class="card-body w-full p-2 pt-8 flex flex-col justify-center items-center">
+                        <div class="card-body-top flex justify-between items-center w-full px-4">
+                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">کیف پول</span>
+                            <div class="flex justify-center items-center gap-[8px] py-4px px-[16px] rounded-[8px]"><img
+                                    src="./src/img/user/dashboard/empty-wallet-add.svg" alt="">
+                                <span class="text-[#194BF0] text-[16px] leading-[26px] font-400 font-Estedad">افزایش
+                                    اعتبار</span>
+                            </div>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div
+                            class="card-body-middle flex mobile:flex-col desktop:flex-row w-full gap-[16px] justify-center items-center">
+                            <img src="./src/img/user/dashboard/Master Card 1 (Hot Ion).png" alt="">
+                            <img src="./src/img/user/dashboard/Master Card 2 (Dark Crystal).png" alt="">
+                            <img src="./src/img/user/dashboard/Visa Card 1 (Sweet Colors).png" alt="">
+                        </div>
+                        <div class="card-body-bottom mt-8">
+                            <div class="prices flex flex-row gap-[8px] w-full">
+                                <div
+                                    class="border-[#D7D7D7] border-1 rounded-[8px] desktop:px-[32px] mobile:px-[12px] py-[4px] font-Estedad font-600 desktop:text-[18px] mobile:text-[12px] text-[#353535] ">
+                                    ۱۰۰،۰۰۰ تومان</div>
+                                <div
+                                    class="border-[#D7D7D7] border-1 rounded-[8px] desktop:px-[32px] mobile:px-[12px] py-[4px] font-Estedad font-600 desktop:text-[18px] mobile:text-[12px] text-[#353535] ">
+                                    ۲۰۰،۰۰۰ تومان</div>
+                                <div
+                                    class="border-[#D7D7D7] border-1 rounded-[8px] desktop:px-[32px] mobile:px-[12px] py-[4px] font-Estedad font-600 desktop:text-[18px] mobile:text-[12px] text-[#353535] ">
+                                    ۳۰۰،۰۰۰ تومان</div>
+                            </div>
+                            <div class="flex flex-col w-full gap-2 mt-4">
+                                <div class="relative">
+                                    <input type="text"
+                                        class="w-full h-[48px] px-4 py-2 border border-[#D7D7D7] rounded-[8px] text-[#353535] font-Estedad outline-none"
+                                        placeholder="مبلغ موردنظر خود را وارد کنید...">
+                                    <span
+                                        class="absolute left-4 top-1/2 -translate-y-1/2 text-[#5E5E5E] text-[14px] font-Estedad">تومان</span>
+                                </div>
+                            </div>
+                            <div
+                                class="add mt-4 bg-[#194BF0] rounded-[8px] py-[14px] px-[16px] font-Estedad font-500 leading-[100%] text-[16px] text-white text-center">
+                                افزایش اعتبار</div>
+                        </div>
                     </div>
                 </div>
-                <div id="tab-3" class="tab-content card bg-base-100 shadow">
-                    <div class="card-body">
-                        <h2 class="card-title">بخش ۳</h2>
-                        <p>محتوای بخش ۳</p>
+                <div id="tab-3"
+                    class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
+                    <div class="card-body w-full p-2 pt-8 flex flex-col justify-center items-center">
+                        <!-- Tab Headers -->
+                        <div class="flex w-full justify-between">
+
+                            <button
+                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border border-[#08237D] bg-[#08237D] text-white transition-all duration-200"
+                                onclick="setActive(this)">
+                                <div>جاری</div>
+                                <div class="mt-1 text-[#FFB800]">۲</div>
+                            </button>
+                            <button
+                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border border-gray-300 bg-white text-[#353535] transition-all duration-200"
+                                onclick="setActive(this)">
+                                <div>انجام شده</div>
+                                <div class="mt-1 text-gray-500">۳</div>
+                            </button>
+
+
+                            <button
+                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border border-gray-300 bg-white text-[#353535] transition-all duration-200"
+                                onclick="setActive(this)">
+                                <div>لغو شده</div>
+                                <div class="mt-1 text-gray-500">۱</div>
+                            </button>
+                        </div>
+
+
+                        <!-- Tab Contents -->
+                        <div class="tab-content-wrapper w-full">
+                            <!-- Tab 1 Content -->
+                            <div class="tab-pane active p-4 w-full h-auto flex flex-col gap-4">
+                                <div class="flex flex-col w-full gap-8">
+                                    <div
+                                        class="flex desktop:flex-row mobile:flex-col border-[#08237D] border-1 rounded-[8px] justify-between items-center p-[12px] gap-4">
+                                        <div class="flex justify-between gap items-center bg-white">
+                                            <img src="./src/img/user/dashboard/timer.svg" alt="">
+                                            <span
+                                                class="text-[#1371F4] text-[14px] leading-[180%] font-500 font-Estedad">در
+                                                حال بررسی</span>
+                                        </div>
+                                        <img src="./src/img/user/dashboard/image 3.png" alt=""
+                                            class="rounded-[8px] bg-[#d7d7d7]">
+                                        <div
+                                            class="flex flex-col font-Estedad text-[14px] font-600 leading-[100%] my-4 gap-2 justify-end items-center ">
+                                            <span class="font-Estedad text-[14px] font-600 leading-[100%]">بنز جی-کلاس
+                                                (Mercedes Benz G Class)</span><span
+                                                class="font-Estedad text-[14px] font-600 leading-[100%]">تاریخ تحویل: 11
+                                                بهمن 1403 ساعت 18</span>
+                                        </div>
+                                        <div
+                                            class="border-[#194BF0] py-[4px] px-[16px] border-1 rounded-[8px] text-[#194BF0] text-[14px] leading-[180%] font-600 font-Estedad">
+                                            مشاهده جزئیات</div>
+                                    </div>
+                                    <div
+                                        class="flex desktop:flex-row mobile:flex-col border-[#08237D] border-1 rounded-[8px] justify-between items-center p-[12px] gap-4">
+                                        <div class="flex justify-between gap items-center bg-white">
+                                            <img src="./src/img/user/dashboard/timer.svg" alt="">
+                                            <span
+                                                class="text-[#1371F4] text-[14px] leading-[180%] font-500 font-Estedad">در
+                                                حال بررسی</span>
+                                        </div>
+                                        <img src="./src/img/user/dashboard/image 3.png" alt=""
+                                            class="rounded-[8px] bg-[#d7d7d7]">
+                                        <div
+                                            class="flex flex-col font-Estedad text-[14px] font-600 leading-[100%] my-4 gap-2 justify-end items-center ">
+                                            <span class="font-Estedad text-[14px] font-600 leading-[100%]">بنز جی-کلاس
+                                                (Mercedes Benz G Class)</span><span
+                                                class="font-Estedad text-[14px] font-600 leading-[100%]">تاریخ تحویل: 11
+                                                بهمن 1403 ساعت 18</span>
+                                        </div>
+                                        <div
+                                            class="border-[#194BF0] py-[4px] px-[16px] border-1 rounded-[8px] text-[#194BF0] text-[14px] leading-[180%] font-600 font-Estedad">
+                                            مشاهده جزئیات</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2 Content -->
+                            <div class="tab-pane hidden p-4 w-full h-auto flex flex-col gap-4">
+                                <div class="flex flex-col w-full gap-8"></div>
+                                <div
+                                    class="flex desktop:flex-row mobile:flex-col border-[#08237D] border-1 rounded-[8px] justify-between items-center p-[12px] gap-4">
+                                    <div class="flex justify-between gap items-center bg-white">
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                        <span class="text-[#269E22] text-[14px] leading-[180%] font-500 font-Estedad">در
+                                            حال بررسی</span>
+                                    </div>
+                                    <img src="./src/img/user/dashboard/image 3.png" alt=""
+                                        class="rounded-[8px] bg-[#d7d7d7]">
+                                    <div
+                                        class="flex flex-col font-Estedad text-[14px] font-600 leading-[100%] my-4 gap-2 justify-end items-center ">
+                                        <span class="font-Estedad text-[14px] font-600 leading-[100%]">بنز جی-کلاس
+                                            (Mercedes Benz G Class)</span><span
+                                            class="font-Estedad text-[14px] font-600 leading-[100%]">تاریخ تحویل: 11
+                                            بهمن 1403 ساعت 18</span>
+                                    </div>
+                                    <div
+                                        class="border-[#194BF0] py-[4px] px-[16px] border-1 rounded-[8px] text-[#194BF0] text-[14px] leading-[180%] font-600 font-Estedad">
+                                        مشاهده جزئیات</div>
+                                </div>
+                                <div
+                                    class="flex desktop:flex-row mobile:flex-col border-[#08237D] border-1 rounded-[8px] justify-between items-center p-[12px] gap-4">
+                                    <div class="flex justify-between gap items-center bg-white">
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                        <span class="text-[#269E22] text-[14px] leading-[180%] font-500 font-Estedad">در
+                                            حال بررسی</span>
+                                    </div>
+                                    <img src="./src/img/user/dashboard/image 3.png" alt=""
+                                        class="rounded-[8px] bg-[#d7d7d7]">
+                                    <div
+                                        class="flex flex-col font-Estedad text-[14px] font-600 leading-[100%] my-4 gap-2 justify-end items-center ">
+                                        <span class="font-Estedad text-[14px] font-600 leading-[100%]">بنز جی-کلاس
+                                            (Mercedes Benz G Class)</span><span
+                                            class="font-Estedad text-[14px] font-600 leading-[100%]">تاریخ تحویل: 11
+                                            بهمن 1403 ساعت 18</span>
+                                    </div>
+                                    <div
+                                        class="border-[#194BF0] py-[4px] px-[16px] border-1 rounded-[8px] text-[#194BF0] text-[14px] leading-[180%] font-600 font-Estedad">
+                                        مشاهده جزئیات</div>
+                                </div>
+                                <div
+                                    class="flex desktop:flex-row mobile:flex-col border-[#08237D] border-1 rounded-[8px] justify-between items-center p-[12px] gap-4">
+                                    <div class="flex justify-between gap items-center bg-white">
+                                        <img src="./src/img/user/dashboard/tick-circle.svg" alt="">
+                                        <span class="text-[#269E22] text-[14px] leading-[180%] font-500 font-Estedad">در
+                                            حال بررسی</span>
+                                    </div>
+                                    <img src="./src/img/user/dashboard/image 3.png" alt=""
+                                        class="rounded-[8px] bg-[#d7d7d7]">
+                                    <div
+                                        class="flex flex-col font-Estedad text-[14px] font-600 leading-[100%] my-4 gap-2 justify-end items-center ">
+                                        <span class="font-Estedad text-[14px] font-600 leading-[100%]">بنز جی-کلاس
+                                            (Mercedes Benz G Class)</span><span
+                                            class="font-Estedad text-[14px] font-600 leading-[100%]">تاریخ تحویل: 11
+                                            بهمن 1403 ساعت 18</span>
+                                    </div>
+                                    <div
+                                        class="border-[#194BF0] py-[4px] px-[16px] border-1 rounded-[8px] text-[#194BF0] text-[14px] leading-[180%] font-600 font-Estedad">
+                                        مشاهده جزئیات</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3 Content -->
+                    <div class="tab-pane hidden p-4 w-full h-auto flex flex-col gap-4">
+                        <div class="flex flex-col w-full gap-8">
+                            <div
+                                class="flex desktop:flex-row mobile:flex-col border-[#08237D] border-1 rounded-[8px] justify-between items-center p-[12px] gap-4">
+                                <div class="flex justify-between gap items-center bg-white">
+                                    <img src="./src/img/user/dashboard/close-circle.png" alt="">
+                                    <span class="text-[#FF2F28] text-[14px] leading-[180%] font-500 font-Estedad">در
+                                        حال بررسی</span>
+                                </div>
+                                <img src="./src/img/user/dashboard/image 3.png" alt=""
+                                    class="rounded-[8px] bg-[#d7d7d7]">
+                                <div
+                                    class="flex flex-col font-Estedad text-[14px] font-600 leading-[100%] my-4 gap-2 justify-end items-center ">
+                                    <span class="font-Estedad text-[14px] font-600 leading-[100%]">بنز جی-کلاس
+                                        (Mercedes Benz G Class)</span><span
+                                        class="font-Estedad text-[14px] font-600 leading-[100%]">تاریخ تحویل: 11
+                                        بهمن 1403 ساعت 18</span>
+                                </div>
+                                <div
+                                    class="border-[#194BF0] py-[4px] px-[16px] border-1 rounded-[8px] text-[#194BF0] text-[14px] leading-[180%] font-600 font-Estedad">
+                                    مشاهده جزئیات</div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div id="tab-4" class="tab-content card bg-base-100 shadow">
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const tabBtns = document.querySelectorAll('.tab-btn');
+                        const tabPanes = document.querySelectorAll('.tab-pane');
+
+                        tabBtns.forEach((btn, index) => {
+                            btn.addEventListener('click', () => {
+                                // Remove active states
+                                tabBtns.forEach(b => b.classList.remove('border-[#194BF0]', 'active'));
+                                tabPanes.forEach(p => p.classList.add('hidden'));
+
+                                // Add active states
+                                btn.classList.add('border-[#194BF0]', 'active');
+                                tabPanes[index].classList.remove('hidden');
+                            });
+                        });
+                    });
+                </script>
+
+
+                <div id="tab-4"
+                    class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
                     <div class="card-body">
-                        <h2 class="card-title">بخش ۴</h2>
-                        <p>محتوای بخش ۴</p>
+                        <div class="card-body-top flex justify-between items-center">
+                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">آدرس‌های
+                                من</span>
+                            <div class="flex justify-center items-center gap-[8px] py-4px px-[16px] rounded-[8px]">
+                                <img src="./src/img/user/dashboard/location-add.svg" alt="">
+                                <span class="text-[#194BF0] text-[16px] leading-[26px] font-400 font-Estedad">ثبت
+                                    آدرس</span>
+                            </div>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <h4 class="font-500 font-Estedad leading-[180%] text-[#494949] text-center">آدرسی از شما ثبت
+                            نشده، یک آدرس ثبت کنید.</h4>
+
                     </div>
                 </div>
-                <div id="tab-5" class="tab-content card bg-base-100 shadow">
+                <div id="tab-5"
+                    class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
                     <div class="card-body">
-                        <h2 class="card-title">بخش ۵</h2>
-                        <p>محتوای بخش ۵</p>
+                        <div class="card-body-top flex justify-between items-center">
+                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">پرداخت‌های
+                                من</span>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="flex flex-col justify-center items-center w-full gap-8">
+                            <div class="flex mobile:flex-col desktop:flex-row justify-between items-center w-full">
+                                <div
+                                    class="right flex desktop:flex-row mobile:flex-col justify-center items-center gap-4">
+                                    <img src="./src/img/user/dashboard/car-1.png" alt="">
+                                    <div class="flex flex-col justify-start items-start mx-4 gap-2">
+                                        <span
+                                            class="text-[#353535] text-[16px] leading-[100%] font-600 font-Estedad">لکسوس
+                                            (Lexus IS 300)</span>
+                                        <span
+                                            class="text-[#5E5E5E] text-[14px] leading-[180%] font-500 font-Estedad">تاریخ
+                                            مدل: ۲۰۲۴</span>
+                                        <span
+                                            class="text-[#5E5E5E] text-[14px] leading-[180%] font-500 font-Estedad">تاریخ
+                                            مدت: ۳ روز</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <span
+                                        class="text-[#269E22] font-Estedad text-[14px] leaeding-[100%] font-500">پرداخت
+                                        موفق</span>
+                                    <span class="text-[#212121] font-Estedad text-[14px] leading-[180%] font-400">شناسه
+                                        پرداخت: ۱۳۷۵۹۴۷۶۹۷</span>
+                                    <span class="text-[#212121] font-Estedad text-[14px] leading-[180%] font-400">شناسه
+                                        حساب: ۱۳۷۵۹۴۱۳۷۵۹۴۷۶۹۷</span>
+                                    <span class="text-[#212121] font-Estedad text-[14px] leading-[180%] font-400">دارنده
+                                        حساب: اتورنت گستر ایرانیان</span>
+                                </div>
+                            </div>
+                            <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                            <div class="flex mobile:flex-col desktop:flex-row justify-between items-center w-full">
+                                <div
+                                    class="right flex desktop:flex-row mobile:flex-col justify-center items-center gap-4">
+                                    <img src="./src/img/user/dashboard/car-2.png" alt="">
+                                    <div class="flex flex-col justify-start items-start mx-4 gap-2">
+                                        <span
+                                            class="text-[#353535] text-[16px] leading-[100%] font-600 font-Estedad">آستون
+                                            مارتین (Aston Martin DBS)</span>
+                                        <span
+                                            class="text-[#5E5E5E] text-[14px] leading-[180%] font-500 font-Estedad">تاریخ
+                                            مدل: ۲۰۲۴</span>
+                                        <span
+                                            class="text-[#5E5E5E] text-[14px] leading-[180%] font-500 font-Estedad">تاریخ
+                                            مدت: ۳ روز</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-start items-start gap-2">
+                                    <span
+                                        class="text-[#FF2F28] font-Estedad text-[14px] leaeding-[100%] font-500">پرداخت
+                                        ناموفق</span>
+                                    <span class="text-[#212121] font-Estedad text-[14px] leading-[180%] font-400">شناسه
+                                        پرداخت: ۱۳۷۵۹۴۷۶۹۷</span>
+                                    <span class="text-[#212121] font-Estedad text-[14px] leading-[180%] font-400">شناسه
+                                        حساب: ۱۳۷۵۹۴۱۳۷۵۹۴۷۶۹۷</span>
+                                    <span class="text-[#212121] font-Estedad text-[14px] leading-[180%] font-400">دارنده
+                                        حساب: اتورنت گستر ایرانیان</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="tab-6" class="tab-content card bg-base-100 shadow">
+                <div id="tab-6"
+                    class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
                     <div class="card-body">
-                        <h2 class="card-title">بخش ۶</h2>
-                        <p>محتوای بخش ۶</p>
+                        <div class="card-body-top flex justify-between items-center">
+                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">پرداخت‌های
+                                من</span>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="flex flex-col justify-center w-full items-center">
+                            <div
+                                class="flex flex-row flex-wrap w-full mobile:justify-center desktop:justify-start items-center gap-[16px]">
+                                <div
+                                    class="border-1 rounded-[8px] py-[4px] px-[16px] gap-[8px] border-[#194BF0] text-[#194BF0] font-Estedad font-600 text-[14px] leading-[180%]">
+                                    همه نظرات</div>
+                                <div
+                                    class="border-1 border-[#C2C2C2] py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
+                                    <img src="./src/img/user/dashboard/tick-circle-c.svg" alt=""><span
+                                        class="font-Estedad text-[#9a9a9a]  text-[14px] font-400 leading-[100%] gap-[8px]">نظرات
+                                        تایید شده</span>
+                                </div>
+                                <div
+                                    class="brder-1 border-[#C2C2C2] py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
+                                    <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
+                                        class="font-Estedad text-[#9a9a9a]  text-[14px] font-400 leading-[100%] gap-[8px]">در
+                                        انتظار تایید</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-start items-start gap-4 my-8 w-full">
+                                <div
+                                    class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
+                                    <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[100%] gap-[8px]">ماشین
+                                        موردعلاقم ناموجود بود. چرا خب؟</span>
+                                </div>
+                                <div class="w-full justify-between items-center flex flex-row"><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">در
+                                        انتظار تائید</span><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴ اردبیهشت
+                                        ۱۴۰۳</span></div>
+                            </div>
+                           <hr class="border-[##F3F3F3] border-1 w-full my-4">
+                            <div class="flex flex-col justify-start items-start gap-4 my-8 w-full">
+                                <div
+                                    class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
+                                    <img src="./src/img/user/dashboard/tick-circle-c.svg" alt=""><span
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[100%] gap-[8px]">بهترین تجربه جذابی با پورشه داشتم.دمتون گرم</span>
+                                </div>
+                                <div class="w-full justify-between items-center flex flex-row"><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">تایید شده</span><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴ فروردین
+                                        ۱۴۰۳</span></div>
+                            </div>
+                           <hr class="border-[##F3F3F3] border-1 w-full my-4">
+                            <div class="flex flex-col justify-start items-start gap-4 my-8 w-full">
+                                <div
+                                    class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
+                                    <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[100%] gap-[8px]">منتظرم برای شب عروسیم ماشین موردعلاقم رو بگیرم.</span>
+                                </div>
+                                <div class="w-full justify-between items-center flex flex-row"><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">در
+                                        انتظار تائید</span><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴ مرداد
+                                        ۱۴۰۳</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="tab-7" class="tab-content card bg-base-100 shadow">
-                    <div class="card-body">
-                        <h2 class="card-title">بخش ۷</h2>
-                        <p>محتوای بخش ۷</p>
-                    </div>
-                </div>
-                <div id="tab-8" class="tab-content card bg-base-100 shadow">
-                    <div class="card-body">
-                        <h2 class="card-title">بخش ۸</h2>
-                        <p>محتوای بخش ۸</p>
+                <div id="tab-7" class="tab-content card ">
+                    <div class="card-body bg-white rounded-[8px] border-0">
+                        <div class="card-body-top flex justify-between items-center">
+                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">خروج</span>
+                        </div>
+                        <hr class="border-[##F3F3F3] border-1 w-full my-8">
+                        <div class="warnig flex flex-col justify-start items-start gap-[32px]">
+                            <p class="text-[#212121] font-500 text-[16px] leading-[100%] font-Estedad text-right
+                            ">برای خروج از حساب کاربری خود اطمینان دارید؟</p>
+                            <div class="buttons flex flex-row gap-[16px]">
+                                <div
+                                    class="cancel border-1 border-[#DB1D27] py-[4px] px-[16px] rounded-[8px] text-[14px] leading-[180%] font-Estedad font-600 text-[#DB1D27] cursor-pointer hover:bg-[#DB1D27] hover:text-white transition-all duration-300">
+                                    انصراف</div>
+                                <div
+                                    class="exit bg-[#DB1D27] py-[4px] px-[16px] rounded-[8px] text-[14px] leading-[180%] font-Estedad font-600 text-white cursor-pointer hover:bg-white hover:text-[#DB1D27] transition-all duration-300">
+                                    <a href="./index.html">خروج از حساب</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

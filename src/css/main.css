@@ -70,3 +70,5 @@ input[type=range] {
     #tab-8-radio:checked ~ .dashboard-contents #tab-8 {
       opacity: 1; transform: none;
     }
+
+    
