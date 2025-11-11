@@ -498,11 +498,11 @@
         <div class="px-4 desktop:px-[108px]">
           <div class="container-body-text text-center desktop:text-right">
             <h1
-              class="text-[#FDB713] text-[28px] mobile:text-[36px] desktop:text-[44px] font-bold w-full desktop:w-[335px] font-Estedad leading-[140%] mt-[32px] desktop:mt-[72px]">
+              class="text-[#FDB713] mobile:text-[24px] desktop:text-[44px] font-bold w-full desktop:w-[335px] font-Estedad leading-[140%] mt-[32px] desktop:mt-[72px]">
               اُتـــو رِنت؛ سریع، آسان و به صرفه
             </h1>
             <p
-              class="font-Estedad text-[#F9F9F9] text-[16px] mobile:text-[18px] desktop:text-[20px] leading-[32px] desktop:leading-[36px] mt-2">
+              class="font-Estedad text-[#F9F9F9] mobile:text-[14px] desktop:text-[20px] leading-[32px] desktop:leading-[36px] mt-2">
               سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
             </p>
           </div>
@@ -535,31 +535,32 @@
 
       <!--#region type-choose-->
       <div class="rent-type-choose w-full min-h-[40px]
-              flex desktop:flex-row
+              flex desktop:flex-row mobile:flex-col
               gap-3 desktop:gap-0 justify-center items-center
               desktop:justify-between mx-auto px-2 mobile:px-0">
 
         <!-- Right: Choose type buttons -->
-        <div class="choose-right w-fit desktop:w-[430px] h-full
+        <div
+          class="choose-right w-fit desktop:w-[430px] h-full
                 flex items-center gap-2 
                 overflow-x-auto desktop:overflow-visible
-                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex-wrap justify-center">
           <button
             class="shrink-0 h-10 px-3 rounded-[20px]
                bg-[#194BF0] border border-[#D7D7D7]
-               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[10px] text-white font-[600] leading-[180%] text-center">
+               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[12px] text-white font-[600] leading-[180%] text-center">
             اجاره خودرو با راننده
           </button>
           <button
-            class="shrink-0 h-10 px-3 rounded-[20px]
+            class="shrink-0 h-10 :px-3  rounded-[20px]
                bg-transparent border border-[#D7D7D7]
-               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[10px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
+               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[12px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
             اجاره خودرو بی راننده
           </button>
           <button
             class="shrink-0 h-10 px-3 rounded-[20px]
                bg-transparent border border-[#D7D7D7]
-               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[10px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
+               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[12px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
             اجاره ماشین عروس
           </button>
         </div>
@@ -567,7 +568,7 @@
         <div
           class="choose-left w-fit h-[25px]
                 text-center desktop:text-right 
-                font-Estedad font-[500] desktop:text-[14px] mobile:text-[10px] leading-[100%] text-[#194BF0] flex justify-center items-center ">
+                font-Estedad font-[500] desktop:text-[14px] desktop:ml-4 mobile:ml-0 mobile:text-[10px] leading-[100%] text-[#194BF0] flex justify-center items-center ">
           <a href="#" class="inline-block">
             اطلاعات بیشتر در مورد رزرو خودرو
           </a>
@@ -586,27 +587,27 @@
               desktop:justify-between items-start desktop:items-center desktop:mr-[10px] px-1">
           <div class="rent-type-time-right w-full desktop:w-fit
              inline-flex items-center gap-1
-             font-Estedad text-[14px] text-[#0C0C0C] leading-[180%] font-[400]">
+             font-Estedad desktop:text-[14px] mobile:text-[12px] text-[#0C0C0C] leading-[180%] font-[400]">
             <img src="./src/img/header/arrow-left-b.svg" alt="">
             محل تحویل خودرو
           </div>
 
           <div class="rent-type-time-left w-full desktop:w-[506px]
                 flex flex-wrap items-center desktop:flex-row
-                gap-x-8 gap-y-2 desktop:gap-y-0 mobile:flex-col mobile:items-start">
-            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+                gap-x-8 gap-y-4 desktop:gap-y-0 mobile:flex-col mobile:items-start">
+            <div class="desktop:text-[14px] mobile:text-[12px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1 desktop:mr-[32px]">
               <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ تحویل
             </div>
-            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+            <div class="desktop:text-[14px] mobile:text-[12px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1">
               <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت تحویل
             </div>
-            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+            <div class="desktop:text-[14px] mobile:text-[12px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1">
               <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ بازگشت
             </div>
-            <div class="text-[14px] font-Estedad text-[#0C0C0C] font-[400]
+            <div class="desktop:text-[14px] mobile:text-[12px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1">
               <img src="./src/img/header/arrow-left-b.svg" alt="">ساعت بازگشت
             </div>
@@ -621,7 +622,7 @@
 
           <div class="w-full desktop:w-[535px] h-[29px]
                 flex justify-between items-center">
-            <span class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">
+            <span class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">
               تهران-فرودگاه امام خمینی
             </span>
             <img src="./src/img/header/arrow-down.svg" alt="" class="w-5">
@@ -633,7 +634,7 @@
             <div class="w-full desktop:w-[111px] h-[31px]
                 flex justify-between items-center">
               <span
-                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
               <img src="./src/img/header/calendar.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Delivery Date -->
@@ -644,7 +645,7 @@
             <div class="w-full desktop:w-[106px] h-[31px]
                 flex justify-between items-center">
               <span
-                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
               <img src="./src/img/header/clock.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Delivery Time -->
@@ -655,7 +656,7 @@
             <div class="w-full desktop:w-[111px] h-[31px]
                 flex justify-between items-center">
               <span
-                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[14px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
               <img src="./src/img/header/calendar.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Return Date -->
@@ -666,7 +667,8 @@
             <!-- #region Return Time -->
             <div class="w-full desktop:w-[106px] h-[31px]
                 flex justify-between items-center">
-              <span class="font-Estedad font-[400] text-[16px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
+              <span
+                class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۰۷:۰۰</span>
               <img src="./src/img/header/clock.svg" alt="" class="w-5">
             </div>
             <!-- #endregion Return Time -->
@@ -736,10 +738,10 @@
 
       <!-- feature boxes -->
       <div class="why-us-boxes flex flex-wrap gap-y-[16px]
-           w-[100%] justify-between
+           w-[100%] gap-x-[40px] justify-center
            mx-auto mt-[24px] desktop:mt-[39px]">
 
-        <div class="why-us-boxes-contents desktop:w-[312px] h-full
+        <div class="why-us-boxes-contents desktop:w-[312px] h-[186px]
              rounded-[16px] pt-[16px] px-[24px] mobile:w-[270px] mobile:mx-auto desktop:mx-0
              flex flex-col gap-y-[8px] items-center
              bg-white border border-[#D7D7D7]">
@@ -752,7 +754,7 @@
           </p>
         </div>
 
-        <div class="why-us-boxes-contents desktop:w-[312px] h-full
+        <div class="why-us-boxes-contents desktop:w-[312px] h-[186px]
              rounded-[16px] pt-[16px] px-[24px] mobile:w-[270px] mobile:mx-auto desktop:mx-0
              flex flex-col gap-y-[8px] items-center
              bg-white border border-[#D7D7D7]">
@@ -765,7 +767,7 @@
           </p>
         </div>
 
-        <div class="why-us-boxes-contents desktop:w-[312px] h-full
+        <div class="why-us-boxes-contents desktop:w-[312px] h-[186px]
              rounded-[16px] pt-[16px] px-[24px] mobile:w-[270px] mobile:mx-auto desktop:mx-0
              flex flex-col gap-y-[8px] items-center
              bg-white border border-[#D7D7D7]">
@@ -785,7 +787,7 @@
          mx-auto mt-[96px] desktop:mt-[152px]">
       <!-- grid for car types -->
       <div
-        class="flex flex-wrap desktop:justify-between mobile:justify-center items-center w-[90%] h-auto mx-auto gap-4">
+        class="flex flex-wrap desktop:justify-center mobile:justify-center items-center w-[90%] h-auto mx-auto gap-4">
         <div class="group cursor-pointer w-[232px] h-[144px] desktop:h-[144px]
              rounded-[16px] border border-[#d7d7d7]
              relative overflow-hidden py-[16px] px-[8px]
@@ -850,7 +852,7 @@
     </div>
     <!--#endregion car-types-->
     <!--#region reservation-->
-    <div class="reservation mobile:w-[92%] desktop:w-[90%] mx-auto mt-[48px]">
+    <div class="reservation mobile:w-[92%] desktop:w-[90%] max-w-[1224px] mx-auto mt-[48px]">
 
       <!-- top text -->
       <div class="reservation-textop w-full
@@ -870,7 +872,7 @@
       </div>
 
       <!-- tabs row -->
-      <div class="reservation-sections w-[80%] mx-auto          
+      <div class="reservation-sections w-[100%] mx-auto          
           h-auto desktop:h-[48px]
            mt-[16px] mb-[24px] desktop:mx-auto
            flex flex-col desktop:flex-row gap-3
@@ -1115,7 +1117,7 @@
     </div>
     <!--#endregion reservation-->
     <!--#region how-to-->
-    <div class="how-to desktop:h-[893px] w-full overflow-hidden mt-[96px] desktop:mt-[32px] mx-auto px-4">
+    <div class="how-to h-auto w-full overflow-hidden mt-[96px] desktop:mt-[32px] mx-auto destop:px-4">
       <!--#region how-to-title-->
       <div
         class="how-to-title w-full desktop:w-[362px] h-auto flex flex-col items-center gap-y-[16px] desktop:gap-y-[20px] mx-auto">
@@ -1138,27 +1140,37 @@
 
         <!--#region how-to-answers-right-->
         <div
-          class=" how-to-answers-right mobile:flex-row desktop:flex-col w-full desktop:w-[366px] flex gap-y-[260px] desktop:gap-y-[427px] justify-between">
+          class=" how-to-answers-right mobile:flex-row desktop:flex-col mobile:w-full desktop:w-[366px] flex gap-y-[260px] desktop:gap-y-[427px] desktop:justify-between mobile:justify-center px-2">
           <!-- step 1 -->
-          <div class="how-to-answers-right-first mobile:w-1/2 desktop:w-auto">
+          <div class="how-to-answers-right-first desktop:w-auto desktop:block mobile:flex mobile:flex-col">
             <!-- large outlined number -->
+            <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
+              <span
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۱</span>
+              <div
+                class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
+                <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+            </div>
+
             <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۱</span>
             <!-- step content -->
             <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
               <div
-                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                class="w-[70px] h-[50px] mobile:hidden desktop:flex desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
                 <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px]">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
                   <span
                     class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودروی</span>
                   <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">خود
                     را انتخاب کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right mobile:px-2 desktop:px-0">
                   خودروی مورد نظر خود را، متناسب با درخواست خود انتخاب کنید.
                 </p>
               </div>
@@ -1166,29 +1178,35 @@
           </div>
 
           <!-- step 2 -->
-          <div class="how-to-answers-left-second mobile:w-1/2 desktop:w-auto mobile:visible desktop:hidden text-left">
+          <div class="how-to-answers-right-first desktop:w-auto desktop:hidden mobile:flex mobile:flex-col">
             <!-- large outlined number -->
-            <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mobile:mr-[100px] desktop:mr-[300px]"
-              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
-            <!-- step content -->
-            <div
-              class="how-to-answers-left-first-text flex gap-x-[16px] mobile:gap-x-0 -mt-10 desktop:mt-[-60px] flex-row-reverse">
+            <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
+              <span
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
               <div
-                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center ">
+                class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
                 <img src="./src/img/how-to/calendar-tick.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
+            </div>
+
+            <span
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
+              style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
+            <!-- step content -->
+            <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
+              <div
+                class="w-[70px] h-[50px] mobile:hidden desktop:flex desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px]">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
                   <span
                     class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
-                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">
-                    تحویل را تعیین کنید.</span>
+                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">تحویل را تعیین کنید.</span>
                 </div>
-                <p
-                  class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] text-right ">
-                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید
-                </p>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right ">
+تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید                </p>
               </div>
             </div>
           </div>
@@ -1231,7 +1249,7 @@
 
         <!--#region how-to-answers-left-->
         <div
-          class="how-to-answers-left mobile:flex-row w-full mobile:pr-6 desktop:w-[366px] flex desktop:flex-col gap-y-[260px] desktop:gap-y-[427px] justify-between">
+          class=" how-to-answers-right mobile:flex-row desktop:flex-col mobile:w-full desktop:w-[366px] flex gap-y-[260px] desktop:gap-y-[427px] desktop:justify-between mobile:justify-center px-2 mobile:items-start">
           <!-- step 2 -->
           <div class="how-to-answers-left-second mobile:w-[200px] desktop:w-auto mobile:hidden desktop:block">
             <!-- large outlined number -->
@@ -1260,51 +1278,67 @@
           </div>
 
           <!-- step 3 -->
-          <div class="how-to-answers-right-third mobile:w-1/2 desktop:w-auto mobile:block desktop:hidden">
+          <div class="how-to-answers-right-first desktop:w-auto desktop:hidden mobile:block mobile:flex mobile:flex-col">
             <!-- large outlined number -->
+            <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
+              <span
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
+              <div
+                class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
+                <img src="./src/img/how-to/calendar-tick.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+            </div>
+
             <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mobile:-mr-[30px] desktop:mr-[20px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
             <!-- step content -->
-            <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
+            <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
               <div
-                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
-                <img src="./src/img/how-to/cards.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+                class="w-[70px] h-[50px] mobile:hidden desktop:flex desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px]">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
                   <span
                     class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
-                  <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره
-                    را پرداخت کنید.</span>
+                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره را پرداخت کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
-                  می توانید از طریق کیف پول آنلاین یا کارت های عضو شبکه شتاب هزینه اجاره را پرداخت کنید.
-                </p>
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right ">
+تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید                </p>
               </div>
             </div>
           </div>
           <!-- step 4 -->
-          <div class="how-to-answers-right-fourth mobile:w-1/2 desktop:w-auto">
+          <div class="how-to-answers-right-first desktop:w-autoflex mobile:flex-col">
             <!-- large outlined number -->
+             <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
+              <span
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
+              <div
+                class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
+                <img src="./src/img/how-to/key.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
+              </div>
+            </div>
             <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mobile:mr-[70%] desktop:mr-[300px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent desktop:mr-[300px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
             <!-- step content -->
             <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px] flex-row-reverse">
               <div
-                class="w-[70px] h-[50px] desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
+                class="w-[70px] h-[50px] mobile:hidden desktop:flex desktop:w-[80px] desktop:h-[80px] rounded-[16px] border bg-white border-[#D7D7D7] flex justify-center items-center">
                 <img src="./src/img/how-to/key.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px]">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
                   <span
                     class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودرو</span>
                   <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">را
                     دریافت کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right">
                   در زمان و مکان تعیین شده، خودروی خود را دریافت کنید.
                 </p>
               </div>
@@ -1469,7 +1503,7 @@
         <div class="testimonial-nav w-full flex flex-wrap-reverse flex-row-reverse gap-[8px]">
           <!-- testimonial tab 1 -->
           <div
-            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] mobile:h-auto desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex mobile:flex-col desktop:flex-row justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
             data-testimonial="1">
             <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-4.png" alt="فاطمه ابراهیمی فر"
@@ -1489,7 +1523,7 @@
 
           <!-- testimonial tab 2 -->
           <div
-            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] mobile:h-auto desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex mobile:flex-col desktop:flex-row justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
             data-testimonial="2">
             <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-3.png" alt="فرزانه حیدری"
@@ -1509,7 +1543,7 @@
 
           <!-- testimonial tab 3 -->
           <div
-            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] mobile:h-auto desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex mobile:flex-col desktop:flex-row justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200 hover:bg-[#FDB713]/10"
             data-testimonial="3">
             <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-2.png" alt="محمد جواد امینی"
@@ -1529,7 +1563,7 @@
 
           <!-- testimonial tab 4 (active) -->
           <div
-            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] h-[92px] desktop:h-[96px] bg-[#FDB713] rounded-[8px] border border-[#D7D7D7] p-[8px] flex justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200"
+            class="testimonial-tab w-[calc(50%-4px)] desktop:w-[calc(25%-6px)] mobile:h-auto desktop:h-[96px] bg-white rounded-[8px] border border-[#D7D7D7] p-[8px] flex mobile:flex-col desktop:flex-row justify-center items-center gap-x-[12px] desktop:gap-x-[16px] cursor-pointer transition-all duration-200"
             data-testimonial="4">
             <div class="w-[56px] h-[56px] desktop:w-[64px] desktop:h-[64px] rounded-full overflow-hidden">
               <img src="./src/img/testimonials/img-1.png" alt="اولدوز بهاور" class="w-full h-full object-cover">
@@ -1674,8 +1708,8 @@
     <!--#endregion thesis-->
     <!--#region footer-->
     <footer
-      class="footer relative w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center ">
-      <div class="absolute inset-0 bg-black/80"></div>
+      class="footer relative desktop:w-[90%] mobile:w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] overflow-hidden flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center">
+      <div class="absolute inset-0 bg-black/80 overflow-hidden"></div>
       <!--#region footer-top-->
       <div
         class="footer-top relative w-full mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
@@ -1738,7 +1772,7 @@
             class="footer-bottom-content-box-right w-fit h-auto flex flex-col mobile:items-center mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start text-center desktop:text-left">
             <img src="./src/img/footer/Logo.png" alt="" class="w-[150px] mx-auto desktop:mx-0">
             <p
-              class="font-Estedad font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
+              class="font-Estedad font-normal text-right text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
               اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع خودروهای
               صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
             </p>
@@ -1748,7 +1782,7 @@
           <div
             class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی آسان</p>
-            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">سوالات متداول</p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a href="./FAQ.html">سوالات متداول</a></p>
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما</p>
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">درباره ما</p>
           </div>
@@ -1774,13 +1808,17 @@
 
         <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
 
-        <div
-          class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
-          <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
-          <p class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
-            تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
-          </p>
-        </div>
+         <div
+                    class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+                    <a href="./rules.html"
+                        class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+                        <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
+                        <p
+                            class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
+                            تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+                        </p>
+                    </a>
+                </div>
       </div>
       <!--#endregion footer-bottom-->
     </footer>

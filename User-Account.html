@@ -875,13 +875,13 @@
                         <div class="flex w-full justify-between">
 
                             <button
-                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border border-[#08237D] bg-[#08237D] text-white transition-all duration-200"
+                                class="tab-btn flex-1 text-center cursor-pointer py-4 rounded-xl mx-1 border border-[#08237D] bg-[#08237D] text-white transition-all duration-200"
                                 onclick="setActive(this)">
                                 <div>جاری</div>
                                 <div class="mt-1 text-[#FFB800]">۲</div>
                             </button>
                             <button
-                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border border-gray-300 bg-white text-[#353535] transition-all duration-200"
+                                class="tab-btn flex-1 text-center py-4 rounded-xl cursor-pointer mx-1 border border-gray-300 bg-white text-[#353535] transition-all duration-200"
                                 onclick="setActive(this)">
                                 <div>انجام شده</div>
                                 <div class="mt-1 text-gray-500">۳</div>
@@ -889,13 +889,12 @@
 
 
                             <button
-                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border border-gray-300 bg-white text-[#353535] transition-all duration-200"
+                                class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border cursor-pointer border-gray-300 bg-white text-[#353535] transition-all duration-200"
                                 onclick="setActive(this)">
                                 <div>لغو شده</div>
                                 <div class="mt-1 text-gray-500">۱</div>
                             </button>
                         </div>
-
 
                         <!-- Tab Contents -->
                         <div class="tab-content-wrapper w-full">
@@ -1091,9 +1090,9 @@
                         <div class="flex flex-col justify-center items-center w-full gap-8">
                             <div class="flex mobile:flex-col desktop:flex-row justify-between items-center w-full">
                                 <div
-                                    class="right flex desktop:flex-row mobile:flex-col justify-center items-center gap-4">
+                                    class="right flex desktop:flex-row mobile:flex-col desktop:justify-start mobile:justify-center items-center gap-4 ">
                                     <img src="./src/img/user/dashboard/car-1.png" alt="">
-                                    <div class="flex flex-col justify-start items-start mx-4 gap-2">
+                                    <div class="flex flex-col desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center mx-4 gap-2 ">
                                         <span
                                             class="text-[#353535] text-[16px] leading-[100%] font-600 font-Estedad">لکسوس
                                             (Lexus IS 300)</span>
@@ -1105,7 +1104,7 @@
                                             مدت: ۳ روز</span>
                                     </div>
                                 </div>
-                                <div class="flex flex-col justify-start items-start gap-2">
+                                <div class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center gap-2">
                                     <span
                                         class="text-[#269E22] font-Estedad text-[14px] leaeding-[100%] font-500">پرداخت
                                         موفق</span>
@@ -1122,7 +1121,7 @@
                                 <div
                                     class="right flex desktop:flex-row mobile:flex-col justify-center items-center gap-4">
                                     <img src="./src/img/user/dashboard/car-2.png" alt="">
-                                    <div class="flex flex-col justify-start items-start mx-4 gap-2">
+                                    <div class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center mx-4 gap-2">
                                         <span
                                             class="text-[#353535] text-[16px] leading-[100%] font-600 font-Estedad">آستون
                                             مارتین (Aston Martin DBS)</span>
@@ -1134,7 +1133,7 @@
                                             مدت: ۳ روز</span>
                                     </div>
                                 </div>
-                                <div class="flex flex-col justify-start items-start gap-2">
+                                <div class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center gap-2">
                                     <span
                                         class="text-[#FF2F28] font-Estedad text-[14px] leaeding-[100%] font-500">پرداخت
                                         ناموفق</span>
@@ -1153,7 +1152,7 @@
                     class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">
                     <div class="card-body">
                         <div class="card-body-top flex justify-between items-center">
-                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">پرداخت‌های
+                            <span class="text-[#212121] font-700 text-[16px] leading-[100%] font-Estedad">نظرات
                                 من</span>
                         </div>
                         <hr class="border-[##F3F3F3] border-1 w-full my-8">
@@ -1170,9 +1169,9 @@
                                         تایید شده</span>
                                 </div>
                                 <div
-                                    class="brder-1 border-[#C2C2C2] py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
+                                    class="border-1 border-[#C2C2C2] py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
                                     <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
-                                        class="font-Estedad text-[#9a9a9a]  text-[14px] font-400 leading-[100%] gap-[8px]">در
+                                        class="font-Estedad text-[#9a9a9a]  text-[14px] font-400 leading-[140%] gap-[8px]">در
                                         انتظار تایید</span>
                                 </div>
                             </div>
@@ -1180,7 +1179,7 @@
                                 <div
                                     class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
                                     <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
-                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[100%] gap-[8px]">ماشین
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">ماشین
                                         موردعلاقم ناموجود بود. چرا خب؟</span>
                                 </div>
                                 <div class="w-full justify-between items-center flex flex-row"><span
@@ -1194,7 +1193,7 @@
                                 <div
                                     class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
                                     <img src="./src/img/user/dashboard/tick-circle-c.svg" alt=""><span
-                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[100%] gap-[8px]">بهترین تجربه جذابی با پورشه داشتم.دمتون گرم</span>
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">بهترین تجربه جذابی با پورشه داشتم.دمتون گرم</span>
                                 </div>
                                 <div class="w-full justify-between items-center flex flex-row"><span
                                         class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">تایید شده</span><span
@@ -1206,7 +1205,7 @@
                                 <div
                                     class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
                                     <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
-                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[100%] gap-[8px]">منتظرم برای شب عروسیم ماشین موردعلاقم رو بگیرم.</span>
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">منتظرم برای شب عروسیم ماشین موردعلاقم رو بگیرم.</span>
                                 </div>
                                 <div class="w-full justify-between items-center flex flex-row"><span
                                         class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">در
