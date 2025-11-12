@@ -5,3 +5,80 @@
   --breakpoint-mobile: 340px;
   --breakpoint-how: 1200px;
 }
+@import "tailwindcss";
+@plugin "daisyui";
+
+@font-face {
+  font-family: Estedad;
+  src: url(../fonts/Estedad-Regular.ttf);
+}
+
+@theme {
+  --font-Estedad: Estedad;
+  --breakpoint-desktop: 1000px;
+  --breakpoint-mobile: 340px;
+  --breakpoint-how: 1200px;
+}
+input[type=range] {
+    z-index: 2;
+    height: 20px;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #194BF0;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #194BF0;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+
+  .dashboard-contents .tab-content { display: none; }
+
+    /* when a radio is checked, show its matching content */
+    /* radios live before .dashboard-contents, so we can use general sibling (~) */
+    #tab-1-radio:checked ~ .dashboard-contents #tab-1,
+    #tab-2-radio:checked ~ .dashboard-contents #tab-2,
+    #tab-3-radio:checked ~ .dashboard-contents #tab-3,
+    #tab-4-radio:checked ~ .dashboard-contents #tab-4,
+    #tab-5-radio:checked ~ .dashboard-contents #tab-5,
+    #tab-6-radio:checked ~ .dashboard-contents #tab-6,
+    #tab-7-radio:checked ~ .dashboard-contents #tab-7,
+    #tab-8-radio:checked ~ .dashboard-contents #tab-8 {
+      display: block;
+    }
+
+    /* highlight active item in both sidebars */
+    /* use :has() if supported; otherwise we’ll add a small JS fallback below */
+    .menu li:has(> label[for="tab-1-radio"]):has(+ *) {}
+    /* (we’ll style active via utility classes in JS fallback) */
+
+    /* smooth-ish reveal */
+    .tab-content { opacity: 0; transform: translateY(6px); transition: 180ms; }
+    #tab-1-radio:checked ~ .dashboard-contents #tab-1,
+    #tab-2-radio:checked ~ .dashboard-contents #tab-2,
+    #tab-3-radio:checked ~ .dashboard-contents #tab-3,
+    #tab-4-radio:checked ~ .dashboard-contents #tab-4,
+    #tab-5-radio:checked ~ .dashboard-contents #tab-5,
+    #tab-6-radio:checked ~ .dashboard-contents #tab-6,
+    #tab-7-radio:checked ~ .dashboard-contents #tab-7,
+    #tab-8-radio:checked ~ .dashboard-contents #tab-8 {
+      opacity: 1; transform: none;
+    }
+
+    
+
+
+    

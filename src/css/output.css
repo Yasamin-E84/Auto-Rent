@@ -47,6 +47,9 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-Estedad: Estedad;
+    --breakpoint-desktop: 1000px;
+    --breakpoint-mobile: 340px;
+    --breakpoint-how: 1200px;
   }
 }
 @layer base {
