@@ -327,7 +327,7 @@
 
 <body class="bg-[#F3F3F3]">
     <!--#region main-->
-    <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden">
+    <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
         <!--#region header-->
         <div
             class="header-container w-full h-[400px] mx-auto bg-[url('https://i.pinimg.com/736x/4d/96/4a/4d964ab7a8c34a3c54d021de4fe0da04.jpg')] bg-cover bg-center">
@@ -505,9 +505,11 @@
             <!-- #region banner -->
             <div
                 class="container-body w-fit absolute right-1/2 translate-x-[50%] top-[20%] flex flex-col justify-center items-center">
-                <span class="text-[#FDB713] font-700 text-[32px] leading-[80%] font-Estedad">اجاره خودرو</span>
+                <span
+                    class="text-[#FDB713] font-700 desktop:text-[32px] mobile:text-[24px] leading-[80%] font-Estedad">اجاره
+                    خودرو</span>
                 <div
-                    class="flex justify-center items-center w-fit gap-x-[6px] font-Estedad text-[14px] leading-[10%] text-[#353535]">
+                    class="flex justify-center items-center w-fit gap-x-[6px] font-Estedad desktop:text-[14px] mobile:text-[10px] leading-[100%] text-[#353535]">
                     اتورنت
                     <img src="./src/img/plp/header/arrow-left.svg" alt="">
                     لیست خودروهای اجاره ای
@@ -528,7 +530,7 @@
                     <!-- Accordion Item 1: قیمت اجاره خودرو -->
                     <div class="accordion-item border-b border-gray-200 pb-3">
                         <button
-                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none"
+                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none cursor-pointer"
                             onclick="toggleAccordion(1)">
                             <span>قیمت اجاره خودرو</span>
                             <svg id="icon-1" xmlns="http://www.w3.org/2000/svg"
@@ -613,7 +615,7 @@
                     <!-- Accordion Item 2: برند خودرو -->
                     <div class="accordion-item border-b border-gray-200 pb-3">
                         <button
-                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none"
+                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none cursor-pointer"
                             onclick="toggleAccordion(2)">
                             <span>برند خودرو</span>
                             <svg id="icon-2" xmlns="http://www.w3.org/2000/svg"
@@ -644,7 +646,7 @@
                     <!-- Accordion Item 3: اجاره خودرو براساس نیاز شما -->
                     <div class="accordion-item">
                         <button
-                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none"
+                            class="accordion-header flex items-center justify-between w-full font-Estedad text-[15px] font-[600] text-[#111827] focus:outline-none cursor-pointer"
                             onclick="toggleAccordion(3)">
                             <span>اجاره خودرو براساس نیاز شما</span>
                             <svg id="icon-3" xmlns="http://www.w3.org/2000/svg"
@@ -721,27 +723,96 @@
                         قیمت اجاره خودرو
                     </div>
                     <!-- Panel -->
-                    <div tabindex="-1"
-                        class="dropdown-content z-[1] bg-[#111827] menu p-4 rounded-box w-80 shadow right-0">
+                    <div tabindex="-1" class="dropdown-content z-[1] bg-white menu p-4 rounded-box w-80 shadow right-0">
                         <!-- Labels row -->
-                        <div class="flex items-center justify-between mb-2 text-white font-Estedad">
-                            <span id="maxLabel">تا ۶,۰۰۰,۰۰۰ تومان</span>
-                            <span id="minLabel">از ۶۰,۰۰۰,۰۰۰ تومان</span>
+                        <div class="flex items-center justify-between text-[#111827] font-Estedad text-[13px] mb-2">
+                            <span id="maxLabel">تا ۶۰,۰۰۰,۰۰۰ تومان</span>
+                            <span id="minLabel">از ۶,۰۰۰,۰۰۰ تومان</span>
                         </div>
 
                         <!-- Slider -->
-                        <div id="priceDual" class="relative py-3 select-none" dir="ltr" style="--min:0%; --max:100%;">
-                            <!-- rail with filled segment (blue) -->
-                            <div class="h-2 rounded-full"></div>
+                        <div class="relative w-full h-6" dir="ltr">
+                            <!-- Background track -->
+                            <div
+                                class="absolute top-1/2 -translate-y-1/2 left-0 w-full h-[4px] bg-gray-300 rounded-full">
+                            </div>
 
-                            <!-- two DaisyUI ranges stacked -->
-                            <input id="minR" type="range"
-                                class="range absolute inset-0 w-full bg-transparent [--range-shdw:transparent]"
-                                min="6000000" max="60000000" step="1000000" value="6000000" />
-                            <input id="maxR" type="range"
-                                class="range absolute inset-0 w-full bg-transparent [--range-shdw:transparent]"
-                                min="6000000" max="60000000" step="1000000" value="60000000" />
+                            <!-- Blue filled section -->
+                            <div id="fillTrack"
+                                class="absolute top-1/2 -translate-y-1/2 h-[4px] bg-[#194BF0] rounded-full">
+                            </div>
+
+                            <!-- Min Handle -->
+                            <input id="minRange" type="range" min="6000000" max="60000000" step="1000000"
+                                value="6000000"
+                                class="absolute w-full appearance-none bg-transparent pointer-events-auto accent-[#194BF0]"
+                                oninput="updateDualRange()" />
+
+                            <!-- Max Handle -->
+                            <input id="maxRange" type="range" min="6000000" max="60000000" step="1000000"
+                                value="60000000"
+                                class="absolute w-full appearance-none bg-transparent pointer-events-auto accent-[#194BF0]"
+                                oninput="updateDualRange()" />
+
+                            <style>
+                                /* Custom thumb styling */
+                                input[type=range]::-webkit-slider-thumb {
+                                    appearance: none;
+                                    height: 18px;
+                                    width: 18px;
+                                    border-radius: 50%;
+                                    background-color: #194BF0;
+                                    cursor: pointer;
+                                    position: relative;
+                                    z-index: 3;
+                                }
+
+                                input[type=range]::-moz-range-thumb {
+                                    height: 18px;
+                                    width: 18px;
+                                    border-radius: 50%;
+                                    background-color: #194BF0;
+                                    cursor: pointer;
+                                    position: relative;
+                                    z-index: 3;
+                                }
+
+                                input[type=range] {
+                                    z-index: 2;
+                                    height: 20px;
+                                }
+                            </style>
                         </div>
+                        <script>
+                            function toggleAccordion(id) {
+                                document.querySelectorAll('.accordion-panel').forEach((panel, i) => {
+                                    const num = i + 1;
+                                    const icon = document.getElementById(`icon-${num}`);
+                                    if (num === id) {
+                                        panel.classList.toggle('hidden');
+                                        icon.classList.toggle('rotate-180');
+                                    } else {
+                                        panel.classList.add('hidden');
+                                        icon.classList.remove('rotate-180');
+                                    }
+                                });
+                            }
+
+                            function updateRange() {
+                                const minRange = document.getElementById('minRange');
+                                const maxRange = document.getElementById('maxRange');
+                                const rangeTrack = document.getElementById('rangeTrack');
+                                const min = parseInt(minRange.min), max = parseInt(minRange.max);
+                                const minVal = Math.min(parseInt(minRange.value), parseInt(maxRange.value) - 1000000);
+                                const maxVal = Math.max(parseInt(maxRange.value), parseInt(minRange.value) + 1000000);
+                                const percent1 = ((minVal - min) / (max - min)) * 100;
+                                const percent2 = ((maxVal - min) / (max - min)) * 100;
+
+                                rangeTrack.style.left = percent1 + "%";
+                                rangeTrack.style.width = (percent2 - percent1) + "%";
+                            }
+                            updateRange();
+                        </script>
                     </div>
                 </div>
                 <div class="cars-brand dropdown dropdown-center">
@@ -750,41 +821,41 @@
                         برند
                         خودرو</div>
                     <ul tabindex="-1"
-                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm flex flex-col justify-center items-center">
+                        class="dropdown-content menu rounded-box z-1 w-40 p-2 shadow-sm flex flex-col justify-center items-center bg-white">
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox" checked="checked"
-                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-white w-[16px] h-[16px] rounded-[4px]" />
+                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-[#111827] w-[16px] h-[16px] rounded-[4px]" />
                             اجاره بنز
                         </div>
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox"
-                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-white w-[16px] h-[16px] rounded-[4px]" />
+                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-[#111827] w-[16px] h-[16px] rounded-[4px]" />
                             اجاره بی ام و
                         </div>
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox"
-                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-white w-[16px] h-[16px] rounded-[4px]" />
+                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-[#111827] w-[16px] h-[16px] rounded-[4px]" />
                             اجاره پژو
                         </div>
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox"
-                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-white w-[16px] h-[16px] rounded-[4px]" />
+                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-[#111827] w-[16px] h-[16px] rounded-[4px]" />
                             اجاره پورشه
                         </div>
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox"
-                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-white w-[16px] h-[16px] rounded-[4px]" />
+                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-[#111827] w-[16px] h-[16px] rounded-[4px]" />
                             اجاره کیا
                         </div>
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="checkbox"
-                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-white w-[16px] h-[16px] rounded-[4px]" />
+                                class="checkbox border-[#194BF0] bg-transparent checked:border-transparent checked:bg-[#194BF0] checked:text-[#111827] w-[16px] h-[16px] rounded-[4px]" />
                             اجاره هیوندای
                         </div>
                     </ul>
@@ -795,7 +866,7 @@
                         اجاره
                         خودرو براساس نیاز شما</div>
                     <ul tabindex="-1"
-                        class="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 box-border shadow-sm flex flex-col justify-center items-center">
+                        class="dropdown-content menu bg-white rounded-box z-1 w-40 p-2 box-border shadow-sm flex flex-col justify-center items-center">
                         <div
                             class="w-full h-full flex justify-start items-center font-Estedad font-[500] text-[14px] leading-[180%] gap-x-[8px]">
                             <input type="radio" name="radio-12" checked="checked"
@@ -840,17 +911,87 @@
             <div class="cars-main mobile:w-[95%] flex flex-col mx-auto justify-center items-center desktop:w-[74%]">
                 <!--#region cars-filter-->
                 <div
-                    class="cars-filter w-[95%] flex gap-x-2 mobile:justify-between desktop:justify-center desktop:gap-x-[24px] items-center mb-[24px]">
+                    class="cars-filter w-[95%] flex gap-x-2 mobile:justify-between desktop:justify-center desktop:gap-x-[24px] items-center mb-[24px] ">
+
                     <div
-                        class="calender-filter cursor-pointer flex mobile:w-1/2 desktop:w-2/3 justify-between items-center gap-x-[8px] p-[12px] border-1 border-[#D7D7D7] rounded-[8px]">
-                        <span class="font-Estedad text-[14px] text-[#353535] leading-[180%]">تقویم قیمتی </span>
-                        <img src="./src/img/plp/cars/arrow-down-outline.svg" alt="">
+                        class="dropdown dropdown-bottom dropdown-center calender-filter cursor-pointer flex mobile:w-1/2 desktop:w-[60%] justify-between items-center bg-transparent shadow-none">
+                        <div tabindex="0" role="button"
+                            class="btn calender-filter cursor-pointer flex w-full justify-between items-center gap-x-[8px] p-[12px] border-1 border-[#D7D7D7] rounded-[8px] bg-transparent shadow-none">
+                            <span class="font-Estedad text-[14px] text-[#353535] leading-[180%] font-light">تقویم قیمتی
+                            </span>
+                            <img src="./src/img/plp/cars/arrow-down-outline.svg" alt="">
+                        </div>
+                        <ul tabindex="-1"
+                            class="dropdown-content menu bg-white text-[#0C0C0C] rounded-box z-1 mobile:w-50 desktop:p-2 mobile:p-1 shadow-sm desktop:w-full">
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">زیر ۱,۰۰۰,۰۰۰ تومان</a>
+                            </li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۱,۰۰۰,۰۰۰ تا ۲,۵۰۰,۰۰۰
+                                    تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۲,۵۰۰,۰۰۰ تا ۵,۰۰۰,۰۰۰
+                                    تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۵,۰۰۰,۰۰۰ تا ۷,۵۰۰,۰۰۰
+                                    تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۷,۵۰۰,۰۰۰ تا ۱۰,۰۰۰,۰۰۰
+                                    تومان</a></li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۱۰,۰۰۰,۰۰۰ تا ۱۵,۰۰۰,۰۰۰
+                                    تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۱۵,۰۰۰,۰۰۰ تا ۲۰,۰۰۰,۰۰۰
+                                    تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۲۰,۰۰۰,۰۰۰ تا ۳۰,۰۰۰,۰۰۰
+                                    تومان</a></li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۳۰,۰۰۰,۰۰۰ تا ۵۰,۰۰۰,۰۰۰
+                                    تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">۵۰,۰۰۰,۰۰۰ تا ۸۰,۰۰۰,۰۰۰
+                                    تومان </a></li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بالای ۸۰,۰۰۰,۰۰۰ تومان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">قیمت توافقی / تماس
+                                    بگیرید</a></li>
+
+                        </ul>
                     </div>
                     <div
-                        class="sort-filter cursor-pointer flex mobile:w-1/2 desktop:w-1/3 justify-between items-center gap-x-[8px] p-[12px] border-1 border-[#D7D7D7] rounded-[8px]">
-                        <span class="font-Estedad text-[14px] text-[#353535] leading-[180%]">مرتب سازی</span>
-                        <img src="./src/img/plp/cars/arrow-down-outline.svg" alt="">
+                        class="dropdown dropdown-bottom dropdown-center calender-filter cursor-pointer flex mobile:w-1/2 desktop:w-[30%] justify-between items-center bg-transparent shadow-none">
+                        <div tabindex="0" role="button"
+                            class="btn calender-filter cursor-pointer flex w-full justify-between items-center gap-x-[8px] p-[12px] border-1 border-[#D7D7D7] rounded-[8px] bg-transparent shadow-none">
+                            <span class="font-Estedad text-[14px] text-[#353535] leading-[180%] font-light">مرتب
+                                سازی</span>
+
+                            <img src="./src/img/plp/cars/arrow-down-outline.svg" alt="">
+                        </div>
+                        <ul tabindex="-1"
+                            class="dropdown-content menu bg-white text-[#0C0C0C] rounded-box z-1 desktop:p-2 mobile:p-1 shadow-sm w-full">
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کمترین قیمت</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بیشترین قیمت</a></li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کمترین کیلومتر کارکرد</a>
+                            </li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بیشترین کیلومتر
+                                    کارکرد</a></li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">جدیدترین خودروها</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">قدیمی‌ترین خودروها</a>
+                            </li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بیشترین امتیاز
+                                    مشتریان</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بیشترین میزان رزرو</a>
+                            </li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ارزان‌ترین خودروهای
+                                    لوکس</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">گران‌ترین خودروهای
+                                    لوکس</a></li>
+
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">نزدیک‌ترین خودرو به
+                                    شما</a></li>
+                            <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">محبوب‌ترین خودروها</a>
+                            </li>
+                        </ul>
                     </div>
+
                 </div>
                 <!--#endregion cars-filter-->
                 <!-- #region cars-cards -->
@@ -889,7 +1030,7 @@
                             <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
                         </div>
                         <button
-                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white cursor-pointer">
                             درخواست رزرو
                         </button>
                     </div>
@@ -923,7 +1064,7 @@
                             <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
                         </div>
                         <button
-                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white cursor-pointer">
                             درخواست رزرو
                         </button>
                     </div>
@@ -957,7 +1098,7 @@
                             <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
                         </div>
                         <button
-                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white cursor-pointer">
                             درخواست رزرو
                         </button>
                     </div>
@@ -990,7 +1131,7 @@
                             <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
                         </div>
                         <button
-                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white cursor-pointer">
                             درخواست رزرو
                         </button>
                     </div>
@@ -1024,7 +1165,7 @@
                             <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
                         </div>
                         <button
-                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white cursor-pointer">
                             درخواست رزرو
                         </button>
                     </div>
@@ -1058,7 +1199,7 @@
                             <span class="font-Estedad font-[700] text-[12px] text-[#212121]">۸۰ میلیون تومان</span>
                         </div>
                         <button
-                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white">
+                            class="reservation-items-request w-full h-[44px] rounded-[8px] bg-[#194BF0] font-Estedad font-[600] text-[14px] text-white cursor-pointer">
                             درخواست رزرو
                         </button>
                     </div>
@@ -1158,7 +1299,8 @@
                                 href="./FAQ.html">سوالات متداول</a></p>
                         <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما
                         </p>
-                                   <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a href="./about-us.html">درباره ما</a></p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                                href="./about-us.html">درباره ما</a></p>
 
                     </div>
 

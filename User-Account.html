@@ -327,7 +327,7 @@
 
 <body class="bg-[#F3F3F3] pb-8 h-screen">
     <!--#region main-->
-    <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden">
+  <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
         <!--#region header-->
         <div class="header-container w-full mx-auto">
             <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
@@ -419,7 +419,7 @@
                 <div
                     class="rounded-[12px] w-[90%] right-1/2 translate-x-[50%] border border-[#E5E7EB] bg-white p-3 absolute z-4">
                     <div class="flex flex-col gap-2 font-Estedad text-[#353535] text-[15px]">
-                        <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">رزرو خودرو</a>
+                        <a href="PLP.html" class="py-2 px-3 rounded hover:bg-gray-50">رزرو خودرو</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
                         <a href="about-us.html" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
@@ -877,22 +877,22 @@
                             <button
                                 class="tab-btn flex-1 text-center cursor-pointer py-4 rounded-xl mx-1 border border-[#08237D] bg-[#08237D] text-white transition-all duration-200"
                                 onclick="setActive(this)">
-                                <div>جاری</div>
-                                <div class="mt-1 text-[#FFB800]">۲</div>
+                                <div class="font-Estedad text-[14px]">جاری</div>
+                                <div class="mt-1 text-[#FFB800] font-Estedad text-[14px]">۲</div>
                             </button>
                             <button
                                 class="tab-btn flex-1 text-center py-4 rounded-xl cursor-pointer mx-1 border border-gray-300 bg-white text-[#353535] transition-all duration-200"
                                 onclick="setActive(this)">
-                                <div>انجام شده</div>
-                                <div class="mt-1 text-gray-500">۳</div>
+                                <div class="font-Estedad text-[14px]">انجام شده</div>
+                                <div class="mt-1 text-gray-500 font-Estedad text-[14px]">۳</div>
                             </button>
 
 
                             <button
                                 class="tab-btn flex-1 text-center py-4 rounded-xl mx-1 border cursor-pointer border-gray-300 bg-white text-[#353535] transition-all duration-200"
                                 onclick="setActive(this)">
-                                <div>لغو شده</div>
-                                <div class="mt-1 text-gray-500">۱</div>
+                                <div class="font-Estedad text-[14px]">لغو شده</div>
+                                <div class="mt-1 text-gray-500 font-Estedad text-[14px]">۱</div>
                             </button>
                         </div>
 
@@ -1042,24 +1042,54 @@
                 </div>
 
                 <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const tabBtns = document.querySelectorAll('.tab-btn');
-                        const tabPanes = document.querySelectorAll('.tab-pane');
+            document.addEventListener('DOMContentLoaded', () => {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
 
-                        tabBtns.forEach((btn, index) => {
-                            btn.addEventListener('click', () => {
-                                // Remove active states
-                                tabBtns.forEach(b => b.classList.remove('border-[#194BF0]', 'active'));
-                                tabPanes.forEach(p => p.classList.add('hidden'));
+    tabBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
 
-                                // Add active states
-                                btn.classList.add('border-[#194BF0]', 'active');
-                                tabPanes[index].classList.remove('hidden');
-                            });
-                        });
-                    });
+            // Reset ALL tabs to inactive state
+            tabBtns.forEach(b => {
+                b.classList.remove(
+                    'bg-[#08237D]', 'text-white',
+                    'border-[#08237D]', 'border-[#194BF0]'
+                );
+                b.classList.add(
+                    'bg-white', 'text-[#353535]', 'border-gray-300'
+                );
+
+                // Reset counter color
+                const count = b.querySelector('div:nth-child(2)');
+                if (count) {
+                    count.classList.remove('text-[#FFB800]');
+                    count.classList.add('text-gray-500');
+                }
+            });
+
+            // Hide all tab panes
+            tabPanes.forEach(p => p.classList.add('hidden'));
+
+            // Activate the clicked tab
+            btn.classList.remove('bg-white', 'text-[#353535]', 'border-gray-300');
+            btn.classList.add(
+                'bg-[#08237D]', 'text-white', 'border-[#194BF0]'
+            );
+
+            // Active counter color
+            const activeCount = btn.querySelector('div:nth-child(2)');
+            if (activeCount) {
+                activeCount.classList.remove('text-gray-500');
+                activeCount.classList.add('text-[#FFB800]');
+            }
+
+            // Show the selected content
+            tabPanes[index].classList.remove('hidden');
+        });
+    });
+});
+
                 </script>
-
 
                 <div id="tab-4"
                     class="tab-content card rounded-2xl bg-white w-full flex flex-col justify-center items-center">

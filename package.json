@@ -17,9 +17,13 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "cally": "^0.8.0",
+    "flowbite": "^4.0.0",
     "flyonui": "^2.4.1",
     "nouislider": "^15.8.1",
+    "pikaday": "^1.8.2",
     "preline": "^3.2.3",
+    "react-day-picker": "^9.11.1",
     "tailwindcss": "^4.1.13"
   }
 }

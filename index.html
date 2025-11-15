@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Rent - Car rental website</title>
   <link rel="stylesheet" href="./src/css/output.css">
-
   <style id="force-dark-class">
     /* global browser treatment */
     html.dark {
@@ -322,7 +321,7 @@
 
 <body class="bg-[#F3F3F3]">
   <!--#region main-->
-  <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden">
+  <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
     <!--#region header-->
     <div
       class="header-container w-full h-[683px] mx-auto bg-[url(https://i.pinimg.com/736x/d4/dc/8c/d4dc8cd326e127fc370c996b8a0b7b01.jpg)] bg-cover bg-bottom">
@@ -391,12 +390,10 @@
             </button>
 
             <!-- small theme switch (mobile) -->
-            <button
-              class="js-dark w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition">
+            <button class="js-dark w-[60px] h-[30px] relative overflow-hidden border-none active:scale-95 transition">
               <img src="./src/img/header/lightmode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
             </button>
-            <button
-              class="js-light w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition hidden">
+            <button class="js-light w-[80px] h-[40px] relative overflow-hidden active:scale-95 transition hidden">
               <img src="./src/img/header/dark mode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
             </button>
           </div>
@@ -498,11 +495,11 @@
         <div class="px-4 desktop:px-[108px]">
           <div class="container-body-text text-center desktop:text-right">
             <h1
-              class="text-[#FDB713] mobile:text-[24px] desktop:text-[44px] font-bold w-full desktop:w-[335px] font-Estedad leading-[140%] mt-[32px] desktop:mt-[72px]">
+              class="text-[#FDB713] mobile:text-[20px] desktop:text-[44px] font-bold w-full desktop:w-[335px] font-Estedad leading-[140%] mt-[32px] desktop:mt-[72px]">
               اُتـــو رِنت؛ سریع، آسان و به صرفه
             </h1>
             <p
-              class="font-Estedad text-[#F9F9F9] mobile:text-[14px] desktop:text-[20px] leading-[32px] desktop:leading-[36px] mt-2">
+              class="font-Estedad text-[#F9F9F9] mobile:text-[12px] desktop:text-[20px] leading-[32px] desktop:leading-[36px] mt-2">
               سرویس دهنده رزرو خودرو در ایران در کمترین زمان ممکن!
             </p>
           </div>
@@ -510,11 +507,11 @@
           <div
             class="container-body-btns flex justify-center desktop:justify-between gap-3 w-full desktop:w-[353px] mt-[24px] desktop:mt-[40px]">
             <button
-              class="easy-reserve w-[60%] mobile:w-[240px] desktop:w-[186px] h-[44px] desktop:h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
+              class="easy-reserve w-[60%] mobile:w-[240px] desktop:w-[186px] h-[44px] desktop:h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] mobile:text-[12px] desktop:text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
               <img src="./src/img/header/car.svg" alt="">رزرو آسان خودرو
             </button>
             <button
-              class="w-[35%] mobile:w-[180px] desktop:w-[151px] h-[44px] desktop:h-[48px] gap-x-[8px] rounded-[7px] border border-white bg-transparent text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
+              class="w-[35%] mobile:w-[180px] desktop:w-[151px] h-[44px] desktop:h-[48px] gap-x-[8px] rounded-[7px] border border-white bg-transparent mobile:text-[12px] desktop:text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
               <img src="./src/img/header/arrow-left.svg" alt="">تماس با ما
             </button>
           </div>
@@ -541,7 +538,7 @@
 
         <!-- Right: Choose type buttons -->
         <div
-          class="choose-right w-fit desktop:w-[430px] h-full
+          class="choose-right w-fit h-full
                 flex items-center gap-2 
                 overflow-x-auto desktop:overflow-visible
                 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex-wrap justify-center">
@@ -593,8 +590,8 @@
           </div>
 
           <div class="rent-type-time-left w-full desktop:w-[506px]
-                flex flex-wrap items-center desktop:flex-row
-                gap-x-8 gap-y-4 desktop:gap-y-0 mobile:flex-col mobile:items-start">
+                flex flex-wrap items-center desktop:flex-row desktop:ml-4
+                gap-x-6 gap-y-4 desktop:gap-y-0 mobile:flex-col mobile:items-start">
             <div class="desktop:text-[14px] mobile:text-[12px] font-Estedad text-[#0C0C0C] font-[400]
                inline-flex items-center gap-1 desktop:mr-[32px]">
               <img src="./src/img/header/arrow-left-b.svg" alt="">تاریخ تحویل
@@ -615,28 +612,151 @@
         </div>
         <!--#endregion type-time-->
 
+
         <!--#region type-location-desktop-->
         <div class="rent-type-location w-full desktop:justify-between h-auto
            gap-3 desktop:gap-x-3 desktop:flex desktop:flex-wrap
            items-center px-3 py-3 mobile:mt-[-12px] desktop:mt-[12px]">
 
-          <div class="w-full desktop:w-[535px] h-[29px]
-                flex justify-between items-center">
-            <span class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">
-              تهران-فرودگاه امام خمینی
-            </span>
-            <img src="./src/img/header/arrow-down.svg" alt="" class="w-5">
+          <div class="dropdown dropdown-bottom dropdown-center w-full desktop:w-[535px] h-[29px]
+                flex justify-between items-center shadow-0 border-0 bg-transparent p-0">
+            <div tabindex="0" role="button" class="btn w-full desktop:w-[535px] m-0 h-[29px]
+                flex justify-between items-center shadow-none border-0 bg-transparent p-0"> <span
+                class="flex flex-row font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">
+                تهران-فرودگاه امام
+                <span
+                  class="font-Estedad font-[400] desktop:flex desktop:text-[16px] mobile:text-[10px] mobile:hidden leading-[180%] text-[#0C0C0C]">خمینی</span>
+              </span>
+              <img src="./src/img/header/arrow-down.svg" alt="" class="desktop:w-5 mobile:w-4">
+            </div>
+            <ul tabindex="-1"
+              class="dropdown-content menu bg-white text-[#0C0C0C] rounded-box z-1 mobile:w-50 desktop:p-2 mobile:p-1 shadow-sm desktop:w-full">
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">تهران-فوردگاه امام خمینی</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">مراغه – فرودگاه سهند مراغه</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ارومیه – فرودگاه شهید باکری ارومیه</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">خوی – فرودگاه خوی</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">پیرانشهر – فرودگاه خانه</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ماکو – فرودگاه ماکو</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">اردبیل – فرودگاه بین‌المللی اردبیل</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">پارس‌آباد – فرودگاه پارس‌آباد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">اصفهان – فرودگاه بین‌المللی شهید بهشتی
+                  اصفهان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کاشان – فرودگاه کاشان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کرج – فرودگاه بین‌المللی پیام</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ایلام – فرودگاه ایلام</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بوشهر – فرودگاه بوشهر</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">عسلویه – فرودگاه خلیج فارس</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">دیلم – فرودگاه منطقه نفتی بهرگان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">جزیره خارک – فرودگاه خارک</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">تهران – فرودگاه مهرآباد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">تهران – فرودگاه امام خمینی</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">شهرکرد – فرودگاه شهرکرد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بیرجند – فرودگاه بین‌المللی بیرجند</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">طبس – فرودگاه طبس</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">مشهد – فرودگاه بین‌المللی شهید
+                  هاشمی‌نژاد مشهد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">سبزوار – فرودگاه سبزوار</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کاشمر – فرودگاه کاشمر</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بجنورد – فرودگاه بجنورد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">اهواز – فرودگاه بین‌المللی اهواز</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">آبادان – فرودگاه بین‌المللی آبادان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">دزفول – فرودگاه دزفول</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ماهشهر – فرودگاه ماهشهر</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">مسجدسلیمان – فرودگاه مسجدسلیمان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">امیدیه – فرودگاه آغاجاری</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">زنجان – فرودگاه زنجان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">سمنان – فرودگاه سمنان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">شاهرود – فرودگاه شاهرود</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">زاهدان – فرودگاه بین‌المللی زاهدان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ایرانشهر – فرودگاه شهدای ایرانشهر</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">سراوان – فرودگاه سراوان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">چابهار – فرودگاه کنارک چابهار</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">زابل – فرودگاه شهدای زابل</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">شیراز – فرودگاه بین‌المللی شهید دستغیب
+                  شیراز</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">لامرد – فرودگاه بین‌المللی شهدای
+                  لامرد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">لارستان – فرودگاه آیت‌اللهی لارستان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">جهرم – فرودگاه جهرم</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">فسا – فرودگاه فسا</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">داراب – فرودگاه داراب</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کرمان – فرودگاه بین‌المللی کرمان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">سیرجان – فرودگاه سیرجان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">جیرفت – فرودگاه جیرفت</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">رفسنجان – فرودگاه شهدای رفسنجان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بم – فرودگاه شهدای بم</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کرمانشاه – فرودگاه بین‌المللی
+                  کرمانشاه</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">سنندج – فرودگاه سنندج</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">یاسوج – فرودگاه یاسوج</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">گچساران – فرودگاه شهید امیدبخش
+                  گچساران</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">رشت – فرودگاه سردار جنگل رشت</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">گرگان – فرودگاه گرگان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کلاله – فرودگاه کلاله</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">خرم‌آباد – فرودگاه بین‌المللی شهدای
+                  خرم‌آباد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ساری – فرودگاه بین‌المللی دشت ناز
+                  ساری</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">رامسر – فرودگاه رامسر</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">نوشهر – فرودگاه نوشهر</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">اراک – فرودگاه بین‌المللی شهدای
+                  اراک</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بندرعباس – فرودگاه بین‌المللی
+                  بندرعباس</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">کیش – فرودگاه بین‌المللی کیش</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">قشم – فرودگاه بین‌المللی قشم</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">بندرلنگه – فرودگاه شهدای بندرلنگه</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">ابوموسی – فرودگاه شهدای ابوموسی</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">لاوان – فرودگاه لاوان</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">سیری – فرودگاه جزیره سیری</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">همدان – فرودگاه بین‌المللی همدان</a>
+              </li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">یزد – فرودگاه شهید صدوقی یزد</a></li>
+              <li><a class="font-Estedad desktop:text-[14px] mobile:text-[12px]">تبریز – فرودگاه بین‌المللی شهید مدنی
+                  تبریز</a></li>
+            </ul>
           </div>
 
           <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
           <div class="type-location-middle desktop:flex desktop:flex-wrap desktop:gap-x-3">
+            
             <!-- #region Delivery Date -->
-            <div class="w-full desktop:w-[111px] h-[31px]
-                flex justify-between items-center">
+
+            <button popovertarget="cally-popover1" class="input input-border w-full desktop:w-[120px] h-[31px]
+                flex justify-between items-center gap-4 p-0 bg-transparent cursor-pointer" id="cally1" style="anchor-name:--cally1">
               <span
                 class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
-              <img src="./src/img/header/calendar.svg" alt="" class="w-5">
+              <img src="./src/img/header/calendar.svg" alt="" class="w-5"> </button>
+            <div popover id="cally-popover1" class="dropdown bg-white rounded-box shadow-lg text-[#0C0C0C] right-0"
+              style="position-anchor:--cally1">
+              <calendar-date class="cally" onchange={document.getElementById('cally1').innerText=this.value}>
+                <svg aria-label="Previous" class="fill-current size-4" slot="previous"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                </svg>
+                <svg aria-label="Next" class="fill-current size-4" slot="next" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                </svg>
+                <calendar-month></calendar-month>
+              </calendar-date>
             </div>
+
             <!-- #endregion Delivery Date -->
 
             <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
@@ -653,11 +773,24 @@
             <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
 
             <!-- #region Return Date -->
-            <div class="w-full desktop:w-[111px] h-[31px]
-                flex justify-between items-center">
+            <button popovertarget="cally-popover1" class="input input-border w-full bg-transparent desktop:w-[120px] h-[31px]
+                flex justify-between items-center gap-4 p-0 cursor-pointer" id="cally1" style="anchor-name:--cally1">
               <span
                 class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
-              <img src="./src/img/header/calendar.svg" alt="" class="w-5">
+              <img src="./src/img/header/calendar.svg" alt="" class="w-5"> </button>
+            <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg"
+              style="position-anchor:--cally1">
+              <calendar-date class="cally" onchange={document.getElementById('cally1').innerText=this.value}>
+                <svg aria-label="Previous" class="fill-current size-4" slot="previous"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                </svg>
+                <svg aria-label="Next" class="fill-current size-4" slot="next" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                </svg>
+                <calendar-month></calendar-month>
+              </calendar-date>
             </div>
             <!-- #endregion Return Date -->
 
@@ -1142,11 +1275,11 @@
         <div
           class=" how-to-answers-right mobile:flex-row desktop:flex-col mobile:w-full desktop:w-[366px] flex gap-y-[260px] desktop:gap-y-[427px] desktop:justify-between mobile:justify-center px-2">
           <!-- step 1 -->
-          <div class="how-to-answers-right-first desktop:w-auto desktop:block mobile:flex mobile:flex-col">
+          <div class="how-to-answers-right-first desktop:w-auto desktop:block mobile:flex mobile:flex-col w-full">
             <!-- large outlined number -->
             <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
               <span
-                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[100px] leading-[80%] text-transparent"
                 style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۱</span>
               <div
                 class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
@@ -1155,7 +1288,7 @@
             </div>
 
             <span
-              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[100px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[50px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۱</span>
             <!-- step content -->
             <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
@@ -1164,13 +1297,14 @@
                 <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-start desktop:justify-start desktop:w-[110%]">
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودروی</span>
-                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">خود
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودروی</span>
+                  <span class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">خود
                     را انتخاب کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right mobile:px-2 desktop:px-0">
+                <p
+                  class="font-Estedad font-[500] text-[10px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right mobile:px-2 desktop:px-0">
                   خودروی مورد نظر خود را، متناسب با درخواست خود انتخاب کنید.
                 </p>
               </div>
@@ -1178,11 +1312,11 @@
           </div>
 
           <!-- step 2 -->
-          <div class="how-to-answers-right-first desktop:w-auto desktop:hidden mobile:flex mobile:flex-col">
+          <div class="how-to-answers-right-first desktop:w-auto desktop:hidden mobile:flex mobile:flex-col w-full">
             <!-- large outlined number -->
             <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
               <span
-                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[100px] leading-[80%] text-transparent"
                 style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
               <div
                 class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
@@ -1191,7 +1325,7 @@
             </div>
 
             <span
-              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[100px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
             <!-- step content -->
             <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
@@ -1200,21 +1334,24 @@
                 <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-start desktop:justify-start">
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
-                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">تحویل را تعیین کنید.</span>
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
+                  <span
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">تحویل
+                    را تعیین کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right ">
-تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید                </p>
+                <p
+                  class="font-Estedad font-[500] text-[10px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right ">
+                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید </p>
               </div>
             </div>
           </div>
           <!-- step 3 -->
-          <div class="how-to-answers-right-third mobile:w-[220px] desktop:w-auto mobile:hidden desktop:block">
+          <div class="how-to-answers-right-third mobile:w-[220px] desktop:w-auto mobile:hidden desktop:block w-full">
             <!-- large outlined number -->
             <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-1.5 desktop:mr-[20px]"
+              class="font-Estedad font-[700] text-[100px] desktop:text-[152px] leading-[80%] text-transparent mr-1.5 desktop:-mr-[15px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
             <!-- step content -->
             <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
@@ -1225,12 +1362,12 @@
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
                 <div class="flex gap-x-[4px]">
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره
                     را پرداخت کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                <p class="font-Estedad font-[500] text-[10px] desktop:text-[16px] leading-[140%] text-[#727272]">
                   می توانید از طریق کیف پول آنلاین یا کارت های عضو شبکه شتاب هزینه اجاره را پرداخت کنید.
                 </p>
               </div>
@@ -1251,10 +1388,10 @@
         <div
           class=" how-to-answers-right mobile:flex-row desktop:flex-col mobile:w-full desktop:w-[366px] flex gap-y-[260px] desktop:gap-y-[427px] desktop:justify-between mobile:justify-center px-2 mobile:items-start">
           <!-- step 2 -->
-          <div class="how-to-answers-left-second mobile:w-[200px] desktop:w-auto mobile:hidden desktop:block">
+          <div class="how-to-answers-left-second mobile:w-[200px] desktop:w-auto mobile:hidden desktop:block w-full">
             <!-- large outlined number -->
             <span
-              class="font-Estedad font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[128px] desktop:mr-[300px]"
+              class="font-Estedad font-[700] text-[100px] desktop:text-[152px] leading-[80%] text-transparent mr-[128px] desktop:mr-[300px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۲</span>
             <!-- step content -->
             <div
@@ -1266,11 +1403,11 @@
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
                 <div class="flex gap-x-[4px]">
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
-                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">تاریخ</span>
+                  <span class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">
                     تحویل را تعیین کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272]">
+                <p class="font-Estedad font-[500] text-[10px] desktop:text-[16px] leading-[140%] text-[#727272]">
                   تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید
                 </p>
               </div>
@@ -1278,11 +1415,12 @@
           </div>
 
           <!-- step 3 -->
-          <div class="how-to-answers-right-first desktop:w-auto desktop:hidden mobile:block mobile:flex mobile:flex-col">
+          <div
+            class="how-to-answers-right-first desktop:w-auto desktop:hidden mobile:block mobile:flex mobile:flex-col w-full">
             <!-- large outlined number -->
             <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
               <span
-                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[100px] leading-[80%] text-transparent"
                 style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
               <div
                 class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
@@ -1291,7 +1429,7 @@
             </div>
 
             <span
-              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[100px] desktop:text-[152px] leading-[80%] text-transparent mr-[15px] desktop:mr-[35px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۳</span>
             <!-- step content -->
             <div class="how-to-answers-right-first-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px]">
@@ -1300,22 +1438,25 @@
                 <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-start desktop:justify-start">
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
-                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره را پرداخت کنید.</span>
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">هزینه</span>
+                  <span
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">اجاره
+                    را پرداخت کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right ">
-تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید                </p>
+                <p
+                  class="font-Estedad font-[500] text-[10px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right ">
+                  تاریخ موردنظر خود را از تقویم، انتخاب و رزرو کنید </p>
               </div>
             </div>
           </div>
           <!-- step 4 -->
-          <div class="how-to-answers-right-first desktop:w-autoflex mobile:flex-col">
+          <div class="how-to-answers-right-first desktop:w-autoflex mobile:flex-col w-full">
             <!-- large outlined number -->
-             <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
+            <div class="again flex mobile:flex desktop:hidden h-full justify-center items-center mb-8">
               <span
-                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[120px] leading-[80%] text-transparent"
+                class="font-Estedad desktop:hidden mobile:flex font-[700] text-[100px]  leading-[80%] text-transparent"
                 style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
               <div
                 class="mobile:flex desktop:hidden rounded-[16px] border bg-white border-[#D7D7D7] w-fit h-fit p-3 justify-center items-center">
@@ -1323,7 +1464,7 @@
               </div>
             </div>
             <span
-              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[120px] desktop:text-[152px] leading-[80%] text-transparent desktop:mr-[300px]"
+              class="font-Estedad mobile:hidden desktop:flex font-[700] text-[100px] desktop:text-[152px] leading-[80%] text-transparent desktop:mr-[280px]"
               style="-webkit-text-stroke: 0.5px #0B2FA6; text-stroke: 0.5px #0B2FA6;">۴</span>
             <!-- step content -->
             <div class="how-to-answers-right-third-text flex gap-x-[16px] -mt-10 desktop:mt-[-60px] flex-row-reverse">
@@ -1332,13 +1473,14 @@
                 <img src="./src/img/how-to/key.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-center desktop:justify-start">
+                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-start desktop:justify-start">
                   <span
-                    class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودرو</span>
-                  <span class="font-Estedad font-bold text-[16px] desktop:text-[24px] leading-[140%] text-[#212121]">را
+                    class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودرو</span>
+                  <span class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">را
                     دریافت کنید.</span>
                 </div>
-                <p class="font-Estedad font-[500] text-[12px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right">
+                <p
+                  class="font-Estedad font-[500] text-[10px] desktop:text-[16px] leading-[140%] text-[#727272] mobile:text-center desktop:text-right">
                   در زمان و مکان تعیین شده، خودروی خود را دریافت کنید.
                 </p>
               </div>
@@ -1782,9 +1924,11 @@
           <div
             class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی آسان</p>
-            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a href="./FAQ.html">سوالات متداول</a></p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                href="./FAQ.html">سوالات متداول</a></p>
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما</p>
-            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a href="./about-us.html">درباره ما</a></p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                href="./about-us.html">درباره ما</a></p>
           </div>
 
           <!-- Left box -->
@@ -1808,17 +1952,17 @@
 
         <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
 
-         <div
-                    class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
-                    <a href="./rules.html"
-                        class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
-                        <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
-                        <p
-                            class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
-                            تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
-                        </p>
-                    </a>
-                </div>
+        <div
+          class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+          <a href="./rules.html"
+            class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+            <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
+            <p
+              class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
+              تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+            </p>
+          </a>
+        </div>
       </div>
       <!--#endregion footer-bottom-->
     </footer>
@@ -1827,6 +1971,8 @@
   </main>
   <!--#endregion main-->
   <script src="./src/js/main.js"></script>
+  <script type="module" src="https://unpkg.com/cally"></script>
+  
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 
-
 // Overlay open/close logic for global search
 (function () {
   const openBtn = document.getElementById('openSearch');
