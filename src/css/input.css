@@ -47,8 +47,6 @@ input[type=range] {
 
   .dashboard-contents .tab-content { display: none; }
 
-    /* when a radio is checked, show its matching content */
-    /* radios live before .dashboard-contents, so we can use general sibling (~) */
     #tab-1-radio:checked ~ .dashboard-contents #tab-1,
     #tab-2-radio:checked ~ .dashboard-contents #tab-2,
     #tab-3-radio:checked ~ .dashboard-contents #tab-3,
