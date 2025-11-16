@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Auto Rent - Car rental website</title>
   <link rel="stylesheet" href="./src/css/output.css">
+  <link rel="shortcut icon" href="./src/img/default.ico" type="image/x-icon">
   <style id="force-dark-class">
     /* global browser treatment */
     html.dark {
@@ -538,29 +539,58 @@
 
         <!-- Right: Choose type buttons -->
         <div
-          class="choose-right w-fit h-full
-                flex items-center gap-2 
-                overflow-x-auto desktop:overflow-visible
-                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex-wrap justify-center">
-          <button
-            class="shrink-0 h-10 px-3 rounded-[20px]
-               bg-[#194BF0] border border-[#D7D7D7]
-               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[12px] text-white font-[600] leading-[180%] text-center">
-            اجاره خودرو با راننده
-          </button>
-          <button
-            class="shrink-0 h-10 :px-3  rounded-[20px]
-               bg-transparent border border-[#D7D7D7]
-               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[12px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
-            اجاره خودرو بی راننده
-          </button>
-          <button
-            class="shrink-0 h-10 px-3 rounded-[20px]
-               bg-transparent border border-[#D7D7D7]
-               btn btn-active font-Estedad desktop:text-[14px] mobile:text-[12px] text-[#0C0C0C] font-[600] leading-[180%] text-center">
-            اجاره ماشین عروس
-          </button>
-        </div>
+  class="choose-right w-fit h-full
+         flex items-center gap-2 
+         overflow-x-auto desktop:overflow-visible
+         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex-wrap justify-center">
+
+  <!-- اجاره خودرو با راننده -->
+  <div class="shrink-0">
+    <input id="with-driver" name="rentType" type="radio" class="peer sr-only" checked />
+    <label
+      for="with-driver"
+      class="flex items-center justify-center h-10 px-3 rounded-[20px] cursor-pointer
+             font-Estedad desktop:text-[14px] mobile:text-[12px] font-[600] leading-[180%]
+             border border-[#D7D7D7] text-[#0C0C0C] bg-transparent
+             whitespace-nowrap
+             transition
+             peer-checked:bg-[#194BF0] peer-checked:text-white peer-checked:border-[#194BF0]">
+      اجاره خودرو با راننده
+    </label>
+  </div>
+
+  <!-- اجاره خودرو بی راننده -->
+  <div class="shrink-0">
+    <input id="without-driver" name="rentType" type="radio" class="peer sr-only" />
+    <label
+      for="without-driver"
+      class="flex items-center justify-center h-10 px-3 rounded-[20px] cursor-pointer
+             font-Estedad desktop:text-[14px] mobile:text-[12px] font-[600] leading-[180%]
+             border border-[#D7D7D7] text-[#0C0C0C] bg-transparent
+             whitespace-nowrap
+             transition
+             peer-checked:bg-[#194BF0] peer-checked:text-white peer-checked:border-[#194BF0]">
+      اجاره خودرو بی راننده
+    </label>
+  </div>
+
+  <!-- اجاره ماشین عروس -->
+  <div class="shrink-0">
+    <input id="wedding-car" name="rentType" type="radio" class="peer sr-only" />
+    <label
+      for="wedding-car"
+      class="flex items-center justify-center h-10 px-3 rounded-[20px] cursor-pointer
+             font-Estedad desktop:text-[14px] mobile:text-[12px] font-[600] leading-[180%]
+             border border-[#D7D7D7] text-[#0C0C0C] bg-transparent
+             whitespace-nowrap
+             transition
+             peer-checked:bg-[#194BF0] peer-checked:text-white peer-checked:border-[#194BF0]">
+      اجاره ماشین عروس
+    </label>
+  </div>
+
+</div>
+
 
         <div
           class="choose-left w-fit h-[25px]

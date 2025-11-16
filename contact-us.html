@@ -7,6 +7,8 @@
   <title>Auto-rent-PLP</title>
   <link rel="stylesheet" href="./src/css/output.css">
   <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css">
+  <link rel="shortcut icon" href="./src/img/default.ico" type="image/x-icon">
+
   <style id="force-dark-class">
     .range::-webkit-slider-runnable-track {
       background: transparent;
@@ -354,7 +356,7 @@
         <nav class="hidden desktop:flex items-center gap-x-6 bg-transparent">
           <a href="PLP.html" class="text-base text-[#353535] font-Estedad">رزرو خودرو</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
-          <a href="blog.html" class="text-base text-[#353535] font-Estedad">بلاگ</a>
+          <a href="" class="text-base text-[#353535] font-Estedad">بلاگ</a>
           <a href="about-us.html" class="text-base text-[#353535] font-Estedad">درباره ما</a>
           <a href="contact-us.html" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
 
@@ -556,7 +558,9 @@
     <div
       class="message flex flex-col p-6 mx-auto rounded-[16px] gap-0 bg-white border-[#EDEDED] border-1 max-w-[1224px] mobile:w-[90%]">
       <div class="message-top flex flex-col gap-[16px]">
-        <h3 class="font-400 font-Estedad leading-[100%] desktop:text-[24px] mobile:text-[14px] mobile:text-center desktop:text-right text-[#494949]">ارتباط
+        <h3
+          class="font-400 font-Estedad leading-[100%] desktop:text-[24px] mobile:text-[14px] mobile:text-center desktop:text-right text-[#494949]">
+          ارتباط
           بارسال پیام شما به مجموعه اتورنت</h3>
         <hr class="border-[#C2C2C2] border-1 desktop:w-[40%] mobile:w-[90%] mobile:mx-auto desktop:mr-0">
       </div>
@@ -632,135 +636,135 @@
         </div>
       </div>
     </div>
-      <!--#endregion message-->
+    <!--#endregion message-->
     <!--#region footer-->
-      <footer
-        class="footer relative desktop:w-[90%] mobile:w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] overflow-hidden flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center">
-        <div class="absolute inset-0 bg-black/80 overflow-hidden"></div>
-        <!--#region footer-top-->
+    <footer
+      class="footer relative desktop:w-[90%] mobile:w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] overflow-hidden flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center">
+      <div class="absolute inset-0 bg-black/80 overflow-hidden"></div>
+      <!--#region footer-top-->
+      <div
+        class="footer-top relative w-full mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
         <div
-          class="footer-top relative w-full mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
+          class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+            <img src="./src/img/footer/call-calling.svg" alt="">
+          </div>
+          <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+            <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
+              ارتباط با
+              ما</p>
+            <p
+              class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+              ۰۹۱۲-۲۱۳۲۶۵۴۵
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+        <div
+          class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+            <img src="./src/img/footer/sms.svg" alt="">
+          </div>
+          <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+            <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
+              ایمیل</p>
+            <p
+              class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+              autorent@info.com
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+        <div
+          class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+          <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+            <img src="./src/img/footer/map.svg" alt="">
+          </div>
+          <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+            <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
+              آدرس</p>
+            <p
+              class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+              تهران- خ شادمان
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--#endregion footer-top-->
+
+      <!--#region footer-bottom-->
+      <div class="footer-bottom w-full relative h-auto">
+        <div
+          class="footer-bottom-content w-full flex mobile:flex-col desktop:flex-row gap-y-8 desktop:px-[67.5px] mt-[16px] items-center desktop:justify-evenly mobile:justify-center">
+
+          <!-- Right box -->
           <div
-            class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
-            <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
-              <img src="./src/img/footer/call-calling.svg" alt="">
-            </div>
-            <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
-              <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
-                ارتباط با
-                ما</p>
-              <p
-                class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
-                ۰۹۱۲-۲۱۳۲۶۵۴۵
-              </p>
-            </div>
+            class="footer-bottom-content-box-right w-fit h-auto flex flex-col mobile:items-center mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start text-center desktop:text-left">
+            <img src="./src/img/footer/Logo.png" alt="" class="w-[150px] mx-auto desktop:mx-0">
+            <p
+              class="font-Estedad text-right font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
+              اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع
+              خودروهای
+              صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+            </p>
           </div>
 
-          <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
-
+          <!-- Middle box -->
           <div
-            class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
-            <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
-              <img src="./src/img/footer/sms.svg" alt="">
-            </div>
-            <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
-              <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
-                ایمیل</p>
-              <p
-                class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
-                autorent@info.com
-              </p>
-            </div>
+            class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی
+              آسان</p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                href="./FAQ.html">سوالات متداول</a></p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                href="./contact-us.html">تماس با ما</a></p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                href="./about-us.html">درباره ما</a></p>
+
           </div>
 
-          <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
-
+          <!-- Left box -->
           <div
-            class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
-            <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
-              <img src="./src/img/footer/map.svg" alt="">
-            </div>
-            <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
-              <p class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
-                آدرس</p>
-              <p
-                class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
-                تهران- خ شادمان
-              </p>
+            class="footer-bottom-content-send w-fit h-auto flex flex-col gap-y-[8px] items-center desktop:items-start text-center desktop:text-left">
+            <h4 class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">
+              خبرنامه
+            </h4>
+
+            <div
+              class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
+              <input type="email" placeholder="ایمیل خود را وارد کنید"
+                class="flex-1 h-full bg-transparent px-[12px] desktop:px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
+              <button
+                class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[13px] desktop:text-[14px] px-[12px] desktop:px-[16px] ml-[8px] py-[8px] desktop:py-[12px] h-[36px] desktop:h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
+                ارسال
+              </button>
             </div>
           </div>
         </div>
-        <!--#endregion footer-top-->
-
-        <!--#region footer-bottom-->
-        <div class="footer-bottom w-full relative h-auto">
-          <div
-            class="footer-bottom-content w-full flex mobile:flex-col desktop:flex-row gap-y-8 desktop:px-[67.5px] mt-[16px] items-center desktop:justify-evenly mobile:justify-center">
-
-            <!-- Right box -->
-            <div
-              class="footer-bottom-content-box-right w-fit h-auto flex flex-col mobile:items-center mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start text-center desktop:text-left">
-              <img src="./src/img/footer/Logo.png" alt="" class="w-[150px] mx-auto desktop:mx-0">
-              <p
-                class="font-Estedad text-right font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
-                اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع
-                خودروهای
-                صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
-              </p>
-            </div>
-
-            <!-- Middle box -->
-            <div
-              class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی
-                آسان</p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
-                  href="./FAQ.html">سوالات متداول</a></p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
-                  href="./contact-us.html">تماس با ما</a></p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
-                  href="./about-us.html">درباره ما</a></p>
-
-            </div>
-
-            <!-- Left box -->
-            <div
-              class="footer-bottom-content-send w-fit h-auto flex flex-col gap-y-[8px] items-center desktop:items-start text-center desktop:text-left">
-              <h4 class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">
-                خبرنامه
-              </h4>
-
-              <div
-                class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
-                <input type="email" placeholder="ایمیل خود را وارد کنید"
-                  class="flex-1 h-full bg-transparent px-[12px] desktop:px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
-                <button
-                  class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[13px] desktop:text-[14px] px-[12px] desktop:px-[16px] ml-[8px] py-[8px] desktop:py-[12px] h-[36px] desktop:h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
-                  ارسال
-                </button>
-              </div>
-            </div>
-          </div>
 
 
-          <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
+        <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
 
-          <div
+        <div
+          class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+          <a href="./rules.html"
             class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
-            <a href="./rules.html"
-              class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
-              <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
-              <p
-                class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
-                تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
-              </p>
-            </a>
-          </div>
+            <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
+            <p
+              class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
+              تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+            </p>
+          </a>
         </div>
-        <!--#endregion footer-bottom-->
-      </footer>
-      <div class="h-[48px] desktop:h-[64px]"></div>
-      <!--#endregion footer-->
+      </div>
+      <!--#endregion footer-bottom-->
+    </footer>
+    <div class="h-[48px] desktop:h-[64px]"></div>
+    <!--#endregion footer-->
   </main>
   <!--#endregion main-->
   <script src="./src/js/main.js"></script>
