@@ -383,3 +383,4 @@ const count = document.querySelector("#charCount");
 box.addEventListener("input", () => {
   count.textContent = box.value.length;
 });
+
