@@ -356,7 +356,7 @@
           <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
           <a href="about-us.html" class="text-base text-[#353535] font-Estedad">درباره ما</a>
-          <a href="#" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
+          <a href="contact-us.html" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
 
           <button id="openSearch" class="cursor-pointer" aria-expanded="false">
             <img src="./src/img/header/search.svg" alt="search">
@@ -397,12 +397,10 @@
             </button>
 
             <!-- small theme switch (mobile) -->
-            <button
-              class="js-dark w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition">
+            <button class="js-dark w-[60px] h-[30px] relative overflow-hidden border-none active:scale-95 transition">
               <img src="./src/img/header/lightmode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
             </button>
-            <button
-              class="js-light w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition hidden">
+            <button class="js-light w-[80px] h-[40px] relative overflow-hidden active:scale-95 transition hidden">
               <img src="./src/img/header/dark mode.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
             </button>
           </div>
@@ -419,7 +417,7 @@
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
             <a href="about-us.html" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
-            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+            <a href="contact-us.html" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
             <a href="User-Account.html"
               class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
               ورود / ثبت‌نام
@@ -503,13 +501,13 @@
       <!-- #region banner -->
       <div
         class="container-body w-fit absolute right-1/2 translate-x-[50%] top-[20%] flex flex-col justify-center items-center">
-        <span class="text-[#FDB713] font-bold desktop:text-[32px] mobile:text-[30px] leading-[80%] font-Estedad">درباره
+        <span class="text-[#FDB713] font-bold desktop:text-[32px] mobile:text-[30px] leading-[80%] font-Estedad">تماس با
           ما</span>
         <div
           class="flex justify-center items-center w-fit gap-x-[6px] font-Estedad text-[14px] leading-[10%] text-white">
           اتورنت
           <img src="./src/img/plp/header/arrow-left.svg" alt="">
-          درباره ما
+          تماس با ما
         </div>
       </div>
       <!-- #endregion banner -->
@@ -519,8 +517,7 @@
     <div
       class="contact-hq flex items-center desktop:justify-between mobile:justify-center bg-white mobile:flex-col desktop:flex-row vorder-1 rounded-[16px] border-[#EDEDED] my-[56px] mx-auto max-w-[1224px] mobile:w-[90%] p-6">
       <div
-        class="hq-info flex flex-col justify-center desktop:items-start mobile:items-center gap-[40px] p-6 my-2 desktop:w-[60%] mobile:w-full">
-        v
+        class="hq-info flex flex-col justify-center desktop:items-start mobile:items-center gap-[40px] p-6 desktop:my-2 mobile:my-0 desktop:w-[60%] mobile:w-full">
         <div class="loc flex desktop:flex-row mobile:flex-col w-full gap-[8px] justify-start items-center">
           <img src="./src/img/contact-us/location.svg" alt="">
           <span
@@ -557,14 +554,14 @@
     <!--#endregion contact-hq-->
     <!--#region message-->
     <div
-      class="message flex flex-col p-6 mx-auto rounded-[16px] bg-white border-[#EDEDED] border-1 max-w-[1224px] mobile:w-[90%]">
+      class="message flex flex-col p-6 mx-auto rounded-[16px] gap-0 bg-white border-[#EDEDED] border-1 max-w-[1224px] mobile:w-[90%]">
       <div class="message-top flex flex-col gap-[16px]">
-        <h3 class="font-400 font-Estedad leading-[100%] desktop:text-[24px] mobile:text-[18px] text-[#494949]">ارتباط
+        <h3 class="font-400 font-Estedad leading-[100%] desktop:text-[24px] mobile:text-[14px] mobile:text-center desktop:text-right text-[#494949]">ارتباط
           بارسال پیام شما به مجموعه اتورنت</h3>
         <hr class="border-[#C2C2C2] border-1 desktop:w-[40%] mobile:w-[90%] mobile:mx-auto desktop:mr-0">
       </div>
-      <div class="bottom flex flex-row flex-wrap gap-12 justify-center items-center">
-        <div class="message-right my-24 w-[45%]">
+      <div class="bottom flex flex-row flex-wrap desktop:gap-12 justify-center items-center">
+        <div class="message-right desktop:my-24 mobile:my-12 desktop:w-[45%] mobile:w-full">
           <!-- #region name -->
           <div class="relative flex items-center">
             <input type="text"
@@ -607,7 +604,7 @@
           </div>
           <!-- #endregion phone -->
         </div>
-        <div class="message-left w-[45%]">
+        <div class="message-left desktop:w-[45%] mobile:w-full">
           <div class="w-full space-y-3">
 
             <!-- Textarea box -->
@@ -626,15 +623,17 @@
             </div>
 
             <!-- Submit button -->
-            <button class="w-full bg-[#194BF0] hover:bg-blue-700 cursor-pointer transition-all duration-200 font-Estedad text-white py-[4px] px-[16px] rounded-[8px] text-lg">
+            <button
+              class="w-full bg-[#194BF0] hover:bg-blue-700 cursor-pointer transition-all duration-200 font-Estedad text-white py-[4px] px-[16px] rounded-[8px] text-lg">
               ارسال
             </button>
 
           </div>
         </div>
       </div>
+    </div>
       <!--#endregion message-->
-      <!--#region footer-->
+    <!--#region footer-->
       <footer
         class="footer relative desktop:w-[90%] mobile:w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] overflow-hidden flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center">
         <div class="absolute inset-0 bg-black/80 overflow-hidden"></div>
@@ -717,8 +716,8 @@
                 آسان</p>
               <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
                   href="./FAQ.html">سوالات متداول</a></p>
-              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما
-              </p>
+              <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                  href="./contact-us.html">تماس با ما</a></p>
               <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
                   href="./about-us.html">درباره ما</a></p>
 

@@ -327,7 +327,7 @@
 
 <body class="bg-[#F3F3F3] pb-8 h-screen">
     <!--#region main-->
-  <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
+    <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
         <!--#region header-->
         <div class="header-container w-full mx-auto">
             <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
@@ -354,7 +354,7 @@
                     <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
                     <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
                     <a href="about-us.html" class="text-base text-[#353535] font-Estedad">درباره ما</a>
-                    <a href="#" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
+                    <a href="contact-us.html" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
 
                     <button id="openSearch" class="cursor-pointer" aria-expanded="false">
                         <img src="./src/img/header/search.svg" alt="search">
@@ -400,12 +400,12 @@
 
                         <!-- small theme switch (mobile) -->
                         <button
-                            class="js-dark w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition">
+                            class="js-dark w-[60px] h-[30px] relative overflow-hidden border-none active:scale-95 transition">
                             <img src="./src/img/header/lightmode.svg" alt=""
                                 class="absolute inset-0 w-full h-full object-cover">
                         </button>
                         <button
-                            class="js-light w-[100px] h-[40px] relative rounded-[20px] overflow-hidden ring-1 ring-black/10 active:scale-95 transition hidden">
+                            class="js-light w-[80px] h-[40px] relative overflow-hidden active:scale-95 transition hidden">
                             <img src="./src/img/header/dark mode.svg" alt=""
                                 class="absolute inset-0 w-full h-full object-cover">
                         </button>
@@ -423,7 +423,7 @@
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
                         <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
                         <a href="about-us.html" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
-                        <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+                        <a href="contact-us.html" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
 
                     </div>
                 </div>
@@ -1042,52 +1042,52 @@
                 </div>
 
                 <script>
-            document.addEventListener('DOMContentLoaded', () => {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const tabBtns = document.querySelectorAll('.tab-btn');
+                        const tabPanes = document.querySelectorAll('.tab-pane');
 
-    tabBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
+                        tabBtns.forEach((btn, index) => {
+                            btn.addEventListener('click', () => {
 
-            // Reset ALL tabs to inactive state
-            tabBtns.forEach(b => {
-                b.classList.remove(
-                    'bg-[#08237D]', 'text-white',
-                    'border-[#08237D]', 'border-[#194BF0]'
-                );
-                b.classList.add(
-                    'bg-white', 'text-[#353535]', 'border-gray-300'
-                );
+                                // Reset ALL tabs to inactive state
+                                tabBtns.forEach(b => {
+                                    b.classList.remove(
+                                        'bg-[#08237D]', 'text-white',
+                                        'border-[#08237D]', 'border-[#194BF0]'
+                                    );
+                                    b.classList.add(
+                                        'bg-white', 'text-[#353535]', 'border-gray-300'
+                                    );
 
-                // Reset counter color
-                const count = b.querySelector('div:nth-child(2)');
-                if (count) {
-                    count.classList.remove('text-[#FFB800]');
-                    count.classList.add('text-gray-500');
-                }
-            });
+                                    // Reset counter color
+                                    const count = b.querySelector('div:nth-child(2)');
+                                    if (count) {
+                                        count.classList.remove('text-[#FFB800]');
+                                        count.classList.add('text-gray-500');
+                                    }
+                                });
 
-            // Hide all tab panes
-            tabPanes.forEach(p => p.classList.add('hidden'));
+                                // Hide all tab panes
+                                tabPanes.forEach(p => p.classList.add('hidden'));
 
-            // Activate the clicked tab
-            btn.classList.remove('bg-white', 'text-[#353535]', 'border-gray-300');
-            btn.classList.add(
-                'bg-[#08237D]', 'text-white', 'border-[#194BF0]'
-            );
+                                // Activate the clicked tab
+                                btn.classList.remove('bg-white', 'text-[#353535]', 'border-gray-300');
+                                btn.classList.add(
+                                    'bg-[#08237D]', 'text-white', 'border-[#194BF0]'
+                                );
 
-            // Active counter color
-            const activeCount = btn.querySelector('div:nth-child(2)');
-            if (activeCount) {
-                activeCount.classList.remove('text-gray-500');
-                activeCount.classList.add('text-[#FFB800]');
-            }
+                                // Active counter color
+                                const activeCount = btn.querySelector('div:nth-child(2)');
+                                if (activeCount) {
+                                    activeCount.classList.remove('text-gray-500');
+                                    activeCount.classList.add('text-[#FFB800]');
+                                }
 
-            // Show the selected content
-            tabPanes[index].classList.remove('hidden');
-        });
-    });
-});
+                                // Show the selected content
+                                tabPanes[index].classList.remove('hidden');
+                            });
+                        });
+                    });
 
                 </script>
 
@@ -1122,7 +1122,8 @@
                                 <div
                                     class="right flex desktop:flex-row mobile:flex-col desktop:justify-start mobile:justify-center items-center gap-4 ">
                                     <img src="./src/img/user/dashboard/car-1.png" alt="">
-                                    <div class="flex flex-col desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center mx-4 gap-2 ">
+                                    <div
+                                        class="flex flex-col desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center mx-4 gap-2 ">
                                         <span
                                             class="text-[#353535] text-[16px] leading-[100%] font-600 font-Estedad">لکسوس
                                             (Lexus IS 300)</span>
@@ -1134,7 +1135,8 @@
                                             مدت: ۳ روز</span>
                                     </div>
                                 </div>
-                                <div class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center gap-2">
+                                <div
+                                    class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center gap-2">
                                     <span
                                         class="text-[#269E22] font-Estedad text-[14px] leaeding-[100%] font-500">پرداخت
                                         موفق</span>
@@ -1151,7 +1153,8 @@
                                 <div
                                     class="right flex desktop:flex-row mobile:flex-col justify-center items-center gap-4">
                                     <img src="./src/img/user/dashboard/car-2.png" alt="">
-                                    <div class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center mx-4 gap-2">
+                                    <div
+                                        class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center mx-4 gap-2">
                                         <span
                                             class="text-[#353535] text-[16px] leading-[100%] font-600 font-Estedad">آستون
                                             مارتین (Aston Martin DBS)</span>
@@ -1163,7 +1166,8 @@
                                             مدت: ۳ روز</span>
                                     </div>
                                 </div>
-                                <div class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center gap-2">
+                                <div
+                                    class="flex flex-col  desktop:justify-start mobile:justify-center desktop:items-start mobile:items-center gap-2">
                                     <span
                                         class="text-[#FF2F28] font-Estedad text-[14px] leaeding-[100%] font-500">پرداخت
                                         ناموفق</span>
@@ -1215,27 +1219,32 @@
                                 <div class="w-full justify-between items-center flex flex-row"><span
                                         class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">در
                                         انتظار تائید</span><span
-                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴ اردبیهشت
+                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴
+                                        اردبیهشت
                                         ۱۴۰۳</span></div>
                             </div>
-                           <hr class="border-[##F3F3F3] border-1 w-full my-4">
+                            <hr class="border-[##F3F3F3] border-1 w-full my-4">
                             <div class="flex flex-col justify-start items-start gap-4 my-8 w-full">
                                 <div
                                     class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
                                     <img src="./src/img/user/dashboard/tick-circle-c.svg" alt=""><span
-                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">بهترین تجربه جذابی با پورشه داشتم.دمتون گرم</span>
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">بهترین
+                                        تجربه جذابی با پورشه داشتم.دمتون گرم</span>
                                 </div>
                                 <div class="w-full justify-between items-center flex flex-row"><span
-                                        class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">تایید شده</span><span
-                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴ فروردین
+                                        class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">تایید
+                                        شده</span><span
+                                        class="font-400 text-[14px] leading-[180%] text-[#5E5E5E] font-Estedad">۴
+                                        فروردین
                                         ۱۴۰۳</span></div>
                             </div>
-                           <hr class="border-[##F3F3F3] border-1 w-full my-4">
+                            <hr class="border-[##F3F3F3] border-1 w-full my-4">
                             <div class="flex flex-col justify-start items-start gap-4 my-8 w-full">
                                 <div
                                     class="py-[4px] px-[16px] rounded-[8px] font-Estedad flex gap-[8px] justify-center items-center">
                                     <img src="./src/img/user/dashboard/timer-x.svg" alt=""><span
-                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">منتظرم برای شب عروسیم ماشین موردعلاقم رو بگیرم.</span>
+                                        class="font-Estedad text-[#5E5E5E]  text-[14px] font-400 leading-[140%] gap-[8px]">منتظرم
+                                        برای شب عروسیم ماشین موردعلاقم رو بگیرم.</span>
                                 </div>
                                 <div class="w-full justify-between items-center flex flex-row"><span
                                         class="font-400 text-[14px] leading-[180%] text-[#868686] font-Estedad">در
