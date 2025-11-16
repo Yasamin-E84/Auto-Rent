@@ -20,6 +20,7 @@
     "cally": "^0.8.0",
     "flowbite": "^4.0.0",
     "flyonui": "^2.4.1",
+    "leaflet": "^1.9.4",
     "nouislider": "^15.8.1",
     "pikaday": "^1.8.2",
     "preline": "^3.2.3",

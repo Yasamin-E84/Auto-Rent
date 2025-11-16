@@ -349,7 +349,7 @@
           <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
           <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
           <a href="about-us.html" class="text-base text-[#353535] font-Estedad">درباره ما</a>
-          <a href="#" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
+          <a href="contact-us.html" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
 
           <button id="openSearch" class="cursor-pointer" aria-expanded="false">
             <img src="./src/img/header/search.svg" alt="search">
@@ -409,7 +409,7 @@
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
             <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
             <a href="about-us.html" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
-            <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+            <a href="contact-us.html" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
             <a href="User-Account.html"
               class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
               ورود / ثبت‌نام
@@ -508,12 +508,12 @@
             class="container-body-btns flex justify-center desktop:justify-between gap-3 w-full desktop:w-[353px] mt-[24px] desktop:mt-[40px]">
             <button
               class="easy-reserve w-[60%] mobile:w-[240px] desktop:w-[186px] h-[44px] desktop:h-[48px] gap-x-[8px] bg-[#FDB713] rounded-[7px] font-Estedad text-[#0C0C0C] mobile:text-[12px] desktop:text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
-              <img src="./src/img/header/car.svg" alt="">رزرو آسان خودرو
-            </button>
+              <img src="./src/img/header/car.svg" alt=""><a href="PLP.html">رزرو آسان خودرو
+              </a></button>
             <button
               class="w-[35%] mobile:w-[180px] desktop:w-[151px] h-[44px] desktop:h-[48px] gap-x-[8px] rounded-[7px] border border-white bg-transparent mobile:text-[12px] desktop:text-[15px] desktop:text-base font-bold inline-flex items-center justify-center">
-              <img src="./src/img/header/arrow-left.svg" alt="">تماس با ما
-            </button>
+              <img src="./src/img/header/arrow-left.svg" alt=""><a href="contact-us.html">تماس با ما
+              </a></button>
           </div>
         </div>
       </div>
@@ -734,17 +734,18 @@
 
           <div class="hidden desktop:block h-[32px] w-px bg-[#D7D7D7]"></div>
           <div class="type-location-middle desktop:flex desktop:flex-wrap desktop:gap-x-3">
-            
+
             <!-- #region Delivery Date -->
 
             <button popovertarget="cally-popover1" class="input input-border w-full desktop:w-[120px] h-[31px]
-                flex justify-between items-center gap-4 p-0 bg-transparent cursor-pointer" id="cally1" style="anchor-name:--cally1">
+                flex justify-between items-center gap-4 p-0 bg-transparent cursor-pointer" id="cally1"
+              style="anchor-name:--cally1">
               <span
                 class="font-Estedad font-[400] desktop:text-[16px] mobile:text-[12px] leading-[180%] text-[#0C0C0C]">۱۴۰۳٫۰۲٫۱۰</span>
               <img src="./src/img/header/calendar.svg" alt="" class="w-5"> </button>
             <div popover id="cally-popover1" class="dropdown bg-white rounded-box shadow-lg text-[#0C0C0C] right-0"
               style="position-anchor:--cally1">
-              <calendar-date class="cally" onchange={document.getElementById('cally1').innerText=this.value}>
+              <calendar-date class="cally" onchange="document.getElementById('cally1').innerText = this.value">
                 <svg aria-label="Previous" class="fill-current size-4" slot="previous"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
@@ -780,7 +781,7 @@
               <img src="./src/img/header/calendar.svg" alt="" class="w-5"> </button>
             <div popover id="cally-popover1" class="dropdown bg-base-100 rounded-box shadow-lg"
               style="position-anchor:--cally1">
-              <calendar-date class="cally" onchange={document.getElementById('cally1').innerText=this.value}>
+              <calendar-date class="cally" onchange="document.getElementById('cally1').innerText = this.value">
                 <svg aria-label="Previous" class="fill-current size-4" slot="previous"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
@@ -1297,7 +1298,8 @@
                 <img src="./src/img/how-to/car.svg" alt="" class="svg-invert w-[24px] desktop:w-[48px]">
               </div>
               <div class="w-full desktop:w-[270px] h-auto flex flex-col gap-y-[8px]">
-                <div class="flex gap-x-[4px] mobile:justify-center mobile:items-start desktop:justify-start desktop:w-[110%]">
+                <div
+                  class="flex gap-x-[4px] mobile:justify-center mobile:items-start desktop:justify-start desktop:w-[110%]">
                   <span
                     class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#D79C10]">خودروی</span>
                   <span class="font-Estedad font-bold text-[14px] desktop:text-[24px] leading-[140%] text-[#212121]">خود
@@ -1926,7 +1928,8 @@
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی آسان</p>
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
                 href="./FAQ.html">سوالات متداول</a></p>
-            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">تماس با ما</p>
+            <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                href="./contact-us.html">تماس با ما</a></p>
             <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
                 href="./about-us.html">درباره ما</a></p>
           </div>
@@ -1972,7 +1975,7 @@
   <!--#endregion main-->
   <script src="./src/js/main.js"></script>
   <script type="module" src="https://unpkg.com/cally"></script>
-  
+
 </body>
 
 </html>
