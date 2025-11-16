@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-rent-PLP</title>
+    <link rel="stylesheet" href="./src/css/output.css">
+    <style id="force-dark-class">
+        .range::-webkit-slider-runnable-track {
+            background: transparent;
+        }
+
+        .range::-moz-range-track {
+            background: transparent;
+        }
+
+        /* global browser treatment */
+        html.dark {
+            color-scheme: dark;
+        }
+
+        html:not(.dark) {
+            color-scheme: light;
+        }
+
+        /* ===== COMMON TOKENS (text) ===== */
+        /* primaries → light text */
+        html.dark .text-\[\#0C0C0C\],
+        html.dark .text-\[\#111827\],
+        html.dark .text-\[\#212121\],
+        html.dark .text-\[\#353535\],
+        html.dark .text-\[\#374151\],
+        html.dark .text-\[\#414141\] {
+            color: #E5E7EB !important;
+        }
+
+        /* secondary/grays → softer text */
+        html.dark .text-\[\#494949\],
+        html.dark .text-\[\#5E5E5E\],
+        html.dark .text-\[\#727272\],
+        html.dark .text-\[\#757575\],
+        html.dark .text-\[\#9A9A9A\] {
+            color: #A3A3A3 !important;
+        }
+
+        /* accents you already use (keep) */
+        html.dark .text-\[\#FDB713\] {
+            color: #FACC15 !important;
+        }
+
+        html.dark .text-\[\#D79C10\] {
+            color: #FACC15 !important;
+        }
+
+        html.dark .text-\[\#194BF0\] {
+            color: #89A9FF !important;
+        }
+
+        /* placeholders */
+        html.dark ::placeholder,
+        html.dark .placeholder\:text-\[\#9CA3AF\] {
+            color: #9CA3AF !important;
+        }
+
+        /* ===== COMMON TOKENS (borders / backgrounds) ===== */
+        html.dark .border-\[\#D7D7D7\],
+        html.dark .border-\[\#d7d7d7\] {
+            border-color: #334155 !important;
+        }
+
+        /* slate-700 */
+        html.dark .border-\[\#E5E7EB\] {
+            border-color: #475569 !important;
+        }
+
+        /* slate-600 */
+        html.dark .border-\[\#f3f3f3\] {
+            border-color: #1F2937 !important;
+        }
+
+        /* gray-800 */
+        html.dark .border-\[\#868686\] {
+            border-color: #475569 !important;
+        }
+
+        /* “white” surfaces → dark surfaces */
+        html.dark .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        /* slate-900ish */
+        html.dark .bg-\[\#F3F3F3\] {
+            background-color: #0B1220 !important;
+        }
+
+        /* page */
+        html.dark .bg-\[\#d7d7d7\] {
+            background-color: #111827 !important;
+        }
+
+        /* chips/rows */
+        html.dark .bg-\[\#353535\] {
+            background-color: #111827 !important;
+        }
+
+        /* newsletter bar */
+
+        /* blue/yellow brand blocks */
+        html.dark .bg-\[\#194BF0\] {
+            background-color: #365CF5 !important;
+        }
+
+        html.dark .hover\:bg-\[\#194BF0\]\/20:hover {
+            background-color: rgba(54, 92, 245, .2) !important;
+        }
+
+        html.dark .bg-\[\#FDB713\] {
+            background-color: #FACC15 !important;
+        }
+
+        /* generic hover grays used in search/history chips */
+        html.dark .hover\:bg-gray-50:hover {
+            background-color: rgba(148, 163, 184, .10) !important;
+        }
+
+        /* inputs default text color (if not overridden) */
+        html.dark input,
+        html.dark textarea,
+        html.dark button {
+            color: #E5E7EB;
+        }
+
+        /* ===== HEADER / HERO / SEARCH ===== */
+        html.dark .header-container header {
+            background: #0F172A !important;
+            color: #E5E7EB !important;
+        }
+
+        html.dark .header-container header a {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .header-container header .border-\[\#E5E7EB\] {
+            border-color: #475569 !important;
+        }
+
+        /* search overlay card & field */
+        html.dark #searchOverlay .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark #searchOverlay .border-\[\#E5E7EB\] {
+            border-color: #475569 !important;
+        }
+
+        html.dark #searchOverlay .text-\[\#111827\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark #searchOverlay .text-\[\#374151\] {
+            color: #A3A3A3 !important;
+        }
+
+        html.dark #searchOverlay .h-px {
+            background-color: #334155 !important;
+        }
+
+        /* ===== RENT TYPE CARD ===== */
+        html.dark .rent-type {
+            background: #0F172A !important;
+            color: #E5E7EB !important;
+            border-color: #334155 !important;
+        }
+
+        html.dark .rent-type .choose-right button {
+            border-color: #334155 !important;
+        }
+
+        html.dark .rent-type .h-\[32px\].w-px {
+            background: #334155 !important;
+        }
+
+        /* ===== CAR TYPES ===== */
+        html.dark .car-types .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .car-types .border-\[\#d7d7d7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .car-types h4 {
+            color: #E5E7EB !important;
+        }
+
+        /* ===== RESERVATION CARDS ===== */
+        html.dark .reservation .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .reservation .border-\[\#d7d7d7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .reservation .border-\[\#f3f3f3\] {
+            border-color: #1F2937 !important;
+        }
+
+        html.dark .reservation .w-\[32px\].h-\[29px\].bg-\[\#08237d\] {
+            background-color: #0B2FA6 !important;
+        }
+
+        /* keep readable */
+        html.dark .reservation .text-\[\#0c0c0c\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .reservation .text-\[\#494949\] {
+            color: #A3A3A3 !important;
+        }
+
+        /* gray price rows */
+        html.dark .reservation .bg-\[\#d7d7d7\] {
+            background-color: #111827 !important;
+        }
+
+        /* ===== WHY-US ===== */
+        html.dark .why-us-boxes-contents {
+            background: #0F172A !important;
+            color: #E5E7EB !important;
+            border-color: #334155 !important;
+        }
+
+        html.dark .why-us-text p {
+            color: #E5E7EB !important;
+        }
+
+        /* ===== HOW-TO ===== */
+        html.dark .how-to .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .how-to .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        /* outlined big numbers: keep stroke blue but brighten a bit */
+        html.dark .how-to span[style*="text-stroke"],
+        html.dark .how-to span[style*="-webkit-text-stroke"] {
+            color: transparent !important;
+        }
+
+        /* ===== FAQ (collapse) ===== */
+        html.dark .common-Q .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .common-Q .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        /* ===== COMMENTS (testimonials) ===== */
+        html.dark .comments .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .comments .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .comments .text-\[\#353535\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .comments .text-\[\#727272\] {
+            color: #A3A3A3 !important;
+        }
+
+        html.dark .testimonial-tab:hover {
+            background-color: rgba(250, 204, 21, .10) !important;
+        }
+
+        /* ===== THESIS (blog cards) ===== */
+        html.dark .thesis .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .thesis .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .thesis .text-\[\#414141\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .thesis .text-\[\#757575\] {
+            color: #A3A3A3 !important;
+        }
+
+        /* ===== FOOTER ===== */
+        html.dark .footer .border-\[\#868686\] {
+            border-color: #475569 !important;
+        }
+
+        html.dark .footer .border-t {
+            border-color: #475569 !important;
+        }
+
+        html.dark .brand {
+            opacity: .8 !important;
+        }
+
+        html.dark img.land-over {
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        html.dark img.svg-invert {
+            filter: invert(1) hue-rotate(90deg);
+        }
+
+        html.dark .easy-reserve {
+            color: #0C0C0C !important;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F3F3F3]">
+    <!--#region main-->
+    <main class="main bg-[#F3F3F3] h-auto mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
+        <!--#region header-->
+        <div
+            class="header-container w-full h-[400px] mx-auto bg-[url('https://i.pinimg.com/736x/4d/96/4a/4d964ab7a8c34a3c54d021de4fe0da04.jpg')] bg-cover bg-center">
+            <header class="w-full desktop:w-[80%] h-[64px] desktop:h-[96px] bg-white
+         mx-auto rounded-bl-[16px] rounded-br-[16px]
+         px-4 desktop:px-[32px] flex items-center justify-between">
+
+                <!-- Left: logo & menu -->
+                <div class="flex items-center gap-3">
+                    <button id="navToggle"
+                        class="inline-flex desktop:hidden items-center justify-center w-10 h-10 rounded-md border border-[#E5E7EB] transition">
+                        <img src="./src/img/header/hamburger.svg" alt="" class="w-[24px]">
+                        <span class="sr-only">باز کردن منو</span>
+                    </button>
+
+                    <div class="header-logo">
+                        <a href="./index.html"><img src="./src/img/header/Logo.png" alt="Auto-Rent"
+                                class="h-[40px] desktop:h-[59px]"></a>
+                    </div>
+                </div>
+
+                <!-- Center: nav links -->
+                <nav class="hidden desktop:flex items-center gap-x-6 bg-transparent">
+                    <a href="PLP.html" class="text-base text-[#353535] font-Estedad">رزرو خودرو</a>
+                    <a href="#" class="text-base text-[#353535] font-Estedad">خدمات ما</a>
+                    <a href="#" class="text-base text-[#353535] font-Estedad">بلاگ</a>
+                    <a href="about-us.html" class="text-base text-[#353535] font-Estedad">درباره ما</a>
+                    <a href="contact-us.html" class="text-base text-[#353535] font-Estedad">تماس با ما</a>
+
+                    <button id="openSearch" class="cursor-pointer" aria-expanded="false">
+                        <img src="./src/img/header/search.svg" alt="search">
+                    </button>
+                </nav>
+
+                <!-- Right: theme + login -->
+                <div class="flex items-center gap-4">
+                    <!-- desktop theme buttons -->
+                    <div class="hidden desktop:flex items-center gap-3" dir="rtl">
+                        <!-- Moon (light→dark) -->
+                        <button
+                            class="js-dark w-[56px] h-[40px] relative rounded-[32px] overflow-hidden active:scale-95 transition"
+                            aria-label="تیره کن">
+                            <img src="./src/img/header/lightmode.svg" alt=""
+                                class="absolute inset-0 w-[56px] object-cover mx-auto my-auto">
+                        </button>
+
+                        <!-- Sun (dark→light) -->
+                        <button
+                            class="js-light w-[72px] h-[30px] relative rounded-[32px] overflow-hidden active:scale-95 transition hidden"
+                            aria-label="روشن کن">
+                            <img src="./src/img/header/dark mode.svg" alt=""
+                                class="absolute inset-0 w-[72px] object-cover mx-auto my-auto">
+                        </button>
+                    </div>
+
+                    <!-- login btn -->
+                    <button class="mobile:hidden desktop:flex border-none bg-[#194BF0] font-Estedad cursor-pointer text-[15.9px] text-white rounded-[8px] py-[4px] px-[16px] gap-x-[8px]
+             hover:bg-[#194BF0]/20 hover:text-[#194BF0] transition-all duration-200">
+                        <a href="User-Account.html"> ورود / ثبت‌نام
+                        </a> </button>
+
+                    <!-- mobile search + theme + login -->
+                    <div class="flex items-center gap-2 desktop:hidden">
+                        <button id="openSearchMobile"
+                            class="w-10 h-10 inline-flex items-center justify-center rounded-md border border-[#E5E7EB]">
+                            <img src="./src/img/header/search.svg" alt="جستجو" class="w-5 h-5">
+                        </button>
+
+                        <!-- small theme switch (mobile) -->
+                        <button
+                            class="js-dark w-[60px] h-[30px] relative overflow-hidden border-none active:scale-95 transition">
+                            <img src="./src/img/header/lightmode.svg" alt=""
+                                class="absolute inset-0 w-full h-full object-cover">
+                        </button>
+                        <button
+                            class="js-light w-[80px] h-[40px] relative overflow-hidden active:scale-95 transition hidden">
+                            <img src="./src/img/header/dark mode.svg" alt=""
+                                class="absolute inset-0 w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- #region hamburger -->
+            <div id="mobileNav" class="desktop:hidden w-full max-w-[1224px] mx-auto px-4 pt-2 pb-4 relative
+              hidden">
+                <div
+                    class="rounded-[12px] w-[90%] right-1/2 translate-x-[50%] border border-[#E5E7EB] bg-white p-3 absolute z-4">
+                    <div class="flex flex-col gap-2 font-Estedad text-[#353535] text-[15px]">
+                        <a href="PLP.html" class="py-2 px-3 rounded hover:bg-gray-50">رزرو خودرو</a>
+                        <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">خدمات ما</a>
+                        <a href="#" class="py-2 px-3 rounded hover:bg-gray-50">بلاگ</a>
+                        <a href="about-us.html" class="py-2 px-3 rounded hover:bg-gray-50">درباره ما</a>
+                        <a href="contact-us.html" class="py-2 px-3 rounded hover:bg-gray-50">تماس با ما</a>
+                        <a href="User-Account.html"
+                            class="inline-flex desktop:hidden items-center justify-center border-none bg-[#194BF0] font-Estedad text-[14px] text-white h-10 px-3 rounded-[8px]">
+                            ورود / ثبت‌نام
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- #endregion hamburger -->
+
+            <section id="searchOverlay"
+                class="fixed inset-0 z-50 invisible opacity-0 pointer-events-none transition-opacity duration-300">
+                <div class="absolute inset-x-0 bottom-0 top-[64px] desktop:top-[96px] bg-black/40" data-close></div>
+                <div class="absolute top-0 inset-x-0 h-[64px] desktop:h-[96px] pointer-events-none">
+                    <div class="w-full h-full flex justify-center">
+                        <div class="flex-1 bg-black/40"></div>
+                        <div class="w-full desktop:w-[1224px] h-full"></div>
+                        <div class="flex-1 bg-black/40"></div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-full desktop:w-[884px] mx-auto">
+                        <div class="h-[64px] desktop:h-[96px] mx-auto flex items-center px-4 desktop:px-[32px]">
+                            <div class="flex-1">
+                                <label class="block" for="globalSearch"></label>
+                                <div
+                                    class="relative rounded-[16px] border border-[#E5E7EB] bg-white shadow-sm py-2 desktop:py-3 pr-10 desktop:pr-12 pl-4">
+                                    <button type="button" aria-hidden="true" tabindex="-1"
+                                        class="absolute right-3 desktop:right-4 top-1/2 -translate-y-1/2">
+                                        <img src="./src/img/header/search.svg" alt="search" class="w-5 h-5">
+                                    </button>
+                                    <input id="globalSearch" type="text" placeholder="جستجو"
+                                        class="w-full bg-transparent outline-none text-[#353535] placeholder:text-[#9CA3AF] font-Estedad" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-auto px-4 desktop:px-[16px] pb-6 desktop:pb-8 bg-white rounded-b-[16px]">
+                            <div class="h-px bg-[#E5E7EB] mb-4 desktop:mb-6"></div>
+
+                            <div class="mb-6 desktop:mb-8">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex gap-2 items-center">
+                                        <img src="./src/img/header/clock.svg" alt="">
+                                        <h4 class="text-[#111827] font-Estedad">تاریخچه جستجوهای شما</h4>
+                                    </div>
+                                    <img src="./src/img/header/trash.svg" alt="" class="w-6">
+                                </div>
+                                <div id="recentChips" class="flex flex-wrap gap-2 desktop:gap-3"></div>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between mb-3 mt-6">
+                                    <div class="text-[#111827] font-Estedad flex gap-2">
+                                        <img src="./src/img/header/heart-search.svg" alt="">جستجوهای پرطرفدار
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 desktop:gap-3" id="popularChips">
+                                    <button type="button"
+                                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
+                                        S500</button>
+                                    <button type="button"
+                                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">پرشیا
+                                        ELX سفید</button>
+                                    <button type="button"
+                                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">بنز
+                                        S500</button>
+                                    <button type="button"
+                                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Audi
+                                        A8</button>
+                                    <button type="button"
+                                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Peugeot
+                                        2008</button>
+                                    <button type="button"
+                                        class="cursor-pointer px-4 py-2 rounded-full border border-[#E5E7EB] text-[#374151] bg-white hover:bg-gray-50">Ferrari
+                                        Roma</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- #region banner -->
+            <div
+                class="container-body w-fit absolute right-1/2 translate-x-[50%] top-[20%] flex flex-col justify-center items-center">
+                <span class="text-[#FDB713] font-700 text-[32px] leading-[80%] font-Estedad">مقالات</span>
+                <div
+                    class="flex justify-center items-center w-fit gap-x-[6px] font-Estedad text-[14px] leading-[10%] text-white">
+                    اتورنت
+                    <img src="./src/img/plp/header/arrow-left.svg" alt="">
+                    مقالات
+                </div>
+            </div>
+            <!-- #endregion banner -->
+        </div>
+        <!--#endregion header-->
+
+        <!--#region blog-title-->
+        <div
+            class="blog-title flex flex-col justify-center desktop:items-start mobile:items-center desktop:my-[56px] mobile:my-[32px] mx-auto gap-[25px] max-w-[1224px] mobile:w-[90%] p-2">
+            <h2
+                class="text-[#212121] font-Estedad font-bold desktop:text-[40px] mobile:text-[24px] desktop:text-right mobile:text-center leading-[140%]">
+                بهترین ماشین برای خانواده</h2>
+            <div class="flex flex-row desktop:justify-start items-center mobile:justify-center gap-[24px] -mt-2">
+                <div class="bg-[#F9F9F9] rounded-[8px] p-[4px] gap-[8px] flex flex-row justify-center items-center ">
+                    <img src="./src/img/blog/next/clock.svg" alt="">
+                    <span class="font-Estedad font-400 leading-[100%] text-[12px] text-[#353535]">زمان مطالعه: ۵
+                        دقیقه</span>
+                </div>
+                <div class="bg-[#F9F9F9] rounded-[8px] p-[4px] gap-[8px] flex flex-row justify-center items-center">
+                    <img src="./src/img/blog/next/calendar.svg" alt="">
+                    <span class="font-Estedad font-400 leading-[100%] text-[12px] text-[#353535]">۳۰ آذر ۱۴۰۲</span>
+                </div>
+            </div>
+        </div>
+        <!--#endregion blog-title-->
+
+        <!--#region blog-->
+        <div
+            class="blog flex desktop:flex-row mobile:flex-col-reverse justify-center items-start mx-auto mt-[14px] mb-[56px] gap-[25px] max-w-[1224px] mobile:w-[90%] p-2">
+            <!--#region blog-thesis-->
+            <div class="blog-thesis desktop:max-w-[807px] mobile:w-full flex flex-col gap-x-[10px] gap-y-[16px]">
+                <img src="./src/img/blog/next/Photo.png" alt="">
+                <div class="bg-white gap-[32px] py-[24px] px-[16px] rounded-[14px] w-full justify-center items-start">
+                    <div class="text flex-col flex justify-center items-start">
+                        <h4
+                            class="font-Estedad font-bold leading-[140%] desktop:text-[32px] text-[#212121] mobile:text-[24px] mobile:text-center desktop:text-right">
+                            محبوب‌ترین خودرو های خانوادگی کدامند؟</h4>
+                        <p
+                            class="text-[#494949] desktop:text-[16px] mobile:text-[14px] font-500 font-Estedad text-justify">
+                            ۱. سمند
+                            LX: سمند به عنوان یکی از محبوب‌ترین خودروهای خانوادگی در ایران شناخته می‌شود. این
+                            خودرو دارای فضای داخلی راحتی است و از لحاظ ایمنی نیز در سطح قابل قبولی قرار دارد. مصرف سوخت
+                            مناسب و قیمت مقرون به صرفه، سمند را به یک انتخاب عالی تبدیل کرده است. <br>
+                            ۲. دنا پلاس توربو: دنا پلاس، مدل ارتقاء یافته دنا، با موتور توربو و طراحی مدرن، یک گزینه
+                            عالی برای خانواده‌هایی است که به دنبال ترکیبی از قدرت، ایمنی و زیبایی هستند. این خودرو
+                            همچنین دارای امکانات رفاهی به‌روز و فضای داخلی جادار است. <br>
+                            ۳. پژو ۲۰۶ تیپ ۵: پژو ۲۰۶ با طراحی کلاسیک و شناخته شده خود، گزینه‌ای محبوب در میان
+                            خانواده‌های ایرانی است. این خودرو علاوه بر اینکه از نظر فنی قابل اعتماد است، در زمینه مصرف
+                            سوخت نیز اقتصادی به شمار می‌رود. <br>
+                            ۴. رنو تندر 90 (لوگان): رنو تندر 90 با فضای داخلی بسیار جادار، امکانات رفاهی مناسب و عملکرد
+                            فنی قابل توجه، یکی از بهترین گزینه‌ها برای خانواده‌هایی است که به دنبال خودرویی با
+                            استانداردهای اروپایی هستند. این خودرو همچنین در زمینه ایمنی نیز امتیازات خوبی کسب کرده است.
+                            <br>
+                            انتخاب بهترین ماشین برای خانواده نیازمند توجه به جزئیات فراوانی است. با توجه به اینکه هر
+                            خانواده نیازها و بودجه مختلفی دارد، ارزیابی دقیق خودروهای موجود در بازار بر اساس فاکتورهای
+                            فوق می‌تواند به شما در انتخاب خودرویی که به بهترین شکل پاسخگوی نیازهای شما باشد کمک کند.
+                        </p>
+                    </div>
+                    <div class="text flex-col flex justify-center items-start mt-[24px]">
+                        <h4
+                            class="font-Estedad font-bold leading-[140%] desktop:text-[32px] text-[#212121] mobile:text-[24px] mobile:text-center desktop:text-right">
+                            فاکتورهای کلیدی در انتخاب خودروی خانوادگی </h4>
+                        <p
+                            class="text-[#494949] desktop:text-[16px] mobile:text-[14px] font-500 font-Estedad text-justify">
+                            ۱.
+                            ایمنی: ایمنی باید اولین و مهم‌ترین اولویت در هنگام خرید ماشین خانوادگی باشد. خودروهایی که
+                            دارای امتیاز بالایی در تست‌های تصادف و مجهز به سیستم‌های ایمنی پیشرفته مانند کیسه‌های هوا،
+                            ترمزهای ABS و سیستم پایداری الکترونیکی هستند، انتخاب‌های مناسب‌تری هستند. <br>
+                            ۲. راحتی و فضای داخلی: فضای داخلی کابین باید به اندازه کافی جادار برای راحتی تمام اعضای
+                            خانواده باشد. صندلی‌های راحت، فضای کافی برای پا، و کیفیت مواد به کار رفته در داخل کابین از
+                            جمله نکاتی هستند که باید به آن توجه کنید. <br>
+                            ۳. کارایی و مصرف سوخت: خودروی خانوادگی باید از لحاظ اقتصادی نیز مقرون به صرفه باشد.
+                            خودروهایی با مصرف سوخت بهینه و هزینه‌های نگهداری پایین‌تر در درازمدت مقرون به صرفه‌تر خواهند
+                            بود.</p>
+                    </div>
+                </div>
+                <div
+                    class="comments flex flex-col gap-[16px] justify-center desktop:items-start mobile:items-center desktop:mt-[56px]">
+                    <span
+                        class="font-Estedad text-[#868686] desktop:text-[14px] leading-[120%] mobile:text-[12px] mobile:text-center desktop:text-right">نشانی
+                        ایمیل شما منتشر نخواهد شد. بخش‌های موردنیاز علامت‌گذاری شده‌اند *
+                    </span>
+                    <div
+                        class="w-full mt-[16px] gap-[16px] flex flex-col justify-center mobile:items-center desktop:items-start">
+                        <div class="w-full">
+                            <label
+                                class="block mb-4 text-[#353535] font-medium font-Estedad font-500 desktop:text-[20px] mobile:text-[16px]">
+                                دیدگاه شما*
+                            </label>
+
+                            <textarea rows="6"
+                                class="w-full border border-gray-300 rounded-xl py-4 px-6 text-right resize-none focus:ring-2 focus:ring-gray-300 focus:outline-none bg-white placeholder:desktop:text-[16px] placeholder:font-Estedad placeholder:mobile:text-[14px] placeholder:text-[#9A9A9A] placeholder:leading-[180%]"
+                                placeholder="پیام"></textarea>
+                        </div>
+                        <div class="w-full">
+                            <label
+                                class="block mb-4 text-[#353535] font-medium font-Estedad font-500 desktop:text-[20px] mobile:text-[16px]">
+                                نام*
+                            </label>
+
+                            <input type="text"
+                                class="w-full border border-gray-300 rounded-xl py-4 px-6 text-right resize-none focus:ring-2 focus:ring-gray-300 focus:outline-none bg-white placeholder:desktop:text-[16px] placeholder:font-Estedad placeholder:mobile:text-[14px] placeholder:text-[#9A9A9A] placeholder:leading-[180%]"
+                                placeholder="نام" />
+                        </div>
+                        <div class="w-full">
+                            <label
+                                class="block mb-4 text-[#353535] font-medium font-Estedad font-500 desktop:text-[20px] mobile:text-[16px]">
+                                ایمیل*
+                            </label>
+
+                            <input type="email"
+                                class="w-full border border-gray-300 rounded-xl py-4 px-6 text-right resize-none focus:ring-2 focus:ring-gray-300 focus:outline-none bg-white placeholder:desktop:text-[16px] placeholder:font-Estedad placeholder:mobile:text-[14px] placeholder:text-[#9A9A9A] placeholder:leading-[180%]"
+                                placeholder="ایمیل" />
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="flex justify-end">
+                            <button
+                                class="bg-[#194BF0] hover:bg-blue-800 text-white py-3 px-[46px] rounded-[8px] transition-all duration-200 cursor-pointer font-Estedad font-500 text-[14px] leading-[100%]">
+                                ثبت دیدگاه
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion blog-thesis-->
+            <!--#region blog-sidebar-->
+            <div
+                class="blog-sidebar flex flex-col mobile:w-full desktop:max-w-[392px] gap-[24px] justify-center items-center">
+                <!--#region blog-sidebar-input-->
+                <label class="input w-full flex-row-reverse bg-white rounded-[14px]">
+                    <svg class="h-[1em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="#9A9A9A">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" required placeholder="جستجو در سایت اجاره خودرو اتورنت"
+                        class="placeholder:font-Estedad placeholder:text-[#9A9A9A] placeholder:text-[12px] placeholder:font-400 placeholder:leading-[100%]" />
+                </label>
+                <!--#endregion blog-sidebar-input-->
+
+                <!--#region blog-sidebar-latest-->
+                <div class="blog-sidebar-latest w-full flex flex-col bg-white px-[8px] rounded-[14px] gap-[16px] py-4">
+                    <h4
+                        class="font-Estedad font-bold text-[#353535] text-[24px] mobile:text-center desktop:text-right leading-[140%]">
+                        آخرین مقالات</h4>
+                    <hr
+                        class="border-[#D79C10] desktop:border-2 mobile:border-1 desktop:w-[16%] -mt-2 mobile:mx-auto mobile:w-[90%] desktop:mr-0">
+                    <div class="latest-cards flex flex-col gap-[12px]">
+                        <div class="card flex flex-row px-[8px] py-2 gap-[14px] items-center justify-start">
+                            <img src="./src/img/blog/pic-1.png" alt="">
+                            <div
+                                class="flex flex-col desktop:items-start justify-center mobile:items-center gap-[12px]">
+                                <h5 class="text-[#414141] font-Estedad font-500 text-[16px] leading-[160%]">نگاهی به
+                                    Lexus NX</h5>
+                                <div
+                                    class="flex flex-row gap-[16px] items-center desktop:justify-center mobile:justify-start">
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/clock.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۳دقیقه</span>
+                                    </div>
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/eye.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۲۱,۵۹۷</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border-[#C2C2C2] border-1">
+                        <div class="card flex flex-row px-[8px] py-2 gap-[14px] items-center justify-start">
+                            <img src="./src/img/blog/pic-2.png" alt="">
+                            <div
+                                class="flex flex-col desktop:items-start justify-center mobile:items-center gap-[12px]">
+                                <h5 class="text-[#414141] font-Estedad font-500 text-[16px] leading-[160%]">نگاهی
+                                    برونمایی از Lamborgini Urus</h5>
+                                <div
+                                    class="flex flex-row gap-[16px] items-center desktop:justify-center mobile:justify-start">
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/clock.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۳دقیقه</span>
+                                    </div>
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/eye.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۲۱,۵۹۷</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border-[#C2C2C2] border-1">
+                        <div class="card flex flex-row px-[8px] py-2 gap-[14px] items-center justify-start">
+                            <img src="./src/img/blog/pic-3.png" alt="">
+                            <div
+                                class="flex flex-col desktop:items-start justify-center mobile:items-center gap-[12px]">
+                                <h5 class="text-[#414141] font-Estedad font-500 text-[16px] leading-[160%]">بنتلی
+                                    Bentayga زیر تیغ تیونینگ منصوری</h5>
+                                <div
+                                    class="flex flex-row gap-[16px] items-center desktop:justify-center mobile:justify-start">
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/clock.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۳دقیقه</span>
+                                    </div>
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/eye.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۲۱,۵۹۷</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="border-[#C2C2C2] border-1">
+                        <div class="card flex flex-row px-[8px] py-2 gap-[14px] items-center justify-start">
+                            <img src="./src/img/blog/pic-4.png" alt="">
+                            <div
+                                class="flex flex-col desktop:items-start justify-center mobile:items-center gap-[12px]">
+                                <h5 class="text-[#414141] font-Estedad font-500 text-[16px] leading-[160%]">نگاهی ببنتلی
+                                    Bentayga زیر تیغ تیونینگ منصوری</h5>
+                                <div
+                                    class="flex flex-row gap-[16px] items-center desktop:justify-center mobile:justify-start">
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/clock.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۳دقیقه</span>
+                                    </div>
+                                    <div class="flex flex-row gap-[8px] items-center justify-center">
+                                        <img src="./src/img/blog/eye.svg" alt="">
+                                        <span
+                                            class="font-Estedad font-400 text-[14px] text-[#757575] leading-[180%]">۲۱,۵۹۷</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion blog-sidebar-latest-->
+                <!--#region blog-sidebar-tags-->
+                <div class="blog-sidebar-latest w-full flex flex-col bg-white px-[8px] rounded-[14px] gap-[16px] py-4">
+                    <h4
+                        class="font-Estedad font-bold text-[#353535] text-[24px] mobile:text-center desktop:text-right leading-[140%]">
+                        برچسب‌ها</h4>
+                    <hr
+                        class="border-[#D79C10] desktop:border-2 mobile:border-1 desktop:w-[16%] -mt-2 mobile:mx-auto mobile:w-[90%] desktop:mr-0">
+                    <div
+                        class="flex flex-row justify-center items-center gap-[16px] px-[8px] mobile:flex-wrap desktop:flex-nowrap">
+                        <div
+                            class="cursor-pointer bg-[#F3F3F3] py-[8px] px-[16px] rounded-[48px] text-[#414141] text-[12px] leading-[100%] font-Estedad font-400 hover:bg-black hover:text-white transition-all duration-200">
+                            اجاره خودرو</div>
+                        <div
+                            class="cursor-pointer bg-[#F3F3F3] py-[8px] px-[16px] rounded-[48px] text-[#414141] text-[12px] leading-[100%] font-Estedad font-400 hover:bg-black hover:text-white transition-all duration-200">
+                            مرسدس بنز</div>
+                        <div
+                            class="cursor-pointer bg-[#F3F3F3] py-[8px] px-[16px] rounded-[48px] text-[#414141] text-[12px] leading-[100%] font-Estedad font-400 hover:bg-black hover:text-white transition-all duration-200">
+                            ون</div>
+                        <div
+                            class="cursor-pointer bg-[#F3F3F3] py-[8px] px-[16px] rounded-[48px] text-[#414141] text-[12px] leading-[100%] font-Estedad font-400 hover:bg-black hover:text-white transition-all duration-200">
+                            بدون راننده</div>
+                    </div>
+                </div>
+                <!--#endregion blog-sidebar-tags-->
+            </div>
+            <!--#endregion blog-sidebar-->
+        </div>
+        <!--#endregion blog-->
+        <!--#region footer-->
+        <footer
+            class="footer relative desktop:max-w-[1224px] mobile:w-full h-auto bg-[#1E1E1EE5] py-[40px] desktop:py-[56px] px-4 desktop:px-[24px] rounded-[16px] overflow-hidden flex flex-col gap-y-[16px] shadow-md shadow-black/35 mt-[48px] desktop:mt-[80px] mx-auto bg-[url(https://i.pinimg.com/736x/ab/fb/d5/abfbd5a249016341afe2ce417a890ad0.jpg)] bg-cover bg-center">
+            <div class="absolute inset-0 bg-black/80 overflow-hidden"></div>
+            <!--#region footer-top-->
+            <div
+                class="footer-top relative w-full mx-auto h-auto rounded-[16px] border border-[#868686] p-[12px] desktop:p-[16px] flex flex-wrap items-center justify-center gap-3 desktop:gap-x-[81px]">
+                <div
+                    class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+                    <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+                        <img src="./src/img/footer/call-calling.svg" alt="">
+                    </div>
+                    <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+                        <p
+                            class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
+                            ارتباط با
+                            ما</p>
+                        <p
+                            class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+                            ۰۹۱۲-۲۱۳۲۶۵۴۵
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+                <div
+                    class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+                    <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+                        <img src="./src/img/footer/sms.svg" alt="">
+                    </div>
+                    <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+                        <p
+                            class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
+                            ایمیل</p>
+                        <p
+                            class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+                            autorent@info.com
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hidden desktop:block h-[32px] w-[2px] bg-[#868686]"></div>
+
+                <div
+                    class="footer-top-box w-full mobile:w-auto h-auto flex gap-x-[12px] desktop:gap-x-[16px] justify-center items-center">
+                    <div class="w-[48px] h-[48px] rounded-[12px] p-[12px] border border-[#FFFFFF]">
+                        <img src="./src/img/footer/map.svg" alt="">
+                    </div>
+                    <div class="flex flex-col gap-y-[8px] desktop:gap-y-[12px] w-fit h-full items-center">
+                        <p
+                            class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFBFB] leading-[180%] font-normal">
+                            آدرس</p>
+                        <p
+                            class="font-Estedad text-[14px] desktop:text-[16px] text-[#FFFFFF] leading-[100%] font-normal shadow-md shadow-black/25">
+                            تهران- خ شادمان
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion footer-top-->
+
+            <!--#region footer-bottom-->
+            <div class="footer-bottom w-full relative h-auto">
+                <div
+                    class="footer-bottom-content w-full flex mobile:flex-col desktop:flex-row gap-y-8 desktop:px-[67.5px] mt-[16px] items-center desktop:justify-evenly mobile:justify-center">
+
+                    <!-- Right box -->
+                    <div
+                        class="footer-bottom-content-box-right w-fit h-auto flex flex-col mobile:items-center mobile:gap-x-40 gap-y-[16px] desktop:gap-y-[24px] desktop:items-start text-center desktop:text-left">
+                        <img src="./src/img/footer/Logo.png" alt="" class="w-[150px] mx-auto desktop:mx-0">
+                        <p
+                            class="font-Estedad text-right font-normal text-[13px] desktop:text-[14px] leading-[200%] desktop:leading-[180%] text-white desktop:w-[407px]">
+                            اتورنت با رویکرد اعتماد به مشتری، با در اختیار داشتن بزرگترین ناوگان خودرویی متشکل از انواع
+                            خودروهای
+                            صفر کیلومتر، اقتصادی تا تجاری در سراسر کشور ایران آماده خدمت‌رسانی به مشتریان است.
+                        </p>
+                    </div>
+
+                    <!-- Middle box -->
+                    <div
+                        class="footer-bottom-content-box-left w-fit h-auto flex flex-col mobile:justify-center mobile:items-center desktop:items-center gap-y-[16px] desktop:gap-y-[32px]">
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer">دسترسی
+                            آسان</p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                                href="./FAQ.html">سوالات متداول</a></p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                                href="./contact-us.html">تماس با ما</a></p>
+                        <p class="font-Estedad font-500 text-[14px] text-white leading-[100%] cursor-pointer"><a
+                                href="./about-us.html">درباره ما</a></p>
+
+                    </div>
+
+                    <!-- Left box -->
+                    <div
+                        class="footer-bottom-content-send w-fit h-auto flex flex-col gap-y-[8px] items-center desktop:items-start text-center desktop:text-left">
+                        <h4
+                            class="font-Estedad font-[600] text-[16px] leading-[100%] text-white mb-[8px] desktop:mb-[12px]">
+                            خبرنامه
+                        </h4>
+
+                        <div
+                            class="newsletter-container w-[320px] h-[48px] bg-[#353535] rounded-[8px] border border-[#D7D7D7] flex items-center overflow-hidden">
+                            <input type="email" placeholder="ایمیل خود را وارد کنید"
+                                class="flex-1 h-full bg-transparent px-[12px] desktop:px-[16px] text-right font-Estedad text-[12px] text-white placeholder:text-[#9CA3AF] outline-none border-none" />
+                            <button
+                                class="bg-[#FDB713] text-[#353535] font-Estedad font-[600] text-[13px] desktop:text-[14px] px-[12px] desktop:px-[16px] ml-[8px] py-[8px] desktop:py-[12px] h-[36px] desktop:h-[32px] w-[66px] leading-[12.5px] rounded-[6px] border-none outline-none cursor-pointer hover:bg-[#FDB713]/90 transition-colors duration-200">
+                                ارسال
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="footer-bottom-divider w-full mt-[24px] border-t border-[#868686]"></div>
+
+                <div
+                    class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+                    <a href="./rules.html"
+                        class="w-full flex flex-col items-center justify-center gap-y-2 desktop:gap-y-0 desktop:flex-row desktop:gap-x-[8px] mx-auto mt-[16px] desktop:mt-[24px]">
+                        <img src="./src/img/footer/creative-commons.svg" alt="" class="w-[20px] desktop:w-[24px]">
+                        <p
+                            class="font-Estedad font-[500] text-[13px] desktop:text-[14px] leading-[180%] text-[#9A9A9A] text-center">
+                            تمامی حقوق این وبسایت متعلق به اتورنت می‌باشد
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!--#endregion footer-bottom-->
+        </footer>
+        <div class="h-[48px] desktop:h-[64px]"></div>
+        <!--#endregion footer-->
+    </main>
+    <!--#endregion main-->
+    <script src="./src/js/main.js"></script>
+</body>
+
+</html>
