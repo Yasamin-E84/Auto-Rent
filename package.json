@@ -18,7 +18,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
     "cally": "^0.8.0",
-    "flowbite": "^4.0.0",
+    "flowbite": "^4.0.1",
     "flyonui": "^2.4.1",
     "leaflet": "^1.9.4",
     "nouislider": "^15.8.1",

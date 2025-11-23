@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Rent - Car rental website</title>
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="shortcut icon" href="./src/img/default.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./node_modules/flowbite/dist/flowbite.min.css">
+    <style id="force-dark-class">
+        /* global browser treatment */
+        html.dark {
+            color-scheme: dark;
+        }
+
+        html:not(.dark) {
+            color-scheme: light;
+        }
+
+        /* ===== COMMON TOKENS (text) ===== */
+        /* primaries → light text */
+        html.dark .text-\[\#0C0C0C\],
+        html.dark .text-\[\#111827\],
+        html.dark .text-\[\#212121\],
+        html.dark .text-\[\#353535\],
+        html.dark .text-\[\#374151\],
+        html.dark .text-\[\#414141\] {
+            color: #E5E7EB !important;
+        }
+
+        /* secondary/grays → softer text */
+        html.dark .text-\[\#494949\],
+        html.dark .text-\[\#5E5E5E\],
+        html.dark .text-\[\#727272\],
+        html.dark .text-\[\#757575\],
+        html.dark .text-\[\#9A9A9A\] {
+            color: #A3A3A3 !important;
+        }
+
+        /* accents you already use (keep) */
+        html.dark .text-\[\#FDB713\] {
+            color: #FACC15 !important;
+        }
+
+        html.dark .text-\[\#D79C10\] {
+            color: #FACC15 !important;
+        }
+
+        html.dark .text-\[\#194BF0\] {
+            color: #89A9FF !important;
+        }
+
+        /* placeholders */
+        html.dark ::placeholder,
+        html.dark .placeholder\:text-\[\#9CA3AF\] {
+            color: #9CA3AF !important;
+        }
+
+        /* ===== COMMON TOKENS (borders / backgrounds) ===== */
+        html.dark .border-\[\#D7D7D7\],
+        html.dark .border-\[\#d7d7d7\] {
+            border-color: #334155 !important;
+        }
+
+        /* slate-700 */
+        html.dark .border-\[\#E5E7EB\] {
+            border-color: #475569 !important;
+        }
+
+        /* slate-600 */
+        html.dark .border-\[\#f3f3f3\] {
+            border-color: #1F2937 !important;
+        }
+
+        /* gray-800 */
+        html.dark .border-\[\#868686\] {
+            border-color: #475569 !important;
+        }
+
+        /* “white” surfaces → dark surfaces */
+        html.dark .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        /* slate-900ish */
+        html.dark .bg-\[\#F3F3F3\] {
+            background-color: #0B1220 !important;
+        }
+
+        /* page */
+        html.dark .bg-\[\#d7d7d7\] {
+            background-color: #111827 !important;
+        }
+
+        /* chips/rows */
+        html.dark .bg-\[\#353535\] {
+            background-color: #111827 !important;
+        }
+
+        /* newsletter bar */
+
+        /* blue/yellow brand blocks */
+        html.dark .bg-\[\#194BF0\] {
+            background-color: #365CF5 !important;
+        }
+
+        html.dark .hover\:bg-\[\#194BF0\]\/20:hover {
+            background-color: rgba(54, 92, 245, .2) !important;
+        }
+
+        html.dark .bg-\[\#FDB713\] {
+            background-color: #FACC15 !important;
+        }
+
+        /* generic hover grays used in search/history chips */
+        html.dark .hover\:bg-gray-50:hover {
+            background-color: rgba(148, 163, 184, .10) !important;
+        }
+
+        /* inputs default text color (if not overridden) */
+        html.dark input,
+        html.dark textarea,
+        html.dark button {
+            color: #E5E7EB;
+        }
+
+        /* ===== HEADER / HERO / SEARCH ===== */
+        html.dark .header-container header {
+            background: #0F172A !important;
+            color: #E5E7EB !important;
+        }
+
+        html.dark .header-container header a {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .header-container header .border-\[\#E5E7EB\] {
+            border-color: #475569 !important;
+        }
+
+        /* search overlay card & field */
+        html.dark #searchOverlay .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark #searchOverlay .border-\[\#E5E7EB\] {
+            border-color: #475569 !important;
+        }
+
+        html.dark #searchOverlay .text-\[\#111827\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark #searchOverlay .text-\[\#374151\] {
+            color: #A3A3A3 !important;
+        }
+
+        html.dark #searchOverlay .h-px {
+            background-color: #334155 !important;
+        }
+
+        /* ===== RENT TYPE CARD ===== */
+        html.dark .rent-type {
+            background: #0F172A !important;
+            color: #E5E7EB !important;
+            border-color: #334155 !important;
+        }
+
+        html.dark .rent-type .choose-right button {
+            border-color: #334155 !important;
+        }
+
+        html.dark .rent-type .h-\[32px\].w-px {
+            background: #334155 !important;
+        }
+
+        /* ===== CAR TYPES ===== */
+        html.dark .car-types .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .car-types .border-\[\#d7d7d7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .car-types h4 {
+            color: #E5E7EB !important;
+        }
+
+        /* ===== RESERVATION CARDS ===== */
+        html.dark .reservation .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .reservation .border-\[\#d7d7d7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .reservation .border-\[\#f3f3f3\] {
+            border-color: #1F2937 !important;
+        }
+
+        html.dark .reservation .w-\[32px\].h-\[29px\].bg-\[\#08237d\] {
+            background-color: #0B2FA6 !important;
+        }
+
+        /* keep readable */
+        html.dark .reservation .text-\[\#0c0c0c\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .reservation .text-\[\#494949\] {
+            color: #A3A3A3 !important;
+        }
+
+        /* gray price rows */
+        html.dark .reservation .bg-\[\#d7d7d7\] {
+            background-color: #111827 !important;
+        }
+
+        /* ===== WHY-US ===== */
+        html.dark .why-us-boxes-contents {
+            background: #0F172A !important;
+            color: #E5E7EB !important;
+            border-color: #334155 !important;
+        }
+
+        html.dark .why-us-text p {
+            color: #E5E7EB !important;
+        }
+
+        /* ===== HOW-TO ===== */
+        html.dark .how-to .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .how-to .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        /* outlined big numbers: keep stroke blue but brighten a bit */
+        html.dark .how-to span[style*="text-stroke"],
+        html.dark .how-to span[style*="-webkit-text-stroke"] {
+            color: transparent !important;
+        }
+
+        /* ===== FAQ (collapse) ===== */
+        html.dark .common-Q .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .common-Q .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        /* ===== COMMENTS (testimonials) ===== */
+        html.dark .comments .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .comments .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .comments .text-\[\#353535\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .comments .text-\[\#727272\] {
+            color: #A3A3A3 !important;
+        }
+
+        html.dark .testimonial-tab:hover {
+            background-color: rgba(250, 204, 21, .10) !important;
+        }
+
+        /* ===== THESIS (blog cards) ===== */
+        html.dark .thesis .bg-white {
+            background-color: #0F172A !important;
+        }
+
+        html.dark .thesis .border-\[\#D7D7D7\] {
+            border-color: #334155 !important;
+        }
+
+        html.dark .thesis .text-\[\#414141\] {
+            color: #E5E7EB !important;
+        }
+
+        html.dark .thesis .text-\[\#757575\] {
+            color: #A3A3A3 !important;
+        }
+
+        /* ===== FOOTER ===== */
+        html.dark .footer .border-\[\#868686\] {
+            border-color: #475569 !important;
+        }
+
+        html.dark .footer .border-t {
+            border-color: #475569 !important;
+        }
+
+        html.dark .brand {
+            opacity: .8 !important;
+        }
+
+        html.dark img.land-over {
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        html.dark img.svg-invert {
+            filter: invert(1) hue-rotate(90deg);
+        }
+
+        html.dark .easy-reserve {
+            color: #0C0C0C !important;
+        }
+    </style>
+
+
+</head>
+
+<body class="bg-[#F3F3F3]">
+    <!--#region main-->
+    <main class="main bg-[#F3F3F3] h-screen mx-auto overflow-hiden max-w-[1440px] min-w-[340px]">
+
+        <div class="w-full bg-[#D7D7D7] rounded-[8px] mx-auto py-[84px]">
+            <div
+                class="desktop:max-w-[1016px] mobile:w-[90%] bg-white rounded-[8px] mx-auto flex flex-row overflow-hidden">
+                <div
+                    class="desktop:max-w-[660px] mobile:w-[90%] rounded-[8px] bg-white flex flex-col justify-between items-center py-8">
+                    <a href="./index.html"><img src="./src/img/header/Logo.png" alt="" class="w-[151px]">
+                    </a>
+                    <div class="login-form flex flex-col gap-4 justify-center items-center">
+                        <h4 class="text-[#494949] font-bold font-Estedad leading-[100%] text-[20px]">ورود یا ثبت‌نام
+                        </h4>
+                        <span class="text-[#494949] font-400 font-Estedad text-[14px] leading-[180%] mt-4">کد تایید به
+                            شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.</span>
+                        <form id="phone-form" class="desktop:w-[556px] mobile:w-[90%] mx-auto" style="direction: ltr;">
+
+                            <!-- PHONE INPUT WRAPPER -->
+                            <div id="phone-wrapper"
+                                class="flex items-center justify-center shadow-xs border border-[#C2C2C2] rounded-[8px] h-[54px] w-[100%] mx-auto px-2 transition-all duration-200">
+
+                                <!-- COUNTRY DROPDOWN BUTTON -->
+                                <button id="dropdown-phone-button-2" data-dropdown-toggle="dropdown-phone-2"
+                                    type="button"
+                                    class="inline-flex gap-1 items-center shrink-0 z-10 text-body box-border font-medium leading-5">
+                                    <img src="https://flagcdn.com/ir.svg" class="w-6 h-6 rounded-full object-cover">
+                                    <span class="text-[#0C0C0C] text-[14px] leading-[180%] font-Estedad">+۹۸</span>
+                                </button>
+
+                                <!-- COUNTRY DROPDOWN LIST -->
+                                <div id="dropdown-phone-2"
+                                    class="z-10 hidden bg-white-primary-medium border border-default-medium rounded-base shadow-lg w-54">
+                                    <ul class="p-2 text-sm text-body font-medium bg-white overflow-scroll h-70"
+                                        aria-labelledby="dropdown-phone-button-2">
+
+                                        <!-- ALWAYS FIRST -->
+                                        <li><a href="#" data-code="+98" data-flag="ir"
+                                                class="country-option inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">
+                                                <img src="https://flagcdn.com/ir.svg"
+                                                    class="w-4 h-4 me-1.5 rounded-full object-cover">
+                                                <span class="text-[#0C0C0C] text-[14px] font-Estedad">Iran (+98)</span>
+                                            </a></li>
+
+                                        <!-- SAMPLE OF SORTED COUNTRIES (SHORTENED FOR CLARITY) -->
+                                        <li><a href="#" data-code="+1" data-flag="us"
+                                                class="country-option inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">
+                                                <img src="https://flagcdn.com/us.svg"
+                                                    class="w-4 h-4 me-1.5 rounded-full object-cover">
+                                                <span class="text-[#0C0C0C] text-[14px] font-Estedad">United States
+                                                    (+1)</span>
+                                            </a></li>
+
+                                        <li><a href="#" data-code="+44" data-flag="gb"
+                                                class="country-option inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">
+                                                <img src="https://flagcdn.com/gb.svg"
+                                                    class="w-4 h-4 me-1.5 rounded-full object-cover">
+                                                <span class="text-[#0C0C0C] text-[14px] font-Estedad">United Kingdom
+                                                    (+44)</span>
+                                            </a></li>
+
+                                        <li><a href="#" data-code="+47" data-flag="no"
+                                                class="country-option inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">
+                                                <img src="https://flagcdn.com/no.svg"
+                                                    class="w-4 h-4 me-1.5 rounded-full object-cover">
+                                                <span class="text-[#0C0C0C] text-[14px] font-Estedad">Norway
+                                                    (+47)</span>
+                                            </a></li>
+
+                                        <li><a href="#" data-code="+886" data-flag="tw"
+                                                class="country-option inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">
+                                                <img src="https://flagcdn.com/tw.svg"
+                                                    class="w-4 h-4 me-1.5 rounded-full object-cover">
+                                                <span class="text-[#0C0C0C] text-[14px] font-Estedad">Taiwan
+                                                    (+886)</span>
+                                            </a></li>
+
+                                    </ul>
+                                </div>
+
+                                <!-- SEPARATOR -->
+                                <hr class="w-[24px] rotate-90 border-[#C2C2C2]">
+
+                                <!-- PHONE INPUT -->
+                                <div class="relative w-full">
+                                    <input type="tel" id="phone-input" inputmode="numeric" pattern="\d{10}"
+                                        minlength="10" maxlength="10" title="10 digits, no separators"
+                                        class="w-full z-20 text-[#0C0C0C] ring-0 outline-none border-none px-0 text-heading placeholder:text-[#949494] placeholder:text-[14px] placeholder:font-Estedad placeholder:leading-[180%]"
+                                        placeholder="۹********" />
+                                </div>
+
+                                <!-- CLEAR BUTTON (X) -->
+                                <button id="clear-phone" type="button"
+                                    class="ml-2 text-[#949494] text-xl font-bold hidden"><img
+                                        src="./src/img/header/circle-close-fill.svg" alt=""></button>
+                            </div>
+
+                            <!-- WARNING TEXT -->
+                            <p id="phone-error"
+                                class="text-[#F23218] text-[14px] font-Estedad mt-2 pr-2 hidden text-right">
+                                متن راهنما
+                            </p>
+
+                            <!-- AGREEMENT CHECKBOX -->
+                            <div class="agree flex flex-row gap-2 justify-start items-start mt-8"
+                                style="direction: rtl;">
+                                <input id="agreement" type="checkbox" class="checkbox border border-[#C2C2C2]" />
+                                <p class="text-[#727272] text-[14px] font-Estedad leading-[180%]">
+                                    با ورود و ثبت‌نام در سایت، با
+                                    <a href="#" class="text-[#194BF0] text-[14px] font-Estedad">قوانین اتورنت</a> موافقت
+                                    می‌کنم.
+                                </p>
+                            </div>
+
+                            <!-- SUBMIT BUTTON -->
+                            <button id="submit-btn" type="submit"
+                                class="w-full text-[#AEAEAE] bg-[#F3F3F3] box-border border border-transparent rounded-base text-[14px] font-Estedad mt-4 rounded-[8px] px-4 py-2.5 cursor-not-allowed">
+                                تایید و ادامه </button>
+
+                        </form>
+                        <div id="otp-step" dir="rtl"
+                            class="desktop:w-[556px] mobile:w-[90%] mx-auto mt-8 text-center hidden">
+
+                            <h2 class="font-Estedad text-[20px] font-bold text-[#0C0C0C] mb-3">
+                                ورود یا ثبت‌نام
+                            </h2>
+
+                            <p class="text-[#4E4E4E] text-[14px] font-Estedad mt-8">
+                                کد تایید به شماره موبایلی که وارد می‌کنید، ارسال خواهد شد.
+                            </p>
+
+                            <p id="otp-phone-display" class="text-[#194BF0] font-Estedad text-[16px] mt-2"></p>
+
+                            <!-- OTP boxes -->
+                            <div id="otp-row" class="flex justify-center gap-3 mt-6">
+
+                                <input maxlength="1" inputmode="numeric" pattern="[0-9]*"
+                                    class="otp-input w-[55px] h-[55px] border border-[#D0D0D0] rounded-[10px] text-center text-[22px] font-[600] text-black focus:border-2 focus:border-[#194BF0] outline-none transition-all" />
+
+                                <input maxlength="1" inputmode="numeric" pattern="[0-9]*"
+                                    class="otp-input w-[55px] h-[55px] border border-[#D0D0D0] rounded-[10px] text-center text-[22px] font-[600] text-black focus:border-2 focus:border-[#194BF0] outline-none transition-all" />
+
+                                <input maxlength="1" inputmode="numeric" pattern="[0-9]*"
+                                    class="otp-input w-[55px] h-[55px] border border-[#D0D0D0] rounded-[10px] text-center text-[22px] font-[600] text-black focus:border-2 focus:border-[#194BF0] outline-none transition-all" />
+
+                                <input maxlength="1" inputmode="numeric" pattern="[0-9]*"
+                                    class="otp-input w-[55px] h-[55px] border border-[#D0D0D0] rounded-[10px] text-center text-[22px] font-[600] text-black focus:border-2 focus:border-[#194BF0] outline-none transition-all" />
+
+                                <input maxlength="1" inputmode="numeric" pattern="[0-9]*"
+                                    class="otp-input w-[55px] h-[55px] border border-[#D0D0D0] rounded-[10px] text-center text-[22px] font-[600] text-black focus:border-2 focus:border-[#194BF0] outline-none transition-all" />
+
+                            </div>
+                            <div class="flex justify-between items-center flex-row-reverse">
+                                <a id="edit-phone" href="#"
+                                    class="text-[#194BF0] text-[14px] font-Estedad mt-3 inline-block">
+                                    ویرایش شماره موبایل
+                                </a>
+
+                                <p
+                                    class="mt-4 text-center text-[#6E6E6E] font-Estedad gap-1 text-[14px] flex flex-row justify-start items-center">
+                                    <img src="./src/img/header/clock.svg" alt="">
+                                    <span id="timer" class="text-[#194BF0]">۱:۵۹</span> تا دریافت مجدد کد
+                                </p>
+                            </div>
+                            <button id="verify-btn"
+                                class="mt-6 w-full text-white bg-[#F3F3F3] rounded-base text-sm px-4 py-2.5 cursor-not-allowed rounded-[8px] font-Estedad">
+                                تأیید و ادامه
+                            </button>
+                        </div>
+                    </div>
+                    <img src="./src/img/header/Logo.png" alt="" class="w-[151px] opacity-0">
+                </div>
+                <div class="mobile:hidden desktop:flex max-w-[356px]">
+                    <img src="./src/img/header/car-log.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--#endregion main-->
+    <script src="./src/js/main.js"></script>
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+
+    <script>
+        // Elements
+        const phoneForm = document.getElementById("phone-form");
+        const otpStep = document.getElementById("otp-step");
+        const successStep = document.getElementById("success-step");
+        const otpPhoneDisplay = document.getElementById("otp-phone-display");
+        const otpError = document.getElementById("otp-error");
+
+        // Fake OTP code (for demo)
+        const FAKE_CODE = "1234";
+
+        // Handle phone form submit
+        phoneForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // stop refresh
+
+            const phone = document.getElementById("phone-input").value;
+
+            if (phone.length < 9) {
+                alert("شماره معتبر وارد کنید");
+                return;
+            }
+
+            // Show the OTP screen
+            phoneForm.classList.add("hidden");
+            otpStep.classList.remove("hidden");
+
+            // Show number on OTP screen
+            otpPhoneDisplay.textContent = phone;
+
+            console.log("Fake SMS sent with code:", FAKE_CODE);
+        });
+
+        // OTP auto-focus behavior
+        document.querySelectorAll(".otp-input").forEach((input, index, arr) => {
+            input.addEventListener("input", () => {
+                if (input.value && index < arr.length - 1) {
+                    arr[index + 1].focus();
+                }
+            });
+        });
+
+        // Resend Button
+        document.getElementById("resend-btn").addEventListener("click", () => {
+            alert("Verification code re-sent (fake): " + FAKE_CODE);
+        });
+    </script>
+    <script>
+        const phoneInput = document.getElementById("phone-input");
+        const phoneWrapper = document.getElementById("phone-wrapper");
+        const phoneError = document.getElementById("phone-error");
+        const clearBtn = document.getElementById("clear-phone");
+        const submitBtn = document.getElementById("submit-btn");
+        const agreement = document.getElementById("agreement");
+
+        // Country selector
+        document.querySelectorAll(".country-option").forEach(option => {
+            option.addEventListener("click", () => {
+                const code = option.dataset.code;
+                const flag = option.dataset.flag;
+
+                document.querySelector("#dropdown-phone-button-2 img").src =
+                    `https://flagcdn.com/${flag}.svg`;
+
+                document.querySelector("#dropdown-phone-button-2 span").textContent =
+                    code;
+
+                document.getElementById("dropdown-phone-2").classList.add("hidden");
+            });
+        });
+
+        // VALIDATION
+        function validatePhone() {
+            const value = phoneInput.value.trim();
+
+            if (value === "" || value.length < 9 || !agreement.checked) {
+
+                phoneWrapper.style.border = "2px solid #F23218";
+                phoneError.classList.remove("hidden");
+                clearBtn.classList.remove("hidden");
+
+                submitBtn.disabled = true;
+                submitBtn.classList.add("cursor-pointer");
+                submitBtn.style.backgroundColor = "#F3F3F3";
+                submitBtn.style.color = "#A0A0A0";
+                return false;
+            }
+
+            phoneWrapper.style.border = "1px solid #C2C2C2";
+            phoneError.classList.add("hidden");
+            clearBtn.classList.add("hidden");
+
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("cursor-not-allowed");
+            submitBtn.style.backgroundColor = "#194BF0";
+            submitBtn.style.color = "white";
+
+            return true;
+        }
+
+        phoneInput.addEventListener("input", validatePhone);
+        agreement.addEventListener("change", validatePhone);
+
+        // CLEAR BUTTON
+        clearBtn.addEventListener("click", () => {
+            phoneInput.value = "";
+            validatePhone();
+        });
+
+        // PREVENT SUBMISSION IF INVALID
+        document.getElementById("phone-form").addEventListener("submit", function (e) {
+            if (!validatePhone()) e.preventDefault();
+        });
+    </script>
+    <script>
+
+        const toAsciiDigits = s => s.replace(/[۰-۹]/g, d => String.fromCharCode(d.charCodeAt(0) - 1728))
+            .replace(/[٠-٩]/g, d => String.fromCharCode(d.charCodeAt(0) - 1632));
+        const otpRow = document.getElementById('otp-row');
+        const isRTL = getComputedStyle(otpRow).direction === 'rtl';
+        const inputs = Array.from(document.querySelectorAll('#otp-row .otp-input'));
+
+        const setVerifyEnabled = (on) => {
+            const btn = document.getElementById('verify-btn');
+            if (on) {
+                btn.disabled = false;
+                btn.classList.remove('cursor-not-allowed');
+                btn.style.backgroundColor = '#194BF0';
+                btn.style.color = '#fff';
+            } else {
+                btn.disabled = true;
+                btn.classList.add('cursor-pointer');
+                btn.style.backgroundColor = '#F3F3F3';
+                btn.style.color = '#D0D0D0';
+            }
+        };
+
+        const allFilled = () => inputs.every(i => toAsciiDigits(i.value).trim().length === 1);
+
+        // ---------- behavior ----------
+        inputs.forEach((input, idx) => {
+            // typing → move focus in RTL to the next box on the LEFT
+            input.addEventListener('input', e => {
+                input.classList.remove('otp-error');
+                // keep only one digit (ASCII)
+                input.value = toAsciiDigits(input.value).replace(/\D/g, '').slice(0, 1);
+
+                if (input.value) {
+                    const nextIdx = isRTL ? idx - 1 : idx + 1;
+                    if (inputs[nextIdx]) inputs[nextIdx].focus();
+                }
+                setVerifyEnabled(allFilled());
+            });
+
+            // backspace navigation (RTL aware)
+            input.addEventListener('keydown', e => {
+                if (e.key === 'Backspace' && !input.value) {
+                    const prevIdx = isRTL ? idx + 1 : idx - 1;
+                    if (inputs[prevIdx]) inputs[prevIdx].focus();
+                }
+                // arrow keys
+                if (e.key === 'ArrowLeft') {
+                    const leftIdx = isRTL ? idx + 1 : idx - 1;
+                    if (inputs[leftIdx]) inputs[leftIdx].focus();
+                    e.preventDefault();
+                }
+                if (e.key === 'ArrowRight') {
+                    const rightIdx = isRTL ? idx - 1 : idx + 1;
+                    if (inputs[rightIdx]) inputs[rightIdx].focus();
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // paste full code (fills RTL from rightmost to leftmost)
+        inputs[0].addEventListener('paste', e => {
+            const data = toAsciiDigits((e.clipboardData || window.clipboardData).getData('text')).replace(/\D/g, '').slice(0, inputs.length);
+            if (!data) return;
+            e.preventDefault();
+
+            const order = isRTL ? [...inputs].reverse() : inputs;
+            for (let i = 0; i < order.length; i++) {
+                order[i].value = data[i] || '';
+                order[i].classList.remove('otp-error');
+            }
+            setVerifyEnabled(allFilled());
+            // focus last filled (RTL aware)
+            const lastIndex = Math.min(data.length, order.length) - 1;
+            if (lastIndex >= 0) order[lastIndex].focus();
+        });
+
+        // verify
+        document.getElementById('verify-btn').addEventListener('click', verifyOTP);
+
+        function verifyOTP() {
+            const value = toAsciiDigits(inputs.map(i => i.value).join(''));
+            const CORRECT = '54321'; // demo; replace with your check later
+
+            if (value !== CORRECT) {
+                // ❌ WRONG CODE → show red borders (#FF2F28)
+                inputs.forEach(i => {
+                    i.classList.remove("border-[#194BF0]", "border-2"); // remove blue
+                    i.classList.add("border-[#FF2F28]", "border-2");     // add red
+                });
+
+                setVerifyEnabled(false);
+
+                // focus first empty box (RTL aware)
+                const target = inputs.find(i => i.value === '')
+                    || inputs[isRTL ? 0 : inputs.length - 1];
+
+                target.focus();
+                return;
+            }
+
+            // ✅ SUCCESS → redirect
+            window.location.href = "User-Account.html";
+        }
+
+        // ENTER submits OTP
+        inputs.forEach(input => {
+            input.addEventListener("keyup", e => {
+                if (e.key === "Enter") {
+                    verifyOTP();
+                }
+            });
+        });
+
+
+        // initial state
+        setVerifyEnabled(false);
+        function toPersian(n) {
+            return n.toString().replace(/\d/g, d => "۰۱۲۳۴۵۶۷۸۹"[d]);
+        }
+
+        let minutes = 1;
+        let seconds = 59;
+
+        const timerElement = document.getElementById("timer");
+
+        function updateTimer() {
+            // stop at 0:00
+            if (minutes === 0 && seconds === 0) {
+                timerElement.textContent = "۰:۰۰";
+                clearInterval(timerInterval);
+                return;
+            }
+
+            // decrease time
+            if (seconds === 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+
+            // format → MM:SS with Persian digits
+            const m = toPersian(minutes);
+            const s = seconds < 10 ? "۰" + toPersian(seconds) : toPersian(seconds);
+
+            timerElement.textContent = `${m}:${s}`;
+        }
+
+        const timerInterval = setInterval(updateTimer, 1000);
+
+    </script>
+
+</body>
+
+</html>
